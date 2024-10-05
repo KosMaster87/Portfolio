@@ -5,8 +5,7 @@
   justify-content: center;
   height: calc(100vh - 7vh);
   width: 100%;
-  background-color: rgba(255, 252, 242, 0.904);
-  // background-color: rgb(255, 252, 242); // original
+  background-color: rgb(255, 252, 242);
   flex-direction: column;
   gap: 4rem;
 }
@@ -28,7 +27,7 @@
   justify-content: center;
 
   > h1 {
-    filter: drop-shadow(2px 2px 2px gray);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
     font-weight: 800;
     letter-spacing: -0.07rem;
@@ -122,5 +121,11 @@
   > span {
     font-size: clamp(0.6rem, 0.8vw + 0.5rem, 5.75rem);
     text-align: center;
+
+    a {
+      text-decoration: none;
+      // letter-spacing: -0.09rem;
+      color: rgb(55, 53, 53);
+    }
   }
 }

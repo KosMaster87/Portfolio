@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/app.component.scss"],
+  "sourcesContent": [".headerSelf {\n  top: 0;\n  left: 0;\n  right: 0;\n  transition: top 0.3s; /* Smoothes Ein- und Ausblenden */\n}\n"],
+  "mappings": "AAAA,CAAA,WACE,IAAA,EACA,KAAA,EACA,MAAA,EACA,WAAA,IAAA",
+  "names": []
+}

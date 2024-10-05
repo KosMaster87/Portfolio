@@ -2,6 +2,13 @@
 @import "./../src/assets/styles/syne.scss";
 @import "./../src/assets/styles/overpass.scss";
 
+:root {
+  --padding-small: clamp(40px, 10px, 10px);
+  --padding-medium: clamp(100px, 10vw, 160px);
+  --padding-large: clamp(160px, 15vw, 200px);
+  --gap: clamp(10px, 2.5vw, 20px);
+}
+
 * {
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -9,8 +16,7 @@
 }
 
 body {
-  background-color: rgb(88, 77, 100); // developer
-  // background-color: rgb(255, 252, 242); // original
+  background-color: rgb(255, 252, 242);
 }
 
 .disableTextSelection {
