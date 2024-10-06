@@ -6,9 +6,10 @@
   justify-content: space-between;
   height: 7vh;
   padding: 0 10vw;
-}
 
-// ----------------------------------------------------
+  max-width: 2560px;
+  margin: 0 auto;
+}
 
 .navLeft {
   display: flex;
@@ -19,11 +20,6 @@
 .pageSelfLogo {
   height: 30px;
 }
-
-.pageSelfSlogen {
-}
-
-// ----------------------------------------------------
 
 .navRight {
   display: flex;
@@ -40,8 +36,6 @@
   gap: 1rem;
 }
 
-// ----------------------------------------------------
-
 .langDiv {
   display: flex;
   flex-direction: row;
@@ -54,14 +48,10 @@
   border: solid whitesmoke 1px;
 }
 
-// ----------------------------------------------------
-
 .navBarSelfLinks {
   display: flex;
   gap: 0.5rem;
 }
-
-// ----------------------------------------------------
 
 .burgerMenuBtn {
   cursor: pointer;
@@ -79,16 +69,3 @@
 .line3 {
   transform-origin: 10% 90%;
 }
-
-// ----------------------------------------------------
-
-// @media only screen and (min-width: 250px) and (max-width: 1024px) {
-//   .headerSelfInner {
-//     padding: 0 10vw;
-//   }
-// }
-// @media only screen and (min-width: 1025px) and (max-width: 1440px) {
-//   .headerSelfInner {
-//     padding: 0 10vw;
-//   }
-// }

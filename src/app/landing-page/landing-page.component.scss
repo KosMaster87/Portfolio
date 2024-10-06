@@ -5,6 +5,8 @@
   justify-content: center;
   height: calc(100vh - 7vh);
   width: 100%;
+  max-width: 2560px;
+  margin: 0 auto;
   background-color: rgb(255, 252, 242);
   flex-direction: column;
   gap: 4rem;
