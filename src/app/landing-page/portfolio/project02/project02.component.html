@@ -1,0 +1,50 @@
+<section *ngIf="isVisible" [@fadeInOut_Ng]>
+  <div class="toTheLeftSideBox">
+    <div class="h2Box">
+      <h2 class="fontSyne disableTextSelection">02/02</h2>
+    </div>
+    <div class="blancoBox"></div>
+  </div>
+
+  <div class="mainProjectBox disableTextSelection">
+    <img class="transparentDiv disableTextSelection" alt="Placeholder image." />
+    <img
+      src="assets/images/projects/Loco.avif"
+      alt="Image of project: El pollo loco."
+    />
+
+    <div class="slider">
+      <div class="infoBox" [ngClass]="{ active: isVisible }">
+        <div class="innerBox">
+          <h2 class="fontSyne disableTextSelection">El pollo loco</h2>
+          <h3 class="fontOverpass disableTextSelection">
+            JavaScript | HTML | CSS
+          </h3>
+          <p class="disableTextSelection projectText fontOverpass">
+            Ein einfaches Jump-and-Run-Spiel mit einem objektorientierten
+            Ansatz. Helfen Sie Pepe, Münzen und Salsa-Flaschen zu finden, um das
+            Killer-Huhn zu bekämpfen.
+          </p>
+          <div class="fontOverpass disableTextSelection btnBox">
+            <button
+              class="fontOverpass disableTextSelection"
+              onclick="window.open('https://El-pollo-loco.dev2k.net/', '_blank')"
+            >
+              Live test
+            </button>
+            <button
+              class="fontOverpass disableTextSelection"
+              onclick="window.open('https://github.com/KosMaster87/El-pollo-loco.git', '_blank')"
+            >
+              GitHub
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="rectangle" [ngClass]="{ active: isVisible }">
+        <div class="hoverArrow" [ngClass]="{ active: isVisible }"></div>
+      </div>
+    </div>
+  </div>
+</section>

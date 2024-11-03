@@ -1,0 +1,100 @@
+.headerSelfInner {
+  // background-color: rgb(255, 252, 242);
+  // background-color: darkkhaki;
+  border-bottom: 1px solid rgb(0, 188, 143);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 7vh;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 9rem;
+}
+
+@media screen and (max-width: 750px) {
+  .headerSelfInner {
+    padding: 0 2rem;
+  }
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.pageSelfLogo {
+  height: 30px;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navBarSelf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.langDiv {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.langImage {
+  height: 30px;
+  border-radius: 5px;
+  border: solid whitesmoke 1px;
+}
+
+.navBarSelfLinks {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.burgerMenuBtn {
+  margin: 0 1rem;
+
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.line {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.line1 {
+  transform-origin: 10% 10%;
+}
+
+.line3 {
+  transform-origin: 10% 90%;
+}
+
+// Handy extra Klein
+@media screen and (max-width: 350px) and (orientation: portrait) {
+}
+
+// Handy
+@media screen and (min-width: 350px) and (max-width: 720px) and (orientation: portrait) {
+}
+
+@media screen and (max-width: 720px) and (orientation: landscape) {
+}
+
+// Tablet
+@media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+}
+
+@media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: landscape) {
+}
+
+// Desktop
+@media screen and (min-width: 1025px) {
+}

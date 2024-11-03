@@ -1,0 +1,38 @@
+@import "./../src/assets/styles/syne.scss";
+@import "./../src/assets/styles/overpass.scss";
+
+:root {
+  // LAYOUT SIZE
+  --padding-smaller: clamp(20px, 0.2rem, 10px);
+  --padding-small: clamp(40px, 0.2rem, 10px);
+  --padding-medium: clamp(100px, 6.25rem, 160px);
+  --gap-smaller: clamp(2px, 0.2rem, 20px);
+  --gap-small: clamp(6px, 0.2rem, 20px);
+  --gap-medium: clamp(10px, 2rem, 20px);
+
+  // LAYOUT COLOR
+  --primeColor-background: rgb(230, 228, 227); // Standart background-color
+  --primeColor-light: yellow;
+  --primeColor-light: green;
+  --primeColor-light: blue;
+  --primeColor-light: darkgray;
+  --primeColor-light: black;
+}
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  // background-color: rgb(255, 252, 242);
+  background-color: var(--primeColor-background);
+}
+
+.disableTextSelection {
+  user-select: none; /* Für Webkit-Browser wie Chrome, Safari */
+  -webkit-user-select: none; /* Für Webkit-Browser */
+  -moz-user-select: none; /* Für Firefox */
+  -ms-user-select: none; /* Für Internet Explorer */
+}

@@ -1,0 +1,119 @@
+section {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  gap: 4rem;
+  // background-color: rgb(255, 252, 242);
+  // background-color: cornflowerblue;
+  container-type: inline-size;
+}
+
+.firstSector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  gap: 2rem;
+
+  .justText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
+    font-weight: 800;
+    letter-spacing: -0.07rem;
+    color: black;
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: 2.2rem;
+  }
+
+  p {
+    text-shadow: 4px 3px 20px rgba(0, 0, 0, 0.38);
+    font-size: clamp(12px, 1vw + 0.2rem, 40px);
+    font-weight: 400;
+    align-items: stretch;
+    padding-left: 1rem;
+    text-wrap: balance;
+    max-width: 40ch;
+  }
+
+  img {
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-color: rgb(100, 171, 100);
+    width: clamp(130px, 20% + 4rem, 300px);
+    // width: clamp(200px, 20% + 7rem, 300px);
+    border-radius: 10px;
+  }
+}
+
+button {
+  display: none;
+}
+
+.secondSector {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+
+  .arrowLeft {
+    background-image: url("./../../../assets/vector/arrowLeft.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: clamp(50px, 20vw, 150px);
+    height: clamp(50px, 20vw, 150px);
+  }
+}
+
+@container (min-width: 720px) {
+  .firstSector {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(100px, 20% + 0.4rem, 200px);
+    height: clamp(30px, 12% + 1.4rem, 68px);
+    font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.5s ease;
+    box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+    margin-top: 3rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(0, 188, 143);
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      color: white;
+    }
+  }
+
+  img {
+    margin-top: 15rem;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  .secondSector {
+    justify-content: flex-end;
+    padding-right: 10vw;
+  }
+}

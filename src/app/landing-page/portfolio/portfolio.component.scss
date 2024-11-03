@@ -1,0 +1,115 @@
+section {
+  height: 100%;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 10vh 0 10vh 0;
+  align-items: center;
+  justify-content: center;
+
+  display: grid;
+  grid-template-columns: 1fr 80% 1fr;
+  grid-template-rows: min-content min-content 1fr;
+
+  grid-column-gap: 0px;
+  grid-row-gap: 0rem;
+
+  grid-template-areas:
+    " . header . "
+    " . text . "
+    " . project . "
+    " . arrowSector .";
+
+  h1 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: clamp(1.5rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.07rem;
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    grid-area: header;
+  }
+
+  span {
+    grid-area: text;
+    width: 100%;
+    max-width: 1440px;
+    font-size: clamp(12px, 1vw + 0.8rem, 40px);
+    font-weight: 400;
+    text-wrap: balance;
+    text-align: center;
+    padding: 20px 0 20px 0;
+  }
+}
+
+app-project {
+  grid-area: project;
+}
+
+.arrowSector {
+  // width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  grid-area: arrowSector;
+
+  .arrowLeft {
+    background-image: url("./../../../assets/vector/arrowLeft.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: clamp(50px, 20vw, 150px);
+    height: clamp(50px, 20vw, 150px);
+  }
+}
+
+@media screen and (max-width: 720px) and (orientation: portrait) {
+  section {
+    grid-template-columns: 80%;
+    grid-template-rows: min-content min-content 1fr;
+
+    grid-column-gap: 0px;
+    grid-row-gap: 0rem;
+
+    grid-template-areas:
+      " header "
+      " text "
+      " project ";
+  }
+}
+
+@media screen and (max-width: 720px) and (orientation: landscape) {
+  section {
+    margin-top: 4rem;
+    grid-template-columns: 80%;
+    grid-template-rows: min-content min-content 1fr;
+
+    grid-column-gap: 0px;
+    grid-row-gap: 0rem;
+
+    grid-template-areas:
+      " header "
+      " text "
+      " project ";
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+}
+
+@media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: landscape) {
+  section {
+    margin-top: 4rem;
+    grid-template-columns: 80%;
+    grid-template-rows: min-content min-content 1fr;
+
+    grid-column-gap: 0px;
+    grid-row-gap: 0rem;
+
+    grid-template-areas:
+      " header "
+      " text "
+      " project ";
+  }
+}
+
+@media screen and (min-width: 1025px) {
+}

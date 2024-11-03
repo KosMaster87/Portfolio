@@ -1,0 +1,84 @@
+<!-- @if (project) else (loading){  -->
+
+@for (project of data.myProjects; track $index) { @defer (prefetch on idle) {
+
+<ng-container *ngIf="project; else loading">
+  <section
+    [ngClass]="oddOrEven($index)"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+  >
+    <div class="toTheRightSideBox">
+      <div class="blancoBox"></div>
+      <div class="h2Box">
+        <h2 class="fontSyne disableTextSelection">
+          {{ $index + 1 }} / {{ projectLength }}
+        </h2>
+      </div>
+
+      <!-- <style>
+        :scope {
+          .odd {
+            background-color: red;
+          }
+        }
+      </style> -->
+    </div>
+
+    <div class="mainProjectBox disableTextSelection">
+      <img [src]="project.img" [alt]="project.alt" />
+      <img
+        class="transparentDiv disableTextSelection"
+        alt="Placeholder image."
+      />
+
+      <div class="slider">
+        <div class="rectangle" id="rectangle" [class.active]="isVisible">
+          <div
+            class="hoverArrow"
+            id="hoverArrow"
+            [class.active]="isVisible"
+          ></div>
+        </div>
+
+        <div class="infoBox" id="infoBox" [class.active]="isVisible">
+          <div class="innerBox">
+            <h2 class="fontSyne disableTextSelection">
+              {{ project.projectName }}
+            </h2>
+            <h3 class="fontOverpass disableTextSelection">
+              {{ project.headline }}
+            </h3>
+
+            <p class="disableTextSelection projectText fontOverpass">
+              {{ "PROJECT0.FIRST" | translate }}
+            </p>
+
+            <div class="fontOverpass disableTextSelection btnBox">
+              <button
+                class="fontOverpass disableTextSelection"
+                (click)="openLink(project.linkToPage)"
+              >
+                Live test
+              </button>
+              <button
+                class="fontOverpass disableTextSelection"
+                (click)="openLink(project.linkToGit)"
+              >
+                GitHub
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-container>
+
+} @placeholder {
+<div class="sectionPlaceholder"></div>
+} }
+
+<ng-template #loading>
+  <div class="project_blank"></div>
+</ng-template>

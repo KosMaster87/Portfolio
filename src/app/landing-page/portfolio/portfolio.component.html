@@ -1,0 +1,79 @@
+<section id="portfolio_Component">
+  <h1 class="fontSyne disableTextSelection">Portfolio</h1>
+
+  <span class="fontOverpass disableTextSelection">{{
+    "SECTION_PORTFOLIO.WELCOME" | translate
+  }}</span>
+
+  <app-project></app-project>
+
+  <!-- @for (project of data.myProjects; track $index) { @defer (prefetch on idle) {
+
+  <ng-container *ngIf="project; else loading">
+    <app-project [project]="project"></app-project>
+  </ng-container>
+
+  <ng-template #loading>
+    <div class="project_blank"></div>
+  </ng-template>
+
+  } @placeholder {
+  <div class="placeholder"></div>
+  } } -->
+
+  <div class="arrowSector">
+    <a href="#contact_Component"> <div class="arrowLeft"></div></a>
+  </div>
+</section>
+
+
+
+<!-- -------------------------------------------------------------------- -->
+
+<!-- @defer (prefetch on idle) { @for (item of items; track $index) {
+  <app-project></app-project>} } @placeholder {
+  <div class="placeholder">Placeholder</div>
+  }  -->
+
+<!-- -------------------------------------------------------------------- -->
+
+<!-- DEFERABLE => Aufschieben = Weitere möglichkeiten. -->
+<!-- @defer (on viewport) { -->
+
+<!-- @defer (on hover) { -->
+
+<!-- Draufklicken. -->
+<!-- @defer (on interaction) { -->
+
+<!-- @defer (on timer(2000)) { -->
+<!-- @defer (on hover; on timer(2000)) { -->
+
+<!-- Soll wohl wenn man in der Komponente selber was mit einem Flag was erreichen will. -->
+<!-- <button ((click)="isVisible = true" )>Load</button> -->
+<!-- @defer (when isVisible) { -->
+
+<!-- <button ((click)="isVisible = true" )>Show</button> -->
+<!-- <button ((click)="prefetchCondition = true" )>Load</button> -->
+<!-- @defer (when isVisible; prefetch when prefetchCondition) { -->
+
+<!-- Homepage ist aufgebaut. -->
+<!-- @defer (on immediate) { -->
+
+<!-- @defer (prefetch on idle) { -->
+
+<!-- Full notation of defer! -->
+<!-- @defer (on viewport) {
+      <app-project></app-project> 
+    } 
+    
+    @loading {after 150ms; minimum 150ms} {
+      <div>loading</div>
+    }
+    
+    @placeholder (minimum 150ms) {
+      <div class="placeholder">Placeholder</div>
+    }
+    
+    @error {
+      <div>Error</div>
+    } -->

@@ -1,0 +1,63 @@
+<div class="headerSelfInner">
+  <div class="navLeft">
+    <a routerLink="['/']" href="https://portfolio.dev2k.net/"
+      ><img class="pageSelfLogo" src="assets/images/terminal_logo.svg" /></a
+    ><span class="fontSyne disableTextSelection pageSelfSlogen">dev2k</span>
+  </div>
+
+  <div class="navRight" style="display: flex">
+    <nav class="navBarSelf">
+
+      <!-- <div class="navBarSelfLinks">
+        <a href="#contact">{{ "LINKS.CONTACT" | translate }}</a>
+      </div> -->
+
+      <div class="langDiv">
+        <img
+          class="langImage"
+          src="assets/images/de.png"
+          (click)="translateText('de')"
+        />
+        <img
+          class="langImage"
+          src="assets/images/en.png"
+          (click)="translateText('en')"
+        />
+      </div>
+
+  
+    </nav>
+
+    <div class="burgerMenuBtn" id="burgerMenuBtn" style="display: flex"></div>
+    <svg
+      width="25"
+      height="25"
+      viewBox="0 0 32 31"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      style="display: flex"
+    >
+      <path
+        class="line line1"
+        d="M1 1.5127H31"
+        stroke="black"
+        stroke-width="2"
+        stroke-linecap="round"
+      />
+      <path
+        class="line line2"
+        d="M1 15.5127H31"
+        stroke="black"
+        stroke-width="2"
+        stroke-linecap="round"
+      />
+      <path
+        class="line line3"
+        d="M1 29.5127H31"
+        stroke="black"
+        stroke-width="2"
+        stroke-linecap="round"
+      />
+    </svg>
+  </div>
+</div>

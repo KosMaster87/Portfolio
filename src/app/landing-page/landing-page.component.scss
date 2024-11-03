@@ -1,0 +1,128 @@
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 7vh);
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  // background-color: coral;
+  flex-direction: column;
+}
+
+.landingPage_firstSector {
+  display: flex;
+  flex-direction: column;
+}
+
+.landingPage_Headline_Box {
+  margin-top: 100px;
+}
+
+.landingPage_Headline_Titel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  > h1 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
+    font-weight: 800;
+    letter-spacing: -0.07rem;
+    color: black;
+    text-align: center;
+  }
+}
+
+.landingPage_Headline_NameBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  > .landingPage_Headline_SolidLine {
+    border: solid black 1.14px;
+    width: 100%;
+    margin-left: 1em;
+  }
+
+  > h3 {
+    text-shadow: 4px 3px 9px rgba(0, 0, 0, 0.38);
+    font-size: clamp(12px, 1vw + 1rem, 40px);
+    font-weight: 700;
+    letter-spacing: -0.09rem;
+    color: rgb(0, 188, 143);
+    white-space: nowrap;
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+  }
+}
+
+.landingPage_secondSector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 20vw;
+
+  > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(100px, 20% + 0.4rem, 200px);
+    height: clamp(30px, 12% + 1.4rem, 68px);
+    font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.5s ease;
+    box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(0, 188, 143);
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      color: white;
+    }
+  }
+}
+
+.landingPage_thirdSector {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 80%;
+  height: 20vh;
+  margin-bottom: 50px;
+
+  > a {
+    display: inline-block;
+    transform: rotate(270deg);
+    transform-origin: left bottom;
+    font-size: clamp(0.625rem, 2vw, 1.625rem);
+    white-space: nowrap;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+
+    & a:hover {
+      text-decoration: underline;
+      letter-spacing: -0.09rem;
+      color: rgb(0, 188, 143);
+    }
+  }
+
+  > span {
+    font-size: clamp(0.6rem, 0.8vw + 0.5rem, 5.75rem);
+    text-align: center;
+
+    a {
+      text-decoration: none;
+      color: rgb(55, 53, 53);
+    }
+  }
+}

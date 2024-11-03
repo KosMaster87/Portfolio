@@ -1,0 +1,15 @@
+{
+  "SECTION_PORTFOLIO": {
+    "WELCOME": "Ich habe Erfahrung im Aufbau von Projekten mit unterschiedlichen Frontend - Technologien und Konzepten."
+  },
+
+  "PROJECT0": {
+    "FIRST": "Task Manager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mit Drag-and-Drop-Funktionen, fügen Sie Benutzer und Kategorien hinzu."
+  },
+  "PROJECT1": {
+    "FIRST": "Ein einfaches Jump-and-Run-Spiel, das mit dem Konzept der Objektorientierung aufgebaut wurde. Hilf Pepe, Münzen und Flaschen zu finden, um gegen das verrückte Riesenhuhn zu kämpfen."
+  },
+  "LINKS": {
+    "CONTACT": "Kontakt"
+  }
+}

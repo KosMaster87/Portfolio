@@ -1,0 +1,14 @@
+{
+  "SECTION_PORTFOLIO": {
+    "WELCOME": "I have experience in building projects with different frontend technologies and concepts."
+  },
+  "PROJECT0": {
+    "FIRST": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+  },
+  "PROJECT1": {
+    "FIRST": "A simple Jump and Run game based on an object-oriented approach. Help Pepe to find coins and bottles to fight against the crazy monster-chicken."
+  },
+  "LINKS": {
+    "CONTACT": "Contact"
+  }
+}

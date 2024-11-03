@@ -1,0 +1,47 @@
+<section *ngIf="isVisible" [@fadeInOut_Ng]>
+  <div class="toTheRightSideBox">
+    <div class="blancoBox"></div>
+    <div class="h2Box">
+      <h2 class="fontSyne disableTextSelection">01/02</h2>
+    </div>
+  </div>
+
+  <div class="mainProjectBox disableTextSelection">
+    <img src="assets/images/projects/Join.avif" alt="Image of project: Join." />
+    <img class="transparentDiv disableTextSelection" alt="Placeholder image." />
+
+    <div class="slider">
+      <div class="rectangle" id="rectangle" [ngClass]="{ 'active': isVisible }" #rectangleRef>
+        <div class="hoverArrow" id="hoverArrow" [ngClass]="{ 'active': isVisible }" #hoverArrowRef></div>
+      </div>
+
+      <div class="infoBox" id="infoBox" [ngClass]="{ 'active': isVisible }" #infoBoxRef>
+        <div class="innerBox">
+          <h2 class="fontSyne disableTextSelection">Join</h2>
+          <h3 class="fontOverpass disableTextSelection">
+            JavaScript | HTML | CSS
+          </h3>
+          <p class="disableTextSelection projectText fontOverpass">
+            Task-Manager inspiriert vom Kanban-System. Erstellen und
+            organisieren Sie Aufgaben mit Drag-and-Drop-Funktionen, weisen Sie
+            Benutzer und Kategorien zu.
+          </p>
+          <div class="fontOverpass disableTextSelection btnBox">
+            <button
+              class="fontOverpass disableTextSelection"
+              onclick="window.open('https://join.dev2k.net/', '_blank')"
+            >
+              Live test
+            </button>
+            <button
+              class="fontOverpass disableTextSelection"
+              onclick="window.open('https://github.com/KosMaster87/Join.git', '_blank')"
+            >
+              GitHub
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
