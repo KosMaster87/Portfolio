@@ -1,6 +1,7 @@
 <!-- @if (project) else (loading){  -->
 
-@for (project of data.myProjects; track $index) { @defer (prefetch on idle) {
+<!-- @for (project of data.myProjects; track $index) { @defer (prefetch on idle) { -->
+@for (project of projects; track $index) { @defer (prefetch on idle) {
 
 <ng-container *ngIf="project; else loading">
   <section
@@ -12,7 +13,7 @@
       <div class="blancoBox"></div>
       <div class="h2Box">
         <h2 class="fontSyne disableTextSelection">
-          {{ $index + 1 }} / {{ projectLength }}
+          {{ $index + 1 }} / {{ projectsLength }}
         </h2>
       </div>
 

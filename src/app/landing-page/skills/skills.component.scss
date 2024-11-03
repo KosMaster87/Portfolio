@@ -117,7 +117,7 @@ section {
   container-type: inline-size;
 
   .arrowRight {
-    background-image: url("./../../../assets/vector/arrowRight.svg");
+    background-image: url("./../../../../public/assets/vector/arrowRight.svg");
     background-size: contain;
     background-repeat: no-repeat;
     width: clamp(50px, 20vw, 150px);
@@ -133,35 +133,35 @@ section {
 }
 
 .angular {
-  background-image: url(./../../../assets/vector/icons/icon-ng.svg);
+  background-image: url(./../../../../public/assets/vector/icons/icon-ng.svg);
 }
 .materialDisign {
-  background-image: url(./../../../assets/vector/icons/icon-md.svg);
+  background-image: url(./../../../../public/assets/vector/icons/icon-md.svg);
 }
 .firebase {
-  background-image: url(./../../../assets/vector/icons/icon-fb.svg);
+  background-image: url(./../../../../public/assets/vector/icons/icon-fb.svg);
 }
 .typeScript {
-  background-image: url(./../../../assets/vector/icons/icon-ts.svg);
+  background-image: url(./../../../../public/assets/vector/icons/icon-ts.svg);
 }
 .javaScript {
-  background-image: url(./../../../assets/vector/icons/icon-js.svg);
+  background-image: url(./../../../../public/assets/vector/icons/icon-js.svg);
 }
 .html {
-  background-image: url(./../../../assets/vector/icons/icon-html.svg);
+  background-image: url(./../../../../public/assets/vector/icons/icon-html.svg);
 }
 .css {
-  background-image: url(./../../../assets/vector/icons/icon-css.svg);
+  background-image: url(./../../../../public/assets/vector/icons/icon-css.svg);
 }
 .git {
-  background-image: url(./../../../assets/vector/icons/icon-git.svg);
+  background-image: url(./../../../../public/assets/vector/icons/icon-git.svg);
 }
 .Scrum {
-  background-image: url(./../../../assets/vector/icons/icon-scrum.svg);
+  background-image: url(./../../../../public/assets/vector/icons/icon-scrum.svg);
 }
 .rest {
-  background-image: url(./../../../assets/vector/icons/icon-api.svg);
+  background-image: url(./../../../../public/assets/vector/icons/icon-api.svg);
 }
 .wordPress {
-  background-image: url(./../../../assets/vector/icons/icon-wp.svg);
+  background-image: url(./../../../../public/assets/vector/icons/icon-wp.svg);
 }

@@ -67,7 +67,7 @@ button {
   justify-content: center;
 
   .arrowLeft {
-    background-image: url("./../../../assets/vector/arrowLeft.svg");
+    background-image: url("./../../../../public/assets/vector/arrowLeft.svg");
     background-size: contain;
     background-repeat: no-repeat;
     width: clamp(50px, 20vw, 150px);

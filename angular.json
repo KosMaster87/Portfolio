@@ -33,11 +33,6 @@
                 "glob": "favicon.ico",
                 "input": "public/assets/icon/",
                 "output": "/"
-              },
-              {
-                "glob": "**/*",
-                "input": "/assets/fonts",
-                "output": "/assets/fonts/"
               }
             ],
             "styles": ["src/styles.scss"],
