@@ -2,8 +2,8 @@ section {
   height: 100%;
   width: 100%;
   max-width: 1440px;
-  margin: 0 auto;
-  padding: 10vh 0 10vh 0;
+  // margin: 0 auto;
+  padding: 5vh 0 0 0;
   align-items: center;
   justify-content: center;
 
@@ -47,10 +47,13 @@ app-project {
 }
 
 .arrowSector {
-  // width: 100%;
   display: flex;
   justify-content: flex-end;
   grid-area: arrowSector;
+
+  a {
+    padding: 1vh 0;
+  }
 
   .arrowLeft {
     background-image: url("./../../../../public/assets/vector/arrowLeft.svg");
@@ -74,6 +77,10 @@ app-project {
       " text "
       " project "
       " arrowSector ";
+  }
+
+  .arrowSector {
+    justify-content: center;
   }
 }
 

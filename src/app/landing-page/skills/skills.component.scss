@@ -1,17 +1,35 @@
 section {
+  // margin: 2rem auto;
+  padding: 5vh 0 0 0;
+
+  width: 100%;
+  max-width: 1440px;
+
   flex-direction: column;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 80% 1fr;
+  grid-template-rows: min-content min-content;
+
+  grid-column-gap: 0px;
+  grid-row-gap: 0rem;
+
+  grid-template-areas:
+    " . firstSector . "
+    " . secondSector . ";
+
   gap: 4rem;
   // background-color: cadetblue;
 }
 
 .firstSector {
+  grid-area: firstSector;
+  justify-self: center;
+
   position: relative;
   flex-direction: column;
   display: flex;
@@ -19,7 +37,7 @@ section {
   justify-content: center;
   width: 100%;
   height: auto;
-  margin-top: 10vh;
+  padding-top: 5rem;
   container-type: inline-size;
 
   h1 {
@@ -38,7 +56,7 @@ section {
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 50%);
   }
 }
 
@@ -111,10 +129,17 @@ section {
 }
 
 .secondSector {
+  grid-area: secondSector;
+  justify-self: center;
+
   width: 80%;
   display: flex;
   justify-content: center;
   container-type: inline-size;
+
+  a {
+    padding: 1vh 0;
+  }
 
   .arrowRight {
     background-image: url("./../../../../public/assets/vector/arrowRight.svg");
@@ -130,6 +155,56 @@ section {
     justify-content: flex-start;
     padding-left: 10vw;
   }
+}
+
+@media screen and (max-width: 720px) and (orientation: portrait) {
+  section {
+    grid-template-columns: 80%;
+    grid-template-rows: min-content min-content;
+
+    grid-column-gap: 0px;
+    grid-row-gap: 0rem;
+
+    grid-template-areas:
+      " firstSector "
+      " secondSector ";
+  }
+}
+
+@media screen and (max-width: 720px) and (orientation: landscape) {
+  section {
+    margin-top: 4rem;
+    grid-template-columns: 80%;
+    grid-template-rows: min-content min-content;
+
+    grid-column-gap: 0px;
+    grid-row-gap: 0rem;
+
+    grid-template-areas:
+      " firstSector "
+      " secondSector ";
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+}
+
+@media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: landscape) {
+  section {
+    margin-top: 4rem;
+    grid-template-columns: 80%;
+    grid-template-rows: min-content min-content;
+
+    grid-column-gap: 0px;
+    grid-row-gap: 0rem;
+
+    grid-template-areas:
+      " firstSector "
+      " secondSector ";
+  }
+}
+
+@media screen and (min-width: 1025px) {
 }
 
 .angular {

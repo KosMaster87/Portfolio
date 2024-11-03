@@ -248,6 +248,10 @@ button {
   // -------------------------------------------------------------
 
   .even {
+    .toTheRightSideBox {
+      flex-direction: row-reverse;
+    }
+
     .hoverArrow {
       left: 0;
     }
@@ -275,10 +279,6 @@ button {
   }
 
   .odd {
-    .toTheRightSideBox {
-      flex-direction: row-reverse;
-    }
-
     .innerBox {
       align-items: flex-end;
 

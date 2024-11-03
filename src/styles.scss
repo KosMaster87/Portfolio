@@ -28,6 +28,10 @@
 body {
   // background-color: rgb(255, 252, 242);
   background-color: var(--primeColor-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .disableTextSelection {
