@@ -135,22 +135,22 @@ button {
       transition: transform 1s ease, border 1s ease, opacity 0.7s ease;
     }
 
-    .rectangle.active {
-      animation: slideIn 1s ease forwards;
-      border: 2px solid black;
-      transform: scale(1.05);
-    }
+    // .rectangle.active {
+    //   animation: slideIn 1s ease forwards;
+    //   border: 2px solid black;
+    //   transform: scale(1.05);
+    // }
 
-    @keyframes slideIn {
-      0% {
-        transform: translate(0%, 0%);
-        opacity: 0;
-      }
-      100% {
-        transform: translate(2%, 4%);
-        opacity: 1;
-      }
-    }
+    // @keyframes slideIn {
+    //   0% {
+    //     transform: translate(0%, 0%);
+    //     opacity: 0;
+    //   }
+    //   100% {
+    //     transform: translate(2%, 4%);
+    //     opacity: 1;
+    //   }
+    // }
 
     .hoverArrow {
       position: absolute;
@@ -255,6 +255,23 @@ button {
     .rectangle.active .hoverArrow {
       transform: translate(-50%, -40%) rotate(100deg) scale(1);
     }
+
+    .rectangle.active {
+      animation: slideInEven 1s ease forwards;
+      border: 2px solid black;
+      transform: scale(1.05);
+    }
+
+    @keyframes slideInEven {
+      0% {
+        transform: translate(0%, 0%);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(2%, 4%);
+        opacity: 1;
+      }
+    }
   }
 
   .odd {
@@ -271,6 +288,23 @@ button {
 
       div {
         align-self: flex-end;
+      }
+    }
+
+    .rectangle.active {
+      animation: slideInOdd 1s ease forwards;
+      border: 2px solid black;
+      transform: scale(1.05);
+    }
+
+    @keyframes slideInOdd {
+      0% {
+        transform: translate(0%, 0%);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-2%, 4%);
+        opacity: 1;
       }
     }
   }
@@ -383,22 +417,22 @@ button {
       transition: transform 1s ease, border 1s ease, opacity 0.7s ease;
     }
 
-    .rectangle.active {
-      animation: slideIn 1s ease forwards;
-      border: 4px solid black;
-      transform: scale(1.05);
-    }
+    // .rectangle.active {
+    //   animation: slideIn 1s ease forwards;
+    //   border: 4px solid black;
+    //   transform: scale(1.05);
+    // }
 
-    @keyframes slideIn {
-      0% {
-        transform: translate(0%, 0%);
-        opacity: 0;
-      }
-      100% {
-        transform: translate(2%, 4%);
-        opacity: 1;
-      }
-    }
+    // @keyframes slideIn {
+    //   0% {
+    //     transform: translate(0%, 0%);
+    //     opacity: 0;
+    //   }
+    //   100% {
+    //     transform: translate(2%, 4%);
+    //     opacity: 1;
+    //   }
+    // }
 
     .hoverArrow {
       position: absolute;
@@ -507,6 +541,23 @@ button {
     .rectangle.active .hoverArrow {
       transform: translate(-50%, -40%) rotate(100deg) scale(1.2);
     }
+
+    .rectangle.active {
+      animation: slideInEven 1s ease forwards;
+      border: 2px solid black;
+      transform: scale(1.05);
+    }
+
+    @keyframes slideInEven {
+      0% {
+        transform: translate(0%, 0%);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(2%, 4%);
+        opacity: 1;
+      }
+    }
   }
 
   .odd {
@@ -520,6 +571,23 @@ button {
 
       div {
         align-self: flex-end;
+      }
+    }
+
+    .rectangle.active {
+      animation: slideInOdd 1s ease forwards;
+      border: 2px solid black;
+      transform: scale(1.05);
+    }
+
+    @keyframes slideInOdd {
+      0% {
+        transform: translate(0%, 0%);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-2%, 4%);
+        opacity: 1;
       }
     }
   }
@@ -631,22 +699,22 @@ button {
       transition: transform 1s ease, border 1s ease, opacity 0.7s ease;
     }
 
-    .rectangle.active {
-      animation: slideIn 1s ease forwards;
-      border: 4px solid black;
-      transform: scale(1.05);
-    }
+    // .rectangle.active {
+    //   animation: slideIn 1s ease forwards;
+    //   border: 4px solid black;
+    //   transform: scale(1.05);
+    // }
 
-    @keyframes slideIn {
-      0% {
-        transform: translate(0%, 0%);
-        opacity: 0;
-      }
-      100% {
-        transform: translate(2%, 4%);
-        opacity: 1;
-      }
-    }
+    // @keyframes slideIn {
+    //   0% {
+    //     transform: translate(0%, 0%);
+    //     opacity: 0;
+    //   }
+    //   100% {
+    //     transform: translate(2%, 4%);
+    //     opacity: 1;
+    //   }
+    // }
 
     .hoverArrow {
       position: absolute;
@@ -751,6 +819,23 @@ button {
     .rectangle.active .hoverArrow {
       transform: translate(-50%, -40%) rotate(100deg) scale(1.25);
     }
+
+    .rectangle.active {
+      animation: slideInEven 1s ease forwards;
+      border: 2px solid black;
+      transform: scale(1.05);
+    }
+
+    @keyframes slideInEven {
+      0% {
+        transform: translate(0%, 0%);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(2%, 4%);
+        opacity: 1;
+      }
+    }
   }
 
   .odd {
@@ -768,6 +853,23 @@ button {
 
       div {
         align-self: flex-end;
+      }
+    }
+
+    .rectangle.active {
+      animation: slideInOdd 1s ease forwards;
+      border: 2px solid black;
+      transform: scale(1.05);
+    }
+
+    @keyframes slideInOdd {
+      0% {
+        transform: translate(0%, 0%);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-2%, 4%);
+        opacity: 1;
       }
     }
   }
@@ -880,22 +982,22 @@ button {
       transition: transform 1s ease, border 1s ease, opacity 0.7s ease;
     }
 
-    .rectangle.active {
-      animation: slideIn 1s ease forwards;
-      border: 4px solid black;
-      transform: scale(1.05);
-    }
+    // .rectangle.active {
+    //   animation: slideIn 1s ease forwards;
+    //   border: 4px solid black;
+    //   transform: scale(1.05);
+    // }
 
-    @keyframes slideIn {
-      0% {
-        transform: translate(0%, 0%);
-        opacity: 0;
-      }
-      100% {
-        transform: translate(2%, 4%);
-        opacity: 1;
-      }
-    }
+    // @keyframes slideIn {
+    //   0% {
+    //     transform: translate(0%, 0%);
+    //     opacity: 0;
+    //   }
+    //   100% {
+    //     transform: translate(2%, 4%);
+    //     opacity: 1;
+    //   }
+    // }
 
     .hoverArrow {
       position: absolute;
@@ -1004,6 +1106,23 @@ button {
     .rectangle.active .hoverArrow {
       transform: translate(-50%, -40%) rotate(100deg) scale(1.25);
     }
+
+    .rectangle.active {
+      animation: slideInEven 1s ease forwards;
+      border: 2px solid black;
+      transform: scale(1.05);
+    }
+
+    @keyframes slideInEven {
+      0% {
+        transform: translate(0%, 0%);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(2%, 4%);
+        opacity: 1;
+      }
+    }
   }
 
   .odd {
@@ -1017,6 +1136,23 @@ button {
 
       div {
         align-self: flex-end;
+      }
+    }
+
+    .rectangle.active {
+      animation: slideInOdd 1s ease forwards;
+      border: 2px solid black;
+      transform: scale(1.05);
+    }
+
+    @keyframes slideInOdd {
+      0% {
+        transform: translate(0%, 0%);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-2%, 4%);
+        opacity: 1;
       }
     }
   }
@@ -1129,22 +1265,22 @@ button {
       transition: transform 1s ease, border 0.2s ease, opacity 0.2s ease;
     }
 
-    .rectangle.active {
-      animation: slideIn 1s ease forwards;
-      border: 2.25px solid black;
-      transform: scale(1.05);
-    }
+    // .rectangle.active {
+    //   animation: slideIn 1s ease forwards;
+    //   border: 2.25px solid black;
+    //   transform: scale(1.05);
+    // }
 
-    @keyframes slideIn {
-      0% {
-        transform: translate(0%, 0%);
-        opacity: 0;
-      }
-      100% {
-        transform: translate(2%, 4%);
-        opacity: 1;
-      }
-    }
+    // @keyframes slideIn {
+    //   0% {
+    //     transform: translate(0%, 0%);
+    //     opacity: 0;
+    //   }
+    //   100% {
+    //     transform: translate(2%, 4%);
+    //     opacity: 1;
+    //   }
+    // }
 
     .hoverArrow {
       position: absolute;
@@ -1255,6 +1391,23 @@ button {
     .rectangle.active .hoverArrow {
       transform: translate(-50%, -40%) rotate(0deg) scale(1.25);
     }
+
+    .rectangle.active {
+      animation: slideInEven 1s ease forwards;
+      border: 2px solid black;
+      transform: scale(1.5);
+    }
+
+    @keyframes slideInEven {
+      0% {
+        transform: translate(0%, 0%);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(2%, 4%);
+        opacity: 1;
+      }
+    }
   }
 
   .odd {
@@ -1292,6 +1445,23 @@ button {
     .rectangle.active .hoverArrow {
       left: 0;
       transform: translate(-50%, -40%) rotate(-100deg) scale(1.25);
+    }
+
+    .rectangle.active {
+      animation: slideInOdd 1s ease forwards;
+      border: 2px solid black;
+      transform: scale(1.5);
+    }
+
+    @keyframes slideInOdd {
+      0% {
+        transform: translate(0%, 0%);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-2%, 4%);
+        opacity: 1;
+      }
     }
   }
 }
@@ -1407,38 +1577,38 @@ button {
     border: 4px solid transparent;
     transition: transform 1s ease, border 1s ease, opacity 0.7s ease;
 
-    &:hover {
-      animation: slideIn 1s ease forwards;
-      border: 4px solid black;
-      transform: scale(1.05);
-    }
+    // &:hover {
+    //   animation: slideIn 1s ease forwards;
+    //   border: 4px solid black;
+    //   transform: scale(1.05);
+    // }
   }
 
-  @keyframes slideIn {
-    0% {
-      transform: translate(0%, 0%);
-      opacity: 0;
-    }
-    100% {
-      transform: translate(2%, 4%);
-      opacity: 1;
-    }
-  }
+  // @keyframes slideIn {
+  //   0% {
+  //     transform: translate(0%, 0%);
+  //     opacity: 0;
+  //   }
+  //   100% {
+  //     transform: translate(2%, 4%);
+  //     opacity: 1;
+  //   }
+  // }
 
-  .rectangle:not(:hover) {
-    animation: slideOut 1s ease forwards;
-  }
+  // .rectangle:not(:hover) {
+  //   animation: slideOut 1s ease forwards;
+  // }
 
-  @keyframes slideOut {
-    0% {
-      transform: translate(2%, 4%);
-      opacity: 1;
-    }
-    100% {
-      transform: translate(0%, 0%);
-      opacity: 0;
-    }
-  }
+  // @keyframes slideOut {
+  //   0% {
+  //     transform: translate(2%, 4%);
+  //     opacity: 1;
+  //   }
+  //   100% {
+  //     transform: translate(0%, 0%);
+  //     opacity: 0;
+  //   }
+  // }
 
   .hoverArrow {
     position: absolute;
@@ -1575,6 +1745,40 @@ button {
         opacity: 1;
       }
     }
+
+    .rectangle {
+      &:hover {
+        animation: slideInEven 1s ease forwards;
+        border: 4px solid black;
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes slideInEven {
+      0% {
+        transform: translate(0%, 0%);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(2%, 4%);
+        opacity: 1;
+      }
+    }
+
+    .rectangle:not(:hover) {
+      animation: slideOutEven 1s ease forwards;
+    }
+
+    @keyframes slideOutEven {
+      0% {
+        transform: translate(2%, 4%);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(0%, 0%);
+        opacity: 0;
+      }
+    }
   }
 
   .odd {
@@ -1634,17 +1838,45 @@ button {
 
     .hoverArrow {
       transform: translate(-50%, -40%) rotate(135deg);
+      left: 0;
     }
-
-    // .rectangle {
-    // }
 
     .rectangle:hover .hoverArrow {
       transform: translate(-50%, -40%) rotate(270deg) scale(1.5);
     }
 
-    .hoverArrow {
-      left: 0;
+    .rectangle {
+      &:hover {
+        animation: slideInOdd 1s ease forwards;
+        border: 4px solid black;
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes slideInOdd {
+      0% {
+        transform: translate(0%, 0%);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-2%, 4%);
+        opacity: 1;
+      }
+    }
+
+    .rectangle:not(:hover) {
+      animation: slideOutOdd 1s ease forwards;
+    }
+
+    @keyframes slideOutOdd {
+      0% {
+        transform: translate(-2%, 4%);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(0%, 0%);
+        opacity: 0;
+      }
     }
   }
 }
