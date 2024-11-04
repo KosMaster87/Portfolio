@@ -12,21 +12,18 @@
   grid-column-gap: 0px;
   grid-row-gap: 0rem;
   grid-template-areas: " . headerSector . ";
-  gap: 4rem;
 }
 
 .headerSelfInner {
   grid-area: headerSector;
-  // background-color: rgb(255, 252, 242);
-  // background-color: darkkhaki;
   border-bottom: 1px solid rgb(0, 188, 143);
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 7vh;
-  // width: 100%;
-  // max-width: 1440px;
-  padding: 0 9rem;
+  width: 100%;
+
+  padding: 1rem;
 }
 
 .navLeft {
@@ -88,24 +85,20 @@
   transform-origin: 10% 90%;
 }
 
-// Handy extra Klein
 @media screen and (max-width: 350px) and (orientation: portrait) {
 }
 
-// Handy
 @media screen and (min-width: 350px) and (max-width: 720px) and (orientation: portrait) {
 }
 
 @media screen and (max-width: 720px) and (orientation: landscape) {
 }
 
-// Tablet
 @media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
 }
 
 @media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: landscape) {
 }
 
-// Desktop
 @media screen and (min-width: 1025px) {
 }
