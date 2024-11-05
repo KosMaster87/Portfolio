@@ -1,24 +1,28 @@
 <section id="contact_Component">
-  <h1 class="greeting">Say Hi!</h1>
+  <h1 class="greeting fontSyne disableTextSelection">Say Hi!</h1>
 
   <div class="formParent">
     <div class="greetings">
-      <h2>Want to discuss a new project?</h2>
-      <h3>Say hello! let's discuss your ideas and make it happen</h3>
+      <h2 class="fontOverpass disableTextSelection">
+        Want to discuss a new project?
+      </h2>
+      <h3 class="fontOverpass disableTextSelection">
+        Say hello! let's discuss your ideas and make it happen
+      </h3>
     </div>
 
     <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
+      <input class="fontOverpass disableTextSelection" type="text" />
+      <input class="fontOverpass disableTextSelection" type="text" />
+      <input class="fontOverpass disableTextSelection" type="text" />
     </form>
 
     <input type="checkbox" name="" id="" />
 
-    <button>Send message</button>
+    <button class="fontOverpass disableTextSelection">Send message</button>
   </div>
 
-  <div class="homeArraw">
+  <div class="homeArraw_Section">
     <a href="#landingPage_firstSector"> <div class="homeArrow"></div></a>
   </div>
 </section>

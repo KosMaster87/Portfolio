@@ -2,47 +2,45 @@ section {
   margin: 5vh 0 0 0;
   width: 100%;
   max-width: 1440px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   display: grid;
   grid-template-columns: 1fr 80% 1fr;
   grid-template-rows: min-content 1fr min-content;
-  grid-column-gap: 0px;
-  grid-row-gap: 0rem;
   grid-template-areas:
     " . greeting . "
     " . form . "
     " . homeArrow . ";
-
   background-color: black;
+  align-items: center;
+  justify-content: center;
 }
 
 .greeting {
   grid-area: greeting;
-  color: whitesmoke;
+  color: var(--primeColor-white);
 }
 
 h2 {
-  color: whitesmoke;
+  color: var(--primeColor-white);
 }
 
 h3 {
-  color: whitesmoke;
+  color: var(--primeColor-white);
 }
 
 .formParent {
   grid-area: form;
 }
 
-.homeArraw {
+.homeArraw_Section {
   grid-area: homeArrow;
-  background-image: url("./../../../../public/assets/arrows/arrowTop.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: clamp(50px, 20vw, 150px);
-  height: clamp(50px, 20vw, 150px);
+
+  .homeArrow {
+    background-image: url("./../../../../public/assets/arrows/arrowTop.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: clamp(50px, 20vw, 150px);
+    height: clamp(50px, 20vw, 150px);
+  }
 }
 
 @media screen and (max-width: 720px) and (orientation: portrait) {
