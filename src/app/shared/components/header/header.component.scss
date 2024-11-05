@@ -1,104 +1,435 @@
-.headerOuterSelf {
-  width: 100%;
-  max-width: 1440px;
+@media screen and (max-width: 720px) and (orientation: portrait) {
+  .headerOuterSelf {
+    width: 100%;
+    max-width: 1440px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  display: grid;
-  grid-template-columns: 1fr 80% 1fr;
-  grid-template-rows: min-content;
-  grid-column-gap: 0px;
-  grid-row-gap: 0rem;
-  grid-template-areas: " . headerSector . ";
-}
+    display: grid;
+    grid-template-columns: 80%;
+    grid-template-rows: min-content;
+    grid-column-gap: 0px;
+    grid-row-gap: 0rem;
+    grid-template-areas: " headerSector ";
+  }
 
-.headerSelfInner {
-  grid-area: headerSector;
-  border-bottom: 1px solid rgb(0, 188, 143);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 7vh;
-  width: 100%;
+  .headerSelfInner {
+    grid-area: headerSector;
+    // border-bottom: 1px solid rgb(0, 188, 143);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7vh;
+    width: 100%;
+  }
 
-  padding: 1rem;
-}
+  .navLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
 
-.navLeft {
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-}
+    .pageSelfLogo {
+      height: 30px;
+    }
+  }
 
-.pageSelfLogo {
-  height: 30px;
-}
+  .navRight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-.navRight {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    .navBarSelf {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
 
-.navBarSelf {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
+      .langDiv {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
 
-.langDiv {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-}
+        .langImage {
+          height: 30px;
+          border-radius: 5px;
+          border: solid whitesmoke 1px;
+        }
+      }
 
-.langImage {
-  height: 30px;
-  border-radius: 5px;
-  border: solid whitesmoke 1px;
-}
+      .navBarSelfLinks {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+  }
 
-.navBarSelfLinks {
-  display: flex;
-  gap: 0.5rem;
-}
+  .burgerMenuBtn {
+    margin: 0 1rem;
 
-.burgerMenuBtn {
-  margin: 0 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
+    .line {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
 
-.line {
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
+    .line1 {
+      transform-origin: 10% 10%;
+    }
 
-.line1 {
-  transform-origin: 10% 10%;
-}
-
-.line3 {
-  transform-origin: 10% 90%;
-}
-
-@media screen and (max-width: 350px) and (orientation: portrait) {
-}
-
-@media screen and (min-width: 350px) and (max-width: 720px) and (orientation: portrait) {
+    .line3 {
+      transform-origin: 10% 90%;
+    }
+  }
 }
 
 @media screen and (max-width: 720px) and (orientation: landscape) {
+  .headerOuterSelf {
+    width: 100%;
+    max-width: 1440px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    display: grid;
+    grid-template-columns: 80%;
+    grid-template-rows: min-content;
+    grid-column-gap: 0px;
+    grid-row-gap: 0rem;
+    grid-template-areas: " headerSector ";
+  }
+
+  .headerSelfInner {
+    grid-area: headerSector;
+    // border-bottom: 1px solid rgb(0, 188, 143);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7vh;
+    width: 100%;
+  }
+
+  .navLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+
+    .pageSelfLogo {
+      height: 30px;
+    }
+  }
+
+  .navRight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .navBarSelf {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      .langDiv {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+
+        .langImage {
+          height: 30px;
+          border-radius: 5px;
+          border: solid whitesmoke 1px;
+        }
+      }
+
+      .navBarSelfLinks {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+  }
+
+  .burgerMenuBtn {
+    margin: 0 1rem;
+
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    .line {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .line1 {
+      transform-origin: 10% 10%;
+    }
+
+    .line3 {
+      transform-origin: 10% 90%;
+    }
+  }
 }
 
 @media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .headerOuterSelf {
+    width: 100%;
+    max-width: 1440px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: min-content;
+    grid-column-gap: 0px;
+    grid-row-gap: 0rem;
+    grid-template-areas: " . headerSector . ";
+  }
+
+  .headerSelfInner {
+    grid-area: headerSector;
+    // border-bottom: 1px solid rgb(0, 188, 143);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7vh;
+    width: 100%;
+  }
+
+  .navLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+
+    .pageSelfLogo {
+      height: 30px;
+    }
+  }
+
+  .navRight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .navBarSelf {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      .langDiv {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+
+        .langImage {
+          height: 30px;
+          border-radius: 5px;
+          border: solid whitesmoke 1px;
+        }
+      }
+
+      .navBarSelfLinks {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+  }
+
+  .burgerMenuBtn {
+    margin: 0 1rem;
+
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    .line {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .line1 {
+      transform-origin: 10% 10%;
+    }
+
+    .line3 {
+      transform-origin: 10% 90%;
+    }
+  }
 }
 
 @media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: landscape) {
+  .headerOuterSelf {
+    width: 100%;
+    max-width: 1440px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: min-content;
+    grid-column-gap: 0px;
+    grid-row-gap: 0rem;
+    grid-template-areas: " . headerSector . ";
+  }
+
+  .headerSelfInner {
+    grid-area: headerSector;
+    // border-bottom: 1px solid rgb(0, 188, 143);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7vh;
+    width: 100%;
+  }
+
+  .navLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+
+    .pageSelfLogo {
+      height: 30px;
+    }
+  }
+
+  .navRight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .navBarSelf {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      .langDiv {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+
+        .langImage {
+          height: 30px;
+          border-radius: 5px;
+          border: solid whitesmoke 1px;
+        }
+      }
+
+      .navBarSelfLinks {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+  }
+
+  .burgerMenuBtn {
+    margin: 0 1rem;
+
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    .line {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .line1 {
+      transform-origin: 10% 10%;
+    }
+
+    .line3 {
+      transform-origin: 10% 90%;
+    }
+  }
 }
 
 @media screen and (min-width: 1025px) {
+  .headerOuterSelf {
+    width: 100%;
+    max-width: 1440px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: min-content;
+    grid-column-gap: 0px;
+    grid-row-gap: 0rem;
+    grid-template-areas: " . headerSector . ";
+  }
+
+  .headerSelfInner {
+    grid-area: headerSector;
+    // border-bottom: 1px solid rgb(0, 188, 143);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7vh;
+    width: 100%;
+    padding: 0.2vh 0 0.2vh 0;
+  }
+
+  .navLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+
+    .pageSelfLogo {
+      height: 30px;
+    }
+  }
+
+  .navRight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .navBarSelf {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      .langDiv {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+
+        .langImage {
+          height: 30px;
+          border-radius: 5px;
+          border: solid whitesmoke 1px;
+        }
+      }
+
+      .navBarSelfLinks {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+  }
+
+  .burgerMenuBtn {
+    margin: 0 1rem;
+
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    .line {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .line1 {
+      transform-origin: 10% 10%;
+    }
+
+    .line3 {
+      transform-origin: 10% 90%;
+    }
+  }
 }

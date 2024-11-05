@@ -1,7 +1,5 @@
 @media screen and (max-width: 720px) and (orientation: portrait) {
   section {
-    // margin: 5vh 0 0 0;
-    // padding: 5vh 0 5vh 0;
     width: 100%;
     max-width: 1440px;
     height: calc(100vh - 7vh);
@@ -11,9 +9,9 @@
     justify-content: center;
     display: grid;
     grid-template-columns: 80%;
-    grid-template-rows: min-content min-content min-content;
-    grid-column-gap: 0px;
-    grid-row-gap: 10vh;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
     grid-template-areas:
       " firstSector "
       " secondSector "
@@ -21,7 +19,7 @@
   }
 
   .landingPage_firstSector {
-    // padding: 15rem 0 15rem 0;
+    padding: 16vh 0 10vh 0;
     grid-area: firstSector;
     display: flex;
     flex-direction: column;
@@ -40,7 +38,7 @@
       letter-spacing: -0.07rem;
       color: black;
       text-align: center;
-      margin-top: 15vh;
+      // margin-top: 15vh;
     }
   }
 
@@ -74,7 +72,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 5rem 0 5rem 0;
+    // padding: 5rem 0 5rem 0;
 
     > button {
       display: flex;
@@ -139,8 +137,6 @@
 
 @media screen and (max-width: 720px) and (orientation: landscape) {
   section {
-    margin: 5vh 0 0 0;
-    // padding: 5vh 0 5vh 0;
     width: 100%;
     max-width: 1440px;
     height: calc(100dvh - 7vh);
@@ -150,9 +146,9 @@
     justify-content: center;
     display: grid;
     grid-template-columns: 80%;
-    grid-template-rows: min-content min-content min-content;
-    grid-column-gap: 0px;
-    grid-row-gap: 10vh;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
     grid-template-areas:
       " firstSector "
       " secondSector "
@@ -179,7 +175,7 @@
       letter-spacing: -0.07rem;
       color: black;
       text-align: center;
-      margin-top: 5vh;
+      // margin-top: 5vh;
     }
   }
 
@@ -279,21 +275,18 @@
 
 @media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
   section {
-    margin: 5vh 0 0 0;
-    // padding: 5vh 0 5vh 0;
     width: 100%;
     max-width: 1440px;
-    // height: calc(100dvh - 7vh);
-    // min-height: 50vh;
+    height: calc(100dvh - 7vh);
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
     display: grid;
     grid-template-columns: 1fr 80% 1fr;
-    grid-template-rows: min-content min-content min-content;
-    grid-column-gap: 0px;
-    grid-row-gap: 0rem;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
     grid-template-areas:
       " . firstSector . "
       " . secondSector . "
@@ -301,7 +294,7 @@
   }
 
   .landingPage_firstSector {
-    padding: 15rem 0 15rem 0;
+    padding: 16vh 0 10vh 0;
     grid-area: firstSector;
     display: flex;
     flex-direction: column;
@@ -353,7 +346,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 5rem 0 5rem 0;
+    // padding: 5rem 0 5rem 0;
 
     > button {
       display: flex;
@@ -418,8 +411,6 @@
 
 @media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: landscape) {
   section {
-    margin: 5vh 0 0 0;
-    // padding: 5vh 0 5vh 0;
     width: 100%;
     max-width: 1440px;
     height: calc(100dvh - 7vh);
@@ -428,10 +419,10 @@
     align-items: center;
     justify-content: center;
     display: grid;
-    grid-template-columns: 1fr 60% 1fr;
-    grid-template-rows: min-content min-content min-content;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-column-gap: 0;
-    grid-row-gap: 5vh;
+    grid-row-gap: 0;
     grid-template-areas:
       " . firstSector . "
       " . secondSector . "
@@ -439,7 +430,7 @@
   }
 
   .landingPage_firstSector {
-    padding: 1rem 0 1rem 0;
+    padding: 10vh 0 10vh 0;
     grid-area: firstSector;
     display: flex;
     flex-direction: column;
@@ -492,7 +483,6 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 1rem 0 1rem 0;
 
     > button {
       display: flex;
@@ -524,13 +514,13 @@
     align-items: flex-end;
     justify-content: space-between;
     width: 100%;
-    padding: 0 0.5vw 0.2rem 2.5vw;
+    padding: 1vh 0.5vw 1vh 2.5vw;
 
     > a {
       display: inline-block;
       transform: rotate(270deg);
       transform-origin: left bottom;
-      font-size: clamp(0.625rem, 2vw, 1.625rem);
+      font-size: clamp(0.2rem, 1.3vw, 1.625rem);
       white-space: nowrap;
       text-decoration: none;
       color: black;
@@ -544,7 +534,7 @@
     }
 
     > span {
-      font-size: clamp(0.6rem, 0.8vw + 0.5rem, 5.75rem);
+      font-size: clamp(0.6rem, 1.4vw, 1.625rem);
       text-align: center;
 
       a {
@@ -557,21 +547,18 @@
 
 @media screen and (min-width: 1025px) {
   section {
-    margin: 5vh 0 0 0;
-    // padding: 5vh 0 5vh 0;
     width: 100%;
     max-width: 1440px;
-    // height: calc(100dvh - 7vh);
-    // min-height: 50vh;
+    height: calc(100dvh - 7vh);
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
     display: grid;
     grid-template-columns: 1fr 80% 1fr;
-    grid-template-rows: min-content min-content min-content;
-    grid-column-gap: 0px;
-    grid-row-gap: 0rem;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
     grid-template-areas:
       " . firstSector . "
       " . secondSector . "
@@ -579,7 +566,7 @@
   }
 
   .landingPage_firstSector {
-    padding: 15rem 0 15rem 0;
+    padding: 16vh 0 10vh 0;
     grid-area: firstSector;
     display: flex;
     flex-direction: column;
@@ -631,7 +618,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 5rem 0 5rem 0;
+    // padding: 5rem 0 5rem 0;
 
     > button {
       display: flex;
@@ -663,7 +650,7 @@
     align-items: flex-end;
     justify-content: space-between;
     width: 100%;
-    padding: 5rem 0.5vw 0.2rem 2.5vw;
+    padding: 1vh 0.5vw 1vh 2.5vw;
 
     > a {
       display: inline-block;

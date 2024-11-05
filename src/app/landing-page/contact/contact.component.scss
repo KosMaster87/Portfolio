@@ -1,12 +1,7 @@
 section {
   margin: 5vh 0 0 0;
-  // padding: 5vh 0 0 0;
-
   width: 100%;
   max-width: 1440px;
-
-  // flex-direction: column;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,19 +9,27 @@ section {
   display: grid;
   grid-template-columns: 1fr 80% 1fr;
   grid-template-rows: min-content 1fr min-content;
-
   grid-column-gap: 0px;
   grid-row-gap: 0rem;
-
   grid-template-areas:
     " . greeting . "
     " . form . "
     " . homeArrow . ";
-  // gap: 4rem;
+
+  background-color: black;
 }
 
 .greeting {
   grid-area: greeting;
+  color: whitesmoke;
+}
+
+h2 {
+  color: whitesmoke;
+}
+
+h3 {
+  color: whitesmoke;
 }
 
 .formParent {
@@ -40,4 +43,19 @@ section {
   background-repeat: no-repeat;
   width: clamp(50px, 20vw, 150px);
   height: clamp(50px, 20vw, 150px);
+}
+
+@media screen and (max-width: 720px) and (orientation: portrait) {
+}
+
+@media screen and (max-width: 720px) and (orientation: landscape) {
+}
+
+@media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+}
+
+@media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: landscape) {
+}
+
+@media screen and (min-width: 1025px) {
 }
