@@ -22,6 +22,20 @@
   margin: 0;
 }
 
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--primeColor-background);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primeColor-secundario);
+  border-radius: 10px;
+  border: 2px solid var(--primeColor-background);
+}
+
 body {
   // background-color: rgb(255, 252, 242);
   background-color: var(--primeColor-background);

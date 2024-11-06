@@ -1,84 +1,69 @@
-<!-- @if (project) else (loading){  -->
-<ng-container *ngIf="projects; else loading">
-  
-  @for (project of projects; track $index) { @defer (prefetch on idle) {
+@if (projects) { @for (project of projects; track $index) { @defer (prefetch on
+idle) {
 
-  <section
-    [ngClass]="oddOrEven($index)"
-    data-aos="fade-up"
-    data-aos-duration="1000"
-  >
-    <div class="toTheRightSideBox">
-      <div class="blancoBox"></div>
-      <div class="h2Box">
-        <h2 class="fontSyne disableTextSelection">
-          {{ $index + 1 }} / {{ projectsLength }}
-        </h2>
+<section
+  [ngClass]="oddOrEven($index)"
+  data-aos="fade-up"
+  data-aos-duration="1000"
+>
+  <div class="toTheRightSideBox">
+    <div class="blancoBox"></div>
+    <div class="h2Box">
+      <h2 class="fontSyne disableTextSelection">
+        {{ $index + 1 }} / {{ projectsLength }}
+      </h2>
+    </div>
+  </div>
+
+  <div class="mainProjectBox disableTextSelection">
+    <img [src]="project.img" [alt]="project.alt" />
+    <img class="transparentDiv disableTextSelection" alt="Placeholder image." />
+
+    <div class="slider">
+      <div class="rectangle" id="rectangle" [class.active]="isVisible">
+        <div
+          class="hoverArrow"
+          id="hoverArrow"
+          [class.active]="isVisible"
+        ></div>
       </div>
 
-      <!-- <style>
-        :scope {
-          .odd {
-            background-color: red;
-          }
-        }
-      </style> -->
-    </div>
+      <div class="infoBox" id="infoBox" [class.active]="isVisible">
+        <div class="innerBox">
+          <h2 class="fontSyne disableTextSelection">
+            {{ project.projectName }}
+          </h2>
+          <h3 class="fontOverpass disableTextSelection">
+            {{ project.headline }}
+          </h3>
 
-    <div class="mainProjectBox disableTextSelection">
-      <img [src]="project.img" [alt]="project.alt" />
-      <img
-        class="transparentDiv disableTextSelection"
-        alt="Placeholder image."
-      />
+          <p class="disableTextSelection projectText fontOverpass">
+            {{ "PROJECT0.FIRST" | translate }}
+          </p>
 
-      <div class="slider">
-        <div class="rectangle" id="rectangle" [class.active]="isVisible">
-          <div
-            class="hoverArrow"
-            id="hoverArrow"
-            [class.active]="isVisible"
-          ></div>
-        </div>
-
-        <div class="infoBox" id="infoBox" [class.active]="isVisible">
-          <div class="innerBox">
-            <h2 class="fontSyne disableTextSelection">
-              {{ project.projectName }}
-            </h2>
-            <h3 class="fontOverpass disableTextSelection">
-              {{ project.headline }}
-            </h3>
-
-            <p class="disableTextSelection projectText fontOverpass">
-              {{ "PROJECT0.FIRST" | translate }}
-            </p>
-
-            <div class="fontOverpass disableTextSelection btnBox">
-              <button
-                class="fontOverpass disableTextSelection"
-                (click)="openLink(project.linkToPage)"
-              >
-                Live test
-              </button>
-              <button
-                class="fontOverpass disableTextSelection"
-                (click)="openLink(project.linkToGit)"
-              >
-                GitHub
-              </button>
-            </div>
+          <div class="fontOverpass disableTextSelection btnBox">
+            <button
+              class="fontOverpass disableTextSelection"
+              (click)="openLink(project.linkToPage)"
+            >
+              Live test
+            </button>
+            <button
+              class="fontOverpass disableTextSelection"
+              (click)="openLink(project.linkToGit)"
+            >
+              GitHub
+            </button>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  } @placeholder {
-  <div class="sectionPlaceholder"></div>
-  } }
-</ng-container>
+} @placeholder {
+<div class="sectionPlaceholder"></div>
+} } } @else {
 
-<ng-template #loading>
-  <div class="project_blank">project_blank WORKS</div>
-</ng-template>
+<div class="project_blank">project_Fallback WORKS</div>
+}
