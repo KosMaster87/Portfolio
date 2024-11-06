@@ -1,4 +1,5 @@
 <section id="contact_Component">
+  <div class="bgLine"></div>
   <h1 class="greeting fontSyne disableTextSelection">Say Hi!</h1>
 
   <div class="formParent">
@@ -12,9 +13,9 @@
     </div>
 
     <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-      <input class="fontOverpass disableTextSelection" type="text" />
-      <input class="fontOverpass disableTextSelection" type="text" />
-      <input class="fontOverpass disableTextSelection" type="text" />
+      <input class="formName fontOverpass disableTextSelection" type="text" />
+      <input class="formMail fontOverpass disableTextSelection" type="text" />
+      <input class="formMessage fontOverpass disableTextSelection" type="text" />
     </form>
 
     <input type="checkbox" name="" id="" />

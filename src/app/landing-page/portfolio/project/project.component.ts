@@ -29,7 +29,7 @@ export class ProjectComponent implements AfterViewInit {
 
   ngOnInit(): void {
     this.projectsLength = this.data.myProjects.length;
-    this.projects = this.data.myProjects;
+    // this.projects = this.data.myProjects;
   }
 
   oddOrEven(num: number): string {

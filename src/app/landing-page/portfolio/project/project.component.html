@@ -1,9 +1,8 @@
 <!-- @if (project) else (loading){  -->
+<ng-container *ngIf="projects; else loading">
+  
+  @for (project of projects; track $index) { @defer (prefetch on idle) {
 
-<!-- @for (project of data.myProjects; track $index) { @defer (prefetch on idle) { -->
-@for (project of projects; track $index) { @defer (prefetch on idle) {
-
-<ng-container *ngIf="project; else loading">
   <section
     [ngClass]="oddOrEven($index)"
     data-aos="fade-up"
@@ -74,12 +73,12 @@
       </div>
     </div>
   </section>
+
+  } @placeholder {
+  <div class="sectionPlaceholder"></div>
+  } }
 </ng-container>
 
-} @placeholder {
-<div class="sectionPlaceholder"></div>
-} }
-
 <ng-template #loading>
-  <div class="project_blank"></div>
+  <div class="project_blank">project_blank WORKS</div>
 </ng-template>
