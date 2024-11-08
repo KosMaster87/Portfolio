@@ -1,16 +1,17 @@
-import { HttpClient } from "@angular/common/http";
-import { Component, inject } from "@angular/core";
-import { FormsModule, NgForm } from "@angular/forms";
-import { TranslateModule } from "@ngx-translate/core";
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
-import { PortfolioDataService } from "./../../shared/services/portfolioData/portfolio-data.service";
+import { PortfolioDataService } from './../../shared/services/portfolioData/portfolio-data.service';
+import { CallActionButtonComponent } from './../../future-modul/components/call-action-button/call-action-button.component';
 
 @Component({
-  selector: "app-contact",
+  selector: 'app-contact',
   standalone: true,
-  imports: [TranslateModule, FormsModule],
-  templateUrl: "./contact.component.html",
-  styleUrl: "./contact.component.scss",
+  imports: [TranslateModule, FormsModule, CallActionButtonComponent],
+  templateUrl: './contact.component.html',
+  styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
   btnDisabled: boolean = true;
@@ -23,9 +24,9 @@ export class ContactComponent {
   data = inject(PortfolioDataService);
 
   contactData = {
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   };
 
   checkPolicy() {
@@ -33,12 +34,12 @@ export class ContactComponent {
   }
 
   post = {
-    endPoint: "https://portfolio.dev2k.net/sendMail.php",
+    endPoint: 'https://portfolio.dev2k.net/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
-        "Content-Type": "text/plain",
-        responseType: "text",
+        'Content-Type': 'text/plain',
+        responseType: 'text',
       },
     },
   };
@@ -60,7 +61,7 @@ export class ContactComponent {
           error: (error) => {
             console.error(error);
           },
-          complete: () => console.info("send post complete"),
+          complete: () => console.info('send post complete'),
         });
     } else if (
       ngForm.submitted &&

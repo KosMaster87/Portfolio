@@ -15,12 +15,16 @@
     <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
       <input class="formName fontOverpass disableTextSelection" type="text" />
       <input class="formMail fontOverpass disableTextSelection" type="text" />
-      <input class="formMessage fontOverpass disableTextSelection" type="text" />
+      <input
+        class="formMessage fontOverpass disableTextSelection"
+        type="text"
+      />
     </form>
 
     <input type="checkbox" name="" id="" />
 
-    <button class="fontOverpass disableTextSelection">Send message</button>
+    <!-- <button class="fontOverpass disableTextSelection">Send message</button> -->
+    <app-call-action-button></app-call-action-button>
   </div>
 
   <div class="homeArraw_Section">

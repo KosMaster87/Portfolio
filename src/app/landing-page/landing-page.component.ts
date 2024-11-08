@@ -14,7 +14,7 @@ import { TranslateModule } from "@ngx-translate/core";
     AboutComponent,
     PortfolioComponent,
     SkillsComponent,
-    CommentsComponent,
+    // CommentsComponent,
     ContactComponent,
     TranslateModule,
   ],
