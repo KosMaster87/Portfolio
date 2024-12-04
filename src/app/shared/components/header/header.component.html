@@ -1,0 +1,45 @@
+<div class="ultraWide">
+  <div class="headerOuterSelf">
+    <div class="headerSelfInner">
+      <div class="navLeft">
+        <a (click)="navigateToHome()"
+          ><img class="pageLogo" src="assets/images/terminal_logo.svg" /></a
+        ><span class="fontSyne disableTextSelection pageSelfSlogen">dev2k</span>
+      </div>
+
+      <div class="navRight" style="display: flex">
+        <nav class="navBarSelf">
+          <div class="langDiv">
+            <div class="langGermanWrapper">
+              <img
+                class="langImage german"
+                src="assets/images/de.png"
+                [class.active]="currentLanguage === 'de'"
+                (click)="translateText('de')"
+                (click)="changeLanguage('de')"
+                appHighlighting
+              />
+            </div>
+
+            <div class="langEnglishWrapper">
+              <img
+                class="langImage english"
+                src="assets/images/en.png"
+                [class.active]="currentLanguage === 'en'"
+                (click)="translateText('en')"
+                (click)="changeLanguage('en')"
+                appHighlighting
+              />
+            </div>
+          </div>
+        </nav>
+
+        @if (isOnHomePage) {
+        <div class="menuWrapper">
+          <app-hamburger-menu-btn></app-hamburger-menu-btn>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="ultraWide">
+  <section class="landingPage_Section">
+    <div class="landingPage_firstSector" id="landingPage_firstSector">
+      <div class="landingPage_Headline_Box">
+        <div class="landingPage_Headline_Titel">
+          <h1 class="fontSyne disableTextSelection">
+            Frontend <br />
+            {{ "DEVELOPER.developer" | translate }}
+          </h1>
+        </div>
+      </div>
+
+      <div class="landingPage_Headline_NameBox">
+        <div class="landingPage_Headline_SolidLine"></div>
+        <h3 class="fontOverpass disableTextSelection">Konstantin Aksenov</h3>
+      </div>
+    </div>
+
+    <div class="landingPage_secondSector">
+      <app-call-action-button
+        [buttonClass]="'landingButton'"
+        [buttonTextRowOne]="'BUTTONS.sentMessage' | translate"
+        [routerLink]="'/'"
+        [fragment]="'contact_component'"
+      ></app-call-action-button>
+    </div>
+
+    <div class="landingPage_thirdSector">
+      <a
+        class="fontOverpass disableTextSelection"
+        href="mailto:konstantin.aksenov@dev2k.org"
+        >Konstantin.Aksenov&#64;dev2k.org</a
+      >
+      <span class="fontOverpass disableTextSelection">
+        <a
+          [routerLink]="'/'"
+          fragment="aboutH1"
+          (click)="scrollToFragment('aboutH1')"
+        >
+          <app-scroll-to-fragment></app-scroll-to-fragment>
+
+          {{ "BUTTONS.scroll" | translate | upperCase }}
+          <br />
+          {{ "BUTTONS.down" | translate | upperCase }}</a
+        >
+      </span>
+    </div>
+  </section>
+</div>

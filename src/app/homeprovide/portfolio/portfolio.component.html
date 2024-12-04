@@ -1,0 +1,46 @@
+<div class="ultraWide">
+  <section id="portfolio_Component">
+    <div class="wrapperH1">
+      <h1 class="fontSyne disableTextSelection" appHighlighting>
+        {{ "PORTFOLIO.title" | translate }}
+      </h1>
+    </div>
+
+    <span class="fontOverpass disableTextSelection">{{
+      "PORTFOLIO.description" | translate
+    }}</span>
+
+    <app-project></app-project>
+
+    <!-- @for (project of data.myProjects; track $index) { @defer (prefetch on idle) {
+
+  <ng-container *ngIf="project; else loading">
+    <app-project [project]="project"></app-project>
+  </ng-container>
+
+  <ng-template #loading>
+    <div class="project_blank"></div>
+  </ng-template>
+
+  } @placeholder {
+  <div class="placeholder"></div>
+  } } -->
+
+    <div class="arrowSector">
+      <a
+        [routerLink]="'/'"
+        [fragment]="'linearGradient'"
+        (click)="scrollToFragment('linearGradient')"
+      >
+        <div
+          [ngClass]="{
+            'rotate-left': rotatingArrowIsLeft,
+            'rotate-right': !rotatingArrowIsLeft
+          }"
+        >
+          <app-scroll-to-fragment-optional></app-scroll-to-fragment-optional>
+        </div>
+      </a>
+    </div>
+  </section>
+</div>

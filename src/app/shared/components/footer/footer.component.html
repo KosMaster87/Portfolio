@@ -1,0 +1,100 @@
+<div class="ultraWide">
+  <div class="footer_section">
+    <div class="footerContent">
+      <div class="leftWrapper">
+        <a (click)="navigateToHome()"
+          ><img class="pageLogo" src="assets/images/terminal_logo.svg"
+        /></a>
+        <span class="copyRight fontOverpass disableTextSelection"
+          >© Konstantin Aksenov 2024</span
+        >
+      </div>
+
+      <div class="rightWrapper">
+        <div class="socialIcons fontOverpass disableTextSelection">
+          <div class="socialIconWrapper" appIconHover>
+            <a
+              class="socialIconSelf icon socialGit"
+              href="https://github.com/KosMaster87"
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
+          </div>
+          <div class="socialIconWrapper" appIconHover>
+            <a
+              class="socialIconSelf icon socialMail"
+              href="mailto:konstantin.aksenov@dev2k.org"
+            ></a>
+          </div>
+          <div class="socialIconWrapper" appIconHover>
+            <a
+              class="socialIconSelf icon socialIn"
+              href="https://www.linkedin.com/in/konstantin-aksenov-802b88190/"
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
+          </div>
+        </div>
+
+        <span class="legal fontOverpass disableTextSelection"
+          ><a class="imprintHover" routerLink="/imprint">
+            {{ "FOOTER.policy" | translate }}</a
+          ></span
+        >
+      </div>
+    </div>
+
+    <div class="footerContentMobile dNone">
+      <div class="leftWrapper">
+        <div class="socialIcons fontOverpass disableTextSelection">
+          <div class="socialIconWrapper" appIconHover>
+            <a
+              class="socialIconSelf icon socialGit"
+              href="https://github.com/KosMaster87"
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
+          </div>
+
+          <div class="socialIconWrapper" appIconHover>
+            <a
+              class="socialIconSelf icon socialMail"
+              href="mailto:konstantin.aksenov@dev2k.org"
+            ></a>
+          </div>
+
+          <div class="socialIconWrapper" appIconHover>
+            <a
+              class="socialIconSelf icon socialIn"
+              href="https://www.linkedin.com/in/konstantin-aksenov-802b88190/"
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
+          </div>
+        </div>
+
+        <a
+          routerLink="/home"
+          fragment="landingPage_firstSector"
+          (click)="navigateToHome()"
+          ><img class="pageLogo" src="assets/images/terminal_logo.svg"
+        /></a>
+      </div>
+
+      <div class="rightWrapper">
+        <span class="copyRight fontOverpass disableTextSelection"
+          >Konstantin.Aksenov&#64;dev2k.org</span
+        >
+        <span class="legal fontOverpass disableTextSelection"
+          ><a
+            class="imprintHover"
+            routerLink="/imprint"
+            fragment="imprint_component"
+          >
+            {{ "FOOTER.policy" | translate }}</a
+          ></span
+        >
+      </div>
+    </div>
+  </div>
+</div>

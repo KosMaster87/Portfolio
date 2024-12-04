@@ -1,0 +1,20 @@
+{
+  "name": "Portfolio",
+  "short_name": "port.dev2k.org",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "rgb(230, 228, 227)",
+  "theme_color": "rgba(187, 187, 187, 0.958)",
+  "icons": [
+    {
+      "src": "favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ]
+}

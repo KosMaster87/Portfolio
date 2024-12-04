@@ -1,0 +1,179 @@
+.icon {
+  transition: filter 0.3s ease-in-out;
+}
+
+.angular.hover-effect {
+  animation: glow-angular 1s forwards;
+}
+
+.materialDisign.hover-effect {
+  animation: glow-material 1s forwards;
+}
+
+.firebase.hover-effect {
+  animation: glow-firebase 1s forwards;
+}
+
+.typeScript.hover-effect {
+  animation: glow-typescript 1s forwards;
+}
+
+.javaScript.hover-effect {
+  animation: glow-javascript 1s forwards;
+}
+
+.html.hover-effect {
+  animation: glow-html 1s forwards;
+}
+
+.css.hover-effect {
+  animation: glow-css 1s forwards;
+}
+
+.git.hover-effect {
+  animation: glow-git 1s forwards;
+}
+
+.scrum.hover-effect {
+  animation: glow-scrum 1s forwards;
+}
+
+.rest.hover-effect {
+  animation: glow-rest 1s forwards;
+}
+
+.wordPress.hover-effect {
+  animation: glow-wordpress 1s forwards;
+}
+
+@keyframes glow-angular {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(0, 255, 0, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(0, 255, 0, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(0, 255, 0, 0.5));
+  }
+}
+
+@keyframes glow-material {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 87, 34, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.5));
+  }
+}
+
+@keyframes glow-firebase {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 87, 34, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.5));
+  }
+}
+
+@keyframes glow-typescript {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(0, 122, 204, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(0, 122, 204, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(0, 122, 204, 0.5));
+  }
+}
+
+@keyframes glow-javascript {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(255, 221, 51, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 221, 51, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(255, 221, 51, 0.5));
+  }
+}
+
+@keyframes glow-html {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 87, 34, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.5));
+  }
+}
+
+@keyframes glow-css {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(0, 153, 255, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(0, 153, 255, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(0, 153, 255, 0.5));
+  }
+}
+
+@keyframes glow-git {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(244, 43, 43, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(244, 43, 43, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(244, 43, 43, 0.5));
+  }
+}
+
+@keyframes glow-scrum {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(0, 153, 102, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(0, 153, 102, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(0, 153, 102, 0.5));
+  }
+}
+
+@keyframes glow-rest {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 87, 34, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.5));
+  }
+}
+
+@keyframes glow-wordpress {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(0, 51, 102, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(0, 51, 102, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(0, 51, 102, 0.5));
+  }
+}

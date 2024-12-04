@@ -1,0 +1,76 @@
+@use "./../public/assets/styles/syne";
+@use "./../public/assets/styles/overpass";
+
+:root {
+  --padding-smaller: clamp(20px, 0.2rem, 10px);
+  --padding-small: clamp(40px, 0.2rem, 10px);
+  --padding-medium: clamp(70px, 4rem, 160px);
+
+  --gap-smaller: clamp(2px, 0.2rem, 20px);
+  --gap-small: clamp(6px, 0.2rem, 20px);
+  --gap-medium: clamp(50px, 0.1rem, 70px);
+
+  --primeColor-background: rgb(230, 228, 227);
+  --primeColor-light: whitesmoke;
+  --primeColor-white: rgb(255, 252, 243);
+  --primeColor-dark: rgb(34, 31, 31);
+  --primeColor-menu: rgba(187, 187, 187, 0.958);
+
+  --primeColor-secundario: rgb(0, 188, 143);
+  --primeColor-secundario-darker: rgb(1, 108, 83);
+  --primeColor-required-red: rgb(230, 28, 64);
+  --primeColor-required-red-darker: rgb(144, 22, 44);
+
+  --btn-contact-background: rgb(34, 31, 31);
+  --btn-contact-border: rgb(187, 187, 187, 0.3);
+  --btn-contact-checkbox: rgb(0, 171, 130);
+  --btn-contact-checkbox-hover: rgb(0, 187, 143);
+  --btn-contact-disabled: rgba(144, 22, 44, 0.13);
+  --btn-contact-enabled: rgba(0, 171, 131, 0.159);
+}
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--primeColor-background);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primeColor-secundario);
+  border-radius: 10px;
+  border: 2px solid var(--primeColor-background);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primeColor-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.disableTextSelection {
+  user-select: none; /* Für Webkit-Browser wie Chrome, Safari */
+  -webkit-user-select: none; /* Für Webkit-Browser */
+  -moz-user-select: none; /* Für Firefox */
+  -ms-user-select: none; /* Für Internet Explorer */
+}
+
+.no-scroll {
+  overflow: hidden;
+}

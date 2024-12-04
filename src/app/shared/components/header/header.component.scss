@@ -1,0 +1,321 @@
+@media screen and (max-width: 350px) {
+  .langImage {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 720px) and (orientation: portrait) {
+  .headerOuterSelf {
+    width: 100%;
+    max-width: 1440px;
+    display: grid;
+    grid-template-columns: 1fr 90% 1fr;
+    grid-template-rows: min-content;
+    grid-column-gap: 0px;
+    grid-row-gap: 0rem;
+    grid-template-areas: " . headerSector . ";
+  }
+
+  .headerSelfInner {
+    grid-area: headerSector;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7vh;
+    width: 100%;
+  }
+
+  .navLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+
+    .pageLogo {
+      height: 30px;
+    }
+  }
+
+  .navRight {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .navBarSelf {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      .langDiv {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+
+        .langImage {
+          height: 30px;
+        }
+      }
+
+      .navBarSelfLinks {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px) and (orientation: landscape) {
+  .headerOuterSelf {
+    width: 100%;
+    max-width: 1440px;
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: min-content;
+    grid-column-gap: 0px;
+    grid-row-gap: 0rem;
+    grid-template-areas: " . headerSector . ";
+  }
+
+  .headerSelfInner {
+    grid-area: headerSector;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7vh;
+    width: 100%;
+  }
+
+  .navLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+
+    .pageLogo {
+      height: 30px;
+    }
+  }
+
+  .navRight {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .navBarSelf {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      .langDiv {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+
+        .langImage {
+          height: 30px;
+        }
+      }
+
+      .navBarSelfLinks {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .headerOuterSelf {
+    width: 100%;
+    max-width: 1440px;
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: min-content;
+    grid-column-gap: 0px;
+    grid-row-gap: 0rem;
+    grid-template-areas: " . headerSector . ";
+  }
+
+  .headerSelfInner {
+    grid-area: headerSector;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7vh;
+    width: 100%;
+  }
+
+  .navLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+
+    .pageLogo {
+      height: 30px;
+    }
+  }
+
+  .navRight {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .navBarSelf {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      .langDiv {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+
+        .langImage {
+          height: 30px;
+        }
+      }
+
+      .navBarSelfLinks {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: landscape) {
+  .headerOuterSelf {
+    width: 100%;
+    max-width: 1440px;
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: min-content;
+    grid-column-gap: 0px;
+    grid-row-gap: 0rem;
+    grid-template-areas: " . headerSector . ";
+  }
+
+  .headerSelfInner {
+    grid-area: headerSector;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7vh;
+    width: 100%;
+  }
+
+  .navLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+
+    .pageLogo {
+      height: 30px;
+    }
+  }
+
+  .navRight {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    .navBarSelf {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      .langDiv {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+
+        .langImage {
+          height: 30px;
+        }
+      }
+
+      .navBarSelfLinks {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .headerOuterSelf {
+    width: 100%;
+    max-width: 1440px;
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: min-content;
+    grid-column-gap: 0px;
+    grid-row-gap: 0rem;
+    grid-template-areas: " . headerSector . ";
+  }
+
+  .headerSelfInner {
+    grid-area: headerSector;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7vh;
+    width: 100%;
+    padding: 0.2vh 0 0.2vh 0;
+  }
+
+  .navLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+
+    .pageLogo {
+      height: 30px;
+    }
+  }
+
+  .navRight {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    .navBarSelf {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      .langDiv {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+
+        .langImage {
+          height: 30px;
+        }
+      }
+
+      .navBarSelfLinks {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+  }
+}
+
+.ultraWide {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.langImage {
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
+}

@@ -1,0 +1,239 @@
+<div class="linearGradient" id="linearGradient"></div>
+<div class="ultraWide">
+  <section id="contact_component">
+    <h1 class="greeting fontSyne disableTextSelection" appHighlighting>
+      {{ "CONTACT.say" | translate }}
+    </h1>
+
+    <div class="formParent">
+      <div class="greetings">
+        <h2 class="fontOverpass disableTextSelection">
+          {{ "CONTACT.title" | translate }}
+        </h2>
+        <h3 class="fontOverpass disableTextSelection">
+          {{ "CONTACT.expression" | translate }}
+        </h3>
+      </div>
+
+      <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <div
+          class="inputWrapper inputWrapper_name"
+          [ngClass]="{
+            inputWrapper_focusName: isFocusedName || contactData.name
+          }"
+        >
+          <label
+            class="inputLabel_name fontOverpass disableTextSelection"
+            for="input_name"
+            >{{ "CONTACT.yourName" | translate }}</label
+          >
+
+          <input
+            class="input_name fontOverpass disableTextSelection"
+            id="input_name"
+            type="text"
+            (focus)="onFocus('name', true)"
+            (blur)="onFocus('name', false)"
+            placeholder=""
+            autocomplete="off"
+            required
+            pattern="^[a-zA-Z]+ [a-zA-Z]+$"
+            [(ngModel)]="contactData.name"
+            #name="ngModel"
+            name="name"
+            [ngClass]="{
+      'borderValid': name.valid && name.touched,
+      'borderInvalid': name.invalid && name.touched,
+    }"
+          />
+
+          <div class="validateIconsWrapper">
+            @if (name.valid && name.touched) {
+            <span class="validIcon"></span>} @if (name.invalid && name.touched)
+            { <span class="errorIcon"></span>}
+          </div>
+
+          @if (name.invalid && name.touched) {
+          <small
+            class="errorText fontOverpass disableTextSelection"
+            *ngIf="name.errors?.['required']"
+          >
+            {{ "CONTACT.yourNameRequired" | translate }}
+          </small>
+
+          <small
+            class="errorText fontOverpass disableTextSelection"
+            *ngIf="name.errors?.['pattern']"
+          >
+            {{ "CONTACT.yourNameFull" | translate }}
+          </small>
+          }
+        </div>
+
+        <div
+          class="inputWrapper inputWrapper_email"
+          [ngClass]="{
+            inputWrapper_focusEmail: isFocusedEmail || contactData.email
+          }"
+        >
+          <label
+            class="inputLabel_email fontOverpass disableTextSelection"
+            for="input_email"
+            >{{ "CONTACT.yourEmail" | translate }}</label
+          >
+          <input
+            class="input_email fontOverpass disableTextSelection"
+            id="input_email"
+            type="text"
+            (focus)="onFocus('email', true)"
+            (blur)="onFocus('email', false)"
+            placeholder=""
+            required
+            autocomplete="off"
+            [(ngModel)]="contactData.email"
+            #email="ngModel"
+            name="email"
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+            [ngClass]="{
+          'borderValid': email.valid && email.touched,
+          'borderInvalid': email.invalid && email.touched,
+        }"
+          />
+
+          <div class="validateIconsWrapper">
+            @if (email.valid && email.touched) {
+            <span class="validIcon"></span>} @if (email.invalid &&
+            email.touched) { <span class="errorIcon"></span>}
+          </div>
+
+          @if (email.invalid && email.touched) {
+          <small
+            class="errorText fontOverpass disableTextSelection"
+            *ngIf="email.errors?.['required']"
+          >
+            {{ "CONTACT.yourEmailRequired" | translate }}
+          </small>
+
+          <small
+            class="errorText fontOverpass disableTextSelection"
+            *ngIf="email.errors?.['pattern']"
+          >
+            {{ "CONTACT.yourEmailFull" | translate }}
+          </small>
+
+          }
+        </div>
+
+        <div
+          class="textareaWrapper textareaWrapper_message"
+          [ngClass]="{
+            inputWrapper_focusMessage: isFocusedMessage || contactData.message
+          }"
+        >
+          <label
+            class="inputLabel_message fontOverpass disableTextSelection"
+            for="textarea_message"
+            >{{ "CONTACT.yourMessage" | translate }}</label
+          >
+          <textarea
+            class="textarea_message textarea fontOverpass disableTextSelection"
+            id="textarea_message"
+            type="text"
+            (focus)="onFocus('message', true)"
+            (blur)="onFocus('message', false)"
+            placeholder=""
+            required
+            [(ngModel)]="contactData.message"
+            name="message"
+            #message="ngModel"
+            [ngClass]="{
+          'borderValid': message.valid && message.touched,
+          'borderInvalid': message.invalid && message.touched,
+        }"
+          >
+          </textarea>
+
+          <div class="validateIconsWrapper">
+            @if (message.valid && message.touched) {
+            <span class="validIcon"></span>} @if (message.invalid &&
+            message.touched) { <span class="errorIcon"></span>}
+          </div>
+
+          @if (message.invalid && message.touched) {
+          <small class="errorText fontOverpass disableTextSelection">
+            {{ "CONTACT.yourMessageRequired" | translate }} </small
+          >}
+        </div>
+
+        <div class="checkboxWrapper_checkbox">
+          <div class="chechbox_main">
+            <input
+              class="checkboxSelf checkboxHidden"
+              id="checkboxSelf"
+              type="checkbox"
+              placeholder=""
+              [(ngModel)]="isChecked"
+              name="checkbox"
+              #checkbox="ngModel"
+            />
+
+            <div class="checkboxImgWrapper">
+              <img
+                [src]="
+                  checkboxHovered
+                    ? isChecked
+                      ? 'assets/vector/checkbox/checkbox-hovered-checked.svg'
+                      : 'assets/vector/checkbox/checkbox-hovered.svg'
+                    : isChecked
+                    ? 'assets/vector/checkbox/checkbox-checked.svg'
+                    : 'assets/vector/checkbox/checkbox-unchecked.svg'
+                "
+                alt="Checkbox as image."
+                class="checkboxIcon"
+                c
+                (mouseover)="onHover(true)"
+                (mouseout)="onHover(false)"
+                (click)="toggleCheckbox()"
+              />
+            </div>
+
+            <label
+              class="checkboxLabel fontOverpass disableTextSelection"
+              for="checkboxSelf"
+              ><p class="checkboxText"
+                >{{ "CONTACT.checkBox01" | translate }}
+                <a class="checkboxPolicy" routerLink="/imprint">{{
+                  "CONTACT.checkBox02" | translate
+                }}</a>
+                {{ "CONTACT.checkBox03" | translate }}</p
+              ></label
+            >
+          </div>
+
+          @if (!isChecked && checkbox.touched) {
+          <small class="errorText fontOverpass disableTextSelection"
+            >Please accept the privacy policy.</small
+          >
+          }
+        </div>
+
+        <app-button-contact
+          [buttonClass]="'contactButton'"
+          [buttonTextRowOne]="'BUTTONS.sentMessage' | translate"
+          [disabled]="!contactForm.valid || !isChecked"
+        >
+        </app-button-contact>
+      </form>
+    </div>
+
+    <div class="homeArraw_Section">
+      <a
+        [routerLink]="'/'"
+        [fragment]="'landingPage_firstSector'"
+        (click)="scrollToFragment('landingPage_firstSector')"
+      >
+        <app-scroll-to-top></app-scroll-to-top>
+      </a>
+    </div>
+  </section>
+</div>

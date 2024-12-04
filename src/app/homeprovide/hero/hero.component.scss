@@ -1,0 +1,1201 @@
+@media screen and (max-width: 720px) and (orientation: portrait) {
+  section {
+    width: 100%;
+    max-width: 1440px;
+    height: calc(100vh - 7vh);
+    display: grid;
+    grid-template-columns: 1fr 90% 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    grid-template-areas:
+      " . firstSector . "
+      " . secondSector . "
+      " . thirdSector . ";
+  }
+
+  .landingPage_firstSector {
+    padding: 16vh 0 10vh 0;
+    grid-area: firstSector;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landingPage_Headline_Titel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    > h1 {
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
+      font-weight: 800;
+      letter-spacing: -0.07rem;
+      color: black;
+      text-align: center;
+    }
+  }
+
+  .landingPage_Headline_NameBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    > .landingPage_Headline_SolidLine {
+      border: solid black 1.14px;
+      width: 20%;
+      margin-left: 1em;
+    }
+
+    > h3 {
+      text-shadow: 4px 3px 9px rgba(0, 0, 0, 0.38);
+      font-size: clamp(12px, 1vw + 1rem, 40px);
+      font-weight: 700;
+      letter-spacing: -0.09rem;
+      color: rgb(0, 188, 143);
+      white-space: nowrap;
+      margin-right: 1rem;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .landingPage_secondSector {
+    grid-area: secondSector;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(100px, 20% + 0.4rem, 200px);
+      height: clamp(30px, 12% + 1.4rem, 68px);
+      font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
+      border: 1px solid black;
+      border-radius: 2px;
+      background-color: transparent;
+      transition: background-color 0.3s ease, color 0.5s ease;
+      box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(0, 188, 143);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        color: white;
+      }
+    }
+  }
+
+  .landingPage_thirdSector {
+    grid-area: thirdSector;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3rem 0.5vw 1rem 0.5vw;
+    transform: translate(0%, -6vh);
+
+    > a {
+      writing-mode: tb-rl;
+      transform: rotate(-180deg);
+
+      font-size: clamp(0.625rem, 2vw, 1.625rem);
+      white-space: nowrap;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+
+      & a:hover {
+        text-decoration: underline;
+        letter-spacing: -0.09rem;
+        color: rgb(0, 188, 143);
+      }
+    }
+
+    > span {
+      font-size: clamp(0.6rem, 0.8vw + 0.5rem, 5.75rem);
+      text-align: center;
+
+      a {
+        text-decoration: none;
+        color: rgb(55, 53, 53);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px) and (orientation: landscape) {
+  section {
+    width: 100%;
+    max-width: 1440px;
+    height: calc(100vh - 7vh);
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    grid-template-areas:
+      " . firstSector . "
+      " . secondSector . "
+      " . thirdSector . ";
+  }
+
+  .landingPage_firstSector {
+    grid-area: firstSector;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landingPage_Headline_Titel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    > h1 {
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
+      font-weight: 800;
+      letter-spacing: -0.07rem;
+      color: black;
+      text-align: center;
+      margin-top: 10vh;
+    }
+  }
+
+  .landingPage_Headline_NameBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    > .landingPage_Headline_SolidLine {
+      border: solid black 1.14px;
+      width: 20%;
+      margin-left: 1em;
+    }
+
+    > h3 {
+      text-shadow: 4px 3px 9px rgba(0, 0, 0, 0.38);
+      font-size: clamp(12px, 1vw + 1rem, 40px);
+      font-weight: 700;
+      letter-spacing: -0.09rem;
+      color: rgb(0, 188, 143);
+      white-space: nowrap;
+      margin-right: 1rem;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .landingPage_secondSector {
+    grid-area: secondSector;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 0;
+
+    > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(100px, 20% + 0.4rem, 200px);
+      height: clamp(30px, 12% + 1.4rem, 68px);
+      font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
+      border: 1px solid black;
+      border-radius: 2px;
+      background-color: transparent;
+      transition: background-color 0.3s ease, color 0.5s ease;
+      box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(0, 188, 143);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        color: white;
+      }
+    }
+  }
+
+  .landingPage_thirdSector {
+    grid-area: thirdSector;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    transform: translate(0%, -20vh);
+
+    > a {
+      writing-mode: tb-rl;
+      transform: rotate(-180deg);
+
+      font-size: clamp(0.6rem, 1vw, 1.6rem);
+      white-space: nowrap;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+
+      & a:hover {
+        text-decoration: underline;
+        letter-spacing: -0.09rem;
+        color: rgb(0, 188, 143);
+      }
+    }
+
+    > span {
+      font-size: clamp(0.6rem, 0.8vw + 0.5rem, 5.75rem);
+      text-align: center;
+
+      a {
+        text-decoration: none;
+        color: rgb(55, 53, 53);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  section {
+    width: 100%;
+    max-width: 1440px;
+    height: calc(100vh - 7vh);
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    grid-template-areas:
+      " . firstSector . "
+      " . secondSector . "
+      " . thirdSector . ";
+  }
+
+  .landingPage_firstSector {
+    padding: 16vh 0 10vh 0;
+    grid-area: firstSector;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landingPage_Headline_Titel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    > h1 {
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
+      font-weight: 800;
+      letter-spacing: -0.07rem;
+      color: black;
+      text-align: center;
+    }
+  }
+
+  .landingPage_Headline_NameBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    > .landingPage_Headline_SolidLine {
+      border: solid black 1.14px;
+      width: 20%;
+      margin-left: 1em;
+    }
+
+    > h3 {
+      text-shadow: 4px 3px 9px rgba(0, 0, 0, 0.38);
+      font-size: clamp(12px, 1vw + 1rem, 40px);
+      font-weight: 700;
+      letter-spacing: -0.09rem;
+      color: rgb(0, 188, 143);
+      white-space: nowrap;
+      margin-right: 1rem;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .landingPage_secondSector {
+    grid-area: secondSector;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(100px, 20% + 0.4rem, 200px);
+      height: clamp(30px, 12% + 1.4rem, 68px);
+      font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
+      border: 1px solid black;
+      border-radius: 2px;
+      background-color: transparent;
+      transition: background-color 0.3s ease, color 0.5s ease;
+      box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(0, 188, 143);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        color: white;
+      }
+    }
+  }
+
+  .landingPage_thirdSector {
+    grid-area: thirdSector;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    transform: translate(0%, -5vh);
+
+    > a {
+      writing-mode: tb-rl;
+      transform: rotate(-180deg);
+
+      font-size: clamp(0.625rem, 2vw, 1.625rem);
+      white-space: nowrap;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+
+      & a:hover {
+        text-decoration: underline;
+        letter-spacing: -0.09rem;
+        color: rgb(0, 188, 143);
+      }
+    }
+
+    > span {
+      font-size: clamp(0.6rem, 0.8vw + 0.5rem, 5.75rem);
+      text-align: center;
+
+      a {
+        text-decoration: none;
+        color: rgb(55, 53, 53);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: landscape) {
+  section {
+    width: 100%;
+    max-width: 1440px;
+    height: calc(100vh - 7vh);
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    grid-template-areas:
+      " . firstSector . "
+      " . secondSector . "
+      " . thirdSector . ";
+  }
+
+  .landingPage_firstSector {
+    padding: 6vh 0 7vh 0;
+    grid-area: firstSector;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landingPage_Headline_Titel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    > h1 {
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
+      font-weight: 800;
+      letter-spacing: -0.07rem;
+      color: black;
+      text-align: center;
+      margin-top: 5vh;
+    }
+  }
+
+  .landingPage_Headline_NameBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    > .landingPage_Headline_SolidLine {
+      border: solid black 1.14px;
+      width: 20%;
+      margin-left: 1em;
+    }
+
+    > h3 {
+      text-shadow: 4px 3px 9px rgba(0, 0, 0, 0.38);
+      font-size: clamp(12px, 1vw + 1rem, 40px);
+      font-weight: 700;
+      letter-spacing: -0.09rem;
+      color: rgb(0, 188, 143);
+      white-space: nowrap;
+      margin-right: 1rem;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .landingPage_secondSector {
+    grid-area: secondSector;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(120px, 20% + 0.4rem, 200px);
+      height: clamp(30px, 12% + 1.4rem, 68px);
+      font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
+      border: 1px solid black;
+      border-radius: 2px;
+      background-color: transparent;
+      transition: background-color 0.3s ease, color 0.5s ease;
+      box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(0, 188, 143);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        color: white;
+      }
+    }
+  }
+
+  .landingPage_thirdSector {
+    grid-area: thirdSector;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1vh 0.5vw 1vh 0.5vw;
+    transform: translate(0%, -25vh);
+
+    > a {
+      writing-mode: tb-rl;
+      transform: rotate(-180deg);
+
+      font-size: clamp(0.2rem, 1.3vw, 1.625rem);
+      white-space: nowrap;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+
+      & a:hover {
+        text-decoration: underline;
+        letter-spacing: -0.09rem;
+        color: rgb(0, 188, 143);
+      }
+    }
+
+    > span {
+      font-size: clamp(0.6rem, 1.4vw, 1.625rem);
+      text-align: center;
+
+      a {
+        text-decoration: none;
+        color: rgb(55, 53, 53);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 2560px) and (min-height: 320px) and (max-height: 2560px) and (orientation: portrait) {
+  section {
+    width: 100%;
+    max-width: 1440px;
+    height: calc(100vh - 7vh);
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    grid-template-areas:
+      " . firstSector . "
+      " . secondSector . "
+      " . thirdSector . ";
+  }
+
+  .landingPage_firstSector {
+    padding: 6vh 0 7vh 0;
+    grid-area: firstSector;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landingPage_Headline_Titel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    > h1 {
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
+      font-weight: 800;
+      letter-spacing: -0.07rem;
+      color: black;
+      text-align: center;
+      margin-top: 5vh;
+    }
+  }
+
+  .landingPage_Headline_NameBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    > .landingPage_Headline_SolidLine {
+      border: solid black 1.14px;
+      width: 20%;
+      margin-left: 1em;
+    }
+
+    > h3 {
+      text-shadow: 4px 3px 9px rgba(0, 0, 0, 0.38);
+      font-size: clamp(12px, 1vw + 1rem, 40px);
+      font-weight: 700;
+      letter-spacing: -0.09rem;
+      color: rgb(0, 188, 143);
+      white-space: nowrap;
+      margin-right: 1rem;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .landingPage_secondSector {
+    grid-area: secondSector;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(120px, 20% + 0.4rem, 200px);
+      height: clamp(30px, 12% + 1.4rem, 68px);
+      font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
+      border: 1px solid black;
+      border-radius: 2px;
+      background-color: transparent;
+      transition: background-color 0.3s ease, color 0.5s ease;
+      box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(0, 188, 143);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        color: white;
+      }
+    }
+  }
+
+  .landingPage_thirdSector {
+    grid-area: thirdSector;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1vh 0.5vw 1vh 0.5vw;
+    transform: translate(0%, -25vh);
+
+    > a {
+      writing-mode: tb-rl;
+      transform: rotate(-180deg);
+
+      font-size: clamp(0.2rem, 1.3vw, 1.625rem);
+      white-space: nowrap;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+
+      & a:hover {
+        text-decoration: underline;
+        letter-spacing: -0.09rem;
+        color: rgb(0, 188, 143);
+      }
+    }
+
+    > span {
+      font-size: clamp(0.6rem, 1.4vw, 1.625rem);
+      text-align: center;
+
+      a {
+        text-decoration: none;
+        color: rgb(55, 53, 53);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) and (min-height: 320px) and (max-height: 720px) and (orientation: landscape) {
+  section {
+    width: 100%;
+    max-width: 1440px;
+    height: calc(100vh - 7vh);
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    grid-template-areas:
+      " . firstSector . "
+      " . secondSector . "
+      " . thirdSector . ";
+  }
+
+  .landingPage_firstSector {
+    padding: 6vh 0 7vh 0;
+    grid-area: firstSector;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landingPage_Headline_Titel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    > h1 {
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
+      font-weight: 800;
+      letter-spacing: -0.07rem;
+      color: black;
+      text-align: center;
+      margin-top: 5vh;
+    }
+  }
+
+  .landingPage_Headline_NameBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    > .landingPage_Headline_SolidLine {
+      border: solid black 1.14px;
+      width: 20%;
+      margin-left: 1em;
+    }
+
+    > h3 {
+      text-shadow: 4px 3px 9px rgba(0, 0, 0, 0.38);
+      font-size: clamp(12px, 1vw + 1rem, 40px);
+      font-weight: 700;
+      letter-spacing: -0.09rem;
+      color: rgb(0, 188, 143);
+      white-space: nowrap;
+      margin-right: 1rem;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .landingPage_secondSector {
+    grid-area: secondSector;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(120px, 20% + 0.4rem, 200px);
+      height: clamp(30px, 12% + 1.4rem, 68px);
+      font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
+      border: 1px solid black;
+      border-radius: 2px;
+      background-color: transparent;
+      transition: background-color 0.3s ease, color 0.5s ease;
+      box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(0, 188, 143);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        color: white;
+      }
+    }
+  }
+
+  .landingPage_thirdSector {
+    grid-area: thirdSector;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1vh 0.5vw 1vh 0.5vw;
+    transform: translate(0%, -25vh);
+
+    > a {
+      writing-mode: tb-rl;
+      transform: rotate(-180deg);
+
+      font-size: clamp(0.2rem, 1.3vw, 1.625rem);
+      white-space: nowrap;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+
+      & a:hover {
+        text-decoration: underline;
+        letter-spacing: -0.09rem;
+        color: rgb(0, 188, 143);
+      }
+    }
+
+    > span {
+      font-size: clamp(0.6rem, 1.4vw, 1.625rem);
+      text-align: center;
+
+      a {
+        text-decoration: none;
+        color: rgb(55, 53, 53);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 5120px) and (min-height: 250px) and (max-height: 1024px) and (orientation: landscape) {
+  .landingPage_Section {
+    width: 100%;
+    max-width: 1440px;
+    height: calc(100vh - 7vh);
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    grid-template-areas:
+      " . firstSector . "
+      " . secondSector . "
+      " . thirdSector . ";
+  }
+
+  .landingPage_firstSector {
+    padding: 10vh 0 10vh 0;
+    grid-area: firstSector;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landingPage_Headline_Titel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    > h1 {
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
+      font-weight: 800;
+      letter-spacing: -0.07rem;
+      color: black;
+      text-align: center;
+    }
+  }
+
+  .landingPage_Headline_NameBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    > .landingPage_Headline_SolidLine {
+      border: solid black 1.14px;
+      width: 20%;
+      margin-left: 1em;
+    }
+
+    > h3 {
+      text-shadow: 4px 3px 9px rgba(0, 0, 0, 0.38);
+      font-size: clamp(12px, 1vw + 1rem, 40px);
+      font-weight: 700;
+      letter-spacing: -0.09rem;
+      color: rgb(0, 188, 143);
+      white-space: nowrap;
+      margin-right: 1rem;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .landingPage_secondSector {
+    grid-area: secondSector;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(100px, 20% + 0.4rem, 200px);
+      height: clamp(30px, 12% + 1.4rem, 68px);
+      font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
+      border: 1px solid black;
+      border-radius: 2px;
+      background-color: transparent;
+      transition: background-color 0.3s ease, color 0.5s ease;
+      box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(0, 188, 143);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        color: white;
+      }
+    }
+  }
+
+  .landingPage_thirdSector {
+    grid-area: thirdSector;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1vh 0.5vw 1vh 0.5vw;
+    transform: translate(0%, -5vh);
+
+    > a {
+      writing-mode: tb-rl;
+      transform: rotate(-180deg);
+
+      font-size: clamp(0.625rem, 2vw, 1.625rem);
+      white-space: nowrap;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+
+      & a:hover {
+        text-decoration: underline;
+        letter-spacing: -0.09rem;
+        color: rgb(0, 188, 143);
+      }
+    }
+
+    > span {
+      font-size: clamp(0.6rem, 0.8vw + 0.5rem, 5.75rem);
+      text-align: center;
+
+      a {
+        text-decoration: none;
+        color: rgb(55, 53, 53);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 5120px) and (min-height: 1024px) and (max-height: 1440px) and (orientation: landscape) {
+  .landingPage_Section {
+    width: 100%;
+    max-width: 1440px;
+    height: calc(100vh - 7vh);
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    grid-template-areas:
+      " . firstSector . "
+      " . secondSector . "
+      " . thirdSector . ";
+  }
+
+  .landingPage_firstSector {
+    padding: 16vh 0 10vh 0;
+    grid-area: firstSector;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landingPage_Headline_Titel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    > h1 {
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
+      font-weight: 800;
+      letter-spacing: -0.07rem;
+      color: black;
+      text-align: center;
+    }
+  }
+
+  .landingPage_Headline_NameBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    > .landingPage_Headline_SolidLine {
+      border: solid black 1.14px;
+      width: 20%;
+      margin-left: 1em;
+    }
+
+    > h3 {
+      text-shadow: 4px 3px 9px rgba(0, 0, 0, 0.38);
+      font-size: clamp(12px, 1vw + 1rem, 40px);
+      font-weight: 700;
+      letter-spacing: -0.09rem;
+      color: rgb(0, 188, 143);
+      white-space: nowrap;
+      margin-right: 1rem;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .landingPage_secondSector {
+    grid-area: secondSector;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(100px, 20% + 0.4rem, 200px);
+      height: clamp(30px, 12% + 1.4rem, 68px);
+      font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
+      border: 1px solid black;
+      border-radius: 2px;
+      background-color: transparent;
+      transition: background-color 0.3s ease, color 0.5s ease;
+      box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(0, 188, 143);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        color: white;
+      }
+    }
+  }
+
+  .landingPage_thirdSector {
+    grid-area: thirdSector;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1vh 0.5vw 1vh 0.5vw;
+    transform: translate(0%, -10vh);
+
+    > a {
+      writing-mode: tb-rl;
+      transform: rotate(-180deg);
+
+      font-size: clamp(0.625rem, 2vw, 1.625rem);
+      white-space: nowrap;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+
+      & a:hover {
+        text-decoration: underline;
+        letter-spacing: -0.09rem;
+        color: rgb(0, 188, 143);
+      }
+    }
+
+    > span {
+      font-size: clamp(0.6rem, 0.8vw + 0.5rem, 5.75rem);
+      text-align: center;
+
+      a {
+        text-decoration: none;
+        color: rgb(55, 53, 53);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 5120px) and (min-height: 1440px) and (max-height: 2560px) and (orientation: landscape) {
+  .landingPage_Section {
+    width: 100%;
+    max-width: 1440px;
+    height: calc(100vh - 7vh);
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    grid-template-areas:
+      " . firstSector . "
+      " . secondSector . "
+      " . thirdSector . ";
+  }
+
+  .landingPage_firstSector {
+    padding: 16vh 0 10vh 0;
+    grid-area: firstSector;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landingPage_Headline_Titel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    > h1 {
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
+      font-weight: 800;
+      letter-spacing: -0.07rem;
+      color: black;
+      text-align: center;
+    }
+  }
+
+  .landingPage_Headline_NameBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    > .landingPage_Headline_SolidLine {
+      border: solid black 1.14px;
+      width: 20%;
+      margin-left: 1em;
+    }
+
+    > h3 {
+      text-shadow: 4px 3px 9px rgba(0, 0, 0, 0.38);
+      font-size: clamp(12px, 1vw + 1rem, 40px);
+      font-weight: 700;
+      letter-spacing: -0.09rem;
+      color: rgb(0, 188, 143);
+      white-space: nowrap;
+      margin-right: 1rem;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .landingPage_secondSector {
+    grid-area: secondSector;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(100px, 20% + 0.4rem, 200px);
+      height: clamp(30px, 12% + 1.4rem, 68px);
+      font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
+      border: 1px solid black;
+      border-radius: 2px;
+      background-color: transparent;
+      transition: background-color 0.3s ease, color 0.5s ease;
+      box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(0, 188, 143);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        color: white;
+      }
+    }
+  }
+
+  .landingPage_thirdSector {
+    grid-area: thirdSector;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1vh 0.5vw 0 0.5vw;
+
+    > a {
+      writing-mode: tb-rl;
+      transform: rotate(-180deg);
+
+      font-size: clamp(0.625rem, 2vw, 1.625rem);
+      white-space: nowrap;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+
+      & a:hover {
+        color: rgb(0, 188, 143);
+      }
+    }
+
+    > span {
+      font-size: clamp(0.6rem, 0.8vw + 0.5rem, 5.75rem);
+      text-align: center;
+
+      a {
+        text-decoration: none;
+        color: rgb(55, 53, 53);
+      }
+    }
+  }
+}
+
+.landingPage_thirdSector {
+  z-index: 1;
+}
+
+.ultraWide {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

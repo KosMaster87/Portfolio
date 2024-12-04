@@ -1,0 +1,35 @@
+.langGermanWrapper:hover .german {
+  animation: move-up 0.3s forwards, glow-german 1s forwards;
+}
+
+.langEnglishWrapper:hover .english {
+  animation: move-up 0.3s forwards, glow-english 1s forwards;
+}
+
+.langImage.active {
+  filter: drop-shadow(0 0 8px rgba(54, 113, 56, 0.839));
+}
+
+@keyframes glow-german {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(0, 255, 0, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(0, 255, 0, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(0, 255, 0, 0.5));
+  }
+}
+
+@keyframes glow-english {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 87, 34, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.5));
+  }
+}

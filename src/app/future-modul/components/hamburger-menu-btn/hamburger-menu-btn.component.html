@@ -1,0 +1,18 @@
+<div class="menuWrapper">
+  <input type="checkbox" class="menuInput" id="menuInput" appNoScroll />
+  <label class="burger" for="menuInput">
+    <div></div>
+    <div></div>
+    <div></div>
+  </label>
+
+  <div class="menu">
+    @for (btn of arrBtn; track btn;) {
+    <app-menu-button
+      [btnName]="btn.btnName | translate"
+      [sectionId]="btn.sectionId"
+      (click)="onMenuBtnClick(btn.sectionId)"
+    ></app-menu-button>
+    }
+  </div>
+</div>
