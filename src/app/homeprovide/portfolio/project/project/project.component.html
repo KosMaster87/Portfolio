@@ -9,7 +9,7 @@ idle) {
   <div class="toTheRightSideBox">
     <div class="blancoBox"></div>
     <div class="h2Box">
-      <h2 class="fontSyne disableTextSelection">
+      <h2 class="secondFont disableTextSelection">
         {{ $index + 1 }} / {{ projectsLength }}
       </h2>
     </div>
@@ -31,26 +31,26 @@ idle) {
 
       <div class="infoBox" id="infoBox" [class.active]="isVisible">
         <div class="innerBox">
-          <h2 class="fontSyne disableTextSelection" appHighlighting>
+          <h2 class="secondFont disableTextSelection" appHighlighting>
             {{ project.projectName | translate }}
           </h2>
-          <h3 class="fontOverpass disableTextSelection">
+          <h3 class="primeFont disableTextSelection">
             {{ project.headline }}
           </h3>
 
-          <p class="disableTextSelection projectText fontOverpass">
+          <p class="disableTextSelection projectText primeFont">
             {{ project.description | translate }}
           </p>
 
-          <div class="fontOverpass disableTextSelection btnBox">
+          <div class="primeFont disableTextSelection btnBox">
             <button
-              class="fontOverpass disableTextSelection"
+              class="primeFont disableTextSelection"
               (click)="openLink(project.linkToPage)"
             >
               Live test
             </button>
             <button
-              class="fontOverpass disableTextSelection"
+              class="primeFont disableTextSelection"
               (click)="openLink(project.linkToGit)"
             >
               GitHub

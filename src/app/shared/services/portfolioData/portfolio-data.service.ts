@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Project } from '../../../models/project/project';
 
+/**
+ * Service to provide portfolio-related data, including project details and references.
+ * 
+ * This service centralizes static data for portfolio components, making it easily reusable
+ * across the application.
+ */
 @Injectable({
   providedIn: 'root',
 })

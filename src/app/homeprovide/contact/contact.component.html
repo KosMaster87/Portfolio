@@ -1,16 +1,16 @@
 <div class="linearGradient" id="linearGradient"></div>
 <div class="ultraWide">
   <section id="contact_component">
-    <h1 class="greeting fontSyne disableTextSelection" appHighlighting>
+    <h1 class="greeting secondFont disableTextSelection" appHighlighting>
       {{ "CONTACT.say" | translate }}
     </h1>
 
     <div class="formParent">
       <div class="greetings">
-        <h2 class="fontOverpass disableTextSelection">
+        <h2 class="primeFont disableTextSelection">
           {{ "CONTACT.title" | translate }}
         </h2>
-        <h3 class="fontOverpass disableTextSelection">
+        <h3 class="primeFont disableTextSelection">
           {{ "CONTACT.expression" | translate }}
         </h3>
       </div>
@@ -23,13 +23,13 @@
           }"
         >
           <label
-            class="inputLabel_name fontOverpass disableTextSelection"
+            class="inputLabel_name primeFont disableTextSelection"
             for="input_name"
             >{{ "CONTACT.yourName" | translate }}</label
           >
 
           <input
-            class="input_name fontOverpass disableTextSelection"
+            class="input_name primeFont disableTextSelection"
             id="input_name"
             type="text"
             (focus)="onFocus('name', true)"
@@ -55,14 +55,14 @@
 
           @if (name.invalid && name.touched) {
           <small
-            class="errorText fontOverpass disableTextSelection"
+            class="errorText primeFont disableTextSelection"
             *ngIf="name.errors?.['required']"
           >
             {{ "CONTACT.yourNameRequired" | translate }}
           </small>
 
           <small
-            class="errorText fontOverpass disableTextSelection"
+            class="errorText primeFont disableTextSelection"
             *ngIf="name.errors?.['pattern']"
           >
             {{ "CONTACT.yourNameFull" | translate }}
@@ -77,12 +77,12 @@
           }"
         >
           <label
-            class="inputLabel_email fontOverpass disableTextSelection"
+            class="inputLabel_email primeFont disableTextSelection"
             for="input_email"
             >{{ "CONTACT.yourEmail" | translate }}</label
           >
           <input
-            class="input_email fontOverpass disableTextSelection"
+            class="input_email primeFont disableTextSelection"
             id="input_email"
             type="text"
             (focus)="onFocus('email', true)"
@@ -108,14 +108,14 @@
 
           @if (email.invalid && email.touched) {
           <small
-            class="errorText fontOverpass disableTextSelection"
+            class="errorText primeFont disableTextSelection"
             *ngIf="email.errors?.['required']"
           >
             {{ "CONTACT.yourEmailRequired" | translate }}
           </small>
 
           <small
-            class="errorText fontOverpass disableTextSelection"
+            class="errorText primeFont disableTextSelection"
             *ngIf="email.errors?.['pattern']"
           >
             {{ "CONTACT.yourEmailFull" | translate }}
@@ -131,12 +131,12 @@
           }"
         >
           <label
-            class="inputLabel_message fontOverpass disableTextSelection"
+            class="inputLabel_message primeFont disableTextSelection"
             for="textarea_message"
             >{{ "CONTACT.yourMessage" | translate }}</label
           >
           <textarea
-            class="textarea_message textarea fontOverpass disableTextSelection"
+            class="textarea_message textarea primeFont disableTextSelection"
             id="textarea_message"
             type="text"
             (focus)="onFocus('message', true)"
@@ -160,7 +160,7 @@
           </div>
 
           @if (message.invalid && message.touched) {
-          <small class="errorText fontOverpass disableTextSelection">
+          <small class="errorText primeFont disableTextSelection">
             {{ "CONTACT.yourMessageRequired" | translate }} </small
           >}
         </div>
@@ -198,20 +198,20 @@
             </div>
 
             <label
-              class="checkboxLabel fontOverpass disableTextSelection"
+              class="checkboxLabel primeFont disableTextSelection"
               for="checkboxSelf"
-              ><p class="checkboxText"
-                >{{ "CONTACT.checkBox01" | translate }}
+              ><p class="checkboxText">
+                {{ "CONTACT.checkBox01" | translate }}
                 <a class="checkboxPolicy" routerLink="/imprint">{{
                   "CONTACT.checkBox02" | translate
                 }}</a>
-                {{ "CONTACT.checkBox03" | translate }}</p
-              ></label
+                {{ "CONTACT.checkBox03" | translate }}
+              </p></label
             >
           </div>
 
           @if (!isChecked && checkbox.touched) {
-          <small class="errorText fontOverpass disableTextSelection"
+          <small class="errorText primeFont disableTextSelection"
             >Please accept the privacy policy.</small
           >
           }

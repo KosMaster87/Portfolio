@@ -3,16 +3,22 @@ import { Component, HostBinding, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
+/**
+ * Component that represents a call-to-action button, which can trigger navigation or scroll to a section.
+ *
+ * This button can be styled with custom classes and can display text in two rows. It supports routing via the `routerLink`
+ * and can also scroll to a specific fragment on the page when clicked.
+ *
+ */
 @Component({
   selector: 'app-call-action-button',
   standalone: true,
   imports: [CommonModule, TranslateModule, RouterModule],
-  // templateUrl: './call-action-button.component.html',
   template: `
     <div class="btnFlexBox">
       <button
         buttonType="button"
-        class="btnSelf fontOverpass disableTextSelection"
+        class="btnSelf primeFont disableTextSelection"
         [attr.type]="buttonType"
         [ngClass]="buttonClass"
         [disabled]="disabled"
@@ -26,8 +32,8 @@ import { TranslateModule } from '@ngx-translate/core';
     </div>
   `,
   styleUrls: [
-    './call-action-button.component.scss', // Basic style and responsive.
-    './../../../shared/styles/buttons.scss', // Change color and else.
+    './call-action-button.component.scss',
+    './../../../shared/styles/buttons.scss',
   ],
 })
 export class CallActionButtonComponent {
@@ -43,6 +49,16 @@ export class CallActionButtonComponent {
   @Input() routerLink: string | any[] = '';
   @Input() fragment: string = '';
 
+  /**
+   * Handles the click event on the button and scrolls the page to the specified section.
+   *
+   * This method is triggered when the button is clicked. It finds the DOM element specified by the
+   * `link` input property (a CSS selector) and smooth-scrolls the page to that section.
+   *
+   * If the element is not found, the method does nothing.
+   *
+   * @memberof CallActionButtonComponent
+   */
   onClick() {
     const element = document.querySelector(this.link);
     if (element) {
@@ -50,6 +66,14 @@ export class CallActionButtonComponent {
     }
   }
 
+  /**
+   * Handles the click event of the button and scrolls the page to the specified `fragment`.
+   *
+   * This method is triggered when the button is clicked. It smooth-scrolls the page to the section
+   * identified by the `fragment` input property.
+   *
+   * @memberof CallActionButtonComponent
+   */
   scrollToFragment(): void {
     if (this.fragment) {
       const element = document.querySelector(`#${this.fragment}`);

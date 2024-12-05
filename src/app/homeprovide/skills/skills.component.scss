@@ -29,7 +29,7 @@
     position: relative;
     width: 100%;
     min-height: 33vh;
-    border: 4px solid black;
+    border: 4px solid var(--primeColor-dark);
     border-radius: 2px;
     transition: all 0.9s ease;
     flex-direction: column;
@@ -48,7 +48,7 @@
       letter-spacing: -0.07rem;
       text-align: center;
       white-space: nowrap;
-      background-color: rgb(230, 228, 227);
+      background-color: var(--primeColor-background);
       border-radius: 5px;
       padding: 0 0.8rem;
       position: absolute;
@@ -128,7 +128,7 @@
     position: relative;
     width: 100%;
     min-height: 33vh;
-    border: 4px solid black;
+    border: 4px solid var(--primeColor-dark);
     border-radius: 2px;
     transition: all 0.9s ease;
     flex-direction: column;
@@ -147,7 +147,7 @@
       letter-spacing: -0.07rem;
       text-align: center;
       white-space: nowrap;
-      background-color: rgb(230, 228, 227);
+      background-color: var(--primeColor-background);
       border-radius: 5px;
       padding: 10px 20px 10px 20px;
       position: absolute;
@@ -226,7 +226,7 @@
     position: relative;
     width: 100%;
     min-height: 33vh;
-    border: 4px solid black;
+    border: 4px solid var(--primeColor-dark);
     border-radius: 2px;
     transition: all 0.9s ease;
     flex-direction: column;
@@ -245,7 +245,7 @@
       letter-spacing: -0.07rem;
       text-align: center;
       white-space: nowrap;
-      background-color: rgb(230, 228, 227);
+      background-color: var(--primeColor-background);
       border-radius: 5px;
       padding: 10px 20px 10px 20px;
       position: absolute;
@@ -325,7 +325,7 @@
     position: relative;
     width: 100%;
     min-height: 33vh;
-    border: 4px solid black;
+    border: 4px solid var(--primeColor-dark);
     border-radius: 2px;
     transition: all 0.9s ease;
     flex-direction: column;
@@ -344,7 +344,7 @@
       letter-spacing: -0.07rem;
       text-align: center;
       white-space: nowrap;
-      background-color: rgb(230, 228, 227);
+      background-color: var(--primeColor-background);
       border-radius: 5px;
       padding: 10px 20px 10px 20px;
       position: absolute;
@@ -423,7 +423,7 @@
     position: relative;
     width: 100%;
     min-height: 33vh;
-    border: 4px solid black;
+    border: 4px solid var(--primeColor-dark);
     border-radius: 2px;
     transition: all 0.9s ease;
     flex-direction: column;
@@ -442,7 +442,7 @@
       letter-spacing: -0.07rem;
       text-align: center;
       white-space: nowrap;
-      background-color: rgb(230, 228, 227);
+      background-color: var(--primeColor-background);
       border-radius: 5px;
       padding: 10px 20px 10px 20px;
       position: absolute;

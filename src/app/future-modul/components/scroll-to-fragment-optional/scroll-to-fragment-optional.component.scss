@@ -12,7 +12,6 @@ $anim-timing: 3s;
   height: $circle-w;
   position: relative;
   top: 50%;
-  // transform: translateY(-50%);
   filter: url("#goo");
 
   .circle {
@@ -54,7 +53,6 @@ $anim-timing: 3s;
 }
 
 .svg {
-  // outline: 1px solid red;
   z-index: 9;
   position: relative;
 }
@@ -76,23 +74,18 @@ $anim-timing: 3s;
 
 @keyframes blob-2-anim {
   0% {
-    //transform: scale(1) translate(-50%,-150%);
     transform: scale(1) translate(-50%, 10px);
   }
   30% {
-    //transform: scale(1) translate(-50%,-50%);
     transform: scale(1) translate(-50%, 10px);
   }
   70% {
-    //transform: scale(1) translate(-50%,-50%);
     transform: scale(1) translate(-50%, 10px);
   }
   95% {
-    //transform: scale(1) translate(-50%,-50%);
     transform: scale(1) translate(-50%, 26px);
   }
   100% {
-    //transform: scaleX(1.5) translate(-50%,140%);
     transform: scale(1) translate(-50%, 10px);
   }
 }

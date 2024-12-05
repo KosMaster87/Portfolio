@@ -4,6 +4,12 @@ import { MenuButtonComponent } from './../menu-button/menu-button.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { HamburgerMenuService } from '../../../shared/services/HamburgerMenu/hamburger-menu.service';
 
+/**
+ * Component that represents the hamburger menu button.
+ *
+ * This component displays the hamburger menu button, manages the menu's state, and handles
+ * scrolling to different sections when a menu button is clicked.
+ */
 @Component({
   selector: 'app-hamburger-menu-btn',
   imports: [NoScrollDirective, MenuButtonComponent, TranslateModule],
@@ -15,10 +21,24 @@ export class HamburgerMenuBtnComponent {
   private hamburgerMenuService: HamburgerMenuService =
     inject(HamburgerMenuService);
 
+  /**
+   * Initializes the component and loads the list of menu buttons from the HamburgerMenuService.
+   *
+   * @memberof HamburgerMenuBtnComponent
+   */
   ngOnInit(): void {
     this.arrBtn = this.hamburgerMenuService.getButtons();
   }
 
+  /**
+   * Handles the click event of a menu button.
+   *
+   * This method is responsible for closing the hamburger menu (by unchecking the menu input)
+   * and scrolling the page to the selected section with smooth animation.
+   *
+   * @param {string} sectionId The ID of the section to scroll to.
+   * @memberof HamburgerMenuBtnComponent
+   */
   onMenuBtnClick(sectionId: string) {
     const menuInput = document.getElementById('menuInput') as HTMLInputElement;
 

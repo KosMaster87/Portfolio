@@ -5,6 +5,10 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
+/**
+ * The root component of the application.
+ * It serves as the container for all application-level components and functionality.
+ */
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, TranslateModule, HeaderComponent, FooterComponent],
@@ -16,20 +20,27 @@ export class AppComponent {
   private translateService = inject(TranslateService);
   private route = inject(ActivatedRoute);
 
+  /**
+   * Initializes the root component and sets the default language of the application.
+   */
   ngOnInit() {
     this.setDefaultLanguage();
-    // this.route.fragment.subscribe((fragment: string | null) => {
-    //   const element = document.getElementById(fragment ?? '');
-    //   if (element) {
-    //     element.scrollIntoView({ behavior: 'smooth' });
-    //   }
-    // });
   }
 
+  /**
+   * Sets the default language for the application to German (`'de'`).
+   * This is called during the initialization of the component.
+   *
+   * @private
+   */
   private setDefaultLanguage() {
     this.translateService.setDefaultLang('de');
   }
 
+  /**
+   * Changes the current language of the application.
+   * @param {string} lang - The language to switch to (e.g., 'en', 'de').
+   */
   changeLanguage(lang: string) {
     this.translateService.use(lang);
   }

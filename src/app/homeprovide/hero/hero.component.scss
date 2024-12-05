@@ -32,7 +32,7 @@
       font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
       font-weight: 800;
       letter-spacing: -0.07rem;
-      color: black;
+      color: var(--primeColor-dark);
       text-align: center;
     }
   }
@@ -44,7 +44,7 @@
     justify-content: center;
 
     > .landingPage_Headline_SolidLine {
-      border: solid black 1.14px;
+      border: solid var(--primeColor-dark) 1.14px;
       width: 20%;
       margin-left: 1em;
     }
@@ -54,7 +54,7 @@
       font-size: clamp(12px, 1vw + 1rem, 40px);
       font-weight: 700;
       letter-spacing: -0.09rem;
-      color: rgb(0, 188, 143);
+      color: var(--primeColor-secundario);
       white-space: nowrap;
       margin-right: 1rem;
       margin-left: 0.5rem;
@@ -75,19 +75,19 @@
       width: clamp(100px, 20% + 0.4rem, 200px);
       height: clamp(30px, 12% + 1.4rem, 68px);
       font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
-      border: 1px solid black;
+      border: 1px solid var(--primeColor-dark);
       border-radius: 2px;
       background-color: transparent;
       transition: background-color 0.3s ease, color 0.5s ease;
-      box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+      box-shadow: 0px 4px 4px 0px var(--primeColor-secundario-darker);
       padding: 0.5rem 1rem;
       white-space: nowrap;
       cursor: pointer;
 
       &:hover {
-        background-color: rgb(0, 188, 143);
+        background-color: var(--primeColor-secundario);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        color: white;
+        color: var(--primeColor-white);
       }
     }
   }
@@ -108,13 +108,13 @@
       font-size: clamp(0.625rem, 2vw, 1.625rem);
       white-space: nowrap;
       text-decoration: none;
-      color: black;
+      color: var(--primeColor-dark);
       cursor: pointer;
 
       & a:hover {
         text-decoration: underline;
         letter-spacing: -0.09rem;
-        color: rgb(0, 188, 143);
+        color: var(--primeColor-secundario);
       }
     }
 
@@ -124,7 +124,7 @@
 
       a {
         text-decoration: none;
-        color: rgb(55, 53, 53);
+        color: var(--primeColor-dark);
       }
     }
   }
@@ -163,7 +163,7 @@
       font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
       font-weight: 800;
       letter-spacing: -0.07rem;
-      color: black;
+      color: var(--primeColor-dark);
       text-align: center;
       margin-top: 10vh;
     }
@@ -176,7 +176,7 @@
     justify-content: center;
 
     > .landingPage_Headline_SolidLine {
-      border: solid black 1.14px;
+      border: solid var(--primeColor-dark) 1.14px;
       width: 20%;
       margin-left: 1em;
     }
@@ -186,7 +186,7 @@
       font-size: clamp(12px, 1vw + 1rem, 40px);
       font-weight: 700;
       letter-spacing: -0.09rem;
-      color: rgb(0, 188, 143);
+      color: var(--primeColor-secundario);
       white-space: nowrap;
       margin-right: 1rem;
       margin-left: 0.5rem;
@@ -208,19 +208,19 @@
       width: clamp(100px, 20% + 0.4rem, 200px);
       height: clamp(30px, 12% + 1.4rem, 68px);
       font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
-      border: 1px solid black;
+      border: 1px solid var(--primeColor-dark);
       border-radius: 2px;
       background-color: transparent;
       transition: background-color 0.3s ease, color 0.5s ease;
-      box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+      box-shadow: 0px 4px 4px 0px var(--primeColor-secundario-darker);
       padding: 0.5rem 1rem;
       white-space: nowrap;
       cursor: pointer;
 
       &:hover {
-        background-color: rgb(0, 188, 143);
+        background-color: var(--primeColor-secundario);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        color: white;
+        color: var(--primeColor-white);
       }
     }
   }
@@ -240,13 +240,13 @@
       font-size: clamp(0.6rem, 1vw, 1.6rem);
       white-space: nowrap;
       text-decoration: none;
-      color: black;
+      color: var(--primeColor-dark);
       cursor: pointer;
 
       & a:hover {
         text-decoration: underline;
         letter-spacing: -0.09rem;
-        color: rgb(0, 188, 143);
+        color: var(--primeColor-secundario);
       }
     }
 
@@ -256,7 +256,7 @@
 
       a {
         text-decoration: none;
-        color: rgb(55, 53, 53);
+        color: var(--primeColor-dark);
       }
     }
   }
@@ -296,7 +296,7 @@
       font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
       font-weight: 800;
       letter-spacing: -0.07rem;
-      color: black;
+      color: var(--primeColor-dark);
       text-align: center;
     }
   }
@@ -308,7 +308,7 @@
     justify-content: center;
 
     > .landingPage_Headline_SolidLine {
-      border: solid black 1.14px;
+      border: solid var(--primeColor-dark) 1.14px;
       width: 20%;
       margin-left: 1em;
     }
@@ -318,7 +318,7 @@
       font-size: clamp(12px, 1vw + 1rem, 40px);
       font-weight: 700;
       letter-spacing: -0.09rem;
-      color: rgb(0, 188, 143);
+      color: var(--primeColor-secundario);
       white-space: nowrap;
       margin-right: 1rem;
       margin-left: 0.5rem;
@@ -339,19 +339,19 @@
       width: clamp(100px, 20% + 0.4rem, 200px);
       height: clamp(30px, 12% + 1.4rem, 68px);
       font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
-      border: 1px solid black;
+      border: 1px solid var(--primeColor-dark);
       border-radius: 2px;
       background-color: transparent;
       transition: background-color 0.3s ease, color 0.5s ease;
-      box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+      box-shadow: 0px 4px 4px 0px var(--primeColor-secundario-darker);
       padding: 0.5rem 1rem;
       white-space: nowrap;
       cursor: pointer;
 
       &:hover {
-        background-color: rgb(0, 188, 143);
+        background-color: var(--primeColor-secundario);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        color: white;
+        color: var(--primeColor-white);
       }
     }
   }
@@ -371,13 +371,13 @@
       font-size: clamp(0.625rem, 2vw, 1.625rem);
       white-space: nowrap;
       text-decoration: none;
-      color: black;
+      color: var(--primeColor-dark);
       cursor: pointer;
 
       & a:hover {
         text-decoration: underline;
         letter-spacing: -0.09rem;
-        color: rgb(0, 188, 143);
+        color: var(--primeColor-secundario);
       }
     }
 
@@ -387,7 +387,7 @@
 
       a {
         text-decoration: none;
-        color: rgb(55, 53, 53);
+        color: var(--primeColor-dark);
       }
     }
   }
@@ -431,7 +431,7 @@
       font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
       font-weight: 800;
       letter-spacing: -0.07rem;
-      color: black;
+      color: var(--primeColor-dark);
       text-align: center;
       margin-top: 5vh;
     }
@@ -444,7 +444,7 @@
     justify-content: center;
 
     > .landingPage_Headline_SolidLine {
-      border: solid black 1.14px;
+      border: solid var(--primeColor-dark) 1.14px;
       width: 20%;
       margin-left: 1em;
     }
@@ -454,7 +454,7 @@
       font-size: clamp(12px, 1vw + 1rem, 40px);
       font-weight: 700;
       letter-spacing: -0.09rem;
-      color: rgb(0, 188, 143);
+      color: var(--primeColor-secundario);
       white-space: nowrap;
       margin-right: 1rem;
       margin-left: 0.5rem;
@@ -475,19 +475,19 @@
       width: clamp(120px, 20% + 0.4rem, 200px);
       height: clamp(30px, 12% + 1.4rem, 68px);
       font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
-      border: 1px solid black;
+      border: 1px solid var(--primeColor-dark);
       border-radius: 2px;
       background-color: transparent;
       transition: background-color 0.3s ease, color 0.5s ease;
-      box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+      box-shadow: 0px 4px 4px 0px var(--primeColor-secundario-darker);
       padding: 0.5rem 1rem;
       white-space: nowrap;
       cursor: pointer;
 
       &:hover {
-        background-color: rgb(0, 188, 143);
+        background-color: var(--primeColor-secundario);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        color: white;
+        color: var(--primeColor-white);
       }
     }
   }
@@ -508,13 +508,13 @@
       font-size: clamp(0.2rem, 1.3vw, 1.625rem);
       white-space: nowrap;
       text-decoration: none;
-      color: black;
+      color: var(--primeColor-dark);
       cursor: pointer;
 
       & a:hover {
         text-decoration: underline;
         letter-spacing: -0.09rem;
-        color: rgb(0, 188, 143);
+        color: var(--primeColor-secundario);
       }
     }
 
@@ -524,7 +524,7 @@
 
       a {
         text-decoration: none;
-        color: rgb(55, 53, 53);
+        color: var(--primeColor-dark);
       }
     }
   }
@@ -564,7 +564,7 @@
       font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
       font-weight: 800;
       letter-spacing: -0.07rem;
-      color: black;
+      color: var(--primeColor-dark);
       text-align: center;
       margin-top: 5vh;
     }
@@ -577,7 +577,7 @@
     justify-content: center;
 
     > .landingPage_Headline_SolidLine {
-      border: solid black 1.14px;
+      border: solid var(--primeColor-dark) 1.14px;
       width: 20%;
       margin-left: 1em;
     }
@@ -587,7 +587,7 @@
       font-size: clamp(12px, 1vw + 1rem, 40px);
       font-weight: 700;
       letter-spacing: -0.09rem;
-      color: rgb(0, 188, 143);
+      color: var(--primeColor-secundario);
       white-space: nowrap;
       margin-right: 1rem;
       margin-left: 0.5rem;
@@ -608,19 +608,19 @@
       width: clamp(120px, 20% + 0.4rem, 200px);
       height: clamp(30px, 12% + 1.4rem, 68px);
       font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
-      border: 1px solid black;
+      border: 1px solid var(--primeColor-dark);
       border-radius: 2px;
       background-color: transparent;
       transition: background-color 0.3s ease, color 0.5s ease;
-      box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+      box-shadow: 0px 4px 4px 0px var(--primeColor-secundario-darker);
       padding: 0.5rem 1rem;
       white-space: nowrap;
       cursor: pointer;
 
       &:hover {
-        background-color: rgb(0, 188, 143);
+        background-color: var(--primeColor-secundario);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        color: white;
+        color: var(--primeColor-white);
       }
     }
   }
@@ -647,7 +647,7 @@
       & a:hover {
         text-decoration: underline;
         letter-spacing: -0.09rem;
-        color: rgb(0, 188, 143);
+        color: var(--primeColor-secundario);
       }
     }
 
@@ -657,7 +657,7 @@
 
       a {
         text-decoration: none;
-        color: rgb(55, 53, 53);
+        color: var(--primeColor-dark);
       }
     }
   }
@@ -697,7 +697,7 @@
       font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
       font-weight: 800;
       letter-spacing: -0.07rem;
-      color: black;
+      color: var(--primeColor-dark);
       text-align: center;
       margin-top: 5vh;
     }
@@ -710,7 +710,7 @@
     justify-content: center;
 
     > .landingPage_Headline_SolidLine {
-      border: solid black 1.14px;
+      border: solid var(--primeColor-dark) 1.14px;
       width: 20%;
       margin-left: 1em;
     }
@@ -720,7 +720,7 @@
       font-size: clamp(12px, 1vw + 1rem, 40px);
       font-weight: 700;
       letter-spacing: -0.09rem;
-      color: rgb(0, 188, 143);
+      color: var(--primeColor-secundario);
       white-space: nowrap;
       margin-right: 1rem;
       margin-left: 0.5rem;
@@ -741,19 +741,19 @@
       width: clamp(120px, 20% + 0.4rem, 200px);
       height: clamp(30px, 12% + 1.4rem, 68px);
       font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
-      border: 1px solid black;
+      border: 1px solid var(--primeColor-dark);
       border-radius: 2px;
       background-color: transparent;
       transition: background-color 0.3s ease, color 0.5s ease;
-      box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+      box-shadow: 0px 4px 4px 0px var(--primeColor-secundario-darker);
       padding: 0.5rem 1rem;
       white-space: nowrap;
       cursor: pointer;
 
       &:hover {
-        background-color: rgb(0, 188, 143);
+        background-color: var(--primeColor-secundario);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        color: white;
+        color: var(--primeColor-white);
       }
     }
   }
@@ -774,13 +774,13 @@
       font-size: clamp(0.2rem, 1.3vw, 1.625rem);
       white-space: nowrap;
       text-decoration: none;
-      color: black;
+      color: var(--primeColor-dark);
       cursor: pointer;
 
       & a:hover {
         text-decoration: underline;
         letter-spacing: -0.09rem;
-        color: rgb(0, 188, 143);
+        color: var(--primeColor-secundario);
       }
     }
 
@@ -790,7 +790,7 @@
 
       a {
         text-decoration: none;
-        color: rgb(55, 53, 53);
+        color: var(--primeColor-dark);
       }
     }
   }
@@ -830,7 +830,7 @@
       font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
       font-weight: 800;
       letter-spacing: -0.07rem;
-      color: black;
+      color: var(--primeColor-dark);
       text-align: center;
     }
   }
@@ -842,7 +842,7 @@
     justify-content: center;
 
     > .landingPage_Headline_SolidLine {
-      border: solid black 1.14px;
+      border: solid var(--primeColor-dark) 1.14px;
       width: 20%;
       margin-left: 1em;
     }
@@ -852,7 +852,7 @@
       font-size: clamp(12px, 1vw + 1rem, 40px);
       font-weight: 700;
       letter-spacing: -0.09rem;
-      color: rgb(0, 188, 143);
+      color: var(--primeColor-secundario);
       white-space: nowrap;
       margin-right: 1rem;
       margin-left: 0.5rem;
@@ -873,19 +873,19 @@
       width: clamp(100px, 20% + 0.4rem, 200px);
       height: clamp(30px, 12% + 1.4rem, 68px);
       font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
-      border: 1px solid black;
+      border: 1px solid var(--primeColor-dark);
       border-radius: 2px;
       background-color: transparent;
       transition: background-color 0.3s ease, color 0.5s ease;
-      box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+      box-shadow: 0px 4px 4px 0px var(--primeColor-secundario-darker);
       padding: 0.5rem 1rem;
       white-space: nowrap;
       cursor: pointer;
 
       &:hover {
-        background-color: rgb(0, 188, 143);
+        background-color: var(--primeColor-secundario);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        color: white;
+        color: var(--primeColor-white);
       }
     }
   }
@@ -906,13 +906,13 @@
       font-size: clamp(0.625rem, 2vw, 1.625rem);
       white-space: nowrap;
       text-decoration: none;
-      color: black;
+      color: var(--primeColor-dark);
       cursor: pointer;
 
       & a:hover {
         text-decoration: underline;
         letter-spacing: -0.09rem;
-        color: rgb(0, 188, 143);
+        color: var(--primeColor-secundario);
       }
     }
 
@@ -922,7 +922,7 @@
 
       a {
         text-decoration: none;
-        color: rgb(55, 53, 53);
+        color: var(--primeColor-dark);
       }
     }
   }
@@ -962,7 +962,7 @@
       font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
       font-weight: 800;
       letter-spacing: -0.07rem;
-      color: black;
+      color: var(--primeColor-dark);
       text-align: center;
     }
   }
@@ -974,7 +974,7 @@
     justify-content: center;
 
     > .landingPage_Headline_SolidLine {
-      border: solid black 1.14px;
+      border: solid var(--primeColor-dark) 1.14px;
       width: 20%;
       margin-left: 1em;
     }
@@ -984,7 +984,7 @@
       font-size: clamp(12px, 1vw + 1rem, 40px);
       font-weight: 700;
       letter-spacing: -0.09rem;
-      color: rgb(0, 188, 143);
+      color: var(--primeColor-secundario);
       white-space: nowrap;
       margin-right: 1rem;
       margin-left: 0.5rem;
@@ -1005,19 +1005,19 @@
       width: clamp(100px, 20% + 0.4rem, 200px);
       height: clamp(30px, 12% + 1.4rem, 68px);
       font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
-      border: 1px solid black;
+      border: 1px solid var(--primeColor-dark);
       border-radius: 2px;
       background-color: transparent;
       transition: background-color 0.3s ease, color 0.5s ease;
-      box-shadow: 0px 4px 4px 0px rgba(0, 188, 143, 0.25);
+      box-shadow: 0px 4px 4px 0px var(--primeColor-secundario-darker);
       padding: 0.5rem 1rem;
       white-space: nowrap;
       cursor: pointer;
 
       &:hover {
-        background-color: rgb(0, 188, 143);
+        background-color: var(--primeColor-secundario);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        color: white;
+        color: var(--primeColor-white);
       }
     }
   }
@@ -1038,13 +1038,13 @@
       font-size: clamp(0.625rem, 2vw, 1.625rem);
       white-space: nowrap;
       text-decoration: none;
-      color: black;
+      color: var(--primeColor-dark);
       cursor: pointer;
 
       & a:hover {
         text-decoration: underline;
         letter-spacing: -0.09rem;
-        color: rgb(0, 188, 143);
+        color: var(--primeColor-secundario);
       }
     }
 
@@ -1054,7 +1054,7 @@
 
       a {
         text-decoration: none;
-        color: rgb(55, 53, 53);
+        color: var(--primeColor-dark);
       }
     }
   }
@@ -1094,7 +1094,7 @@
       font-size: clamp(28px, 2.5vw + 1.5rem, 80px);
       font-weight: 800;
       letter-spacing: -0.07rem;
-      color: black;
+      color: var(--primeColor-dark);
       text-align: center;
     }
   }
@@ -1106,7 +1106,7 @@
     justify-content: center;
 
     > .landingPage_Headline_SolidLine {
-      border: solid black 1.14px;
+      border: solid var(--primeColor-dark) 1.14px;
       width: 20%;
       margin-left: 1em;
     }
@@ -1116,7 +1116,7 @@
       font-size: clamp(12px, 1vw + 1rem, 40px);
       font-weight: 700;
       letter-spacing: -0.09rem;
-      color: rgb(0, 188, 143);
+      color: var(--primeColor-secundario);
       white-space: nowrap;
       margin-right: 1rem;
       margin-left: 0.5rem;
@@ -1137,7 +1137,7 @@
       width: clamp(100px, 20% + 0.4rem, 200px);
       height: clamp(30px, 12% + 1.4rem, 68px);
       font-size: clamp(0.6rem, 1.4vw + 0.2rem, 1.2rem);
-      border: 1px solid black;
+      border: 1px solid var(--primeColor-dark);
       border-radius: 2px;
       background-color: transparent;
       transition: background-color 0.3s ease, color 0.5s ease;
@@ -1147,9 +1147,9 @@
       cursor: pointer;
 
       &:hover {
-        background-color: rgb(0, 188, 143);
+        background-color: var(--primeColor-secundario);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        color: white;
+        color: var(--primeColor-white);
       }
     }
   }
@@ -1169,11 +1169,11 @@
       font-size: clamp(0.625rem, 2vw, 1.625rem);
       white-space: nowrap;
       text-decoration: none;
-      color: black;
+      color: var(--primeColor-dark);
       cursor: pointer;
 
       & a:hover {
-        color: rgb(0, 188, 143);
+        color: var(--primeColor-secundario);
       }
     }
 
@@ -1183,7 +1183,7 @@
 
       a {
         text-decoration: none;
-        color: rgb(55, 53, 53);
+        color: var(--primeColor-dark);
       }
     }
   }

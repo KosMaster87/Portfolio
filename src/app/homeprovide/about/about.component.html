@@ -2,37 +2,22 @@
   <section id="about_Component">
     <div class="firstSector">
       <div class="justText">
-        <h1 class="fontSyne disableTextSelection" id="aboutH1" appHighlighting>
+        <h1 class="secondFont disableTextSelection" id="aboutH1" appHighlighting>
           {{ "SECTIONS.about" | translate }}
         </h1>
 
         <!-- * Variante block -->
-        <p class="fontOverpass disableTextSelection">
+        <p class="primeFont disableTextSelection">
           {{ "ABOUT.talk-01" | translate }}
         </p>
         <br />
 
         <p
-          class="fontOverpass disableTextSelection"
+          class="primeFont disableTextSelection"
           style="margin-bottom: 2rem"
         >
           {{ "ABOUT.talk-02" | translate }}
         </p>
-
-        <!-- * Variante inline -->
-        <!-- <span class="fontOverpass disableTextSelection">
-          Hello, I am a German-speaking frontend developer living in Loma Plata,
-          Paraguay. Driven by the endless possibilities in the IT world, I am
-          passionate about creating visually appealing and user-friendly
-          websites and applications.
-        </span>
-        <br />
-
-        <span class="fontOverpass disableTextSelection">
-          I can work effectively remote from Paraguay and have the advantage of
-          being available for work in the German-speaking region even during
-          late night hours, thanks to the different time zones.
-        </span> -->
 
         <app-call-action-button
           [buttonClass]="'aboutButton'"

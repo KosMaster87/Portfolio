@@ -7,7 +7,18 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from './../../future-modul/shared.module';
 import { ScrollService } from './../../shared/services/scroll/scroll.service';
 import { ScrollToTopComponent } from './../../future-modul/components/scroll-to-fragment-top/scroll-to-top.component';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
+/**
+ * ContactComponent handles the contact form functionality.
+ * It allows users to submit their contact information and sends it to a backend service.
+ *
+ * **Features:**
+ * - User input for name, email, and message.
+ * - Form validation and submission.
+ * - Displays success or error messages via snack bar.
+ * - Provides checkbox toggle and hover state functionality.
+ */
 @Component({
   selector: 'app-contact',
   imports: [
@@ -17,6 +28,7 @@ import { ScrollToTopComponent } from './../../future-modul/components/scroll-to-
     CommonModule,
     RouterModule,
     ScrollToTopComponent,
+    MatSnackBarModule,
   ],
   templateUrl: './contact.component.html',
   styleUrls: [
@@ -26,6 +38,7 @@ import { ScrollToTopComponent } from './../../future-modul/components/scroll-to-
 })
 export class ContactComponent {
   private scrollService = inject(ScrollService);
+  private snackBar: MatSnackBar = inject(MatSnackBar);
   buttonType: string = 'submit';
   isFocusedName = false;
   isFocusedEmail = false;
@@ -35,25 +48,11 @@ export class ContactComponent {
   isChecked = false;
   checkboxHovered = false;
 
-  toggleCheckbox() {
-    this.isChecked = !this.isChecked;
-  }
-
-  onHover(isHovered: boolean) {
-    this.checkboxHovered = isHovered;
-  }
-
   contactData = {
     name: '',
     email: '',
     message: '',
   };
-
-  // contactData = {
-  //   name: 'Oroku Saki',
-  //   email: 'mySuperDupaFoundation@Shredder.de',
-  //   message: 'Some text; Any lorem ipsum.',
-  // };
 
   post = {
     endPoint: 'https://portfolio.dev2k.org/contact/sendMail.php',
@@ -66,6 +65,26 @@ export class ContactComponent {
     },
   };
 
+  /**
+   * Toggles the checked state of the checkbox.
+   */
+  toggleCheckbox() {
+    this.isChecked = !this.isChecked;
+  }
+
+  /**
+   * Tracks the hover state of the checkbox.
+   * @param {boolean} isHovered - The hover state of the checkbox.
+   */
+  onHover(isHovered: boolean) {
+    this.checkboxHovered = isHovered;
+  }
+
+  /**
+   * Handles the form submission.
+   * If the form is valid, sends a POST request with the contact data.
+   * @param {NgForm} ngForm - The form to be submitted.
+   */
   onSubmit(ngForm: NgForm) {
     console.log('Form submitted:', ngForm.valid);
 
@@ -75,7 +94,7 @@ export class ContactComponent {
         .subscribe({
           next: (response) => {
             ngForm.resetForm();
-            // ein fenster mit einer message einblenden lassen?
+
             this.showMessage('Your message was sent successfully!');
           },
           error: (error) => {
@@ -83,17 +102,29 @@ export class ContactComponent {
             this.showMessage('An error occurred. Please try again.');
           },
           complete: () => console.info('send post complete'),
-          // oder hier ein fenster mit einer message einblenden lassen?
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       ngForm.resetForm();
     }
   }
 
+  /**
+   * Displays a message using a snack bar.
+   * @param {string} message - The message to display.
+   */
   showMessage(message: string) {
-    alert(message);
+    this.snackBar.open(message, 'Close', {
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+    });
   }
 
+  /**
+   * Handles the focus event for input fields.
+   * @param {string} field - The name of the field that received focus.
+   * @param {boolean} isFocused - Whether the field is focused.
+   */
   onFocus(field: string, isFocused: boolean) {
     if (field === 'name') {
       this.isFocusedName = isFocused;
@@ -104,6 +135,10 @@ export class ContactComponent {
     }
   }
 
+  /**
+   * Scrolls to the specified fragment on the page.
+   * @param {string} fragment - The ID of the fragment to scroll to.
+   */
   scrollToFragment(fragment: string): void {
     this.scrollService.scrollToFragment(fragment);
   }

@@ -3,14 +3,18 @@ import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
+/**
+ * ButtonContactComponent is a button component used for rendering a contact button.
+ * It includes two rows of button text, which can be translated using the ngx-translate library.
+ * The button's styling and behavior can be customized through input properties.
+ */
 @Component({
   selector: 'app-button-contact',
   imports: [CommonModule, TranslateModule, RouterModule],
-  // templateUrl: './button-contact.component.html',
   template: `
     <div class="btnFlexBox">
       <button
-        class="btnSelf contact.btn-valid fontOverpass disableTextSelection"
+        class="btnSelf contact.btn-valid primeFont disableTextSelection"
         [ngClass]="buttonClass"
         [disabled]="disabled"
         [routerLink]="routerLink"
@@ -21,14 +25,11 @@ import { TranslateModule } from '@ngx-translate/core';
     </div>
   `,
   styleUrls: [
-    './button-contact.component.scss', // Basic style and responsive.
-    './../../../shared/styles/button-contact.scss', // Change color and else.
+    './button-contact.component.scss',
+    './../../../shared/styles/button-contact.scss',
   ],
 })
 export class ButtonContactComponent {
-  /**
-   * buttenClass means to be import the current  [ngClass] sounds:  buttonClass.
-   */
   @Input() buttonClass: string = '';
   @Input() buttonTextRowOne: string = '';
   @Input() buttonTextRowTWO: string = '';
