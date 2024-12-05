@@ -1,12 +1,13 @@
 {
-  "name": "Portfolio",
+  "name": "portfolio",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "generate-docs": "jsdoc -c jsdoc.conf.json"
   },
   "private": true,
   "dependencies": {
@@ -32,6 +33,7 @@
     "@angular/compiler-cli": "^19.0.0",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.4.0",
+    "jsdoc": "^4.0.4",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",

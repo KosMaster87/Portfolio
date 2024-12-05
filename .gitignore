@@ -44,3 +44,4 @@ Thumbs.db
 # Costum
 backend/*
 .directory
+jsdoc.conf.json
