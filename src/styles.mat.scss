@@ -1,0 +1,35 @@
+@use '@angular/material' as mat;
+
+// Farben für dein Theme definieren
+$primary-palette: mat.define-palette(mat.$indigo-palette);
+$accent-palette: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$warn-palette: mat.define-palette(mat.$red-palette);
+
+// Das Material Design Theme definieren
+$my-theme: mat.define-light-theme((
+  color: (
+    primary: $primary-palette,
+    accent: $accent-palette,
+    warn: $warn-palette,
+  ),
+));
+
+// Das Theme anwenden
+@include mat.core();
+@include mat.all-component-themes($my-theme);
+
+
+// !
+// custom-theme:
+
+// $custom-primary: mat.define-palette(mat.$blue-palette, 500);
+// $custom-accent: mat.define-palette(mat.$orange-palette, A200);
+
+// $custom-theme: mat.define-light-theme((
+//   color: (
+//     primary: $custom-primary,
+//     accent: $custom-accent,
+//   ),
+// ));
+
+// @include mat.all-component-themes($custom-theme);

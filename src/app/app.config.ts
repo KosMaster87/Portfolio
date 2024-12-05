@@ -10,18 +10,20 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { createTranslateLoader } from './shared/services/translationLoader/translation-loader.service';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(
-      routes,
+      routes
       // withInMemoryScrolling({
       //   scrollPositionRestoration: 'top',
       //   anchorScrolling: 'enabled',
       // })
     ),
     provideAnimations(),
+    provideAnimationsAsync(), // Material test
     provideHttpClient(),
 
     importProvidersFrom(

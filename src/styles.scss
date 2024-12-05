@@ -1,6 +1,8 @@
 @use "./../public/assets/styles/syne";
 @use "./../public/assets/styles/overpass";
 
+@use './styles.mat.scss';
+
 :root {
   --padding-smaller: clamp(20px, 0.2rem, 10px);
   --padding-small: clamp(40px, 0.2rem, 10px);
@@ -71,6 +73,7 @@ body {
   -ms-user-select: none; /* Für Internet Explorer */
 }
 
+// ! das neu overflow testen
 .no-scroll {
   overflow: hidden;
 }
