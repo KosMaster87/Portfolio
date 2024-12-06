@@ -39,7 +39,10 @@
     "yourMessageRequired": "Your message is empty.",
     "checkBox01": "I've read the",
     "checkBox02": "privacy policy",
-    "checkBox03": "and agree to the processing of my data as outlined."
+    "checkBox03": "and agree to the processing of my data as outlined.",
+    "success-message": "Your message was sent successfully!",
+    "error-message": "An error occurred. Please try again."
+
   },
   "FOOTER": {
     "policy": "Privacy Policy & Legal Notice"

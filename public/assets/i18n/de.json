@@ -37,9 +37,11 @@
     "yourEmailFull": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
     "yourMessage": "Deine Nachricht",
     "yourMessageRequired": "Ihre Nachricht ist leer.",
-    "checkBox01": "Ich habe gelesen",
+    "checkBox01": "Ich habe die",
     "checkBox02": "Datenschutzrichtlinie",
-    "checkBox03": "und stimme der beschriebenen Verarbeitung meiner Daten zu."
+    "checkBox03": "gelesen und stimme der beschriebenen Verarbeitung meiner Daten zu.",
+    "success-message": "Ihre Nachricht wurde erfolgreich gesendet!",
+    "error-message": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
   },
   "FOOTER": {
     "policy": "Datenschutz und rechtliche Hinweise"

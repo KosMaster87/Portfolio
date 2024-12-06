@@ -33,10 +33,10 @@
             id="input_name"
             type="text"
             (focus)="onFocus('name', true)"
-            (blur)="onFocus('name', false)"
+            (blur)="onFocus('name', false); trimWhitespace('name')"
             placeholder=""
             autocomplete="off"
-            required
+            requiredc
             pattern="^[a-zA-Z]+ [a-zA-Z]+$"
             [(ngModel)]="contactData.name"
             #name="ngModel"
@@ -86,7 +86,7 @@
             id="input_email"
             type="text"
             (focus)="onFocus('email', true)"
-            (blur)="onFocus('email', false)"
+            (blur)="onFocus('email', false); trimWhitespace('email')"
             placeholder=""
             required
             autocomplete="off"

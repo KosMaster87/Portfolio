@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -37,13 +37,14 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
   ],
 })
 export class ContactComponent {
+  private translate: TranslateService = inject(TranslateService);
   private scrollService = inject(ScrollService);
   private snackBar: MatSnackBar = inject(MatSnackBar);
   buttonType: string = 'submit';
   isFocusedName = false;
   isFocusedEmail = false;
   isFocusedMessage = false;
-  mailTest = false;
+
   http = inject(HttpClient);
   isChecked = false;
   checkboxHovered = false;
@@ -86,25 +87,26 @@ export class ContactComponent {
    * @param {NgForm} ngForm - The form to be submitted.
    */
   onSubmit(ngForm: NgForm) {
-    console.log('Form submitted:', ngForm.valid);
-
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+    if (ngForm.submitted && ngForm.form.valid) {
       this.http
         .post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
             ngForm.resetForm();
-
-            this.showMessage('Your message was sent successfully!');
+            this.translate
+              .get('CONTACT.success-message')
+              .subscribe((message: string) => {
+                this.showMessage(message);
+              });
           },
           error: (error) => {
-            console.error(error);
-            this.showMessage('An error occurred. Please try again.');
+            this.translate
+              .get('CONTACT.error-message')
+              .subscribe((message: string) => {
+                this.showMessage(message);
+              });
           },
-          complete: () => console.info('send post complete'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      ngForm.resetForm();
     }
   }
 
@@ -113,7 +115,7 @@ export class ContactComponent {
    * @param {string} message - The message to display.
    */
   showMessage(message: string) {
-    this.snackBar.open(message, 'Close', {
+    this.snackBar.open(message, '', {
       duration: 3000,
       horizontalPosition: 'center',
       verticalPosition: 'top',
@@ -132,6 +134,21 @@ export class ContactComponent {
       this.isFocusedEmail = isFocused;
     } else if (field === 'message') {
       this.isFocusedMessage = isFocused;
+    }
+  }
+
+  /**
+   * Trims the leading and trailing whitespace from the specified field (name or email).
+   * This method is intended to be called when the input field loses focus.
+   *
+   * @param {string} field - The name of the field to trim. It can either be 'name' or 'email'.
+   * @returns {void} - This method does not return anything.
+   */
+  trimWhitespace(field: string): void {
+    if (field === 'name') {
+      this.contactData.name = this.contactData.name.trim();
+    } else if (field === 'email') {
+      this.contactData.email = this.contactData.email.trim();
     }
   }
 

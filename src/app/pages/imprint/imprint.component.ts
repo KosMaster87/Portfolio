@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { SharedModule } from './../../future-modul/shared.module';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-imprint',
@@ -12,4 +12,15 @@ import { TranslateModule } from '@ngx-translate/core';
     './../../shared/styles/highlighting.scss',
   ],
 })
-export class ImprintComponent {}
+export class ImprintComponent {
+  private route: ActivatedRoute = inject(ActivatedRoute);
+
+  ngOnInit(): void {
+    this.route.fragment.subscribe((fragment) => {
+      const element = document.getElementById(fragment || '');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+}
