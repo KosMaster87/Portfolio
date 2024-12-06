@@ -33,18 +33,18 @@
             id="input_name"
             type="text"
             (focus)="onFocus('name', true)"
-            (blur)="onFocus('name', false); trimWhitespace('name')"
+            (blur)="onFocus('name', false); trimWhitespace('name', name)"
             placeholder=""
             autocomplete="off"
-            requiredc
-            pattern="^[a-zA-Z]+ [a-zA-Z]+$"
+            required
+            pattern="^[a-zA-ZäöüÄÖÜß]+([-' ][a-zA-ZäöüÄÖÜß]+)*$"
             [(ngModel)]="contactData.name"
             #name="ngModel"
             name="name"
             [ngClass]="{
-      'borderValid': name.valid && name.touched,
-      'borderInvalid': name.invalid && name.touched,
-    }"
+              borderValid: name.valid && name.touched,
+              borderInvalid: name.invalid && name.touched
+            }"
           />
 
           <div class="validateIconsWrapper">
@@ -84,9 +84,9 @@
           <input
             class="input_email primeFont disableTextSelection"
             id="input_email"
-            type="text"
+            type="email"
             (focus)="onFocus('email', true)"
-            (blur)="onFocus('email', false); trimWhitespace('email')"
+            (blur)="onFocus('email', false); trimWhitespace('email', email)"
             placeholder=""
             required
             autocomplete="off"
@@ -95,9 +95,9 @@
             name="email"
             pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
             [ngClass]="{
-          'borderValid': email.valid && email.touched,
-          'borderInvalid': email.invalid && email.touched,
-        }"
+              borderValid: email.valid && email.touched,
+              borderInvalid: email.invalid && email.touched
+            }"
           />
 
           <div class="validateIconsWrapper">
@@ -147,9 +147,9 @@
             name="message"
             #message="ngModel"
             [ngClass]="{
-          'borderValid': message.valid && message.touched,
-          'borderInvalid': message.invalid && message.touched,
-        }"
+              borderValid: message.valid && message.touched,
+              borderInvalid: message.invalid && message.touched
+            }"
           >
           </textarea>
 
@@ -190,7 +190,6 @@
                 "
                 alt="Checkbox as image."
                 class="checkboxIcon"
-                c
                 (mouseover)="onHover(true)"
                 (mouseout)="onHover(false)"
                 (click)="toggleCheckbox()"

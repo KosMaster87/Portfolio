@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
@@ -144,12 +144,13 @@ export class ContactComponent {
    * @param {string} field - The name of the field to trim. It can either be 'name' or 'email'.
    * @returns {void} - This method does not return anything.
    */
-  trimWhitespace(field: string): void {
+  trimWhitespace(field: string, control: NgModel): void {
     if (field === 'name') {
       this.contactData.name = this.contactData.name.trim();
     } else if (field === 'email') {
       this.contactData.email = this.contactData.email.trim();
     }
+    control.control.updateValueAndValidity();
   }
 
   /**
