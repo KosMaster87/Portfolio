@@ -42,7 +42,6 @@
     "checkBox03": "and agree to the processing of my data as outlined.",
     "success-message": "Your message was sent successfully!",
     "error-message": "An error occurred. Please try again."
-
   },
   "FOOTER": {
     "policy": "Privacy Policy & Legal Notice"
@@ -173,5 +172,10 @@
     "x-008": "Created with free",
     "x-009": "Datenschutz-Generator.de",
     "x-010": "from"
+  },
+  "FAKEPAGE": {
+    "headline": "404 - Page not found",
+    "para": "The page you are looking for does not exist.",
+    "link": "Back to pages"
   }
 }

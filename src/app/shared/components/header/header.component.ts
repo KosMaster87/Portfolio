@@ -20,6 +20,7 @@ export class HeaderComponent {
   @Output() languageChanged = new EventEmitter<string>();
   currentLanguage: string = 'de';
   isOnHomePage: boolean = false;
+  inOnImprint: boolean = false;
 
   private scrollService = inject(ScrollService);
   private router: Router = inject(Router);
@@ -33,6 +34,7 @@ export class HeaderComponent {
       if (event instanceof NavigationEnd) {
         const basePath = event.urlAfterRedirects.split('#')[0].split('?')[0];
         this.isOnHomePage = basePath === '/' || basePath === '/home';
+        this.inOnImprint = basePath === '/imprint';
       }
     });
   }

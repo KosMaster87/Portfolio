@@ -22,7 +22,7 @@
     "join-alt": "Bild vom Projekt: Join.",
 
     "loco-projectName": "El Pollo Loco",
-    "loco-description": "Jump-and-Run-Spiel: Ein Spiel, das mit objektorientierter Programmierung entwickelt wurde. besiege Gegner auf dem weg zum Endboss und sammle dabei Gegenstände.",
+    "loco-description": "Jump-and-Run-Spiel: Ein Spiel, das mit objektorientierter Programmierung entwickelt wurde. Besiege Gegner auf dem weg zum Endboss und sammle dabei Gegenstände.",
     "loco-alt": "Bild vom Projekt: El Pollo Loco."
   },
   "CONTACT": {
@@ -171,5 +171,10 @@
     "x-008": "Erstellt mit kostenlosem",
     "x-009": "Datenschutz-Generator.de",
     "x-010": "von"
+  },
+  "FAKEPAGE": {
+    "headline": "404 - Seite nicht gefunden",
+    "para": "Die Seite, die Sie suchen, existiert nicht.",
+    "link": "Zurück zur Seite"
   }
 }

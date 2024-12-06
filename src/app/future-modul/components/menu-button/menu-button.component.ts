@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 /**
  * Component that represents a menu button.
@@ -15,6 +16,7 @@ import { Component, Input } from '@angular/core';
 export class MenuButtonComponent {
   @Input() btnName!: string;
   @Input() sectionId!: string;
+  private router: Router = inject(Router);
   isBtnClicked: boolean = false;
 
   /**
@@ -26,6 +28,8 @@ export class MenuButtonComponent {
    */
   clickedBtn() {
     this.isBtnClicked = true;
+
+    this.router.navigate(['/'], { fragment: this.sectionId });
 
     setTimeout(() => {
       this.isBtnClicked = false;

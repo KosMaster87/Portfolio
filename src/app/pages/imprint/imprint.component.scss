@@ -19,6 +19,11 @@ section {
     " . privacyLegalWrapper . ";
 }
 
+@media screen and (max-width: 350px) {
+  * {
+    font-size: smaller;
+  }
+}
 @media screen and (max-width: 1024px) {
   .greeting {
     font-size: clamp(1rem, 2.5vw + 0.5rem, 2.25rem);
@@ -140,7 +145,7 @@ section {
     color: var(--primeColor-dark);
     text-align: center;
     white-space: nowrap;
-    font-size: clamp(1.5rem, 2vw + 1rem, 2.25rem);
+    font-size: clamp(1.5rem, 1.8vw + 1rem, 2.25rem);
   }
 
   .cardSection {
