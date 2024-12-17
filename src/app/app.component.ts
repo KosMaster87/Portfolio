@@ -30,8 +30,6 @@ export class AppComponent {
   /**
    * Sets the default language for the application to German (`'de'`).
    * This is called during the initialization of the component.
-   *
-   * @private
    */
   private setDefaultLanguage() {
     this.translateService.setDefaultLang('de');
