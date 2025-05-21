@@ -6,7 +6,7 @@ This is my personal developer portfolio, built as a fully responsive Single Page
 
 ## 🚀 Live Demo
 
-🔗 [https://your-domain.com]([https://your-domain.com](https://portfolio.dev2k.org/))
+🔗 [[https://your-domain.com](https://portfolio.dev2k.org/)]([https://your-domain.com](https://portfolio.dev2k.org/))
 
 ---
 
