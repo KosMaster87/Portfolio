@@ -51,4 +51,6 @@ portfolio/
 ├── tsconfig.json                  # TypeScript configuration
 └── README.md                      # Project documentation
 
+---
+
 
