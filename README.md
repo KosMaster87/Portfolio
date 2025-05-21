@@ -6,13 +6,13 @@ This is my personal developer portfolio, built as a fully responsive Single Page
 
 ## 🚀 Live Demo
 
-🔗 🔗 [Live Demo – portfolio.dev2k.org](https://portfolio.dev2k.org)
+🔗 [Live Demo – portfolio.dev2k.org](https://portfolio.dev2k.org)
 
 ---
 
 ## 📸 Preview
 
-![Portfolio Screenshot](./src/assets/img/preview.png)
+![Portfolio Screenshot](./public/media/preview-portfolio.png)
 
 ---
 
