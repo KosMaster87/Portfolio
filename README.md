@@ -50,7 +50,10 @@ portfolio/
 ├── package.json                   # Project metadata and dependencies
 ├── tsconfig.json                  # TypeScript configuration
 └── README.md                      # Project documentation
+```
 
 ---
+
+## 📁 Next Stuff
 
 
