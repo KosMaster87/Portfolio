@@ -46,9 +46,9 @@ portfolio/
 │   ├── index.html                 # App entry point
 │   ├── main.ts                    # Application bootstrap
 │   └── styles.scss                # Global SCSS styles
-├── angular.json                  # Angular project configuration
-├── package.json                  # Project metadata and dependencies
-├── tsconfig.json                 # TypeScript configuration
-└── README.md                     # Project documentation
+├── angular.json                   # Angular project configuration
+├── package.json                   # Project metadata and dependencies
+├── tsconfig.json                  # TypeScript configuration
+└── README.md                      # Project documentation
 
 
