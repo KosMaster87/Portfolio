@@ -31,3 +31,24 @@ This is my personal developer portfolio, built as a fully responsive Single Page
 
 ## 📁 Folder Structure
 
+```text
+portfolio/
+├── src/
+│   ├── app/
+│   │   ├── components/            # Reusable components (e.g., header, footer, buttons)
+│   │   ├── pages/                 # Page components (e.g., home, about, projects)
+│   │   ├── services/              # Shared services (e.g., data fetching)
+│   │   ├── models/                # TypeScript interfaces and models
+│   │   ├── app.module.ts          # Main Angular module
+│   │   └── app-routing.module.ts  # Routing definitions
+│   ├── assets/                    # Static assets (images, icons, etc.)
+│   ├── environments/              # Environment configs
+│   ├── index.html                 # App entry point
+│   ├── main.ts                    # Application bootstrap
+│   └── styles.scss                # Global SCSS styles
+├── angular.json                  # Angular project configuration
+├── package.json                  # Project metadata and dependencies
+├── tsconfig.json                 # TypeScript configuration
+└── README.md                     # Project documentation
+
+
