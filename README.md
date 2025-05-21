@@ -1,59 +1,33 @@
-# SelfPage
+# 🌐 Personal Portfolio – Angular SPA
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
+This is my personal developer portfolio, built as a fully responsive Single Page Application using **Angular**, **TypeScript**, and **SCSS**. The goal is to present my skills, projects, and experience in a clean, user-friendly, and professional way – optimized for recruiters and hiring managers.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Live Demo
 
-```bash
-ng serve
-```
+🔗 [https://your-domain.com](https://your-domain.com)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 📸 Preview
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+![Portfolio Screenshot](./src/assets/img/preview.png)
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🛠️ Technologies Used
 
-```bash
-ng generate --help
-```
+- **Angular** (vXX) – SPA Framework
+- **TypeScript** – Strong typing and maintainability
+- **SCSS** – Structured styling
+- **HTML5 / CSS3** – Semantic and responsive design
+- **Angular Router** – Navigation between sections
+- **Responsive Design** – Mobile-first approach
+- **GitHub Pages / Netlify / Vercel** – Hosting
+- **Figma** – Design Prototypes
 
-## Building
+---
 
-To build the project run:
+## 📁 Folder Structure
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
