@@ -1,0 +1,76 @@
+/* lexend-100 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 100;
+  src: url('/assets/fonts/lexend/lexend-v25-latin-100.woff2') format('woff2');
+}
+/* lexend-200 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 200;
+  src: url('/assets/fonts/lexend/lexend-v25-latin-200.woff2') format('woff2');
+}
+/* lexend-300 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/assets/fonts/lexend/lexend-v25-latin-300.woff2') format('woff2');
+}
+/* lexend-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/lexend/lexend-v25-latin-regular.woff2') format('woff2');
+}
+/* lexend-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/assets/fonts/lexend/lexend-v25-latin-500.woff2') format('woff2');
+}
+/* lexend-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/assets/fonts/lexend/lexend-v25-latin-600.woff2') format('woff2');
+}
+/* lexend-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/lexend/lexend-v25-latin-700.woff2') format('woff2');
+}
+/* lexend-800 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 800;
+  src: url('/assets/fonts/lexend/lexend-v25-latin-800.woff2') format('woff2');
+}
+/* lexend-900 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 900;
+  src: url('/assets/fonts/lexend/lexend-v25-latin-900.woff2') format('woff2');
+}
+
+.primeFont, .secondFont {
+  font-family: "Lexend";
+}

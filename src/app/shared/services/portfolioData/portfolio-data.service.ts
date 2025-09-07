@@ -3,7 +3,7 @@ import { Project } from '../../../models/project/project';
 
 /**
  * Service to provide portfolio-related data, including project details and references.
- * 
+ *
  * This service centralizes static data for portfolio components, making it easily reusable
  * across the application.
  */
@@ -12,6 +12,15 @@ import { Project } from '../../../models/project/project';
 })
 export class PortfolioDataService {
   projects: Project[] = [
+    {
+      projectName: 'PROJECTS.super-rando-projectName',
+      description: 'PROJECTS.super-rando-description',
+      alt: 'PROJECTS.super-rando-alt',
+      img: 'assets/images/projects/Super~Rando.avif',
+      linkToPage: 'https://super-rando.dev2k.org/',
+      linkToGit: 'https://github.com/KosMaster87/Super-Rando',
+      headline: 'Javascript | CSS | HTML | PHP',
+    },
     {
       projectName: 'PROJECTS.join-projectName',
       description: 'PROJECTS.join-description',
