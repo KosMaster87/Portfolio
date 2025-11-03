@@ -45,16 +45,40 @@
 .wordPress.hover-effect {
   animation: glow-wordpress 1s forwards;
 }
+.nodejs.hover-effect {
+  animation: glow-nodejs 1s forwards;
+}
+.expressjs.hover-effect {
+  animation: glow-expressjs 1s forwards;
+}
+.docker.hover-effect {
+  animation: glow-docker 1s forwards;
+}
+.linux.hover-effect {
+  animation: glow-linux 1s forwards;
+}
+.bash.hover-effect {
+  animation: glow-bash 1s forwards;
+}
+.github.hover-effect {
+  animation: glow-github 1s forwards;
+}
+.githubcopilot.hover-effect {
+  animation: glow-githubcopilot 1s forwards;
+}
+.php.hover-effect {
+  animation: glow-php 1s forwards;
+}
 
 @keyframes glow-angular {
   0% {
-    filter: drop-shadow(0 0 5px rgba(0, 255, 0, 0.5));
+    filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.5));
   }
   50% {
-    filter: drop-shadow(0 0 15px rgba(0, 255, 0, 0.8));
+    filter: drop-shadow(0 0 15px rgba(255, 87, 34, 0.8));
   }
   100% {
-    filter: drop-shadow(0 0 5px rgba(0, 255, 0, 0.5));
+    filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.5));
   }
 }
 
@@ -175,5 +199,101 @@
   }
   100% {
     filter: drop-shadow(0 0 5px rgba(0, 51, 102, 0.5));
+  }
+}
+
+@keyframes glow-nodejs {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(88, 166, 58, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(88, 166, 58, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(88, 166, 58, 0.5));
+  }
+}
+
+@keyframes glow-expressjs {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(88, 166, 58, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(88, 166, 58, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(88, 166, 58, 0.5));
+  }
+}
+
+@keyframes glow-docker {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(29, 136, 212, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(29, 136, 212, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(29, 136, 212, 0.5));
+  }
+}
+
+@keyframes glow-linux {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(238, 205, 55, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(238, 205, 55, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(238, 205, 55, 0.5));
+  }
+}
+
+@keyframes glow-bash {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(76, 175, 80, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(76, 175, 80, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(76, 175, 80, 0.5));
+  }
+}
+
+@keyframes glow-github {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(244, 43, 43, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(244, 43, 43, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(244, 43, 43, 0.5));
+  }
+}
+
+@keyframes glow-githubcopilot {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(244, 43, 43, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(244, 43, 43, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(244, 43, 43, 0.5));
+  }
+}
+
+@keyframes glow-php {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(120, 133, 194, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(120, 133, 194, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(120, 133, 194, 0.5));
   }
 }

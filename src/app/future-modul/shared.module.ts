@@ -25,6 +25,8 @@ import { ButtonContactComponent } from './components/button-contact/button-conta
     CallActionButtonComponent,
     ToUpperCase,
     IconHoverDirective,
+    NoScrollDirective,
+    MenuButtonComponent,
   ],
 })
 export class SharedModule {}
