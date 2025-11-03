@@ -17,17 +17,21 @@
     "description": "Entdecken Sie hier eine Auswahl meiner Arbeiten - Interagieren Sie mit den Projekten, um meine Fähigkeiten in Aktion zu sehen."
   },
   "PROJECTS": {
-    "super-rando-projectName": "Super~Rando",
-    "super-rando-description": "Eine moderne, mobile Web-App, erstellt mit Vanilla JavaScript, CSS und PHP. Das Projekt demonstriert professionelle Frontend-Architektur und Best Practices – ohne auf externe Frameworks angewiesen zu sein.",
-    "super-rando-alt": "Bild vom Projekt: Super~Rando.",
+    "loco-projectName": "El Pollo Loco",
+    "loco-description": "Jump-and-Run-Spiel: Ein Spiel, das mit objektorientierter Programmierung entwickelt wurde. Besiege Gegner auf dem weg zum Endboss und sammle dabei Gegenstände.",
+    "loco-alt": "Bild vom Projekt: El Pollo Loco.",
 
     "join-projectName": "Join",
     "join-description": "Aufgabenmanager, inspiriert vom Kanban-System. Erstellen und Organisieren von Aufgaben mit Drag-and-Drop-Funktionen, Benutzer und Kategorien zuweisen.",
     "join-alt": "Bild vom Projekt: Join.",
 
-    "loco-projectName": "El Pollo Loco",
-    "loco-description": "Jump-and-Run-Spiel: Ein Spiel, das mit objektorientierter Programmierung entwickelt wurde. Besiege Gegner auf dem weg zum Endboss und sammle dabei Gegenstände.",
-    "loco-alt": "Bild vom Projekt: El Pollo Loco."
+    "super-rando-projectName": "Super~Rando",
+    "super-rando-description": "Eine moderne, mobile Web-App, erstellt mit Vanilla JavaScript, CSS und PHP. Das Projekt demonstriert professionelle Frontend-Architektur und Best Practices – ohne auf externe Frameworks angewiesen zu sein.",
+    "super-rando-alt": "Bild vom Projekt: Super~Rando.",
+
+    "lets-todo-projectName": "Let's Todo",
+    "lets-todo-description": "Eine moderne, vollständige Todo-Management-Lösung mit separater Frontend- und Backend-Architektur. Vanilla JavaScript Frontend kommuniziert mit Node.js Express API, inklusive Multi-Umgebungs-Deployment und umfassender Dokumentation.",
+    "lets-todo-alt": "Bild vom Projekt: Let's Todo - Complete Project Suite."
   },
   "CONTACT": {
     "say": "Sag hi!",

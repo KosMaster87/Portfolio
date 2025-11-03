@@ -17,17 +17,21 @@
     "description": "Explore a selection of my work here - Interact with projects to see my skills in action."
   },
   "PROJECTS": {
-    "super-rando-projectName": "Super~Rando",
-    "super-rando-description": "A modern, mobile web app built with Vanilla JavaScript, CSS, and PHP. The project showcases professional frontend architecture and best practices - without relying on external frameworks.",
-    "super-rando-alt": "Image of project: Super~Rando.",
+    "loco-projectName": "El Pollo Loco",
+    "loco-description": "Jump-and-Run game: A game developed using object-oriented programming. Defeat enemies on the way to the final boss and collect items along the way.",
+    "loco-alt": "Image of project: El Pollo Loco.",
 
     "join-projectName": "Join",
     "join-description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
     "join-alt": "Image of project: Join.",
 
-    "loco-projectName": "El Pollo Loco",
-    "loco-description": "Jump-and-Run game: A game developed using object-oriented programming. Defeat enemies on the way to the final boss and collect items along the way.",
-    "loco-alt": "Image of project: El Pollo Loco."
+    "super-rando-projectName": "Super~Rando",
+    "super-rando-description": "A modern, mobile web app built with Vanilla JavaScript, CSS, and PHP. The project showcases professional frontend architecture and best practices - without relying on external frameworks.",
+    "super-rando-alt": "Image of project: Super~Rando.",
+
+    "lets-todo-projectName": "Let's Todo",
+    "lets-todo-description": "A modern, complete todo management solution with separate frontend and backend architecture. Vanilla JavaScript frontend communicates with Node.js Express API, including multi-environment deployment and comprehensive documentation.",
+    "lets-todo-alt": "Image of project: Let's Todo - Complete Project Suite."
   },
   "CONTACT": {
     "say": "Say hi!",

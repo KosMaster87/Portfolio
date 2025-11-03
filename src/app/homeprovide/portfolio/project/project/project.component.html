@@ -49,12 +49,23 @@ idle) {
             >
               Live test
             </button>
+
+            @if (isArrayOfLinks(project.linkToGit)) { @for (link of
+            project.linkToGit; track $index) {
             <button
               class="primeFont disableTextSelection"
-              (click)="openLink(project.linkToGit)"
+              (click)="openLink(link)"
+            >
+              {{ getGitHubButtonLabel($index) }}
+            </button>
+            } } @else {
+            <button
+              class="primeFont disableTextSelection"
+              (click)="openSingleGitHubLink(project.linkToGit)"
             >
               GitHub
             </button>
+            }
           </div>
         </div>
       </div>

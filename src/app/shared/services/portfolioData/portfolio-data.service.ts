@@ -13,6 +13,18 @@ import { Project } from '../../../models/project/project';
 export class PortfolioDataService {
   projects: Project[] = [
     {
+      projectName: 'PROJECTS.lets-todo-projectName',
+      description: 'PROJECTS.lets-todo-description',
+      alt: 'PROJECTS.lets-todo-alt',
+      img: 'assets/images/projects/lets-todo.avif',
+      linkToPage: 'https://lets-todo.dev2k.org/',
+      linkToGit: [
+        'https://github.com/KosMaster87/lets-todo-app',
+        'https://github.com/KosMaster87/lets-todo-api',
+      ],
+      headline: 'Vanilla JS | PHP | Node.js | Express | MariaDB',
+    },
+    {
       projectName: 'PROJECTS.super-rando-projectName',
       description: 'PROJECTS.super-rando-description',
       alt: 'PROJECTS.super-rando-alt',

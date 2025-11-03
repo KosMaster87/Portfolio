@@ -78,6 +78,39 @@ export class ProjectComponent implements AfterViewInit {
   }
 
   /**
+   * Checks if the linkToGit property is an array of strings.
+   *
+   * @param {string | string[]} linkToGit - The linkToGit property from project.
+   * @returns {boolean} - True if linkToGit is an array, false otherwise.
+   */
+  isArrayOfLinks(linkToGit: string | string[]): linkToGit is string[] {
+    return Array.isArray(linkToGit);
+  }
+
+  /**
+   * Gets the appropriate button label for GitHub links based on index.
+   *
+   * @param {number} index - The index of the GitHub link in the array.
+   * @returns {string} - The label for the GitHub button.
+   */
+  getGitHubButtonLabel(index: number): string {
+    const labels = ['Frontend', 'Backend', 'GitHub'];
+    return labels[index] || `GitHub ${index + 1}`;
+  }
+
+  /**
+   * Opens a single GitHub link when linkToGit is a string.
+   * Fallback for cases where only one link is provided.
+   *
+   * @param {string | string[]} linkToGit - The linkToGit property from project.
+   */
+  openSingleGitHubLink(linkToGit: string | string[]): void {
+    if (typeof linkToGit === 'string') {
+      this.openLink(linkToGit);
+    }
+  }
+
+  /**
    * ngAfterViewInit lifecycle hook to initialize the IntersectionObserver for detecting
    * the visibility of the project in the viewport.
    *
