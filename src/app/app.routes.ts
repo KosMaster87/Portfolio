@@ -4,13 +4,11 @@ import { ImprintComponent } from './pages/imprint/imprint.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
-  { path: 'home', redirectTo: '', pathMatch: 'full', },
+  { path: 'home', redirectTo: '', pathMatch: 'full' },
   { path: '', component: HomeprovideComponent },
 
   { path: 'imprint', component: ImprintComponent },
   { path: '**', redirectTo: 'fakePage', pathMatch: 'full' },
 
-  { path: 'fakePage', component: NotFoundComponent,
-  },
+  { path: 'fakePage', component: NotFoundComponent },
 ];
-export class AppRoutingModule {}
