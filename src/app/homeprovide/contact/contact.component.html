@@ -1,3 +1,13 @@
+<div
+  class="notification"
+  [class.show]="showNotification"
+  [class.success]="notificationType === 'success'"
+  [class.error]="notificationType === 'error'"
+>
+  <span>{{ notificationMessage }}</span>
+  <button class="close-btn" (click)="hideNotification()">&times;</button>
+</div>
+
 <div class="linearGradient" id="linearGradient"></div>
 <div class="ultraWide">
   <section id="contact_component">

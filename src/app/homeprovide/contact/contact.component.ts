@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from './../../future-modul/shared.module';
 import { ScrollService } from './../../shared/services/scroll/scroll.service';
 import { ScrollToTopComponent } from './../../future-modul/components/scroll-to-fragment-top/scroll-to-top.component';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 /**
  * ContactComponent handles the contact form functionality.
@@ -28,7 +27,6 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
     CommonModule,
     RouterModule,
     ScrollToTopComponent,
-    MatSnackBarModule,
   ],
   templateUrl: './contact.component.html',
   styleUrls: [
@@ -39,11 +37,16 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 export class ContactComponent {
   private translate: TranslateService = inject(TranslateService);
   private scrollService = inject(ScrollService);
-  private snackBar: MatSnackBar = inject(MatSnackBar);
+
   buttonType: string = 'submit';
   isFocusedName = false;
   isFocusedEmail = false;
   isFocusedMessage = false;
+
+  // Eigene Notification-Properties
+  showNotification = false;
+  notificationMessage = '';
+  notificationType: 'success' | 'error' = 'success';
 
   http = inject(HttpClient);
   isChecked = false;
@@ -96,14 +99,14 @@ export class ContactComponent {
             this.translate
               .get('CONTACT.success-message')
               .subscribe((message: string) => {
-                this.showMessage(message);
+                this.showMessage(message, 'success');
               });
           },
           error: (error) => {
             this.translate
               .get('CONTACT.error-message')
               .subscribe((message: string) => {
-                this.showMessage(message);
+                this.showMessage(message, 'error');
               });
           },
         });
@@ -111,15 +114,26 @@ export class ContactComponent {
   }
 
   /**
-   * Displays a message using a snack bar.
+   * Displays a custom notification message.
    * @param {string} message - The message to display.
+   * @param {'success' | 'error'} type - The type of notification.
    */
-  showMessage(message: string) {
-    this.snackBar.open(message, '', {
-      duration: 3000,
-      horizontalPosition: 'center',
-      verticalPosition: 'top',
-    });
+  showMessage(message: string, type: 'success' | 'error' = 'success') {
+    this.notificationMessage = message;
+    this.notificationType = type;
+    this.showNotification = true;
+
+    // Auto-hide nach 3 Sekunden
+    setTimeout(() => {
+      this.hideNotification();
+    }, 3000);
+  }
+
+  /**
+   * Hides the notification.
+   */
+  hideNotification() {
+    this.showNotification = false;
   }
 
   /**

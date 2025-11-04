@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/components/header/header.component';
@@ -15,8 +15,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'selfPage';
+export class AppComponent implements OnInit {
+  protected readonly title = signal('selfPage');
   private translateService = inject(TranslateService);
   private route = inject(ActivatedRoute);
 

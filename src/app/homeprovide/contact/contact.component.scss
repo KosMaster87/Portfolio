@@ -308,7 +308,7 @@ input {
 
 .checkboxText {
   max-width: 50ch;
-  }
+}
 
 .checkboxHidden {
   display: none;
@@ -391,7 +391,7 @@ app-call-action-button {
   .checkboxText {
     font-size: 0.65rem;
     max-width: 50ch;
-    }
+  }
 }
 
 @media screen and (max-width: 720px) and (orientation: portrait) {
@@ -423,5 +423,52 @@ app-call-action-button {
       var(--primeColor-dark) 50%,
       var(--primeColor-background) 50%
     );
+  }
+}
+
+/* Custom Notification Styles */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateX(400px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  max-width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &.show {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  &.success {
+    background: linear-gradient(135deg, #4caf50, #45a049);
+  }
+
+  &.error {
+    background: linear-gradient(135deg, #f44336, #d32f2f);
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
