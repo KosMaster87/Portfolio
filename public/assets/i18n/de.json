@@ -9,8 +9,9 @@
     "contact": "Kontakt"
   },
   "ABOUT": {
-    "talk-01": "Hallo, ich bin ein deutschsprachiger Frontend-Entwickler, der in Loma Plata, Paraguay, lebt. Getrieben von den unendlichen Möglichkeiten in der IT-Welt bin ich leidenschaftlich daran interessiert, optisch ansprechende und benutzerfreundliche Webseiten und Anwendungen zu erstellen.",
-    "talk-02": "Ich kann effektiv aus Paraguay remote arbeiten und habe den Vorteil, dank der Zeitverschiebung auch während der späten Nachtstunden für Arbeiten im deutschsprachigen Raum verfügbar zu sein."
+    "talk-01": "Hallo, ich bin Konstantin - ein Full-Stack Developer mit Basis in Paraguay. Meine Leidenschaft gilt der Entwicklung skalierbarer Webanwendungen, von der Benutzeroberfläche bis zur Server-Infrastruktur.",
+    "talk-02": "Mit Expertise in JavaScript, Angular und Node.js baue ich nicht nur ansprechende Frontends, sondern auch robuste Backend-Systeme und DevOps-Lösungen.",
+    "talk-03": "Als remote Entwickler mit europäischer Mentalität biete ich flexible Verfügbarkeit und profitiere von der Zeitverschiebung für eine erweiterte Erreichbarkeit im deutschsprachigen Raum."
   },
   "PORTFOLIO": {
     "title": "Portfolio",

@@ -5,14 +5,14 @@ node_modules/
 package-lock.json
 
 # Development
-dev-server.js
+# dev-server.js
 
 # Environment files
-.env
-.env.local
-.env.development
-.env.test
-.env.production
+config/env/.env
+config/env/.env.development
+config/env/.env.feature
+config/env/.env.staging
+config/env/.env.production
 
 # IDE/Editor
 .vscode/
@@ -59,7 +59,12 @@ privateKey.pem
 certificate.pem
 
 # Apache
-.htaccess
+# .htaccess
+
+# PHP files with sensitive data
+public/api/contact/contact.php
+public/api/contact/rate_limit.json
+public/api/contact/contact_logs.txt
 
 # Cache
 /.angular/cache
@@ -70,9 +75,6 @@ certificate.pem
 /libpeerconnection.log
 testem.log
 /typings
-
-# Copilot
-copilot-instructions.md
 
 # Documentation
 docs/

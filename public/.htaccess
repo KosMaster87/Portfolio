@@ -1,0 +1,72 @@
+# ------------------------------------------------------
+# 🔁 Apache Configuration for Angular SPA
+# ------------------------------------------------------
+RewriteEngine On
+
+# ------------------------------------------------------
+# � Force HTTPS
+# ------------------------------------------------------
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ------------------------------------------------------
+# 🛡️ API Routes Protection - Don't redirect to index.html
+# ------------------------------------------------------
+RewriteCond %{REQUEST_URI} ^/api/
+RewriteRule . - [L]
+
+# ------------------------------------------------------
+# ⚙️ SPA Routing - Angular Router Fallback
+# ------------------------------------------------------
+# If the requested file or directory doesn't exist,
+# and it's not an API call, redirect to index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/api/
+RewriteRule . /index.html [L]
+
+# ------------------------------------------------------
+# 🚀 Cache Static Assets
+# ------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/json "access plus 0 seconds"
+</IfModule>
+
+# ------------------------------------------------------
+# 🔐 Security Headers
+# ------------------------------------------------------
+<IfModule mod_headers.c>
+    # Prevent MIME type sniffing
+    Header always set X-Content-Type-Options nosniff
+
+    # Prevent clickjacking
+    Header always set X-Frame-Options DENY
+
+    # XSS Protection
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # HSTS - Force HTTPS for 1 year
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+    # Remove Server signature
+    Header unset Server
+</IfModule>
+
+# ------------------------------------------------------
+# 🐘 PHP Configuration (Production)
+# ------------------------------------------------------
+<IfModule mod_php.c>
+    php_flag display_errors Off
+    php_flag log_errors On
+    php_value error_log /tmp/php_errors.log
+</IfModule>

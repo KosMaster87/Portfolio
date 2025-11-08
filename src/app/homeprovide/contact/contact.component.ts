@@ -59,11 +59,11 @@ export class ContactComponent {
   };
 
   post = {
-    endPoint: 'https://portfolio.dev2k.org/contact/sendMail.php',
+    endPoint: 'https://portfolio.dev2k.org/api/contact/contact.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
-        'Content-Type': 'text/plain',
+        'Content-Type': 'application/json',
         responseType: 'text',
       },
     },

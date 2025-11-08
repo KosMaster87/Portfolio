@@ -9,8 +9,9 @@
     "contact": "Contact"
   },
   "ABOUT": {
-    "talk-01": "Hello, I am a German-speaking frontend developer living in Loma Plata, Paraguay. Driven by the endless possibilities in the IT world, I am passionate about creating visually appealing and user-friendly websites and applications.",
-    "talk-02": "I can work effectively remote from Paraguay and have the advantage of being available for work in the German-speaking region even during late night hours, thanks to the different time zones."
+    "talk-01": "Hello, I'm Konstantin - a Full-Stack Developer based in Paraguay, passionate about building scalable web applications from user interface to server infrastructure.",
+    "talk-02": "With strong expertise in JavaScript, Angular, and Node.js, I specialize in creating both engaging frontends and robust backend systems with DevOps solutions.",
+    "talk-03": "Working remotely with a European work mentality, I offer flexible availability and leverage the time difference to provide extended coverage for German-speaking markets."
   },
   "PORTFOLIO": {
     "title": "Portfolio",
