@@ -369,7 +369,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Konstantin Aksenov**
 
 - 🌐 Portfolio: [portfolio.dev2k.org](https://portfolio.dev2k.org)
-- 💼 LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+- 💼 LinkedIn: [LinkedIn](https://www.linkedin.com/in/konstantin-aksenov-802b88190/)
 - 🐙 GitHub: [@KosMaster87](https://github.com/KosMaster87)
 - 📧 Email: konstantin.aksenov@dev2k.org
 
