@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Header component.
+ * @description Manages the header section of the application, including language switching and navigation.
+ * @module app/shared/components/header
+ */
+
 import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { ScrollService } from './../../services/scroll/scroll.service';

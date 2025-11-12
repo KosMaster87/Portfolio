@@ -1,3 +1,10 @@
+/**
+ * @fileoverview NoScroll Directive.
+ * @description This directive prevents scrolling on the body element when a specific condition is met.
+ * It listens for a change event and toggles the `no-scroll` class on the `body` element.
+ * @module app/future-modul/directives/no-Scroll
+ */
+
 import {
   Directive,
   ElementRef,

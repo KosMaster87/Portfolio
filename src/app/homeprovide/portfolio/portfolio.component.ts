@@ -1,3 +1,10 @@
+/**
+ * @fileoverview PortfolioComponent.
+ * @description This component represents the portfolio section of the application.
+ * It includes functionality to scroll to specific fragments and displays a rotating arrow effect.
+ * @module app/homeprovide/portfolio
+ */
+
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';

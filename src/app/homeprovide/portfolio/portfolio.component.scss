@@ -48,7 +48,7 @@ section {
     grid-area: text;
     width: 100%;
     max-width: 1440px;
-    font-size: clamp(12px, 1vw + 0.8rem, 40px);
+    font-size: clamp(14px, 1vw + 0.8rem, 40px);
     font-weight: 400;
     text-wrap: balance;
     text-align: center;
@@ -87,7 +87,6 @@ app-project {
 
 @media screen and (max-width: 720px) and (orientation: landscape) {
   section {
-    margin-top: 4rem;
     grid-template-columns: 1fr 80% 1fr;
     grid-template-rows: min-content min-content 1fr;
     grid-column-gap: 0px;
@@ -102,7 +101,6 @@ app-project {
 
 @media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
   section {
-    margin-top: 4rem;
     grid-template-columns: 1fr 80% 1fr;
     grid-template-rows: min-content min-content 1fr;
     grid-column-gap: 0px;
@@ -117,7 +115,6 @@ app-project {
 
 @media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: landscape) {
   section {
-    margin-top: 4rem;
     grid-template-columns: 1fr 80% 1fr;
     grid-template-rows: min-content min-content 1fr;
     grid-column-gap: 0px;
@@ -132,7 +129,6 @@ app-project {
 
 @media screen and (min-width: 1025px) {
   section {
-    margin-top: 4rem;
     grid-template-columns: 1fr 80% 1fr;
     grid-template-rows: min-content min-content 1fr;
     grid-column-gap: 0px;

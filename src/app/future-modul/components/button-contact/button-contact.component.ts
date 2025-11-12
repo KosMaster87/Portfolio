@@ -1,3 +1,10 @@
+/**
+ * @fileoverview button-contact.component.ts
+ * @description This file contains the ButtonContactComponent which is a reusable button component
+ * for rendering a contact button with customizable text and styling.
+ * @module app/future-modul/components/button-contact
+ */
+
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';

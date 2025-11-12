@@ -1,3 +1,10 @@
+/**
+ * @fileoverview Scroll to Fragment Top Component.
+ * @description This component provides functionality to scroll to the top of a specified fragment on the page.
+ * It utilizes the ScrollService to perform the scrolling action when triggered.
+ * @module app/future-modul/components/scroll-to-fragment-top
+ */
+
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ScrollService } from './../../../shared/services/scroll/scroll.service';

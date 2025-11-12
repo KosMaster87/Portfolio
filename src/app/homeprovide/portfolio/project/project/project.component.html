@@ -20,7 +20,7 @@ idle) {
 
     <img class="transparentDiv disableTextSelection" alt="Placeholder image." />
 
-    <div class="slider">
+    <div class="slider" #sliderElement>
       <div class="rectangle" id="rectangle" [class.active]="isVisible">
         <div
           class="hoverArrow"
@@ -72,6 +72,10 @@ idle) {
     </div>
   </div>
 </section>
+
+<div class="separator-position">
+  <app-separator color="var(--primeColor-secundario)"></app-separator>
+</div>
 
 } @placeholder {
 <div class="sectionPlaceholder"></div>

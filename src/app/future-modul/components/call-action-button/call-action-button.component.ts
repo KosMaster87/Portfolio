@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Call Action Button Component.
+ * @description This component represents a call-to-action button that can navigate to a route or scroll to a section.
+ * @module app/future-modul/components/call-action-button
+ */
+
 import { CommonModule } from '@angular/common';
 import { Component, HostBinding, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';

@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Hamburger Menu Button Component.
+ * @description This component represents the hamburger menu button and handles its interactions.
+ * @module app/future-modul/components/hamburger-menu-btn
+ */
+
 import { Component, inject } from '@angular/core';
 import { NoScrollDirective } from './../../directives/no-Scroll/no-scroll.directive';
 import { MenuButtonComponent } from './../menu-button/menu-button.component';

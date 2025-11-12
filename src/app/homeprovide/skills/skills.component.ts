@@ -1,3 +1,9 @@
+/**
+ * @fileoverview SkillsComponent.
+ * @description Represents the skills section of the application.
+ * @module app/homeprovide/skills
+ */
+
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';

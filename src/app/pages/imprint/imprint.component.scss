@@ -45,7 +45,7 @@ section {
   }
 
   .businessCardEmail {
-    font-size: clamp(0.688rem, 1vw + 0.25rem, 1rem);
+    font-size: clamp(0.875rem, 1vw + 0.25rem, 1rem);
   }
 
   .businessCard {
@@ -82,7 +82,7 @@ section {
     gap: 1rem;
 
     .privacyLegal {
-      font-size: clamp(0.7rem, 1vw + 0.25rem, 1rem);
+      font-size: clamp(0.875rem, 1vw + 0.25rem, 1rem);
     }
 
     h2 {
@@ -167,7 +167,7 @@ section {
     gap: 2rem;
 
     span {
-      font-size: 11px;
+      font-size: 0.875rem;
     }
   }
 

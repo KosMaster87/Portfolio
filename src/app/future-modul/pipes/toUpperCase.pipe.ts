@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Pipe to convert strings to uppercase.
+ * @description This pipe transforms a given string to its uppercase equivalent.
+ * @module app/future-modul/pipes/toUpperCase
+ */
+
 import { Pipe, PipeTransform } from '@angular/core';
 
 /**

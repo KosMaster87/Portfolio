@@ -1,3 +1,10 @@
+/**
+ * @fileoverview About component.
+ * @description This component displays information about the application or organization.
+ * It includes navigation features to scroll to specific sections of the page.
+ * @module app/homeprovide/about
+ */
+
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';

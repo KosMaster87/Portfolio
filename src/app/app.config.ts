@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Application configuration.
+ * @description Sets up the providers for routing, animations, HTTP client, and translation functionalities.
+ * @module app/config
+ */
+
 import {
   ApplicationConfig,
   importProvidersFrom,

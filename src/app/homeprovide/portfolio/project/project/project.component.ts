@@ -1,9 +1,20 @@
+/**
+ * @fileoverview ProjectComponent for displaying individual projects in the portfolio.
+ * @description This component represents a single project within the portfolio section,
+ *              displaying project details and supporting functionality for linking to
+ *              external project pages.
+ * @module homeprovide/portfolio/project
+ */
+
 import {
   Component,
   AfterViewInit,
   ElementRef,
   ChangeDetectorRef,
   inject,
+  viewChildren,
+  effect,
+  OnDestroy,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
@@ -30,13 +41,31 @@ import { SharedModule } from './../../../../future-modul/shared.module';
     './../../../../shared/styles/highlighting.scss',
   ],
 })
-export class ProjectComponent implements AfterViewInit {
+export class ProjectComponent implements AfterViewInit, OnDestroy {
   public isVisible = false;
   private el: ElementRef = inject(ElementRef);
   private cdr: ChangeDetectorRef = inject(ChangeDetectorRef);
   data = inject(PortfolioDataService);
   projectsLength!: number;
   projects!: Project[];
+  private resizeObserver?: ResizeObserver;
+  sliderElements = viewChildren<ElementRef>('sliderElement');
+
+  constructor() {
+    effect(() => {
+      const elements = this.sliderElements();
+
+      if (elements.length > 0 && this.resizeObserver) {
+        this.resizeObserver.disconnect();
+
+        elements.forEach((sliderRef, index) => {
+          if (this.resizeObserver) {
+            this.resizeObserver.observe(sliderRef.nativeElement);
+          }
+        });
+      }
+    });
+  }
 
   /**
    * ngOnInit lifecycle hook to initialize the component.
@@ -116,6 +145,8 @@ export class ProjectComponent implements AfterViewInit {
    *
    * When the project element is visible on the screen (above the threshold), it updates
    * the `isVisible` property to trigger visibility-based animations or styling.
+   *
+   * Also initializes ResizeObserver to dynamically adjust mainProjectBox heights based on slider content.
    */
   ngAfterViewInit() {
     const observer = new IntersectionObserver(
@@ -131,5 +162,90 @@ export class ProjectComponent implements AfterViewInit {
     );
 
     observer.observe(this.el.nativeElement);
+    this.createResizeObserver();
+  }
+
+  /**
+   * Creates ResizeObserver to monitor slider height changes.
+   * The actual observation is handled by the effect() in the constructor.
+   */
+  private createResizeObserver(): void {
+    this.resizeObserver = new ResizeObserver((entries) => {
+      entries.forEach((entry, index) => {
+        const sliderElement = entry.target as HTMLElement;
+        const mainProjectBox = sliderElement.parentElement;
+
+        if (
+          mainProjectBox &&
+          mainProjectBox.classList.contains('mainProjectBox')
+        ) {
+          const rectangle = sliderElement.querySelector(
+            '.rectangle'
+          ) as HTMLElement;
+          const infoBox = sliderElement.querySelector(
+            '.infoBox'
+          ) as HTMLElement;
+
+          if (rectangle && infoBox) {
+            const rectangleHeight = rectangle.offsetHeight;
+            const infoBoxHeight = infoBox.offsetHeight;
+            const sliderTotalHeight = rectangleHeight + infoBoxHeight;
+            const mainProjectBoxHeight = mainProjectBox.offsetHeight;
+            const flexDirection =
+              getComputedStyle(mainProjectBox).flexDirection;
+            const isRowLayout =
+              flexDirection === 'row' || flexDirection === 'row-reverse';
+
+            let marginNeeded = 0;
+
+            if (isRowLayout) {
+              // Bei row-Layout: Elemente sind NEBENEINANDER
+              // .slider Höhe ist die Höhe des höchsten Elements (rectangle oder infoBox)
+              const sliderActualHeight = Math.max(
+                rectangleHeight,
+                infoBoxHeight
+              );
+              marginNeeded = Math.max(
+                0,
+                sliderActualHeight - mainProjectBoxHeight
+              );
+            } else {
+              // Bei column-Layout: Elemente sind UNTEREINANDER
+              // .slider Höhe ist rectangle + infoBox
+              marginNeeded = Math.max(
+                0,
+                sliderTotalHeight - mainProjectBoxHeight
+              );
+            }
+
+            mainProjectBox.style.setProperty(
+              '--slider-height',
+              `${marginNeeded}px`
+            );
+          } else {
+            console.warn(
+              `⚠️ [Entry ${index}] .rectangle or .infoBox not found`,
+              {
+                hasRectangle: !!rectangle,
+                hasInfoBox: !!infoBox,
+              }
+            );
+          }
+        } else {
+          console.warn(
+            `❌ [Entry ${index}] mainProjectBox not found or wrong class!`
+          );
+        }
+      });
+    });
+  }
+
+  /**
+   * Cleanup method to disconnect the ResizeObserver when component is destroyed.
+   */
+  ngOnDestroy(): void {
+    if (this.resizeObserver) {
+      this.resizeObserver.disconnect();
+    }
   }
 }

@@ -1,3 +1,10 @@
+/**
+ * @fileoverview Portfolio Data Service
+ * @description This service provides static data related to portfolio projects and references.
+ * It centralizes the data for easy reuse across the application.
+ * @module app/shared/services/portfolioData/portfolio-data.service
+ */
+
 import { Injectable } from '@angular/core';
 import { Project } from '../../../models/project/project';
 
@@ -22,7 +29,7 @@ export class PortfolioDataService {
         'https://github.com/KosMaster87/lets-todo-app',
         'https://github.com/KosMaster87/lets-todo-api',
       ],
-      headline: 'Vanilla JS | PHP | Node.js | Express | MariaDB',
+      headline: 'Vanilla JS | PHP | Express | MariaDB',
     },
     {
       projectName: 'PROJECTS.super-rando-projectName',

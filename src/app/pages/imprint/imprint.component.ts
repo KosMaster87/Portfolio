@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Imprint component.
+ * @description Displays the imprint information of the application.
+ * @module app/pages/imprint
+ */
+
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { SharedModule } from './../../future-modul/shared.module';

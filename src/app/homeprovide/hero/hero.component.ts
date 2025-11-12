@@ -1,3 +1,10 @@
+/**
+ * @fileoverview Hero component.
+ * @description This component represents the hero section of the application,
+ *              providing functionality to scroll to specific fragments on the page.
+ * @module app/homeprovide/hero
+ */
+
 import { Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';

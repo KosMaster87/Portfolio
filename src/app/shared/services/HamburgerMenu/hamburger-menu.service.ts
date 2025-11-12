@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Hamburger Menu Service.
+ * @description Provides functionality for managing the hamburger menu buttons.
+ * @module app/shared/services/HamburgerMenu/hamburger-menu.service
+ */
+
 import { Injectable } from '@angular/core';
 
 /**

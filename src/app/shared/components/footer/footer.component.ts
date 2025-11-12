@@ -1,3 +1,10 @@
+/**
+ * @fileoverview Footer component.
+ * @description This component represents the footer section of the application,
+ *              providing navigation and scroll functionalities.
+ * @module app/shared/components/footer/footer.component
+ */
+
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { SharedModule } from './../../../future-modul/shared.module';

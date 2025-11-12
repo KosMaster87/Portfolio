@@ -1,3 +1,10 @@
+/**
+ * @fileoverview Menu Button Component.
+ * @description This component represents a button in the menu that, when clicked,
+ * toggles its state and can trigger actions such as scrolling to a specific section.
+ * @module app/future-modul/components/menu-button
+ */
+
 import { Component, inject, Input } from '@angular/core';
 import { Router } from '@angular/router';
 

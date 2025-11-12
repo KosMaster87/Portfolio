@@ -1,3 +1,11 @@
+/**
+ * @file contact.component.ts
+ * @description This file contains the ContactComponent which manages the contact form functionality.
+ * It allows users to submit their contact information and sends it to a backend service.
+ * The component also handles form validation, submission, and displays success or error messages via snack bar.
+ * @module app/homeprovide/contact
+ */
+
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';

@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Icon Hover Directive.
+ * @description This directive adds a hover effect to an element when the mouse enters or leaves it.
+ * @module app/future-modul/directives/icon-hover
+ */
+
 import {
   Directive,
   ElementRef,

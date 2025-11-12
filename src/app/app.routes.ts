@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Application routes.
+ * @description Defines the routing configuration for the Angular application.
+ * @module app/routes
+ */
+
 import { Routes } from '@angular/router';
 import { HomeprovideComponent } from './homeprovide/homeprovide.component';
 import { ImprintComponent } from './pages/imprint/imprint.component';
@@ -8,7 +14,5 @@ export const routes: Routes = [
   { path: '', component: HomeprovideComponent },
 
   { path: 'imprint', component: ImprintComponent },
-  { path: '**', redirectTo: 'fakePage', pathMatch: 'full' },
-
-  { path: 'fakePage', component: NotFoundComponent },
+  { path: '**', component: NotFoundComponent },
 ];

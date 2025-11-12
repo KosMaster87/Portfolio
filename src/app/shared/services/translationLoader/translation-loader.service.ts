@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Translation loader service.
+ * @description Provides a custom translation loader for the TranslateModule.
+ * @module app/shared/services/translationLoader/translation-loader.service
+ */
+
 import { HttpClient } from '@angular/common/http';
 import { TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';

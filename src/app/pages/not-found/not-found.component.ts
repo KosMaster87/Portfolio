@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Not Found Component.
+ * @description Displays a 404 Not Found page for undefined routes.
+ * @module app/pages/not-found
+ */
+
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';

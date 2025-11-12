@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Highlighting Directive.
+ * @description This directive applies a highlighting effect to elements when hovered over by the mouse.
+ * @module app/future-modul/directives/highlighting
+ */
+
 import {
   Directive,
   ElementRef,

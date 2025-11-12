@@ -184,9 +184,9 @@
     "x-009": "Datenschutz-Generator.de",
     "x-010": "from"
   },
-  "FAKEPAGE": {
+  "NOTFOUND": {
     "headline": "404 - Page not found",
     "para": "The page you are looking for does not exist.",
-    "link": "Back to pages"
+    "link": "Back to home"
   }
 }

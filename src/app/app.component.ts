@@ -1,3 +1,10 @@
+/**
+ * @fileoverview Root component of the Angular application.
+ * @description This component serves as the main container for the application,
+ *              managing global functionalities such as language settings and routing.
+ * @module app/app.component
+ */
+
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
