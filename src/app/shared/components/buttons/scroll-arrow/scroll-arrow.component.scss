@@ -1,0 +1,160 @@
+@use '../../../../../styles/mixins' as *;
+
+:host {
+  @include container;
+  display: block;
+  text-align: center;
+
+  &:has(.scroll-arrow--rotate-left) {
+    margin-bottom: 0;
+  }
+
+  &:has(.scroll-arrow--rotate-right) {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 1024px) {
+    &:has(.scroll-arrow--rotate-left) {
+      text-align: left;
+      margin-bottom: 0;
+    }
+
+    &:has(.scroll-arrow--rotate-right) {
+      text-align: right;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.scroll-arrow {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  padding: var(--space-8);
+
+  &__icon {
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    filter: url('#goo');
+    transition: transform var(--transition-base);
+  }
+
+  &:hover &__icon {
+    transform: translateY(4px);
+  }
+
+  &--rotate-left &__icon {
+    transform: rotate(-45deg);
+  }
+
+  &--rotate-left:hover &__icon {
+    transform: rotate(-45deg) translateY(4px);
+  }
+
+  &--rotate-right &__icon {
+    transform: rotate(45deg);
+  }
+
+  &--rotate-right:hover &__icon {
+    transform: rotate(45deg) translateY(4px);
+  }
+
+  &__circle {
+    background: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transform-origin: 0%;
+
+    &--top {
+      height: 33px;
+      width: 42px;
+      animation: blob-1-anim 4.5s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+      z-index: 0;
+      top: 0;
+    }
+
+    &--main {
+      z-index: 1;
+    }
+
+    &--bottom {
+      height: 33px;
+      width: 42px;
+      animation: blob-2-anim 4.5s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+      z-index: 9;
+      bottom: 0px;
+    }
+  }
+
+  &__svg {
+    z-index: 9;
+    position: relative;
+  }
+
+  &__path {
+    fill: var(--color-arrow-fill);
+    animation: scrolly 4.5s cubic-bezier(0.77, 0, 0.175, 1) forwards infinite;
+    perspective: 9000px;
+    transform: translateZ(0);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes blob-1-anim {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  14% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+  24% {
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes blob-2-anim {
+  0% {
+    transform: scale(1) translate(-50%, 10px);
+  }
+  30% {
+    transform: scale(1) translate(-50%, 10px);
+  }
+  70% {
+    transform: scale(1) translate(-50%, 10px);
+  }
+  95% {
+    transform: scale(1) translate(-50%, 26px);
+  }
+  100% {
+    transform: scale(1) translate(-50%, 10px);
+  }
+}
+
+@keyframes scrolly {
+  0% {
+    transform: translate3d(0, -150%, 0) rotateX(90deg) scale(0.5) skewX(3deg);
+  }
+  30% {
+    transform: translate3d(0, 0, 0) rotateX(0deg) scale(1) skewX(0deg);
+  }
+  70% {
+    transform: translate3d(0, 0, 0) rotateX(0deg) scale(1) skewX(0deg);
+  }
+  95% {
+    transform: translate3d(0, 50%, 0) rotateX(-90deg) scale(0.5) skewX(-3deg);
+  }
+  100% {
+    transform: translate3d(0, 50%, 0) rotateX(-90deg) scale(0.5) skewX(-3deg);
+  }
+}

@@ -1,0 +1,32 @@
+<div
+  class="notification"
+  [class.notification--show]="show()"
+  [class.notification--success]="type() === 'success'"
+  [class.notification--error]="type() === 'error'"
+>
+  <div class="notification__content">
+    <span class="notification__message">{{ message() }}</span>
+
+    @if (actionText()) {
+    <button type="button" class="notification__action" (click)="onAction()">
+      {{ actionText() }}
+    </button>
+    }
+  </div>
+
+  <button
+    type="button"
+    class="notification__close"
+    (click)="onClose()"
+    aria-label="Close notification"
+  >
+    &times;
+  </button>
+
+  <div
+    class="notification__progress-bar"
+    [class.notification__progress-bar--success]="type() === 'success'"
+    [class.notification__progress-bar--error]="type() === 'error'"
+    [style.animation-duration.ms]="duration()"
+  ></div>
+</div>

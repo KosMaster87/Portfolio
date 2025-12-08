@@ -1,0 +1,37 @@
+.project-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  min-width: clamp(8rem, 20vw, 12rem);
+  height: clamp(30px, 12% + 1.4rem, 68px);
+  font-family: var(--font-primary);
+  font-size: clamp(0.875rem, 1.4vw + 0.2rem, 1.2rem);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  background-color: transparent;
+  border: var(--border-normal) solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-4);
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.3s ease, color 0.5s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    box-shadow: var(--shadow-md);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}

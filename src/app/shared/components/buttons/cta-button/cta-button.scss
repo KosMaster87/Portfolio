@@ -1,0 +1,74 @@
+@use '../../../../../styles/mixins' as *;
+
+:host {
+  --btn-cta-width: clamp(140px, 20% + 0.4rem, 220px);
+  --btn-cta-height: clamp(44px, 12% + 1.4rem, 68px);
+  --btn-cta-font-size: clamp(0.875rem, 1.4vw + 0.2rem, 1.2rem);
+  --btn-cta-font-family: var(--font-primary);
+  --btn-cta-font-weight: var(--font-weight-semibold);
+  --btn-cta-bg: var(--color-background);
+  --btn-cta-color: var(--color-text-primary);
+  --btn-cta-border-color: var(--color-button-border);
+  --btn-cta-border-width: var(--border-thick);
+  --btn-cta-bg-hover: var(--color-button-background);
+  --btn-cta-color-hover: var(--color-text-primary);
+  --btn-cta-border-hover: var(--color-button-border-hover);
+  --btn-cta-radius: var(--radius-md);
+  --btn-cta-shadow: var(--shadow-sm);
+  --btn-cta-shadow-hover: var(--shadow-lg);
+  --btn-cta-transition: all var(--transition-base);
+  --btn-cta-padding-y: var(--space-3);
+  --btn-cta-padding-x: var(--space-6);
+  --btn-cta-hover-translateY: -2px;
+}
+
+@media screen and (max-width: 720px) and (orientation: landscape) {
+  :host {
+    --btn-cta-width: clamp(120px, 18% + 0.4rem, 180px);
+    --btn-cta-height: clamp(36px, 10% + 1rem, 52px);
+    --btn-cta-font-size: clamp(0.875rem, 1.2vw + 0.2rem, 1rem);
+  }
+}
+
+@media screen and (max-height: 400px) and (orientation: landscape) {
+  :host {
+    --btn-cta-width: 110px;
+    --btn-cta-height: var(--size-control-md);
+    --btn-cta-font-size: 0.875rem;
+    --btn-cta-padding-y: var(--space-2);
+    --btn-cta-padding-x: var(--space-4);
+  }
+}
+
+.cta-button {
+  @include flex-center;
+  min-width: var(--btn-cta-width);
+  height: var(--btn-cta-height);
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: var(--btn-cta-font-family);
+  font-size: var(--btn-cta-font-size);
+  font-weight: var(--btn-cta-font-weight);
+  background-color: var(--btn-cta-bg);
+  color: var(--btn-cta-color);
+  border: var(--btn-cta-border-width) solid var(--btn-cta-border-color);
+  border-radius: var(--btn-cta-radius);
+  padding: var(--btn-cta-padding-y) var(--btn-cta-padding-x);
+  box-shadow: var(--btn-cta-shadow);
+  transition: var(--btn-cta-transition), box-shadow 1200ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--btn-cta-bg-hover);
+    border-color: var(--btn-cta-border-hover);
+    color: var(--btn-cta-color-hover);
+    box-shadow: var(--btn-cta-shadow-hover);
+    transform: translateY(var(--btn-cta-hover-translateY));
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: inset 0 0 8px var(--color-primary), var(--shadow-xs);
+    transition: box-shadow 800ms cubic-bezier(0.4, 0, 0.2, 1), transform var(--transition-base);
+  }
+}

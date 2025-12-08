@@ -1,0 +1,59 @@
+<div class="not-found-page">
+  @if (translationService.isLoaded()) {
+  <div class="container">
+    <div class="not-found-content">
+      <div class="error-visual">
+        <div class="error-number">{{ pageData().errorNumber }}</div>
+        <div class="error-icon">🔍</div>
+      </div>
+
+      <div class="error-message">
+        <h1>{{ pageData().title }}</h1>
+        <p class="error-description">
+          {{ pageData().description }}
+        </p>
+      </div>
+
+      <div class="error-actions">
+        <app-nav-button [label]="pageData().backToHome" icon="home" [routerLink]="'/'" />
+      </div>
+
+      <div class="helpful-links">
+        <h3>{{ pageData().maybeYouLookingFor }}</h3>
+        <nav class="quick-links">
+          <app-nav-button
+            [label]="pageData().heroLabel"
+            icon="hero"
+            [routerLink]="'/'"
+            fragment="hero"
+          />
+          <app-nav-button
+            [label]="pageData().aboutLabel"
+            icon="about"
+            [routerLink]="'/'"
+            fragment="about"
+          />
+          <app-nav-button
+            [label]="pageData().skillsLabel"
+            icon="skills"
+            [routerLink]="'/'"
+            fragment="skills"
+          />
+          <app-nav-button
+            [label]="pageData().projectsLabel"
+            icon="projects"
+            [routerLink]="'/'"
+            fragment="projects"
+          />
+          <app-nav-button
+            [label]="pageData().contactLabel"
+            icon="contact"
+            [routerLink]="'/'"
+            fragment="contact"
+          />
+        </nav>
+      </div>
+    </div>
+  </div>
+  }
+</div>
