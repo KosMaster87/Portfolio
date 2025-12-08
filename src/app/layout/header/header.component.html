@@ -1,0 +1,116 @@
+<header class="header">
+  @if (translationService.isLoaded()) {
+  <div class="header__container">
+    <div class="header__content">
+      <div class="header__brand">
+        <a class="header__logo" (click)="navigateToHome()">
+          <img class="header__logo-icon" [src]="logoPath()" alt="dev2k Logo" draggable="false" />
+          <span class="header__logo-text">dev2k</span>
+        </a>
+      </div>
+
+      <div class="header__controls">
+        <app-language-switcher></app-language-switcher>
+        <app-theme-switcher></app-theme-switcher>
+      </div>
+
+      @if (isOnHomePage()) {
+      <nav class="header__nav" role="navigation" aria-label="Main navigation">
+        <ul class="header__nav-list">
+          @for (item of menuItems; track item.sectionId) {
+          <li class="header__nav-item">
+            <a class="header__nav-link" (click)="scrollToSection(item.sectionId)" draggable="false">
+              {{ translate(item.label) }}
+            </a>
+          </li>
+          }
+        </ul>
+      </nav>
+      } @else {
+      <nav class="header__nav" role="navigation" aria-label="Main navigation">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <button class="header__nav-link" (click)="navigateToRoute('/')" type="button">
+              {{ translate('MENU.home') }}
+            </button>
+          </li>
+          <li class="header__nav-item">
+            <button class="header__nav-link" (click)="navigateToRoute('/imprint')" type="button">
+              {{ translate('MENU.imprint') }}
+            </button>
+          </li>
+          <li class="header__nav-item">
+            <button
+              class="header__nav-link"
+              (click)="navigateToRoute('/privacy-policy')"
+              type="button"
+            >
+              {{ translate('MENU.privacy') }}
+            </button>
+          </li>
+        </ul>
+      </nav>
+      }
+
+      <div class="header__hamburger">
+        <input
+          type="checkbox"
+          id="menuToggle"
+          class="header__menu-toggle"
+          [(ngModel)]="isMenuOpen"
+          appNoScroll
+        />
+
+        <label class="header__burger" for="menuToggle">
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+        </label>
+
+        <nav class="header__menu" role="navigation" aria-label="Mobile navigation">
+          <ul class="header__menu-list">
+            @if (isOnHomePage()) { @for (item of menuItems; track item.sectionId) {
+            <li class="header__menu-item">
+              <a
+                class="header__menu-link"
+                (click)="scrollToSection(item.sectionId)"
+                draggable="false"
+              >
+                {{ translate(item.label) }}
+              </a>
+            </li>
+            } } @else {
+            <li class="header__menu-item">
+              <button class="header__menu-link" (click)="navigateToRoute('/')" type="button">
+                {{ translate('MENU.home') }}
+              </button>
+            </li>
+            }
+
+            <li class="header__menu-divider"></li>
+
+            <li class="header__menu-item">
+              <button
+                class="header__menu-link header__menu-link--secondary"
+                (click)="navigateToRoute('/imprint')"
+                type="button"
+              >
+                {{ translate('MENU.imprint') }}
+              </button>
+            </li>
+            <li class="header__menu-item">
+              <button
+                class="header__menu-link header__menu-link--secondary"
+                (click)="navigateToRoute('/privacy-policy')"
+                type="button"
+              >
+                {{ translate('MENU.privacy') }}
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  }
+</header>
