@@ -1,0 +1,95 @@
+:root {
+  --btn-menu-secondary-font-size: 1rem;
+  --btn-menu-secondary-font-family: var(--font-primary);
+  --btn-menu-secondary-font-weight: var(--font-weight-normal);
+
+  --btn-menu-secondary-color: var(--color-text-muted);
+  --btn-menu-secondary-bg: transparent;
+
+  --btn-menu-secondary-color-hover: var(--color-text-secondary);
+  --btn-menu-secondary-bg-hover: var(--color-primary);
+
+  --btn-menu-secondary-padding-y: var(--space-2);
+  --btn-menu-secondary-padding-x: var(--space-4);
+  --btn-menu-secondary-radius: var(--radius-md);
+
+  --btn-menu-secondary-transition: all var(--transition-base);
+  --btn-menu-secondary-hover-scale: 1.03;
+}
+
+@media screen and (min-width: 720px) {
+  :root {
+    --btn-menu-secondary-font-size: 1.25rem;
+    --btn-menu-secondary-padding-y: var(--space-3);
+    --btn-menu-secondary-padding-x: var(--space-5);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --btn-menu-secondary-font-size: 1.5rem;
+    --btn-menu-secondary-padding-y: var(--space-4);
+    --btn-menu-secondary-padding-x: var(--space-6);
+  }
+}
+
+@media screen and (max-height: 400px) and (orientation: landscape) {
+  :root {
+    --btn-menu-secondary-font-size: 0.875rem;
+    --btn-menu-secondary-padding-y: var(--space-1);
+    --btn-menu-secondary-padding-x: var(--space-3);
+    --btn-menu-secondary-hover-scale: 1.02;
+  }
+}
+
+@media screen and (min-width: 720px) and (max-height: 540px) and (orientation: landscape) {
+  :root {
+    --btn-menu-secondary-font-size: 0.75rem;
+    --btn-menu-secondary-padding-y: var(--space-1);
+    --btn-menu-secondary-padding-x: var(--space-2);
+    --btn-menu-secondary-hover-scale: 1.01;
+  }
+}
+
+@media screen and (min-width: 667px) and (max-width: 667px) and (max-height: 375px) and (orientation: landscape) {
+  :root {
+    --btn-menu-secondary-font-size: 0.625rem;
+    --btn-menu-secondary-padding-y: var(--space-1);
+    --btn-menu-secondary-padding-x: var(--space-2);
+    --btn-menu-secondary-hover-scale: 1.01;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1024px) and (max-height: 600px) and (orientation: landscape) {
+  :root {
+    --btn-menu-secondary-font-size: 0.875rem;
+    --btn-menu-secondary-padding-y: var(--space-2);
+    --btn-menu-secondary-padding-x: var(--space-3);
+    --btn-menu-secondary-hover-scale: 1.01;
+  }
+}
+
+@mixin btn-menu-secondary {
+  display: block;
+
+  font-family: var(--btn-menu-secondary-font-family);
+  font-size: var(--btn-menu-secondary-font-size);
+  font-weight: var(--btn-menu-secondary-font-weight);
+  text-decoration: none;
+  text-align: center;
+
+  color: var(--btn-menu-secondary-color);
+  background: var(--btn-menu-secondary-bg);
+
+  padding: var(--btn-menu-secondary-padding-y) var(--btn-menu-secondary-padding-x);
+  border-radius: var(--btn-menu-secondary-radius);
+
+  cursor: pointer;
+  transition: var(--btn-menu-secondary-transition);
+
+  &:hover {
+    background: var(--btn-menu-secondary-bg-hover);
+    color: var(--btn-menu-secondary-color-hover);
+    transform: scale(var(--btn-menu-secondary-hover-scale));
+  }
+}
