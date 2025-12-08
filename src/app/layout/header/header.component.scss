@@ -1,0 +1,291 @@
+@use '../../../styles/mixins' as *;
+@use '../../../styles/components/buttons/btn-hamburger' as *;
+@use '../../../styles/components/buttons/btn-menu-primary' as *;
+@use '../../../styles/components/buttons/btn-menu-secondary' as *;
+
+.header {
+  @include container;
+  height: var(--header-height);
+  position: relative;
+  z-index: 101;
+
+  &__container {
+    height: 100%;
+    padding-bottom: var(--space-2);
+    padding-top: var(--space-2);
+  }
+
+  &__content {
+    align-items: center;
+    display: flex;
+    gap: var(--space-2);
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  &__brand {
+    flex-shrink: 0;
+  }
+
+  &__logo {
+    align-items: center;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    display: flex;
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    gap: var(--space-2);
+    text-decoration: none;
+    transition: color var(--transition-base);
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  &__logo-icon {
+    height: var(--size-logo);
+    width: var(--size-logo);
+    transition: transform var(--transition-base);
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__logo-text {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-extrabold);
+  }
+
+  &__nav {
+    display: none;
+
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__nav-list {
+    align-items: center;
+    display: flex;
+    gap: var(--space-3);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__nav-item {
+    position: relative;
+  }
+
+  &__nav-link {
+    color: var(--color-text-primary);
+    cursor: pointer;
+    display: inline-block;
+    font-weight: var(--font-weight-medium);
+    padding: var(--space-2) var(--space-3);
+    position: relative;
+    text-decoration: none;
+    transition: color var(--transition-base);
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+
+    * {
+      pointer-events: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: var(--space-2);
+      left: var(--space-3);
+      right: var(--space-3);
+      width: 0;
+      height: 2px;
+      background: var(--color-primary);
+      margin: 0 auto;
+      transition: width 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &:hover {
+      color: var(--color-primary);
+
+      &::after {
+        width: calc(100% - (var(--space-3) * 2));
+      }
+    }
+
+    &--active {
+      color: var(--color-primary);
+
+      &::after {
+        width: calc(100% - (var(--space-3) * 2));
+      }
+    }
+  }
+
+  &__hamburger {
+    display: block;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__menu-toggle {
+    display: none;
+  }
+
+  &__burger {
+    @include btn-hamburger;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__burger-line {
+    @include btn-hamburger-line;
+  }
+
+  &__menu-toggle:checked {
+    ~ .header__burger {
+      .header__burger-line {
+        &:nth-child(1) {
+          transform: translateY(var(--btn-hamburger-offset)) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+          transform: translateX(-10px) scale(0.8);
+        }
+
+        &:nth-child(3) {
+          transform: translateY(calc(var(--btn-hamburger-offset) * -1)) rotate(-45deg);
+        }
+      }
+    }
+
+    ~ .header__menu {
+      opacity: 1;
+      transform: scale(1);
+      visibility: visible;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-menu-overlay);
+    backdrop-filter: var(--blur-overlay);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    transition: all var(--transition-slower);
+    overflow: hidden;
+  }
+
+  &__menu-list {
+    @include flex-center;
+    flex-direction: column;
+    height: 100%;
+    list-style: none;
+    gap: var(--space-2);
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+
+    @media screen and (min-width: 720px) {
+      max-width: 400px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      max-width: 500px;
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1024px) and (min-height: 768px) and (max-height: 768px) and (orientation: landscape) {
+      max-width: 450px;
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1024px) and (min-height: 600px) and (max-height: 600px) and (orientation: landscape) {
+      max-width: 350px;
+    }
+
+    @media screen and (max-height: 400px) and (orientation: landscape) {
+      gap: 0;
+      max-width: 250px;
+    }
+
+    @media screen and (min-width: 800px) and (min-height: 401px) and (max-height: 450px) and (orientation: landscape) {
+      max-width: 320px;
+    }
+
+    @media screen and (min-width: 720px) and (max-width: 800px) and (min-height: 500px) and (max-height: 600px) and (orientation: landscape) {
+      max-width: 380px;
+    }
+  }
+
+  &__menu-item {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__menu-link {
+    @include btn-menu-primary;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    border: none;
+    width: 100%;
+
+    * {
+      pointer-events: none;
+    }
+
+    &--active {
+      background: var(--btn-menu-primary-bg-active);
+      color: var(--btn-menu-primary-color-active);
+    }
+
+    &--secondary {
+      @include btn-menu-secondary;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-user-drag: none;
+      border: none;
+      width: 100%;
+
+      * {
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__menu-divider {
+    width: var(--width-divider-percentage);
+    height: var(--border-thick);
+    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+    margin: var(--space-4) auto;
+
+    @media screen and (max-height: 400px) and (orientation: landscape) {
+      margin: var(--space-1) auto;
+    }
+  }
+}

@@ -1,37 +1,30 @@
+/**
+ * @fileoverview Application configuration for the Angular app.
+ * @description Sets up providers for routing, HTTP client, error handling, and PWA support.
+ * @module app/config
+ */
+
+import { provideHttpClient } from '@angular/common/http';
 import {
   ApplicationConfig,
-  importProvidersFrom,
-  provideZoneChangeDetection,
+  isDevMode,
   provideBrowserGlobalErrorListeners,
+  provideZonelessChangeDetection,
 } from '@angular/core';
-
 import { provideRouter } from '@angular/router';
-import { routes } from './app.routes';
-import { provideAnimations } from '@angular/platform-browser/animations';
-import { HttpClient, provideHttpClient } from '@angular/common/http';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { createTranslateLoader } from './shared/services/translationLoader/translation-loader.service';
 
-/**
- * Application-wide configuration for Angular.
- * Sets up the providers required for routing, animations, HTTP, and translation functionalities.
- */
+import { provideServiceWorker } from '@angular/service-worker';
+import { routes } from './app.routes';
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideZonelessChangeDetection(),
     provideRouter(routes),
-    provideAnimations(),
     provideHttpClient(),
-
-    importProvidersFrom(
-      TranslateModule.forRoot({
-        loader: {
-          provide: TranslateLoader,
-          useFactory: createTranslateLoader,
-          deps: [HttpClient],
-        },
-      })
-    ),
+    provideServiceWorker('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
   ],
 };

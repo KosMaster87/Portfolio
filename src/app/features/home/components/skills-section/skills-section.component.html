@@ -1,0 +1,21 @@
+<section class="skills-section" id="skills">
+  @if (translationService.isLoaded()) {
+  <div class="skills-section__container">
+    <h2 class="skills-section__heading">{{ heading() }}</h2>
+
+    <div class="skills-section__grid">
+      @for (skill of skills; track skill.name) {
+      <div class="skill-item">
+        <div
+          class="skill-item__icon icon"
+          [class]="skill.cssClass"
+          [style.background-image]="'url(/assets/images/vector/icons/' + skill.icon + ')'"
+          appIconHover
+        ></div>
+        <span class="skill-item__name">{{ skill.name }}</span>
+      </div>
+      }
+    </div>
+  </div>
+  }
+</section>

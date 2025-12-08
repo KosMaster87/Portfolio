@@ -1,0 +1,45 @@
+<div class="theme-switcher">
+  <button
+    class="theme-switcher__toggle"
+    (click)="toggleDropdown()"
+    [attr.aria-expanded]="isDropdownOpen()"
+    aria-label="Theme selector"
+  >
+    @if (currentTheme() === 'light') {
+    <img src="assets/images/theme/light-mode.svg" alt="Light mode" width="20" height="20" />
+    } @else if (currentTheme() === 'dark') {
+    <img src="assets/images/theme/dark-mode.svg" alt="Dark mode" width="20" height="20" />
+    } @else {
+    <img src="assets/images/theme/computer.svg" alt="Auto mode" width="20" height="20" />
+    }
+  </button>
+
+  @if (isDropdownOpen()) {
+  <div class="theme-switcher__dropdown">
+    <button
+      class="theme-switcher__option"
+      [class.theme-switcher__option--active]="currentTheme() === 'light'"
+      (click)="switchTheme('light')"
+    >
+      <img src="assets/images/theme/light-mode.svg" alt="" width="16" height="16" />
+      <span>Light</span>
+    </button>
+    <button
+      class="theme-switcher__option"
+      [class.theme-switcher__option--active]="currentTheme() === 'dark'"
+      (click)="switchTheme('dark')"
+    >
+      <img src="assets/images/theme/dark-mode.svg" alt="" width="16" height="16" />
+      <span>Dark</span>
+    </button>
+    <button
+      class="theme-switcher__option"
+      [class.theme-switcher__option--active]="currentTheme() === 'auto'"
+      (click)="switchTheme('auto')"
+    >
+      <img src="assets/images/theme/computer.svg" alt="" width="16" height="16" />
+      <span>Auto</span>
+    </button>
+  </div>
+  }
+</div>

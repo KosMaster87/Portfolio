@@ -1,0 +1,190 @@
+<section class="contact-section" id="contact">
+  <app-notification
+    [show]="showNotification"
+    [message]="notificationMessage"
+    [type]="notificationType"
+    (closed)="hideNotification()"
+  />
+
+  @if (translationService.isLoaded()) {
+  <div class="contact-section__container">
+    <h2 class="contact-section__heading">{{ contactData().heading }}</h2>
+
+    <div class="contact-section__content">
+      <div class="contact-section__greeting">
+        <h3 class="contact-section__title">{{ contactData().title }}</h3>
+        <p class="contact-section__description">
+          {{ contactData().description }}
+          <a href="mailto:konstantin.aksenov@dev2k.org" class="contact-section__email-link">
+            Konstantin.Aksenov@dev2k.org
+          </a>
+        </p>
+      </div>
+
+      <form class="contact-section__form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <div class="form-field">
+          <div class="form-field__input-wrapper">
+            <label class="form-field__label" for="input_name">{{ contactData().yourName }}</label>
+
+            <input
+              class="form-field__input"
+              id="input_name"
+              type="text"
+              (blur)="trimWhitespace('name', name)"
+              placeholder=""
+              autocomplete="name"
+              required
+              pattern="^[a-zA-Z\u00C0-\u00FF]+([' \-][a-zA-Z\u00C0-\u00FF]+)*$"
+              [(ngModel)]="formData.name"
+              #name="ngModel"
+              name="name"
+              [disabled]="isSubmitting"
+              [class.form-field__input--valid]="name.valid && name.touched"
+              [class.form-field__input--invalid]="name.invalid && name.touched"
+            />
+
+            <div class="form-field__icons">
+              @if (name.valid && name.touched) {
+              <span class="form-field__icon form-field__icon--valid"></span>
+              } @if (name.invalid && name.touched) {
+              <span class="form-field__icon form-field__icon--invalid"></span>
+              }
+            </div>
+          </div>
+
+          <div class="form-field__error-container">
+            @if (name.invalid && name.touched) { @if (name.errors?.['required']) {
+            <small class="form-field__error">{{ contactData().yourNameRequired }}</small>
+            } @if (name.errors?.['pattern']) {
+            <small class="form-field__error">{{ contactData().yourNameInvalid }}</small>
+            } }
+          </div>
+        </div>
+
+        <div class="form-field">
+          <div class="form-field__input-wrapper">
+            <label class="form-field__label" for="input_email">{{ contactData().yourEmail }}</label>
+
+            <input
+              class="form-field__input"
+              id="input_email"
+              type="email"
+              (blur)="trimWhitespace('email', email)"
+              placeholder=""
+              required
+              autocomplete="email"
+              [(ngModel)]="formData.email"
+              #email="ngModel"
+              name="email"
+              pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+              [disabled]="isSubmitting"
+              [class.form-field__input--valid]="email.valid && email.touched"
+              [class.form-field__input--invalid]="email.invalid && email.touched"
+            />
+
+            <div class="form-field__icons">
+              @if (email.valid && email.touched) {
+              <span class="form-field__icon form-field__icon--valid"></span>
+              } @if (email.invalid && email.touched) {
+              <span class="form-field__icon form-field__icon--invalid"></span>
+              }
+            </div>
+          </div>
+
+          <div class="form-field__error-container">
+            @if (email.invalid && email.touched) { @if (email.errors?.['required']) {
+            <small class="form-field__error">{{ contactData().yourEmailRequired }}</small>
+            } @if (email.errors?.['pattern']) {
+            <small class="form-field__error">{{ contactData().yourEmailInvalid }}</small>
+            } }
+          </div>
+        </div>
+
+        <div class="form-field form-field--textarea">
+          <div class="form-field__input-wrapper">
+            <label class="form-field__label" for="textarea_message">{{
+              contactData().yourMessage
+            }}</label>
+
+            <textarea
+              class="form-field__textarea"
+              id="textarea_message"
+              placeholder=""
+              required
+              [(ngModel)]="formData.message"
+              name="message"
+              #message="ngModel"
+              [disabled]="isSubmitting"
+              [class.form-field__textarea--valid]="message.valid && message.touched"
+              [class.form-field__textarea--invalid]="message.invalid && message.touched"
+              rows="6"
+            ></textarea>
+
+            <div class="form-field__icons">
+              @if (message.valid && message.touched) {
+              <span class="form-field__icon form-field__icon--valid"></span>
+              } @if (message.invalid && message.touched) {
+              <span class="form-field__icon form-field__icon--invalid"></span>
+              }
+            </div>
+          </div>
+
+          <div class="form-field__error-container">
+            @if (message.invalid && message.touched) {
+            <small class="form-field__error">{{ contactData().yourMessageRequired }}</small>
+            }
+          </div>
+        </div>
+
+        <div class="form-checkbox">
+          <div class="form-checkbox__main">
+            <input
+              class="form-checkbox__input"
+              id="checkboxSelf"
+              type="checkbox"
+              [(ngModel)]="isChecked"
+              name="checkbox"
+              #checkbox="ngModel"
+              [disabled]="isSubmitting"
+            />
+
+            <div
+              class="form-checkbox__icon-wrapper"
+              [class.form-checkbox__icon-wrapper--disabled]="isSubmitting"
+            >
+              <img
+                [src]="getCheckboxImage()"
+                alt="Checkbox"
+                class="form-checkbox__icon"
+                [class.form-checkbox__icon--dark]="isDark()"
+                (click)="!isSubmitting && toggleCheckbox()"
+              />
+            </div>
+
+            <label class="form-checkbox__label" for="checkboxSelf">
+              <p class="form-checkbox__text">
+                {{ contactData().checkboxText1 }}
+                <a routerLink="/privacy-policy" class="form-checkbox__link">
+                  {{ contactData().checkboxText2 }}
+                </a>
+                {{ contactData().checkboxText3 }}
+              </p>
+            </label>
+          </div>
+
+          @if (!isChecked && checkbox.touched) {
+          <small class="form-field__error">{{ contactData().checkboxRequired }}</small>
+          }
+        </div>
+
+        <div class="contact-section__button-wrapper">
+          <app-submit-button
+            [disabled]="!contactForm.valid || !isChecked || isSubmitting"
+            [label]="isSubmitting ? contactData().submitting : contactData().submitButton"
+          ></app-submit-button>
+        </div>
+      </form>
+    </div>
+  </div>
+  }
+</section>

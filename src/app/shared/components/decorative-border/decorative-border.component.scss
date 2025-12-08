@@ -1,0 +1,56 @@
+:host {
+  display: contents;
+}
+
+.decorative-border {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(var(--initial-x), calc(-50% + var(--initial-y)));
+  width: clamp(180px, 28vw + 3rem, 300px);
+  z-index: 10;
+  border-style: solid;
+  border-color: transparent;
+  pointer-events: none;
+  transition: transform 0.8s ease, border-color 0.8s ease, opacity 0.7s ease;
+  opacity: 1;
+  
+  @media screen and (max-width: 300px) {
+    width: clamp(120px, 40vw + 2rem, 180px);
+  }
+
+  @media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: landscape) {
+    width: clamp(180px, 20vw + 3rem, 240px);
+  }
+
+  @media screen and (min-width: 720px) {
+    width: clamp(220px, 15vw + 8rem, 280px);
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: clamp(240px, 12vw + 5rem, 300px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  :host-context(.portrait-wrapper:hover) .decorative-border,
+  :host-context(.image-wrapper:hover) .decorative-border {
+    transform: translate(var(--hover-x), calc(-50% + var(--hover-y)));
+    border-color: var(--border-color);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .decorative-border {
+    border-color: var(--border-color);
+  }
+
+  :host-context(.portrait-wrapper) .decorative-border {
+    left: 50%;
+    transform: translate(calc(-50% + var(--hover-x)), calc(-50% + var(--hover-y)));
+  }
+
+  :host-context(.image-wrapper) .decorative-border {
+    transform: translate(var(--hover-x), var(--hover-y));
+  }
+}

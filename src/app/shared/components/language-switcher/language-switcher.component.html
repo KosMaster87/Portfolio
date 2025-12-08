@@ -1,0 +1,30 @@
+<div class="language-switcher">
+  <button
+    class="language-switcher__toggle"
+    (click)="toggleDropdown()"
+    [attr.aria-expanded]="isDropdownOpen()"
+    [attr.aria-label]="'Language: ' + getCurrentLanguageData()?.label"
+  >
+    <img
+      [src]="getCurrentLanguageData()?.flag"
+      [alt]="getCurrentLanguageData()?.label"
+      class="language-switcher__flag"
+    />
+  </button>
+
+  @if (isDropdownOpen()) {
+  <div class="language-switcher__dropdown">
+    @for (lang of languages; track lang.code) {
+    <button
+      class="language-switcher__option"
+      [class.language-switcher__option--active]="currentLanguage() === lang.code"
+      (click)="switchLanguage(lang.code)"
+      [attr.aria-label]="lang.label"
+    >
+      <img [src]="lang.flag" [alt]="lang.label" class="language-switcher__option-flag" />
+      <span>{{ lang.label }}</span>
+    </button>
+    }
+  </div>
+  }
+</div>

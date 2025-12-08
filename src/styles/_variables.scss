@@ -1,0 +1,290 @@
+:root {
+  --color-primary: rgb(0, 188, 143);
+  --color-primary-light: rgb(30 180 140);
+  --color-primary-dark: rgb(1, 108, 83);
+  --color-primary-darker: rgba(0, 188, 143, 0.25);
+
+  --color-text-primary: rgb(34, 31, 31);
+  --color-text-secondary: #ffffff;
+  --color-text-muted: #806b6b;
+
+  --filter-icon-muted: brightness(0) saturate(100%) invert(50%) sepia(0%) saturate(0%)
+    hue-rotate(0deg);
+  --filter-icon-primary: brightness(0) saturate(100%) invert(40%) sepia(98%) saturate(380%)
+    hue-rotate(120deg) brightness(91%) contrast(101%);
+
+  --filter-github-hover: brightness(0) saturate(100%) invert(0%);
+
+  --color-background: rgb(217, 217, 217);
+  --color-background-hover: rgba(217, 217, 217, 0.6);
+  --color-surface: rgb(255, 252, 243);
+  --color-border: rgba(104, 104, 104, 0.6);
+
+  --color-menu-overlay: rgba(187, 187, 187, 0.958);
+
+  --color-active-border: var(--color-primary);
+
+  --color-success: #4caf50;
+  --color-error: rgb(230, 28, 64);
+  --color-warning: #ff9800;
+  --color-info: #2196f3;
+
+  --color-form-valid: rgb(0, 188, 143);
+  --color-form-valid-hover: rgb(1, 108, 83);
+
+  --color-form-invalid: rgb(230, 28, 64);
+  --color-form-invalid-hover: rgb(144, 22, 44);
+
+  --color-button-background: var(--color-background);
+  --color-button-border: rgba(1, 1, 1, 0.7);
+  --color-button-border-hover: rgb(0, 188, 143);
+
+  --color-checkbox: rgb(0, 171, 130);
+  --color-checkbox-hover: rgb(0, 187, 143);
+
+  --color-button-disabled: rgba(144, 22, 44, 0.13);
+  --color-button-enabled: rgba(0, 171, 131, 0.159);
+
+  --space-0: 0;
+  --space-0-5: 0.125rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  --space-section-small: clamp(40px, 4vw, 70px);
+  --space-section-medium: clamp(70px, 6vw, 160px);
+  --space-gap-small: clamp(6px, 1vw, 20px);
+  --space-gap-medium: clamp(50px, 4vw, 70px);
+
+  --font-primary: 'Overpass', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-secondary: 'Syne', Georgia, serif;
+  --font-code: 'Fira Code', 'Courier New', monospace;
+
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --font-size-sm: clamp(0.875rem, 0.825rem + 0.25vw, 1rem);
+  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --font-size-lg: clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem);
+  --font-size-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --font-size-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 2rem);
+  --font-size-3xl: clamp(1.875rem, 1.65rem + 1.125vw, 2.5rem);
+  --font-size-4xl: clamp(2.25rem, 1.95rem + 1.5vw, 3rem);
+  --font-size-5xl: clamp(3rem, 2.55rem + 2.25vw, 4rem);
+
+  --font-size-hero-title: clamp(28px, 2.5vw + 1.5rem, 80px);
+  --font-size-hero-title-landscape: clamp(20px, 2vw + 1rem, 50px);
+  --font-size-hero-title-flat: clamp(18px, 1.8vw + 0.8rem, 40px);
+  --font-size-hero-name: clamp(14px, 1vw + 1rem, 40px);
+  --font-size-hero-name-landscape: clamp(14px, 1vw + 0.5rem, 28px);
+  --font-size-hero-name-flat: clamp(14px, 0.9vw + 0.4rem, 24px);
+  --font-size-hero-email: clamp(0.875rem, 1.5vw, 1.125rem);
+  --font-size-hero-email-landscape: clamp(0.875rem, 1.2vw, 0.9rem);
+  --font-size-hero-email-flat: 14px;
+
+  --font-size-404: clamp(4rem, 10vw, 8rem);
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  --letter-spacing-tight: -0.07rem;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025rem;
+
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1440px;
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+
+  --radius-none: 0;
+  --radius-xs: 2px;
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  --border-thin: 1px;
+  --border-normal: 1.5px;
+  --border-thick: 2px;
+  --border-heavy: 2.5px;
+  --border-xheavy: 3px;
+
+  --size-icon-sm: 20px;
+  --size-icon-md: 24px;
+  --size-icon-lg: 28px;
+  --size-icon-xl: 30px;
+  --size-icon-2xl: 36px;
+
+  --header-height: 3.75rem;
+
+  --size-logo: 20px;
+
+  --size-control-sm: 32px;
+  --size-control-md: 40px;
+
+  --width-divider-sm: 60px;
+  --width-divider-md: 100px;
+  --width-divider-lg: 300px;
+  --width-divider-xlg: 20%;
+
+  --width-divider-percentage: 85%;
+
+  --opacity-disabled: 0.6;
+  --opacity-inactive: 0.6;
+  --opacity-active: 1;
+
+  --letter-spacing-tighter: -0.09rem;
+  --letter-spacing-tight: -0.07rem;
+  --letter-spacing-normal: -0.04rem;
+
+  --line-height-tight: 1.3;
+
+  --blur-overlay: blur(10px);
+
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  --shadow-container: var(--shadow-md);
+
+  --color-section-background: rgb(200, 200, 200);
+
+  --color-arrow-fill: var(--color-text-primary);
+
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slower: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 720px) {
+  :root {
+    --header-height: 7vh;
+    --size-logo: 35px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --size-logo: 40px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1024px) and (min-height: 768px) and (max-height: 768px) and (orientation: landscape) {
+  :root {
+    --size-logo: 35px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1024px) and (min-height: 600px) and (max-height: 600px) and (orientation: landscape) {
+  :root {
+    --header-height: 10vh;
+    --size-logo: 30px;
+  }
+}
+
+@media screen and (max-height: 400px) and (orientation: landscape) {
+  :root {
+    --header-height: var(--space-12);
+    --size-logo: 20px;
+  }
+}
+
+@media screen and (min-width: 800px) and (min-height: 401px) and (max-height: 450px) and (orientation: landscape) {
+  :root {
+    --header-height: 10vh;
+    --size-logo: 25px;
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 800px) and (min-height: 500px) and (max-height: 600px) and (orientation: landscape) {
+  :root {
+    --header-height: 10vh;
+    --size-logo: 32px;
+  }
+}
+
+[data-theme='dark'] {
+  --color-text-primary: #e8e8e8;
+  --color-text-secondary: #1a1a1a;
+  --color-text-muted: #a0a0a0;
+
+  --filter-icon-muted: brightness(0) saturate(100%) invert(100%);
+
+  --filter-github-hover: brightness(0) saturate(100%) invert(100%);
+
+  --color-background: #2d2d2d;
+  --color-background-hover: rgba(45, 45, 45, 0.6);
+  --color-surface: #1a1a1a;
+  --color-border: rgba(255, 255, 255, 0.1);
+
+  --color-primary: rgb(0, 188, 143);
+  --color-primary-light: rgb(50, 210, 165);
+  --color-primary-darker: rgba(0, 188, 143, 0.15);
+
+  --color-form-valid: rgb(0, 188, 143);
+  --color-form-valid-hover: rgb(50, 210, 165);
+
+  --color-form-invalid: rgb(230, 28, 64);
+  --color-form-invalid-hover: rgb(255, 70, 100);
+
+  --color-button-background: var(--color-background);
+  --color-button-border: rgba(255, 255, 255, 0.2);
+  --color-button-border-hover: rgb(0, 188, 143);
+
+  --color-menu-overlay: rgba(30, 30, 30, 0.95);
+
+  --color-active-border: var(--color-primary-darker);
+
+  --shadow-xs: 0 1px 2px 0 rgba(255, 255, 255, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(255, 255, 255, 0.1), 0 1px 2px -1px rgba(255, 255, 255, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -2px rgba(255, 255, 255, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -4px rgba(255, 255, 255, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(255, 255, 255, 0.1), 0 8px 10px -6px rgba(255, 255, 255, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(255, 255, 255, 0.25);
+
+  --shadow-container: 0px 4px 4px 0px var(--color-primary-darker);
+
+  --color-section-background: rgb(55, 55, 55);
+
+  --color-arrow-fill: var(--color-primary);
+}

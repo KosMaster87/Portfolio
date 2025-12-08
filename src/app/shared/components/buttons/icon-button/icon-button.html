@@ -1,0 +1,9 @@
+<button [type]="type()" class="icon-button" (click)="onClick()" [attr.aria-label]="ariaLabel()">
+  <img
+    [src]="arrowImage"
+    [class.icon-button__arrow--dark]="isDark()"
+    alt=""
+    class="icon-button__arrow"
+    draggable="false"
+  />
+</button>

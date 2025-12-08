@@ -1,0 +1,60 @@
+<div class="imprint-page">
+  @if (translationService.isLoaded()) {
+  <div class="container">
+    <header class="page-header">
+      <h1>{{ imprintData().pageTitle }}</h1>
+      <p class="lead">{{ imprintData().lead }}</p>
+    </header>
+
+    <main class="imprint-content">
+      <section class="contact-info">
+        <h2>{{ imprintData().contactInfoTitle }}</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <h3>{{ imprintData().responsibleForContent }}</h3>
+            <p>
+              {{ imprintData().name }}<br />
+              {{ imprintData().street }}<br />
+              {{ imprintData().city }}<br />
+              {{ imprintData().country }}
+            </p>
+          </div>
+
+          <div class="info-item">
+            <h3>{{ imprintData().contactTitle }}</h3>
+            <p>
+              <strong>{{ imprintData().email }}</strong> {{ imprintData().emailValue }}<br />
+              <strong>{{ imprintData().phone }}</strong> {{ imprintData().phoneValue }}<br />
+              <strong>{{ imprintData().website }}</strong> {{ imprintData().websiteValue }}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="legal-info">
+        <h2>{{ imprintData().disclaimerTitle }}</h2>
+
+        <div class="disclaimer-section">
+          <h3>{{ imprintData().liabilityForContentTitle }}</h3>
+          <p>{{ imprintData().liabilityForContentText }}</p>
+        </div>
+
+        <div class="disclaimer-section">
+          <h3>{{ imprintData().liabilityForLinksTitle }}</h3>
+          <p>{{ imprintData().liabilityForLinksText }}</p>
+        </div>
+
+        <div class="disclaimer-section">
+          <h3>{{ imprintData().copyrightTitle }}</h3>
+          <p>{{ imprintData().copyrightText }}</p>
+        </div>
+      </section>
+
+      <section class="technical-info">
+        <h2>{{ imprintData().technicalInfoTitle }}</h2>
+        <p>{{ imprintData().technicalInfoText }}</p>
+      </section>
+    </main>
+  </div>
+  }
+</div>

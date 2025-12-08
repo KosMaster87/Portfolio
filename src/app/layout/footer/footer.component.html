@@ -1,0 +1,132 @@
+<footer class="app-footer">
+  @if (translationService.isLoaded()) {
+  <div class="app-footer__wrapper">
+    <div class="app-footer__content">
+      <div class="app-footer__brand">
+        <h3 class="brand-title">Portfolio<span class="brand-accent">.</span></h3>
+        <p class="brand-description">
+          {{ footerData().brandDescription }}
+        </p>
+      </div>
+
+      <div class="app-footer__navigation">
+        <h4 class="app-footer__navigation-heading">{{ footerData().navigationHeading }}</h4>
+        <nav role="navigation" aria-label="Footer navigation">
+          <ul class="app-footer__navigation-list">
+            <li class="app-footer__navigation-item">
+              <a (click)="navigateToHome()" class="app-footer__navigation-link">{{
+                footerData().home
+              }}</a>
+            </li>
+            <li class="app-footer__navigation-item">
+              <a (click)="navigateToSection('about')" class="app-footer__navigation-link">{{
+                footerData().about
+              }}</a>
+            </li>
+            <li class="app-footer__navigation-item">
+              <a (click)="navigateToSection('projects')" class="app-footer__navigation-link">{{
+                footerData().projects
+              }}</a>
+            </li>
+            <li class="app-footer__navigation-item">
+              <a (click)="navigateToSection('contact')" class="app-footer__navigation-link">{{
+                footerData().contact
+              }}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="app-footer__legal">
+        <h4 class="app-footer__legal-heading">{{ footerData().legalHeading }}</h4>
+        <nav role="navigation" aria-label="Legal navigation">
+          <ul class="app-footer__legal-list">
+            <li class="app-footer__legal-item">
+              <a (click)="navigateToRoute('/imprint')" class="app-footer__legal-link">{{
+                footerData().imprint
+              }}</a>
+            </li>
+            <li class="app-footer__legal-item">
+              <a (click)="navigateToRoute('/privacy-policy')" class="app-footer__legal-link">{{
+                footerData().privacy
+              }}</a>
+            </li>
+            <li class="app-footer__legal-item">
+              <a (click)="navigateToRoute('/sources')" class="app-footer__legal-link">{{
+                footerData().sources
+              }}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="app-footer__social">
+        <h4 class="app-footer__social-heading">{{ footerData().socialHeading }}</h4>
+        <div class="social-links">
+          @for (social of socialLinks(); track social.name) {
+          <a
+            [href]="social.url"
+            [attr.aria-label]="social.ariaLabel"
+            [class]="'social-link social-link--' + social.hoverColor"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              [src]="social.iconPath"
+              [alt]="social.name + ' icon'"
+              class="social-icon"
+              draggable="false"
+            />
+            <span class="social-name">{{ social.name }}</span>
+          </a>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="app-footer__bottom">
+      <div class="app-footer__bottom-content">
+        <div class="app-footer__copyright">
+          <p>
+            &copy; {{ currentYear }} {{ footerData().copyright }}
+            <span class="heart" [attr.aria-label]="footerData().love">❤️</span>
+            {{ footerData().and }}
+            <a
+              href="https://angular.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="angular-link"
+              ><strong>{{ footerData().angular }}</strong></a
+            >.
+          </p>
+        </div>
+
+        <div class="app-footer__tech-stack">
+          <p class="tech-info">
+            {{ footerData().builtWith }}
+            <a
+              href="https://www.typescriptlang.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="tech-item"
+              >{{ footerData().typescript }}</a
+            >
+            &
+            <a
+              href="https://sass-lang.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="tech-item"
+              >{{ footerData().scss }}</a
+            >
+          </p>
+        </div>
+
+        <div class="app-footer__back-to-top">
+          <app-icon-button [ariaLabel]="footerData().backToTopAria" (clicked)="scrollToTop()" />
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</footer>

@@ -1,0 +1,96 @@
+:root {
+  --btn-hamburger-size: 32px;
+  --btn-hamburger-padding: 4px;
+
+  --btn-hamburger-line-height: 2.5px;
+  --btn-hamburger-line-width: 100%;
+  --btn-hamburger-line-radius: 2px;
+  --btn-hamburger-gap: 5px;
+
+  --btn-hamburger-offset: 7.5px;
+  --btn-hamburger-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --btn-hamburger-line-color: var(--color-text-primary);
+  --btn-hamburger-bg: transparent;
+}
+
+@media screen and (min-width: 720px) {
+  :root {
+    --btn-hamburger-size: 36px;
+    --btn-hamburger-padding: 5px;
+    --btn-hamburger-line-height: 3px;
+    --btn-hamburger-gap: 6px;
+    --btn-hamburger-offset: 9px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --btn-hamburger-size: 40px;
+    --btn-hamburger-padding: 6px;
+    --btn-hamburger-line-height: 3px;
+    --btn-hamburger-gap: 7px;
+    --btn-hamburger-offset: 10px;
+  }
+}
+
+@media screen and (max-height: 400px) and (orientation: landscape) {
+  :root {
+    --btn-hamburger-size: 28px;
+    --btn-hamburger-padding: 3px;
+    --btn-hamburger-line-height: 2px;
+    --btn-hamburger-gap: 4px;
+    --btn-hamburger-offset: 6px;
+  }
+}
+
+@mixin btn-hamburger {
+  width: var(--btn-hamburger-size);
+  height: var(--btn-hamburger-size);
+  padding: var(--btn-hamburger-padding);
+
+  background: var(--btn-hamburger-bg);
+  border: none;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--btn-hamburger-gap);
+
+  transition: background-color var(--btn-hamburger-transition);
+
+  span {
+    display: block;
+    width: var(--btn-hamburger-line-width);
+    height: var(--btn-hamburger-line-height);
+    background-color: var(--btn-hamburger-line-color);
+    border-radius: var(--btn-hamburger-line-radius);
+    transition: transform var(--btn-hamburger-transition);
+  }
+
+  &--open {
+    span:nth-child(1) {
+      transform: translateY(var(--btn-hamburger-offset)) rotate(45deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    span:nth-child(3) {
+      transform: translateY(calc(-1 * var(--btn-hamburger-offset))) rotate(-45deg);
+    }
+  }
+}
+
+@mixin btn-hamburger-line {
+  display: block;
+  width: var(--btn-hamburger-line-width);
+  height: var(--btn-hamburger-line-height);
+  background-color: var(--btn-hamburger-line-color);
+  border-radius: var(--btn-hamburger-line-radius);
+  transition: transform var(--btn-hamburger-transition);
+}

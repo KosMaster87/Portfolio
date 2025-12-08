@@ -1,0 +1,10 @@
+<button
+  class="nav-btn"
+  [class.nav-btn--dark]="isDark()"
+  type="button"
+  [attr.aria-label]="label()"
+  (click)="navigate()"
+>
+  <img class="nav-btn__icon" [src]="iconPath()" [alt]="label() + ' icon'" draggable="false" />
+  <span class="nav-btn__label">{{ label() }}</span>
+</button>

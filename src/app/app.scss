@@ -1,0 +1,19 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  color: var(--color-text-primary);
+  font-family: var(--font-primary);
+  line-height: var(--line-height-normal);
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+app-footer {
+  flex-shrink: 0;
+  margin-top: auto;
+}

@@ -1,0 +1,25 @@
+<section id="projects" class="projects-section">
+  @if (translationService.isLoaded()) {
+  <div class="projects-section__container">
+    <div class="projects-section__header">
+      <h2 class="projects-section__title">
+        {{ translationService.instant('PROJECTS.title') }}
+      </h2>
+      <p class="projects-section__description">
+        {{ translationService.instant('PROJECTS.description') }}
+      </p>
+    </div>
+
+    <div class="projects-section__grid">
+      @for (project of projects(); track project.id; let index = $index) {
+      <app-project-card [project]="project" [index]="index" [total]="projectCount()" />
+
+      @if (index < projectCount() - 1) {
+      <div class="projects-section__separator">
+        <app-separator />
+      </div>
+      } }
+    </div>
+  </div>
+  }
+</section>

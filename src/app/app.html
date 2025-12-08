@@ -1,0 +1,19 @@
+<div class="app-layout">
+  <app-header></app-header>
+
+  <main class="main-content" role="main">
+    <router-outlet />
+  </main>
+
+  <app-footer></app-footer>
+
+  <app-notification
+    [show]="swUpdateService.showUpdateNotification()"
+    [message]="swUpdateService.updateMessage()"
+    [type]="'success'"
+    [duration]="30000"
+    [actionText]="updateActionText()"
+    (action)="onUpdateAccepted()"
+    (closed)="onUpdateDismissed()"
+  />
+</div>

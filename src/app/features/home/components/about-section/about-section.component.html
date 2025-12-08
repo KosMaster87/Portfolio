@@ -1,0 +1,43 @@
+<section class="about-section" id="about-section" id="about">
+  @if (translationService.isLoaded()) {
+  <div class="about-section__container">
+    <div class="about-section__grid">
+      <div class="about-section__content">
+        <h2 class="about-section__heading">
+          {{ aboutData().heading }}
+        </h2>
+
+        <p class="about-section__paragraph">
+          {{ aboutData().paragraph1 }}
+        </p>
+
+        <p class="about-section__paragraph">
+          {{ aboutData().paragraph2 }}
+        </p>
+
+        <app-cta-button
+          [btnContentText]="aboutData().ctaText"
+          (clicked)="scrollToSection('contact')"
+        ></app-cta-button>
+      </div>
+
+      <div class="about-section__portrait-wrapper portrait-wrapper">
+        <app-decorative-border
+          [aspectRatio]="'9 / 13'"
+          [borderRadius]="'10px'"
+          [borderWidth]="0.18"
+          [borderColor]="borderColor()"
+          [initialOffset]="{ x: 0, y: 0 }"
+          [hoverOffset]="{ x: 8, y: 8 }"
+        ></app-decorative-border>
+        <img
+          class="about-section__portrait"
+          src="assets/images/profile/Aksenov-Konstantin-profile.avif"
+          alt="Portrait of Konstantin Aksenov, Full-Stack Developer"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+  }
+</section>
