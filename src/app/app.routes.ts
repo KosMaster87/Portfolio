@@ -1,14 +1,22 @@
+/**
+ * @fileoverview Application routes.
+ * @description Defines the routing configuration for the Angular application.
+ * @module app/routes
+ */
+
 import { Routes } from '@angular/router';
-import { HomeprovideComponent } from './homeprovide/homeprovide.component';
-import { ImprintComponent } from './pages/imprint/imprint.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
+
+import { HomePageComponent } from './features/home/pages/home-page/home-page.component';
+import { ImprintPageComponent } from './features/legal/pages/imprint-page/imprint-page.component';
+import { PrivacyPolicyPageComponent } from './features/legal/pages/privacy-policy-page/privacy-policy-page.component';
+import { SourcesPageComponent } from './features/legal/pages/sources-page/sources-page.component';
+import { NotFoundPageComponent } from './shared/pages/not-found-page/not-found-page.component';
 
 export const routes: Routes = [
+  { path: '', component: HomePageComponent },
   { path: 'home', redirectTo: '', pathMatch: 'full' },
-  { path: '', component: HomeprovideComponent },
-
-  { path: 'imprint', component: ImprintComponent },
-  { path: '**', redirectTo: 'fakePage', pathMatch: 'full' },
-
-  { path: 'fakePage', component: NotFoundComponent },
+  { path: 'imprint', component: ImprintPageComponent },
+  { path: 'privacy-policy', component: PrivacyPolicyPageComponent },
+  { path: 'sources', component: SourcesPageComponent },
+  { path: '**', component: NotFoundPageComponent },
 ];
