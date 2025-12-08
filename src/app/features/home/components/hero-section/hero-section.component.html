@@ -1,0 +1,26 @@
+<section class="hero-section" id="hero">
+  @if (translationService.isLoaded()) {
+  <div class="hero-section__container">
+    <div class="hero-section__content">
+      <div class="hero-section__headline-box">
+        <h1 class="hero-section__title">
+          {{ heroData().title }}<br />
+          {{ heroData().titleDeveloper }}
+        </h1>
+      </div>
+
+      <div class="hero-section__name-box">
+        <div class="hero-section__line"></div>
+        <h2 class="hero-section__name">{{ heroData().name }}</h2>
+      </div>
+
+      <div class="hero-section__cta">
+        <app-cta-button
+          [btnContentText]="heroData().ctaText"
+          (clicked)="scrollToSection('contact')"
+        />
+      </div>
+    </div>
+  </div>
+  }
+</section>

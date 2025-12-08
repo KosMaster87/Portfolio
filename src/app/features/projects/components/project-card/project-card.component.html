@@ -1,0 +1,52 @@
+<article
+  class="project-card"
+  [class.project-card--even]="isEven()"
+  [class.project-card--odd]="!isEven()"
+>
+  @if (translationService.isLoaded()) {
+  <div class="project-card__number-box">
+    <span class="project-card__number">{{ projectNumber() }}</span>
+  </div>
+
+  <div class="project-card__content">
+    <div class="project-card__image-wrapper image-wrapper">
+      <app-decorative-border
+        [aspectRatio]="'16 / 9'"
+        [borderRadius]="'var(--radius-md)'"
+        [borderWidth]="0.18"
+        [borderColor]="borderColor()"
+        [initialOffset]="{ x: -8, y: -8 }"
+        [hoverOffset]="{ x: 8, y: 8 }"
+      ></app-decorative-border>
+      <img class="project-card__hover-arrow" [src]="arrowImage()" alt="" draggable="false" />
+      <img
+        class="project-card__image"
+        [src]="project().image.src"
+        [alt]="translationService.instant(project().image.alt)"
+      />
+    </div>
+
+    <div class="project-card__info" [class.project-card__info--active]="isVisible()">
+      <div class="project-card__info-inner" #infoInner>
+        <h3 class="project-card__title">
+          {{ translationService.instant(project().name) }}
+        </h3>
+        <p class="project-card__headline">
+          {{ project().headline }}
+        </p>
+        <p class="project-card__description">
+          {{ translationService.instant(project().description) }}
+        </p>
+
+        <div class="project-card__buttons">
+          @if (project().links.live) {
+          <app-project-button [label]="'Live test'" (click)="openLink(project().links.live!)" />
+          } @for (link of githubLinks(); track $index) {
+          <app-project-button [label]="getGithubLabel($index)" (click)="openLink(link)" />
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</article>

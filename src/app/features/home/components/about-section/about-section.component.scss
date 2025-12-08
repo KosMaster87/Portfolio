@@ -1,0 +1,204 @@
+@use '../../../../../styles/mixins' as *;
+
+:host {
+  display: block;
+}
+
+.about-section {
+  @include container;
+  padding: var(--space-section-medium) 0 var(--space-section-small) 0;
+
+  &__container {
+    width: calc(100% - (var(--space-4) * 2));
+    margin: 0 auto;
+    padding: var(--space-8);
+    background: var(--color-section-background);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-container);
+    overflow: hidden;
+
+    @media screen and (max-width: 300px) {
+      width: calc(100% - (var(--space-2) * 2));
+      padding: var(--space-4);
+    }
+
+    @include tablet {
+      width: calc(100% - (var(--space-6) * 2));
+      padding: var(--space-10);
+    }
+
+    @include desktop {
+      width: calc(100% - (var(--space-8) * 2));
+      padding: var(--space-12);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      'content'
+      'portrait';
+    gap: var(--space-8);
+    align-items: center;
+    width: 100%;
+
+    @media screen and (max-width: 300px) {
+      gap: var(--space-4);
+    }
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      gap: var(--space-12);
+    }
+
+    @include desktop {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: 'content content portrait';
+      gap: var(--space-16);
+    }
+  }
+  &__content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+
+    @include desktop {
+      align-items: flex-start;
+      text-align: left;
+      padding-left: 10%;
+    }
+  }
+
+  &__heading {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-extrabold);
+    letter-spacing: var(--letter-spacing-tight);
+    color: var(--color-primary);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin: 0 0 var(--space-12) 0;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+
+    @media screen and (max-width: 300px) {
+      font-size: var(--font-size-2xl);
+      margin: 0 0 var(--space-6) 0;
+    }
+
+    @include tablet {
+      font-size: var(--font-size-5xl);
+      white-space: nowrap;
+    }
+  }
+
+  &__paragraph {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-primary);
+    text-shadow: 4px 3px 20px rgba(0, 0, 0, 0.1);
+    text-wrap: balance;
+    max-width: 40ch;
+    margin: 0 0 var(--space-8) 0;
+
+    @media screen and (max-width: 300px) {
+      font-size: var(--font-size-sm);
+      margin: 0 0 var(--space-4) 0;
+      max-width: 100%;
+    }
+
+    @include tablet {
+      font-size: var(--font-size-lg);
+      max-width: 50ch;
+    }
+  }
+
+  &__cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 140px;
+    height: 50px;
+    padding: var(--space-3) var(--space-8);
+    margin-top: var(--space-8);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    background-color: transparent;
+    border: var(--border-thick) solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 4px 0px var(--color-primary-darker);
+
+    &:hover {
+      background-color: var(--color-primary);
+      color: var(--color-text-secondary);
+      box-shadow: var(--shadow-md);
+    }
+
+    @include desktop {
+      min-width: 160px;
+      height: 60px;
+      font-size: var(--font-size-lg);
+    }
+  }
+
+  &__portrait-wrapper {
+    grid-area: portrait;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: var(--space-8) 0;
+
+    @media screen and (max-width: 300px) {
+      margin: var(--space-4) 0;
+    }
+
+    @include desktop {
+      justify-content: flex-start;
+      margin: 0;
+    }
+  }
+
+  &__portrait {
+    width: clamp(180px, 28vw + 3rem, 300px);
+    aspect-ratio: 9 / 13;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: var(--shadow-lg);
+
+    @media screen and (max-width: 300px) {
+      width: clamp(120px, 40vw + 2rem, 180px);
+      border-radius: var(--radius-sm);
+    }
+
+    @media screen and (min-width: 720px) and (max-width: 1024px) and (orientation: landscape) {
+      width: clamp(180px, 20vw + 3rem, 240px);
+    }
+
+    @include tablet {
+      width: clamp(220px, 15vw + 8rem, 280px);
+    }
+
+    @include desktop {
+      width: clamp(240px, 12vw + 5rem, 300px);
+    }
+  }
+}

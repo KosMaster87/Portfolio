@@ -1,0 +1,30 @@
+<main class="home-page" role="main">
+  <app-hero-section></app-hero-section>
+
+  <app-about-section></app-about-section>
+
+  <app-scroll-arrow direction="down" targetFragment="skills" rotate="right"> </app-scroll-arrow>
+
+  <app-skills-section></app-skills-section>
+
+  <app-scroll-arrow direction="down" targetFragment="projects" rotate="left"> </app-scroll-arrow>
+
+  @defer (prefetch on idle) {
+  <app-projects-section></app-projects-section>
+  } @placeholder (minimum 500ms) {
+  <div class="section-skeleton" id="projects">r
+    <div class="skeleton-content">
+      <div class="skeleton-title"></div>
+      <div class="skeleton-cards">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+    </div>
+  </div>
+  }
+
+  <app-scroll-arrow direction="down" targetFragment="contact" rotate="right"> </app-scroll-arrow>
+
+  <app-linear-gradient></app-linear-gradient>
+  <app-contact-section></app-contact-section>
+</main>

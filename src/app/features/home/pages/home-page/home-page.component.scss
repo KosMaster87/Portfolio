@@ -1,0 +1,79 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.home-page {
+  .section-skeleton {
+    width: 100%;
+    padding: var(--space-16) var(--space-4);
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+      padding: var(--space-4) var(--space-8);
+    }
+  }
+
+  .skeleton-content {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .skeleton-title {
+    height: 60px;
+    background: linear-gradient(
+      90deg,
+      var(--color-surface) 25%,
+      var(--color-border) 50%,
+      var(--color-surface) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: var(--radius-md);
+    margin: var(--space-4) auto;
+    width: 80%;
+    max-width: 400px;
+
+    @include tablet {
+      height: 80px;
+    }
+  }
+
+  .skeleton-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .skeleton-card {
+    height: 400px;
+    background: linear-gradient(
+      90deg,
+      var(--color-surface) 25%,
+      var(--color-border) 50%,
+      var(--color-surface) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: var(--radius-md);
+
+    @include tablet {
+      height: 300px;
+    }
+
+    @include desktop {
+      height: 400px;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+}

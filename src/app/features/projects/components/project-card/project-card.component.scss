@@ -1,0 +1,462 @@
+// ===================================================================
+// PROJECT CARD COMPONENT STYLES (BEM)
+// ===================================================================
+
+@use '../../../../../styles/mixins' as *;
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-5) 0;
+
+  // ===================================================================
+  // Project Number
+  // ===================================================================
+
+  &__number-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__number {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    text-shadow: 4px 3px 20px rgba(0, 0, 0, 0.38);
+    margin-top: var(--space-4);
+  }
+
+  // ===================================================================
+  // Main Content Container
+  // ===================================================================
+
+  &__content {
+    border-radius: var(--radius-md);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+
+  // Fade-up animation when card becomes visible
+  &__info--active ~ &__content,
+  .project-card:has(&__info--active) &__content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &__image-wrapper {
+    position: relative;
+    width: 100%;
+
+    // Override decorative-border to match image exactly
+    ::ng-deep app-decorative-border .decorative-border {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius-md);
+    }
+  }
+
+  &__hover-arrow {
+    position: absolute;
+    top: 50%;
+    width: clamp(2rem, 4.5vw, 3.2rem);
+    height: clamp(2rem, 4.5vw, 3.2rem);
+    display: none; // Hidden by default on mobile
+    transform-origin: center;
+    transition: transform 1s ease, opacity 0.2s ease, filter 0.3s ease;
+    opacity: 0;
+    z-index: 15;
+    pointer-events: none;
+    user-select: none;
+    border-radius: 50%;
+    background-color: var(--color-background);
+    padding: clamp(0.2rem, 0.6vw, 0.3rem);
+  }
+
+  &__image {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    z-index: 5;
+  }
+
+  // Fade-up card-info animation when card becomes visible
+  &__info {
+    width: 100%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+
+  &__info--active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &__info-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  &__title {
+    @include heading-4;
+    margin: var(--space-2) 0 0 0;
+  }
+
+  &__headline {
+    @include body;
+    color: var(--color-primary);
+    margin: 0;
+  }
+
+  &__description {
+    @include body;
+    text-wrap: balance;
+    max-width: 40ch;
+    margin: 0;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding-top: var(--space-1);
+  }
+
+  // ===================================================================
+  // Even/Odd Modifiers
+  // ===================================================================
+
+  &--even {
+    margin: 0 0 var(--space-5) 0;
+
+    .project-card__number-box {
+      justify-content: flex-end;
+      padding-right: var(--space-8);
+    }
+
+    .project-card__rectangle--active {
+      animation: slideInEven 1s ease forwards;
+      border: 2px solid var(--color-primary);
+      transform: scale(1.05);
+    }
+
+    // Mobile/Tablet: Arrow links nach unten rechts
+    @media screen and (max-width: 1023px) {
+      .project-card__hover-arrow {
+        left: 10px;
+        transform: translate(-50%, -50%) rotate(135deg);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInEven {
+      0% {
+        transform: translate(0%, 0%);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(2%, 4%);
+        opacity: 1;
+      }
+    }
+  }
+
+  &--odd {
+    margin: 0 0 var(--space-5) 0;
+
+    .project-card__number-box {
+      justify-content: flex-start;
+      padding-left: var(--space-8);
+    }
+
+    .project-card__info-inner {
+      align-items: flex-end;
+    }
+
+    .project-card__description {
+      text-align: right;
+    }
+
+    .project-card__rectangle--active {
+      animation: slideInOdd 1s ease forwards;
+      border: 2px solid var(--color-primary);
+      transform: scale(1.05);
+    }
+
+    // Mobile/Tablet: Arrow rechts nach unten links
+    @media screen and (max-width: 1023px) {
+      .project-card__hover-arrow {
+        right: -8px;
+        transform: translate(50%, -50%) rotate(-135deg);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInOdd {
+      0% {
+        transform: translate(0%, 0%);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-2%, 4%);
+        opacity: 1;
+      }
+    }
+  }
+
+  // ===================================================================
+  // Responsive Breakpoints
+  // ===================================================================
+
+  @include tablet {
+    &__number {
+      font-size: var(--font-size-xl);
+    }
+
+    &__title {
+      font-size: var(--font-size-3xl);
+    }
+
+    &__headline {
+      font-size: var(--font-size-lg);
+    }
+
+    &__description {
+      font-size: var(--font-size-base);
+    }
+
+    &__buttons {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: var(--space-2);
+      padding-top: var(--space-4);
+    }
+  }
+
+  @include desktop {
+    margin: var(--space-12) 0;
+
+    &__content {
+      flex-direction: row;
+      align-items: flex-start;
+      min-height: 300px;
+      max-width: 1440px;
+      gap: var(--space-8);
+    }
+
+    &__image-wrapper {
+      width: 50%;
+
+      // Desktop: Base state for border
+      ::ng-deep app-decorative-border .decorative-border {
+        transform: translate(0, 0);
+        border-color: transparent;
+      }
+    }
+
+    &__image {
+      width: 100%;
+      filter: grayscale(100%);
+      transition: filter var(--transition-base);
+    }
+
+    &__content:hover &__image {
+      filter: grayscale(0%);
+    }
+
+    &__info {
+      width: 50%;
+    }
+
+    &__info-inner {
+      gap: var(--space-2);
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    // Even cards: Arrow at right
+    &--even {
+      .project-card__hover-arrow {
+        display: block; // Show on desktop
+        right: 0;
+        transform: translate(50%, -50%) rotate(135deg);
+      }
+
+      ::ng-deep app-decorative-border .decorative-border {
+        transition: transform 0.8s ease, border-color 0.8s ease;
+      }
+
+      .project-card__image-wrapper:hover ::ng-deep app-decorative-border .decorative-border {
+        transform: translate(2%, 4%);
+        border-color: var(--border-color);
+      }
+
+      .project-card__image-wrapper:hover .project-card__hover-arrow {
+        animation: arrowSlideEven 1s ease forwards;
+      }
+    }
+
+    @keyframes arrowSlideEven {
+      0% {
+        right: 0;
+        transform: translate(50%, -50%) rotate(135deg);
+        opacity: 0;
+      }
+      100% {
+        right: -2%;
+        transform: translate(50%, calc(-50% + 4%)) rotate(45deg);
+        opacity: 1;
+      }
+    }
+
+    // Odd cards: Arrow at left
+    &--odd {
+      .project-card__hover-arrow {
+        display: block; // Show on desktop
+        left: 0;
+        transform: translate(-50%, -50%) rotate(-135deg);
+      }
+
+      ::ng-deep app-decorative-border .decorative-border {
+        transition: transform 0.8s ease, border-color 0.8s ease;
+      }
+
+      .project-card__image-wrapper:hover ::ng-deep app-decorative-border .decorative-border {
+        transform: translate(-2%, 4%);
+        border-color: var(--border-color);
+      }
+
+      .project-card__image-wrapper:hover .project-card__hover-arrow {
+        animation: arrowSlideOdd 1s ease forwards;
+      }
+    }
+
+    @keyframes arrowSlideOdd {
+      0% {
+        transform: translate(-50%, -50%) rotate(-135deg);
+        opacity: 0;
+      }
+      100% {
+        left: -2%;
+        transform: translate(-50%, calc(-50% + 4%)) rotate(-45deg);
+        opacity: 1;
+      }
+    }
+
+    &__content:hover &__info-inner {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    &__title {
+      font-size: var(--font-size-4xl);
+    }
+
+    &__headline {
+      font-size: var(--font-size-lg);
+    }
+
+    &__description {
+      font-size: var(--font-size-base);
+    }
+
+    &__button {
+      font-size: var(--font-size-base);
+    }
+
+    &__buttons {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: var(--space-4);
+    }
+
+    &--even {
+      padding-left: var(--space-12);
+
+      .project-card__number-box {
+        padding-right: var(--space-16);
+      }
+
+      .project-card__info-inner {
+        padding-left: var(--space-8);
+        padding-right: 0;
+      }
+    }
+
+    &--odd {
+      padding-right: var(--space-12);
+
+      .project-card__number-box {
+        padding-left: var(--space-16);
+      }
+
+      .project-card__content {
+        flex-direction: row-reverse;
+      }
+
+      .project-card__info-inner {
+        transform: translateX(30px);
+      }
+
+      .project-card__content:hover .project-card__info-inner {
+        transform: translateX(0);
+      }
+
+      .project-card__slider {
+        flex-direction: row-reverse;
+      }
+
+      .project-card__info-inner {
+        padding-left: 0;
+        padding-right: var(--space-8);
+      }
+
+      .project-card__arrow {
+        left: 0;
+        transform: translate(-50%, -40%) rotate(135deg);
+      }
+
+      .project-card__rectangle:hover .project-card__arrow {
+        transform: translate(-50%, -40%) rotate(270deg) scale(1.2);
+      }
+    }
+  }
+}
+
+// Theme-specific decorative border color (only when visible)
+:host-context([data-theme='light']) {
+  .project-card {
+    // Mobile/Tablet: Border always visible
+    @media screen and (max-width: 1023px) {
+      ::ng-deep .decorative-border {
+        border-color: #000000 !important;
+      }
+    }
+
+    // Desktop: Border on hover
+    @include desktop {
+      .project-card__image-wrapper:hover ::ng-deep .decorative-border {
+        border-color: #000000 !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,184 @@
+<div class="privacy-policy-page">
+  @if (translationService.isLoaded()) {
+  <div class="container">
+    <header class="page-header">
+      <h1>{{ privacyData().pageTitle }}</h1>
+      <p class="lead">{{ privacyData().lead }}</p>
+      <p class="last-updated">{{ privacyData().lastUpdated }} {{ lastUpdated }}</p>
+    </header>
+
+    <main class="privacy-content">
+      <section class="overview">
+        <h2>{{ privacyData().overviewTitle }}</h2>
+        <p>{{ privacyData().overviewText }}</p>
+      </section>
+
+      <section class="data-collection">
+        <h2>{{ privacyData().dataCollectionTitle }}</h2>
+
+        <div class="info-block">
+          <h3>{{ privacyData().autoCollectedTitle }}</h3>
+          <ul>
+            <li>
+              <strong>{{ privacyData().autoCollectedLogData }}</strong>
+              {{ privacyData().autoCollectedLogDataText }}
+            </li>
+            <li>
+              <strong>{{ privacyData().autoCollectedUsageData }}</strong>
+              {{ privacyData().autoCollectedUsageDataText }}
+            </li>
+            <li>
+              <strong>{{ privacyData().autoCollectedDeviceInfo }}</strong>
+              {{ privacyData().autoCollectedDeviceInfoText }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="info-block">
+          <h3>{{ privacyData().youProvideTitle }}</h3>
+          <ul>
+            <li>
+              <strong>{{ privacyData().youProvideContactForms }}</strong>
+              {{ privacyData().youProvideContactFormsText }}
+            </li>
+            <li>
+              <strong>{{ privacyData().youProvideNewsletter }}</strong>
+              {{ privacyData().youProvideNewsletterText }}
+            </li>
+            <li>
+              <strong>{{ privacyData().youProvideFeedback }}</strong>
+              {{ privacyData().youProvideFeedbackText }}
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="data-usage">
+        <h2>{{ privacyData().dataUsageTitle }}</h2>
+
+        <div class="usage-grid">
+          <div class="usage-item">
+            <h3>{{ privacyData().usageSiteImprovementTitle }}</h3>
+            <p>{{ privacyData().usageSiteImprovementText }}</p>
+          </div>
+
+          <div class="usage-item">
+            <h3>{{ privacyData().usageCommunicationTitle }}</h3>
+            <p>{{ privacyData().usageCommunicationText }}</p>
+          </div>
+
+          <div class="usage-item">
+            <h3>{{ privacyData().usageSecurityTitle }}</h3>
+            <p>{{ privacyData().usageSecurityText }}</p>
+          </div>
+
+          <div class="usage-item">
+            <h3>{{ privacyData().usageLegalTitle }}</h3>
+            <p>{{ privacyData().usageLegalText }}</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cookies">
+        <h2>{{ privacyData().cookiesTitle }}</h2>
+
+        <div class="cookie-types">
+          <div class="cookie-type">
+            <h3>{{ privacyData().cookiesEssentialTitle }}</h3>
+            <p>{{ privacyData().cookiesEssentialText }}</p>
+          </div>
+
+          <div class="cookie-type">
+            <h3>{{ privacyData().cookiesAnalyticsTitle }}</h3>
+            <p>{{ privacyData().cookiesAnalyticsText }}</p>
+          </div>
+
+          <div class="cookie-type">
+            <h3>{{ privacyData().cookiesPreferenceTitle }}</h3>
+            <p>{{ privacyData().cookiesPreferenceText }}</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="data-sharing">
+        <h2>{{ privacyData().dataSharingTitle }}</h2>
+        <div class="sharing-policy">
+          <p>
+            <strong>{{ privacyData().dataSharingIntro }}</strong>
+            {{ privacyData().dataSharingText }}
+          </p>
+          <ul>
+            <li>{{ privacyData().dataSharingConsent }}</li>
+            <li>{{ privacyData().dataSharingLegal }}</li>
+            <li>{{ privacyData().dataSharingRights }}</li>
+            <li>{{ privacyData().dataSharingProviders }}</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="your-rights">
+        <h2>{{ privacyData().yourRightsTitle }}</h2>
+
+        <div class="rights-grid">
+          <div class="right-item">
+            <h3>{{ privacyData().rightsAccessTitle }}</h3>
+            <p>{{ privacyData().rightsAccessText }}</p>
+          </div>
+
+          <div class="right-item">
+            <h3>{{ privacyData().rightsCorrectionTitle }}</h3>
+            <p>{{ privacyData().rightsCorrectionText }}</p>
+          </div>
+
+          <div class="right-item">
+            <h3>{{ privacyData().rightsDeletionTitle }}</h3>
+            <p>{{ privacyData().rightsDeletionText }}</p>
+          </div>
+
+          <div class="right-item">
+            <h3>{{ privacyData().rightsPortabilityTitle }}</h3>
+            <p>{{ privacyData().rightsPortabilityText }}</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="security">
+        <h2>{{ privacyData().securityTitle }}</h2>
+        <p>{{ privacyData().securityIntro }}</p>
+        <ul>
+          <li>{{ privacyData().securitySSL }}</li>
+          <li>{{ privacyData().securityHosting }}</li>
+          <li>{{ privacyData().securityUpdates }}</li>
+          <li>{{ privacyData().securityAccess }}</li>
+        </ul>
+      </section>
+
+      <section class="contact-privacy">
+        <h2>{{ privacyData().contactPrivacyTitle }}</h2>
+        <div class="contact-info">
+          <p>{{ privacyData().contactPrivacyText }}</p>
+          <ul>
+            <li>
+              <strong>{{ privacyData().contactPrivacyEmail }}</strong>
+              {{ privacyData().contactPrivacyEmailValue }}
+            </li>
+            <li>
+              <strong>{{ privacyData().contactPrivacyForm }}</strong>
+              {{ privacyData().contactPrivacyFormText }}
+            </li>
+            <li>
+              <strong>{{ privacyData().contactPrivacyMail }}</strong>
+              {{ privacyData().contactPrivacyMailValue }}
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="policy-updates">
+        <h2>{{ privacyData().policyUpdatesTitle }}</h2>
+        <p>{{ privacyData().policyUpdatesText }}</p>
+      </section>
+    </main>
+  </div>
+  }
+</div>
