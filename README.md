@@ -17,7 +17,7 @@ A fully responsive, modern portfolio website built as a Single Page Application 
 
 ## 📸 Preview
 
-![Portfolio Screenshot](./public/media/preview-portfolio.png)
+![Portfolio Screenshot](./src/assets/images/preview-portfolio.png)
 
 ---
 
