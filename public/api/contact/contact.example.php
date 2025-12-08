@@ -254,6 +254,13 @@ switch ($_SERVER['REQUEST_METHOD']) {
             exit;
         }
 
+        // Additional email pattern validation (matches frontend)
+        if (!preg_match("/^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/", $email)) {
+            http_response_code(400);
+            echo json_encode(['success' => false, 'message' => 'Invalid email format']);
+            exit;
+        }
+
         $name = htmlspecialchars(trim($params['name']), ENT_QUOTES, 'UTF-8');
         $message = htmlspecialchars(trim($params['message']), ENT_QUOTES, 'UTF-8');
 
@@ -263,9 +270,24 @@ switch ($_SERVER['REQUEST_METHOD']) {
             exit;
         }
 
+        // Name pattern validation (matches frontend pattern)
+        if (!preg_match("/^[a-zA-Z\x{00C0}-\x{00FF}]+([' \-][a-zA-Z\x{00C0}-\x{00FF}]+)*$/u", $name)) {
+            http_response_code(400);
+            echo json_encode(['success' => false, 'message' => 'Invalid name format. Only letters, spaces, hyphens, and apostrophes allowed']);
+            exit;
+        }
+
         if (strlen($message) > 2000) {
             http_response_code(400);
             echo json_encode(['success' => false, 'message' => 'Message too long (max 2000 characters)']);
+            exit;
+        }
+
+        // Check for email header injection attempts
+        if (preg_match("/(Content-Type:|Bcc:|Cc:|To:|From:|Subject:)/i", $message)) {
+            http_response_code(400);
+            echo json_encode(['success' => false, 'message' => 'Invalid message content']);
+            logEvent('WARNING', 'Header injection attempt detected', ['message' => $message]);
             exit;
         }
 
