@@ -390,4 +390,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Last Updated:** November 2025
+**Last Updated:** Dezember 2025
