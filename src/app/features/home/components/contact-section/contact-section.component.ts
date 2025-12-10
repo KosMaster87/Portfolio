@@ -9,7 +9,7 @@ import { Component, computed, inject, signal } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { ThemeService, TranslationService } from '@core/services';
+import { SmoothScrollService, ThemeService, TranslationService } from '@core/services';
 import { NotificationComponent, SubmitButtonComponent } from '@shared/components';
 
 /**
@@ -27,6 +27,7 @@ export class ContactSectionComponent {
   private http = inject(HttpClient);
   protected translationService = inject(TranslationService);
   private themeService = inject(ThemeService);
+  private smoothScrollService = inject(SmoothScrollService);
 
   showNotification = false;
   notificationMessage = '';
@@ -79,6 +80,19 @@ export class ContactSectionComponent {
     endPoint: 'https://portfolio.dev2k.org/api/contact/contact.php',
     body: (payload: any) => JSON.stringify(payload),
   };
+
+  /**
+   * Handles focus on email link - scrolls contact section into view
+   * @param {FocusEvent} event - Focus event
+   */
+  onEmailLinkFocus(event: FocusEvent): void {
+    const link = event.target as HTMLElement;
+    const section = link.closest('section') as HTMLElement;
+
+    if (section) {
+      this.smoothScrollService.scrollElementToTop(section, 1000);
+    }
+  }
 
   /**
    * Handles form submission.

@@ -25,45 +25,21 @@
                 {{ footerData().home }}
               </a>
             </li>
+            @for (item of menuItems; track item.sectionId) {
             <li class="app-footer__navigation-item">
               <a
-                (click)="navigateToSection('about')"
+                (click)="navigateToSection(item.sectionId)"
                 (keydown.space)="$event.preventDefault()"
-                (keyup.enter)="navigateToSection('about')"
-                (keyup.space)="navigateToSection('about')"
+                (keyup.enter)="navigateToSection(item.sectionId)"
+                (keyup.space)="navigateToSection(item.sectionId)"
                 class="app-footer__navigation-link"
                 role="button"
                 tabindex="0"
               >
-                {{ footerData().about }}
+                {{ translate(item.label) }}
               </a>
             </li>
-            <li class="app-footer__navigation-item">
-              <a
-                (click)="navigateToSection('projects')"
-                (keydown.space)="$event.preventDefault()"
-                (keyup.enter)="navigateToSection('projects')"
-                (keyup.space)="navigateToSection('projects')"
-                class="app-footer__navigation-link"
-                role="button"
-                tabindex="0"
-              >
-                {{ footerData().projects }}
-              </a>
-            </li>
-            <li class="app-footer__navigation-item">
-              <a
-                (click)="navigateToSection('contact')"
-                (keydown.space)="$event.preventDefault()"
-                (keyup.enter)="navigateToSection('contact')"
-                (keyup.space)="navigateToSection('contact')"
-                class="app-footer__navigation-link"
-                role="button"
-                tabindex="0"
-              >
-                {{ footerData().contact }}
-              </a>
-            </li>
+            }
           </ul>
         </nav>
       </div>

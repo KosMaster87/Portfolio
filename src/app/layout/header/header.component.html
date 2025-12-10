@@ -1,9 +1,17 @@
-<header class="header">
+<header class="header" id="header" tabindex="-1">
   @if (translationService.isLoaded()) {
   <div class="header__container">
     <div class="header__content">
       <div class="header__brand">
-        <a class="header__logo" (click)="navigateToHome()">
+        <a
+          class="header__logo"
+          (click)="navigateToHome()"
+          (keydown.space)="$event.preventDefault()"
+          (keyup.enter)="navigateToHome()"
+          (keyup.space)="navigateToHome()"
+          role="button"
+          tabindex="0"
+        >
           <img class="header__logo-icon" [src]="logoPath()" alt="dev2k Logo" draggable="false" />
           <span class="header__logo-text">dev2k</span>
         </a>
@@ -19,7 +27,16 @@
         <ul class="header__nav-list">
           @for (item of menuItems; track item.sectionId) {
           <li class="header__nav-item">
-            <a class="header__nav-link" (click)="scrollToSection(item.sectionId)" draggable="false">
+            <a
+              class="header__nav-link"
+              (click)="scrollToSection(item.sectionId)"
+              (keydown.space)="$event.preventDefault()"
+              (keyup.enter)="scrollToSection(item.sectionId)"
+              (keyup.space)="scrollToSection(item.sectionId)"
+              role="button"
+              tabindex="0"
+              draggable="false"
+            >
               {{ translate(item.label) }}
             </a>
           </li>
@@ -74,6 +91,11 @@
               <a
                 class="header__menu-link"
                 (click)="scrollToSection(item.sectionId)"
+                (keydown.space)="$event.preventDefault()"
+                (keyup.enter)="scrollToSection(item.sectionId)"
+                (keyup.space)="scrollToSection(item.sectionId)"
+                role="button"
+                tabindex="0"
                 draggable="false"
               >
                 {{ translate(item.label) }}

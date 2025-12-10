@@ -4,6 +4,7 @@
   [class.scroll-arrow--rotate-left]="rotate() === 'left'"
   [class.scroll-arrow--rotate-right]="rotate() === 'right'"
   [attr.aria-label]="'Scroll to ' + targetFragment()"
+  tabindex="-1"
 >
   <div class="scroll-arrow__icon">
     <div class="scroll-arrow__circle scroll-arrow__circle--top"></div>

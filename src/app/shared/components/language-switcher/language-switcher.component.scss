@@ -27,6 +27,11 @@
     &[aria-expanded='true'] {
       border-color: var(--color-primary);
     }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
   }
 
   &__flag {
@@ -97,6 +102,11 @@
       background: var(--color-primary-darker);
       border-color: var(--color-primary);
       color: var(--color-primary);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
     }
   }
 

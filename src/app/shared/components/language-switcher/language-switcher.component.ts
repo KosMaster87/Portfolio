@@ -74,4 +74,19 @@ export class LanguageSwitcherComponent {
       this.closeDropdown();
     }
   }
+
+  /**
+   * Handle focus leaving the component
+   * Closes dropdown when focus moves outside the component
+   * @param event - The focus event
+   * @returns void
+   */
+  onFocusOut(event: FocusEvent): void {
+    const relatedTarget = event.relatedTarget as HTMLElement;
+    const currentTarget = event.currentTarget as HTMLElement;
+
+    if (!currentTarget.contains(relatedTarget)) {
+      this.closeDropdown();
+    }
+  }
 }

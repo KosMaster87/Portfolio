@@ -39,6 +39,13 @@ export class FooterComponent implements OnInit, OnDestroy {
   private beforeInstallHandler: ((e: Event) => void) | null = null;
 
   /**
+   * Navigation menu items from NavigationService
+   */
+  protected get menuItems() {
+    return this.navigationService.menuItems;
+  }
+
+  /**
    * Computed footer content data with translations.
    * Reactively updates when language changes.
    */
@@ -61,7 +68,9 @@ export class FooterComponent implements OnInit, OnDestroy {
       backToTop: t.instant('FOOTER.backToTop'),
       backToTopAria: t.instant('FOOTER.backToTopAria'),
       home: t.instant('MENU.home'),
+      hero: t.instant('MENU.hero'),
       about: t.instant('MENU.about'),
+      skills: t.instant('MENU.skills'),
       projects: t.instant('MENU.projects'),
       contact: t.instant('MENU.contact'),
       imprint: t.instant('MENU.imprint'),
@@ -126,10 +135,7 @@ export class FooterComponent implements OnInit, OnDestroy {
    * Used for footer "Home" link.
    */
   navigateToHome(): void {
-    this.navigationService.navigateToHome();
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 100);
+    this.navigationService.navigateToHeader();
   }
 
   /**
@@ -194,5 +200,14 @@ export class FooterComponent implements OnInit, OnDestroy {
     e.userChoice.then((choice: any) => {
       this.deferredPrompt.set(null);
     });
+  }
+
+  /**
+   * Gets translated text for a translation key.
+   * @param {string} key - Translation key (e.g., 'MENU.home')
+   * @returns {string} Translated text in current language
+   */
+  translate(key: string): string {
+    return this.translationService.instant(key);
   }
 }

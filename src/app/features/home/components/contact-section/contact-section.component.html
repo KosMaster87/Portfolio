@@ -1,4 +1,4 @@
-<section class="contact-section" id="contact">
+<section class="contact-section" id="contact" tabindex="-1">
   <app-notification
     [show]="showNotification"
     [message]="notificationMessage"
@@ -19,6 +19,7 @@
             href="mailto:konstantin.aksenov@dev2k.org"
             class="contact-section__email-link"
             (keydown.space)="$event.preventDefault()"
+            (focus)="onEmailLinkFocus($event)"
             tabindex="0"
           >
             Konstantin.Aksenov@dev2k.org

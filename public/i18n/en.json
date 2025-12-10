@@ -63,11 +63,12 @@
     "errorMessage": "Something went wrong. Please try again or contact me directly via email."
   },
   "MENU": {
-    "about": "About",
+    "about": "About me",
     "skills": "Skills",
     "projects": "Projects",
     "contact": "Contact",
     "home": "Home",
+    "hero": "Hero",
     "imprint": "Imprint",
     "privacy": "Privacy",
     "sources": "Sources"

@@ -8,7 +8,12 @@
     <span class="notification__message">{{ message() }}</span>
 
     @if (actionText()) {
-    <button type="button" class="notification__action" (click)="onAction()">
+    <button
+      type="button"
+      class="notification__action"
+      (click)="onAction()"
+      [attr.tabindex]="show() ? '0' : '-1'"
+    >
       {{ actionText() }}
     </button>
     }
@@ -19,6 +24,7 @@
     class="notification__close"
     (click)="onClose()"
     aria-label="Close notification"
+    [attr.tabindex]="show() ? '0' : '-1'"
   >
     &times;
   </button>

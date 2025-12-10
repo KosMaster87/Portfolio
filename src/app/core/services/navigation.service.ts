@@ -74,6 +74,23 @@ export class NavigationService {
   }
 
   /**
+   * Navigate to home and scroll to top (header).
+   * Use this for "Home" navigation links.
+   */
+  navigateToHeader(): void {
+    this.router.navigate(['/']).then(() => {
+      setTimeout(() => {
+        const header = document.getElementById('header');
+        if (header) {
+          this.scrollService.scrollToFragment('header');
+        } else {
+          this.scrollService.scrollToTop();
+        }
+      }, 100);
+    });
+  }
+
+  /**
    * Navigate to home and scroll to top.
    * Use this for "Back to Top" functionality.
    */
@@ -115,10 +132,11 @@ export class NavigationService {
 
   /**
    * Scroll to top of page without navigation.
+   * Scrolls to header element for consistent focus behavior.
    * Use for "Back to Top" button that should work on any page.
    */
   scrollToTop(): void {
-    this.scrollService.scrollToTop();
+    this.scrollService.scrollToFragment('header');
   }
 
   /**
