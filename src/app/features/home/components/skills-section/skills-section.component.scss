@@ -36,11 +36,8 @@
     padding: var(--space-2) var(--space-4);
     margin: 0 0 var(--space-12) 0;
     position: relative;
-    z-index: 1;
 
     @media screen and (max-width: 300px) {
-      font-size: var(--font-size-2xl);
-      padding: var(--space-1) var(--space-2);
       margin: 0 0 var(--space-8) 0;
     }
   }
@@ -51,10 +48,18 @@
     min-height: 33vh;
     padding: var(--space-8) var(--space-4);
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(clamp(100px, 10vw, 200px), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(clamp(80px, 10vw, 200px), 1fr));
     gap: var(--space-1);
     justify-items: center;
     align-items: center;
+
+    @media screen and (min-width: 300px) {
+      padding: var(--space-6) 0;
+    }
+
+    @media screen and (max-width: 720px) {
+      grid-template-columns: repeat(auto-fill, minmax(clamp(80px, 22vw, 200px), 1fr));
+    }
   }
 
   @include tablet {
@@ -94,8 +99,8 @@
   }
 
   &__icon {
-    width: clamp(50px, 8vw, 80px);
-    height: clamp(50px, 8vw, 80px);
+    width: clamp(45px, 8vw, 80px);
+    height: clamp(45px, 8vw, 80px);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
