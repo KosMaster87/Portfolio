@@ -127,6 +127,9 @@ export class FooterComponent implements OnInit, OnDestroy {
    */
   navigateToHome(): void {
     this.navigationService.navigateToHome();
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
   }
 
   /**

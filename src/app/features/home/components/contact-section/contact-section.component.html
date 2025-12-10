@@ -15,7 +15,12 @@
         <h3 class="contact-section__title">{{ contactData().title }}</h3>
         <p class="contact-section__description">
           {{ contactData().description }}
-          <a href="mailto:konstantin.aksenov@dev2k.org" class="contact-section__email-link">
+          <a
+            href="mailto:konstantin.aksenov@dev2k.org"
+            class="contact-section__email-link"
+            (keydown.space)="$event.preventDefault()"
+            tabindex="0"
+          >
             Konstantin.Aksenov@dev2k.org
           </a>
         </p>
@@ -165,7 +170,14 @@
               <label class="form-checkbox__label" for="checkboxSelf">
                 {{ contactData().checkboxText1 }}
               </label>
-              <a routerLink="/privacy-policy" class="form-checkbox__link" tabindex="0">
+              <a
+                routerLink="/privacy-policy"
+                class="form-checkbox__link"
+                tabindex="0"
+                (keydown.space)="$event.preventDefault()"
+                (keyup.enter)="$event.preventDefault(); $any($event.target).click()"
+                (keyup.space)="$event.preventDefault(); $any($event.target).click()"
+              >
                 {{ contactData().checkboxText2 }}
               </a>
               <label class="form-checkbox__label" for="checkboxSelf">

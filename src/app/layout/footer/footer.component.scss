@@ -121,6 +121,9 @@
       text-decoration: none;
       transition: color var(--transition-base);
       cursor: pointer;
+      padding: 2px 4px;
+      margin: -2px -4px;
+      border-radius: var(--radius-sm);
 
       &:hover {
         color: var(--color-primary);
@@ -140,7 +143,8 @@
       display: flex;
       align-items: center;
       gap: var(--space-3);
-      padding: var(--space-2) 0;
+      padding: var(--space-2) var(--space-3);
+      margin: 0 calc(-1 * var(--space-3));
       font-family: var(--font-primary);
       font-size: var(--font-size-base);
       color: var(--color-text-muted);

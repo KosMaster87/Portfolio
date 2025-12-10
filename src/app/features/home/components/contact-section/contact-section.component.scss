@@ -73,10 +73,18 @@
     text-decoration: none;
     font-weight: var(--font-weight-semibold);
     transition: color var(--transition-base);
+    padding: 2px 4px;
+    margin: -2px 4px;
+    border-radius: var(--radius-sm);
 
     &:hover {
       color: var(--color-primary-light);
       text-decoration: underline;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
     }
   }
 
