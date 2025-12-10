@@ -161,18 +161,16 @@
               />
             </div>
 
-            <div class="form-checkbox__label" (click)="!isSubmitting && toggleCheckbox()">
-              <p class="form-checkbox__text">
+            <div class="form-checkbox__label-group">
+              <label class="form-checkbox__label" for="checkboxSelf">
                 {{ contactData().checkboxText1 }}
-                <a
-                  routerLink="/privacy-policy"
-                  class="form-checkbox__link"
-                  (click)="$event.stopPropagation()"
-                >
-                  {{ contactData().checkboxText2 }}
-                </a>
+              </label>
+              <a routerLink="/privacy-policy" class="form-checkbox__link" tabindex="0">
+                {{ contactData().checkboxText2 }}
+              </a>
+              <label class="form-checkbox__label" for="checkboxSelf">
                 {{ contactData().checkboxText3 }}
-              </p>
+              </label>
             </div>
           </div>
 
