@@ -75,6 +75,7 @@
   "FOOTER": {
     "brandDescription": "Building modern web applications with passion for clean code and great user experiences.",
     "navigationHeading": "Navigation",
+    "featuresHeading": "Website features",
     "legalHeading": "Legal",
     "socialHeading": "Connect",
     "copyright": "Portfolio. Made with",
@@ -84,6 +85,7 @@
     "angular": "Angular",
     "typescript": "TypeScript",
     "scss": "SCSS",
+    "install": "Install App",
     "backToTop": "Top",
     "backToTopAria": "Scroll back to top",
     "githubAria": "Visit my GitHub profile",

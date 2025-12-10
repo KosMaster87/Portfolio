@@ -37,29 +37,6 @@
         </nav>
       </div>
 
-      <div class="app-footer__legal">
-        <h4 class="app-footer__legal-heading">{{ footerData().legalHeading }}</h4>
-        <nav role="navigation" aria-label="Legal navigation">
-          <ul class="app-footer__legal-list">
-            <li class="app-footer__legal-item">
-              <a (click)="navigateToRoute('/imprint')" class="app-footer__legal-link">{{
-                footerData().imprint
-              }}</a>
-            </li>
-            <li class="app-footer__legal-item">
-              <a (click)="navigateToRoute('/privacy-policy')" class="app-footer__legal-link">{{
-                footerData().privacy
-              }}</a>
-            </li>
-            <li class="app-footer__legal-item">
-              <a (click)="navigateToRoute('/sources')" class="app-footer__legal-link">{{
-                footerData().sources
-              }}</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
       <div class="app-footer__social">
         <h4 class="app-footer__social-heading">{{ footerData().socialHeading }}</h4>
         <div class="social-links">
@@ -81,6 +58,42 @@
           </a>
           }
         </div>
+      </div>
+
+      <div class="app-footer__features">
+        <h4 class="app-footer__features-heading">{{ footerData().featuresHeading }}</h4>
+        <nav role="navigation" aria-label="Website features">
+          <ul class="app-footer__features-list">
+            <li class="app-footer__features-item">
+              <a class="app-footer__navigation-link" (click)="installPWA()">{{
+                footerData().install
+              }}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="app-footer__legal">
+        <h4 class="app-footer__legal-heading">{{ footerData().legalHeading }}</h4>
+        <nav role="navigation" aria-label="Legal navigation">
+          <ul class="app-footer__legal-list">
+            <li class="app-footer__legal-item">
+              <a (click)="navigateToRoute('/imprint')" class="app-footer__legal-link">{{
+                footerData().imprint
+              }}</a>
+            </li>
+            <li class="app-footer__legal-item">
+              <a (click)="navigateToRoute('/privacy-policy')" class="app-footer__legal-link">{{
+                footerData().privacy
+              }}</a>
+            </li>
+            <li class="app-footer__legal-item">
+              <a (click)="navigateToRoute('/sources')" class="app-footer__legal-link">{{
+                footerData().sources
+              }}</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
 

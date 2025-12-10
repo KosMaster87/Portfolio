@@ -4,7 +4,15 @@
  * @module layout/footer
  */
 
-import { Component, computed, inject } from '@angular/core';
+import {
+  Component,
+  computed,
+  inject,
+  signal,
+  WritableSignal,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { NavigationService, TranslationService } from '@core/services';
@@ -21,11 +29,14 @@ import { IconButtonComponent } from '@shared/components';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit, OnDestroy {
   protected translationService = inject(TranslationService);
   private navigationService = inject(NavigationService);
-
   currentYear = new Date().getFullYear();
+
+  protected deferredPrompt: WritableSignal<any | null> = signal(null);
+  protected installAvailable = computed(() => !!this.deferredPrompt());
+  private beforeInstallHandler: ((e: Event) => void) | null = null;
 
   /**
    * Computed footer content data with translations.
@@ -36,6 +47,7 @@ export class FooterComponent {
     return {
       brandDescription: t.instant('FOOTER.brandDescription'),
       navigationHeading: t.instant('FOOTER.navigationHeading'),
+      featuresHeading: t.instant('FOOTER.featuresHeading'),
       legalHeading: t.instant('FOOTER.legalHeading'),
       socialHeading: t.instant('FOOTER.socialHeading'),
       copyright: t.instant('FOOTER.copyright'),
@@ -45,6 +57,7 @@ export class FooterComponent {
       angular: t.instant('FOOTER.angular'),
       typescript: t.instant('FOOTER.typescript'),
       scss: t.instant('FOOTER.scss'),
+      install: t.instant('FOOTER.install'),
       backToTop: t.instant('FOOTER.backToTop'),
       backToTopAria: t.instant('FOOTER.backToTopAria'),
       home: t.instant('MENU.home'),
@@ -134,5 +147,49 @@ export class FooterComponent {
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 100);
+  }
+
+  /**
+   * Lifecycle hook that runs after component initialization.
+   * Registers a global event listener to capture the browser's `beforeinstallprompt` event,
+   * which is fired when the PWA installation criteria are met. The event is stored to allow
+   * manual triggering of the installation prompt via user interaction.
+   */
+  ngOnInit(): void {
+    if (typeof window !== 'undefined' && 'addEventListener' in window) {
+      this.beforeInstallHandler = (e: Event) => {
+        (e as any).preventDefault?.();
+        this.deferredPrompt.set(e);
+      };
+      window.addEventListener('beforeinstallprompt', this.beforeInstallHandler as EventListener);
+    }
+  }
+
+  /**
+   * Lifecycle hook that runs when component is being destroyed.
+   * Removes the `beforeinstallprompt` event listener to prevent memory leaks
+   * and cleans up the stored handler reference.
+   */
+  ngOnDestroy(): void {
+    if (this.beforeInstallHandler && typeof window !== 'undefined') {
+      window.removeEventListener('beforeinstallprompt', this.beforeInstallHandler as EventListener);
+      this.beforeInstallHandler = null;
+    }
+  }
+
+  /**
+   * Triggers the PWA installation prompt.
+   * Invokes the stored `beforeinstallprompt` event's `prompt()` method to display
+   * the browser's native installation dialog. After the user responds, the deferred
+   * prompt is cleared regardless of the outcome (accepted or dismissed).
+   * Does nothing if no prompt event is available.
+   */
+  installPWA(): void {
+    const e = this.deferredPrompt();
+    if (!e) return;
+    e.prompt();
+    e.userChoice.then((choice: any) => {
+      this.deferredPrompt.set(null);
+    });
   }
 }

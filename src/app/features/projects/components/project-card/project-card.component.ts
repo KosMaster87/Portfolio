@@ -51,6 +51,9 @@ export class ProjectCardComponent implements AfterViewInit, OnDestroy {
   protected borderColor = computed(() =>
     this.themeService.activeTheme() === 'dark' ? 'var(--color-primary)' : '#000000'
   );
+  protected decorativeBorderOffset = computed(() =>
+    this.isEven() ? { x: 8, y: 8 } : { x: -8, y: 8 }
+  );
 
   ngAfterViewInit(): void {
     this.setupIntersectionObserver();
