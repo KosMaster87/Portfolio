@@ -53,4 +53,16 @@ export class ThemeSwitcherComponent {
       this.closeDropdown();
     }
   }
+
+  /**
+   * Handle focus leaving the component
+   */
+  onFocusOut(event: FocusEvent): void {
+    const relatedTarget = event.relatedTarget as HTMLElement;
+    const currentTarget = event.currentTarget as HTMLElement;
+
+    if (!currentTarget.contains(relatedTarget)) {
+      this.closeDropdown();
+    }
+  }
 }

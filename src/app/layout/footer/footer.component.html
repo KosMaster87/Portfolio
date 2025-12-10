@@ -8,31 +8,38 @@
           {{ footerData().brandDescription }}
         </p>
       </div>
-
       <div class="app-footer__navigation">
         <h4 class="app-footer__navigation-heading">{{ footerData().navigationHeading }}</h4>
         <nav role="navigation" aria-label="Footer navigation">
           <ul class="app-footer__navigation-list">
             <li class="app-footer__navigation-item">
-              <a (click)="navigateToHome()" class="app-footer__navigation-link">{{
-                footerData().home
-              }}</a>
+              <a
+                (click)="navigateToHome()"
+                (keydown.space)="$event.preventDefault()"
+                (keyup.enter)="navigateToHome()"
+                (keyup.space)="navigateToHome()"
+                class="app-footer__navigation-link"
+                role="button"
+                tabindex="0"
+              >
+                {{ footerData().home }}
+              </a>
             </li>
+            @for (item of menuItems; track item.sectionId) {
             <li class="app-footer__navigation-item">
-              <a (click)="navigateToSection('about')" class="app-footer__navigation-link">{{
-                footerData().about
-              }}</a>
+              <a
+                (click)="navigateToSection(item.sectionId)"
+                (keydown.space)="$event.preventDefault()"
+                (keyup.enter)="navigateToSection(item.sectionId)"
+                (keyup.space)="navigateToSection(item.sectionId)"
+                class="app-footer__navigation-link"
+                role="button"
+                tabindex="0"
+              >
+                {{ translate(item.label) }}
+              </a>
             </li>
-            <li class="app-footer__navigation-item">
-              <a (click)="navigateToSection('projects')" class="app-footer__navigation-link">{{
-                footerData().projects
-              }}</a>
-            </li>
-            <li class="app-footer__navigation-item">
-              <a (click)="navigateToSection('contact')" class="app-footer__navigation-link">{{
-                footerData().contact
-              }}</a>
-            </li>
+            }
           </ul>
         </nav>
       </div>
@@ -47,6 +54,7 @@
             [class]="'social-link social-link--' + social.hoverColor"
             target="_blank"
             rel="noopener noreferrer"
+            tabindex="0"
           >
             <img
               [src]="social.iconPath"
@@ -65,9 +73,17 @@
         <nav role="navigation" aria-label="Website features">
           <ul class="app-footer__features-list">
             <li class="app-footer__features-item">
-              <a class="app-footer__navigation-link" (click)="installPWA()">{{
-                footerData().install
-              }}</a>
+              <a
+                class="app-footer__navigation-link"
+                (click)="installPWA()"
+                (keydown.space)="$event.preventDefault()"
+                (keyup.enter)="installPWA()"
+                (keyup.space)="installPWA()"
+                role="button"
+                tabindex="0"
+              >
+                {{ footerData().install }}
+              </a>
             </li>
           </ul>
         </nav>
@@ -78,19 +94,43 @@
         <nav role="navigation" aria-label="Legal navigation">
           <ul class="app-footer__legal-list">
             <li class="app-footer__legal-item">
-              <a (click)="navigateToRoute('/imprint')" class="app-footer__legal-link">{{
-                footerData().imprint
-              }}</a>
+              <a
+                (click)="navigateToRoute('/imprint')"
+                (keydown.space)="$event.preventDefault()"
+                (keyup.enter)="navigateToRoute('/imprint')"
+                (keyup.space)="navigateToRoute('/imprint')"
+                class="app-footer__legal-link"
+                role="button"
+                tabindex="0"
+              >
+                {{ footerData().imprint }}
+              </a>
             </li>
             <li class="app-footer__legal-item">
-              <a (click)="navigateToRoute('/privacy-policy')" class="app-footer__legal-link">{{
-                footerData().privacy
-              }}</a>
+              <a
+                (click)="navigateToRoute('/privacy-policy')"
+                (keydown.space)="$event.preventDefault()"
+                (keyup.enter)="navigateToRoute('/privacy-policy')"
+                (keyup.space)="navigateToRoute('/privacy-policy')"
+                class="app-footer__legal-link"
+                role="button"
+                tabindex="0"
+              >
+                {{ footerData().privacy }}
+              </a>
             </li>
             <li class="app-footer__legal-item">
-              <a (click)="navigateToRoute('/sources')" class="app-footer__legal-link">{{
-                footerData().sources
-              }}</a>
+              <a
+                (click)="navigateToRoute('/sources')"
+                (keydown.space)="$event.preventDefault()"
+                (keyup.enter)="navigateToRoute('/sources')"
+                (keyup.space)="navigateToRoute('/sources')"
+                class="app-footer__legal-link"
+                role="button"
+                tabindex="0"
+              >
+                {{ footerData().sources }}
+              </a>
             </li>
           </ul>
         </nav>

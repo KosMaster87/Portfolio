@@ -46,6 +46,11 @@
           hue-rotate(120deg) brightness(91%) contrast(101%);
       }
     }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
   }
 
   &__dropdown {
@@ -122,6 +127,11 @@
       img {
         filter: var(--filter-icon-primary);
       }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
     }
   }
 }

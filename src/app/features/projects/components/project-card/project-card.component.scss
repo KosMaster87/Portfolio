@@ -274,6 +274,11 @@
       filter: grayscale(0%);
     }
 
+    // Show overlay when button is focused (keyboard navigation)
+    &__content:has(button:focus-visible) &__image {
+      filter: grayscale(0%);
+    }
+
     &__info {
       width: 50%;
     }
@@ -302,7 +307,19 @@
         border-color: var(--border-color);
       }
 
+      .project-card__content:has(button:focus-visible)
+        ::ng-deep
+        app-decorative-border
+        .decorative-border {
+        transform: translate(2%, 4%);
+        border-color: var(--border-color);
+      }
+
       .project-card__image-wrapper:hover .project-card__hover-arrow {
+        animation: arrowSlideEven 1s ease forwards;
+      }
+
+      .project-card__content:has(button:focus-visible) .project-card__hover-arrow {
         animation: arrowSlideEven 1s ease forwards;
       }
     }
@@ -337,7 +354,19 @@
         border-color: var(--border-color);
       }
 
+      .project-card__content:has(button:focus-visible)
+        ::ng-deep
+        app-decorative-border
+        .decorative-border {
+        transform: translate(-2%, 4%);
+        border-color: var(--border-color);
+      }
+
       .project-card__image-wrapper:hover .project-card__hover-arrow {
+        animation: arrowSlideOdd 1s ease forwards;
+      }
+
+      .project-card__content:has(button:focus-visible) .project-card__hover-arrow {
         animation: arrowSlideOdd 1s ease forwards;
       }
     }
@@ -355,6 +384,12 @@
     }
 
     &__content:hover &__info-inner {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    // Show info overlay when button is focused (keyboard navigation)
+    &__content:has(button:focus-visible) &__info-inner {
       opacity: 1;
       transform: translateX(0);
     }
@@ -413,6 +448,10 @@
         transform: translateX(0);
       }
 
+      .project-card__content:has(button:focus-visible) .project-card__info-inner {
+        transform: translateX(0);
+      }
+
       .project-card__slider {
         flex-direction: row-reverse;
       }
@@ -447,6 +486,10 @@
     // Desktop: Border on hover
     @include desktop {
       .project-card__image-wrapper:hover ::ng-deep .decorative-border {
+        border-color: #000000 !important;
+      }
+
+      .project-card__content:has(button:focus-visible) ::ng-deep .decorative-border {
         border-color: #000000 !important;
       }
     }

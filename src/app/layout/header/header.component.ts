@@ -61,15 +61,18 @@ export class HeaderComponent {
    * @param {string} sectionId - The section ID to scroll to
    */
   scrollToSection(sectionId: string): void {
-    // Delay to allow fade-out animation to be visible before closing menu
-    setTimeout(() => {
-      this.closeMenu();
+    if (this.isMenuOpen()) {
 
-      // Additional delay for menu close animation
       setTimeout(() => {
-        this.navigationService.scrollToSection(sectionId);
-      }, 300);
-    }, 500);
+        this.closeMenu();
+
+        setTimeout(() => {
+          this.navigationService.scrollToSection(sectionId);
+        }, 300);
+      }, 500);
+    } else {
+      this.navigationService.scrollToSection(sectionId);
+    }
   }
 
   /**
