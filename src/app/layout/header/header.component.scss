@@ -98,6 +98,8 @@
     transition: color var(--transition-base);
     user-select: none;
     -webkit-user-select: none;
+
+    @include focus-visible;
     -webkit-user-drag: none;
     background: none;
     border: none;
@@ -154,6 +156,8 @@
     @include btn-hamburger;
     position: relative;
     z-index: 1;
+
+    @include focus-visible;
   }
 
   &__burger-line {
@@ -255,6 +259,8 @@
     border: none;
     width: 100%;
 
+    @include focus-visible;
+
     * {
       pointer-events: none;
     }
@@ -271,6 +277,8 @@
       -webkit-user-drag: none;
       border: none;
       width: 100%;
+
+      @include focus-visible;
 
       * {
         pointer-events: none;

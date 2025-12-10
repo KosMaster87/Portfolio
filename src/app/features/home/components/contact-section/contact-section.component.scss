@@ -297,21 +297,37 @@
     display: flex;
     align-items: flex-start;
     gap: var(--space-3);
+    position: relative;
   }
 
   &__input {
-    display: none;
+    position: absolute;
+    left: 0;
+    top: var(--space-1);
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    appearance: none;
+
+    &:focus-visible {
+      opacity: 1;
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+      border-radius: 2px;
+      background: transparent;
+    }
   }
 
   &__icon-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: var(--space-1);
     flex-shrink: 0;
     width: 20px;
     height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
+    border-radius: 2px;
     transition: background-color 0.3s ease;
 
     // Hover effect for devices with mouse/trackpad
@@ -346,6 +362,8 @@
     width: 25px;
     height: 25px;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
 
     &--dark {
       filter: invert(1) brightness(1.2);
@@ -354,7 +372,6 @@
 
   &__label {
     cursor: pointer;
-    flex: 1;
   }
 
   &__text {
@@ -376,6 +393,8 @@
       color: var(--color-checkbox-hover);
       text-decoration: underline;
     }
+
+    @include focus-visible;
   }
 }
 

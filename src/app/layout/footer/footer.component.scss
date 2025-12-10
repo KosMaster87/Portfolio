@@ -125,6 +125,8 @@
       &:hover {
         color: var(--color-primary);
       }
+
+      @include focus-visible;
     }
   }
 
@@ -151,6 +153,8 @@
         background: var(--color-primary-darker);
         transform: translateX(4px);
       }
+
+      @include focus-visible;
 
       .social-icon {
         width: 24px;

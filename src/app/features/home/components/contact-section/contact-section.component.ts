@@ -5,7 +5,7 @@
  */
 
 import { HttpClient } from '@angular/common/http';
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
@@ -31,10 +31,14 @@ export class ContactSectionComponent {
   showNotification = false;
   notificationMessage = '';
   notificationType: 'success' | 'error' = 'success';
-  isChecked = false;
+  isChecked = signal(false);
   isSubmitting = false;
 
   protected isDark = computed(() => this.themeService.activeTheme() === 'dark');
+  protected checkboxImage = computed(() => {
+    const base = 'assets/images/vector/checkbox';
+    return this.isChecked() ? `${base}/checkbox-check.svg` : `${base}/checkbox-unchecked.svg`;
+  });
 
   /**
    * Computed contact content data with translations.
@@ -97,7 +101,7 @@ export class ContactSectionComponent {
    * @private
    */
   private isFormValid(ngForm: NgForm): boolean {
-    return ngForm.submitted && ngForm.form.valid && this.isChecked;
+    return ngForm.submitted && ngForm.form.valid && this.isChecked();
   }
 
   /**
@@ -126,7 +130,7 @@ export class ContactSectionComponent {
   private handleSubmitSuccess(response: string, ngForm: NgForm): void {
     this.isSubmitting = false;
     ngForm.resetForm();
-    this.isChecked = false;
+    this.isChecked.set(false);
     this.showMessage(this.contactData().successMessage, 'success');
   }
 
@@ -174,18 +178,9 @@ export class ContactSectionComponent {
   }
 
   /**
-   * Gets the appropriate checkbox image based on state.
-   * @returns {string} Path to checkbox image
-   */
-  getCheckboxImage(): string {
-    const base = 'assets/images/vector/checkbox';
-    return this.isChecked ? `${base}/checkbox-check.svg` : `${base}/checkbox-unchecked.svg`;
-  }
-
-  /**
    * Toggles the checkbox state.
    */
   toggleCheckbox(): void {
-    this.isChecked = !this.isChecked;
+    this.isChecked.update((v) => !v);
   }
 }
