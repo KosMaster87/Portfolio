@@ -183,9 +183,9 @@ export class ContactSectionComponent {
    * @param {NgModel} control - Angular form control
    */
   trimWhitespace(field: 'name' | 'email', control: NgModel): void {
-    if (field === 'name') {
+    if (field === 'name' && this.formData.name) {
       this.formData.name = this.formData.name.trim();
-    } else if (field === 'email') {
+    } else if (field === 'email' && this.formData.email) {
       this.formData.email = this.formData.email.trim();
     }
     control.control.updateValueAndValidity();
