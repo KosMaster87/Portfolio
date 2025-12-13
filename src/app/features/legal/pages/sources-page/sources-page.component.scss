@@ -112,6 +112,11 @@
               color: var(--color-primary-hover);
               text-decoration: underline;
             }
+
+            @include focus-visible;
+            padding: 2px 4px;
+            margin: -2px 0;
+            border-radius: var(--radius-sm);
           }
         }
       }

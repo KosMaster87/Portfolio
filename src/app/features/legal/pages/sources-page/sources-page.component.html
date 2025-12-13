@@ -13,17 +13,38 @@
 
         <ul>
           <li>
-            <a href="https://www.flaticon.com/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.flaticon.com/"
+              target="_blank"
+              (keydown.space)="$event.preventDefault()"
+              (keyup.space)="handleSpaceKey($event)"
+              rel="noopener noreferrer"
+              tabindex="0"
+            >
               {{ sourcesData().flaticon }}
             </a>
           </li>
           <li>
-            <a href="https://www.svgrepo.com/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.svgrepo.com/"
+              target="_blank"
+              (keydown.space)="$event.preventDefault()"
+              (keyup.space)="handleSpaceKey($event)"
+              rel="noopener noreferrer"
+              tabindex="0"
+            >
               {{ sourcesData().svgRepo }}
             </a>
           </li>
           <li>
-            <a href="https://www.iconpacks.net/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.iconpacks.net/"
+              target="_blank"
+              (keydown.space)="$event.preventDefault()"
+              (keyup.space)="handleSpaceKey($event)"
+              rel="noopener noreferrer"
+              tabindex="0"
+            >
               {{ sourcesData().iconPacks }}
             </a>
           </li>
