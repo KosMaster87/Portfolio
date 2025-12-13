@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Confirmation - Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #5988FF, #00BC8F);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .content {
+      padding: 30px;
+      color: #333;
+    }
+
+    .content p {
+      margin: 15px 0;
+    }
+
+    .button {
+      display: inline-block;
+      background: linear-gradient(135deg, #00BC8F, #5988FF);
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 6px;
+      margin: 20px 0;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      background: #f8f9fa;
+      padding: 20px;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .footer p {
+      margin: 5px 0;
+    }
+
+    .hours {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 6px;
+      margin: 20px 0;
+      border-left: 4px solid #00BC8F;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='container'>
+    <div class='header'>
+      <h1>💼 Konstantin Aksenov</h1>
+      <p>Full-Stack Developer</p>
+    </div>
+    <div class='content'>
+      <p>Hello <strong>{{name}}</strong>,</p>
+      <p>Thank you for reaching out! I have received your message and will get back to you as soon as possible.</p>
+      <p>I usually respond within <strong>24-48 hours</strong> during business days.</p>
+      <div class='hours'>
+        <strong>📞 Availability:</strong><br>
+        Monday - Friday: 09:00 - 17:00 (CET)<br>
+        Weekend: By appointment
+      </div>
+      <p style='text-align: center;'>
+        <a href='https://portfolio.dev2k.org' class='button'>Visit My Portfolio</a>
+      </p>
+      <p>Best regards,<br>
+        <strong>Konstantin Aksenov</strong><br>
+        Full-Stack Developer
+      </p>
+    </div>
+    <div class='footer'>
+      <p>📧 konstantin.aksenov@dev2k.org</p>
+      <p>🌐 portfolio.dev2k.org</p>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Contact Request - Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #00BC8F, #5988FF);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .header p {
+      margin: 10px 0 0;
+      opacity: 0.95;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    .field {
+      margin-bottom: 20px;
+    }
+
+    .field-label {
+      font-weight: bold;
+      color: #333;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .field-value {
+      background: #f8f9fa;
+      padding: 12px;
+      border-radius: 4px;
+      border-left: 4px solid #00BC8F;
+    }
+
+    .message-content {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 4px;
+      white-space: pre-wrap;
+      line-height: 1.8;
+    }
+
+    .footer {
+      background: #f8f9fa;
+      padding: 20px;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .footer p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='container'>
+    <div class='header'>
+      <h1>💼 Portfolio Contact Request</h1>
+      <p>New message from contact form</p>
+    </div>
+    <div class='content'>
+      <div class='field'>
+        <span class='field-label'>👤 Name:</span>
+        <div class='field-value'>{{name}}</div>
+      </div>
+      <div class='field'>
+        <span class='field-label'>📧 Email:</span>
+        <div class='field-value'>{{email}}</div>
+      </div>
+      <div class='field'>
+        <span class='field-label'>💬 Message:</span>
+        <div class='message-content'>{{message}}</div>
+      </div>
+    </div>
+    <div class='footer'>
+      <p>📅 Sent on: {{date}}</p>
+      <p>🌐 From: portfolio.dev2k.org</p>
+    </div>
+  </div>
+</body>
+
+</html>
