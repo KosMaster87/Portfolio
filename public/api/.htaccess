@@ -63,7 +63,17 @@ RewriteRule . /index.html [L]
 </IfModule>
 
 # ------------------------------------------------------
-# 🐘 PHP Configuration (Production)
+# � Protect Internal PHP Files
+# ------------------------------------------------------
+<Files "mailer.service.php">
+    Require all denied
+</Files>
+<Files "rate-limiter.php">
+    Require all denied
+</Files>
+
+# ------------------------------------------------------
+# �🐘 PHP Configuration (Production)
 # ------------------------------------------------------
 <IfModule mod_php.c>
     php_flag display_errors Off

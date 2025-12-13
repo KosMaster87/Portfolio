@@ -61,8 +61,13 @@ certificate.pem
 
 # PHP files with sensitive data
 public/api/contact/contact.php
+public/api/contact/mailer.service.php
+public/api/contact/rate-limiter.php
 public/api/contact/rate_limit.json
+public/api/contact/rate_limit_data.json
 public/api/contact/contact_logs.txt
+public/api/libs/vendor/
+public/api/contact/php.ini
 
 # Cache
 /.angular/cache
