@@ -34,4 +34,12 @@ export class SourcesPageComponent {
       licenseText: t.instant('SOURCES.licenseText'),
     };
   });
+
+  /**
+   * Handles space key press on links to trigger click.
+   * @param event - Keyboard event
+   */
+  protected handleSpaceKey(event: Event): void {
+    (event.target as HTMLElement).click();
+  }
 }

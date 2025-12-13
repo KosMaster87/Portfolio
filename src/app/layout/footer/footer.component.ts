@@ -210,4 +210,12 @@ export class FooterComponent implements OnInit, OnDestroy {
   translate(key: string): string {
     return this.translationService.instant(key);
   }
+
+  /**
+   * Handles space key press on links to trigger click.
+   * @param event - Keyboard event
+   */
+  handleSpaceKey(event: Event): void {
+    (event.target as HTMLElement).click();
+  }
 }

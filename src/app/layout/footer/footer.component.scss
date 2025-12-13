@@ -225,6 +225,9 @@
       .angular-link {
         text-decoration: none;
         transition: color var(--transition-base);
+        padding: 2px 4px;
+        margin: -2px 4px;
+        border-radius: var(--radius-sm);
 
         strong {
           transition: color var(--transition-base);
@@ -234,6 +237,8 @@
           color: var(--color-primary-light);
           text-decoration: underline;
         }
+
+        @include focus-visible;
       }
     }
 
@@ -244,7 +249,7 @@
     }
   }
 
-  &__tech {
+  &__tech-stack {
     .tech-info {
       font-family: var(--font-primary);
       font-size: var(--font-size-sm);
@@ -256,11 +261,16 @@
         font-weight: var(--font-weight-medium);
         text-decoration: none;
         transition: color var(--transition-base);
+        padding: 2px 4px;
+        margin: -2px 4px;
+        border-radius: var(--radius-sm);
 
         &:hover {
           color: var(--color-primary-light);
           text-decoration: underline;
         }
+
+        @include focus-visible;
       }
     }
   }
