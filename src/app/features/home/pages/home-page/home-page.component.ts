@@ -4,7 +4,8 @@
  * @module home-page.component
  */
 
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { ScrollService, SeoService } from '@core/services';
 import { ScrollArrowComponent } from '../../../../shared/components/buttons/scroll-arrow/scroll-arrow.component';
 import { LinearGradientComponent } from '../../../../shared/components/linear-gradient/linear-gradient.component';
 import { AboutSectionComponent } from '../../components/about-section/about-section.component';
@@ -27,4 +28,23 @@ import { SkillsSectionComponent } from '../../components/skills-section/skills-s
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })
-export class HomePageComponent {}
+export class HomePageComponent implements OnInit {
+  private seoService = inject(SeoService);
+  private scrollService = inject(ScrollService);
+
+  ngOnInit(): void {
+    this.seoService.updateMetadata({
+      title: 'Konstantin Aksenov - Software Developer Portfolio',
+      description:
+        'Experienced Software Developer specializing in Angular, TypeScript, and modern web development. View my projects and get in touch.',
+      keywords:
+        'Software Developer, Angular Developer, TypeScript, Web Development, Portfolio, Konstantin Aksenov',
+      ogTitle: 'Konstantin Aksenov - Software Developer',
+      ogDescription: 'Professional portfolio showcasing modern web development projects',
+      ogImage: 'https://portfolio.dev2k.org/assets/screenshots/desktop-home.png',
+      ogUrl: 'https://portfolio.dev2k.org',
+    });
+
+    this.scrollService.triggerPageFlash();
+  }
+}

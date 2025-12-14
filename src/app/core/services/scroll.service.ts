@@ -43,6 +43,20 @@ export class ScrollService {
   }
 
   /**
+   * Triggers viewport flash animation for page transitions.
+   * Waits for initial page load and render before triggering animation.
+   * Uses similar timing logic as scroll navigation for consistency.
+   */
+  triggerPageFlash(): void {
+    const pageLoadDuration = 800;
+
+    setTimeout(() => {
+      const animationDuration = Math.min(pageLoadDuration * 0.9, 1800);
+      this.triggerFlashAnimation(animationDuration);
+    }, pageLoadDuration);
+  }
+
+  /**
    * Gets the element by ID or selector.
    * @param {string} fragment - The element ID to search for
    * @returns {HTMLElement | null} The found element or null

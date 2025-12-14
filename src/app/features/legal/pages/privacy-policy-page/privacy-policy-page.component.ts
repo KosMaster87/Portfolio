@@ -4,8 +4,8 @@
  * @module features/legal/pages/privacy-policy-page
  */
 
-import { Component, computed, inject } from '@angular/core';
-import { TranslationService } from '../../../../core/services/translation.service';
+import { Component, computed, inject, OnInit } from '@angular/core';
+import { ScrollService, SeoService, TranslationService } from '@core/services';
 
 @Component({
   selector: 'app-privacy-policy-page',
@@ -13,8 +13,24 @@ import { TranslationService } from '../../../../core/services/translation.servic
   templateUrl: './privacy-policy-page.component.html',
   styleUrl: './privacy-policy-page.component.scss',
 })
-export class PrivacyPolicyPageComponent {
+export class PrivacyPolicyPageComponent implements OnInit {
   protected translationService = inject(TranslationService);
+  private seoService = inject(SeoService);
+  private scrollService = inject(ScrollService);
+
+  ngOnInit(): void {
+    this.seoService.updateMetadata({
+      title: 'Privacy Policy - Konstantin Aksenov',
+      description:
+        'Privacy policy and data protection information for portfolio website. Learn how we handle your data.',
+      keywords: 'privacy policy, data protection, GDPR, cookies, data security',
+      ogTitle: 'Privacy Policy - Konstantin Aksenov',
+      ogDescription: 'Privacy policy and data protection information',
+      ogUrl: 'https://portfolio.dev2k.org/privacy-policy',
+    });
+
+    this.scrollService.triggerPageFlash();
+  }
 
   /**
    * Last update date of the privacy policy.

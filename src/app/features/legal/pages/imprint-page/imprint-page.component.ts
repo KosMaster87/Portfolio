@@ -4,8 +4,8 @@
  * @module features/legal/pages/imprint-page
  */
 
-import { Component, computed, inject } from '@angular/core';
-import { TranslationService } from '../../../../core/services/translation.service';
+import { Component, computed, inject, OnInit } from '@angular/core';
+import { ScrollService, SeoService, TranslationService } from '@core/services';
 
 @Component({
   selector: 'app-imprint-page',
@@ -13,8 +13,22 @@ import { TranslationService } from '../../../../core/services/translation.servic
   templateUrl: './imprint-page.component.html',
   styleUrl: './imprint-page.component.scss',
 })
-export class ImprintPageComponent {
+export class ImprintPageComponent implements OnInit {
   protected translationService = inject(TranslationService);
+  private seoService = inject(SeoService);
+  private scrollService = inject(ScrollService);
+
+  ngOnInit(): void {
+    this.seoService.updateMetadata({
+      title: 'Impressum - Konstantin Aksenov',
+      description:
+        "Legal information and contact details for Konstantin Aksenov's portfolio website.",
+      ogTitle: 'Impressum - Konstantin Aksenov',
+      ogUrl: 'https://portfolio.dev2k.org/imprint',
+    });
+
+    this.scrollService.triggerPageFlash();
+  }
 
   /**
    * Computed page content data with translations.

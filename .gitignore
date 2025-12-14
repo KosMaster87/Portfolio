@@ -12,6 +12,10 @@ config/env/.env.feature
 config/env/.env.staging
 config/env/.env.production
 
+# Angular environment files with secrets (if any)
+# src/environments/environment.local.ts
+# src/environments/environment.*.local.ts
+
 # IDE/Editor
 .vscode/
 .idea/
