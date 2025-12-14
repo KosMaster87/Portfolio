@@ -4,8 +4,8 @@
  * @module features/legal/pages/sources-page
  */
 
-import { Component, computed, inject } from '@angular/core';
-import { TranslationService } from '../../../../core/services/translation.service';
+import { Component, computed, inject, OnInit } from '@angular/core';
+import { ScrollService, SeoService, TranslationService } from '@core/services';
 
 @Component({
   selector: 'app-sources-page',
@@ -13,8 +13,24 @@ import { TranslationService } from '../../../../core/services/translation.servic
   templateUrl: './sources-page.component.html',
   styleUrl: './sources-page.component.scss',
 })
-export class SourcesPageComponent {
+export class SourcesPageComponent implements OnInit {
   protected translationService = inject(TranslationService);
+  private seoService = inject(SeoService);
+  private scrollService = inject(ScrollService);
+
+  ngOnInit(): void {
+    this.seoService.updateMetadata({
+      title: 'Sources & Attributions - Konstantin Aksenov',
+      description:
+        'Attribution and credits for icons, graphics, and resources used in this portfolio website.',
+      keywords: 'sources, attributions, credits, icons, graphics, licenses',
+      ogTitle: 'Sources & Attributions',
+      ogDescription: 'Credits for visual resources used on this website',
+      ogUrl: 'https://portfolio.dev2k.org/sources',
+    });
+
+    this.scrollService.triggerPageFlash();
+  }
 
   /**
    * Computed page content data with translations.

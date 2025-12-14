@@ -19,6 +19,18 @@ import { NavigationService, TranslationService } from '@core/services';
 import { IconButtonComponent } from '@shared/components';
 
 /**
+ * BeforeInstallPromptEvent interface for PWA installation
+ */
+interface BeforeInstallPromptEvent extends Event {
+  readonly platforms: string[];
+  readonly userChoice: Promise<{
+    outcome: 'accepted' | 'dismissed';
+    platform: string;
+  }>;
+  prompt(): Promise<void>;
+}
+
+/**
  * Footer component.
  * Main footer with navigation links, social media links, legal information,
  * and back-to-top functionality. Uses NavigationService for centralized navigation.
@@ -34,7 +46,7 @@ export class FooterComponent implements OnInit, OnDestroy {
   private navigationService = inject(NavigationService);
   currentYear = new Date().getFullYear();
 
-  protected deferredPrompt: WritableSignal<any | null> = signal(null);
+  protected deferredPrompt: WritableSignal<BeforeInstallPromptEvent | null> = signal(null);
   protected installAvailable = computed(() => !!this.deferredPrompt());
   private beforeInstallHandler: ((e: Event) => void) | null = null;
 
@@ -167,8 +179,8 @@ export class FooterComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     if (typeof window !== 'undefined' && 'addEventListener' in window) {
       this.beforeInstallHandler = (e: Event) => {
-        (e as any).preventDefault?.();
-        this.deferredPrompt.set(e);
+        e.preventDefault();
+        this.deferredPrompt.set(e as BeforeInstallPromptEvent);
       };
       window.addEventListener('beforeinstallprompt', this.beforeInstallHandler as EventListener);
     }
@@ -197,7 +209,7 @@ export class FooterComponent implements OnInit, OnDestroy {
     const e = this.deferredPrompt();
     if (!e) return;
     e.prompt();
-    e.userChoice.then((choice: any) => {
+    e.userChoice.then((choice) => {
       this.deferredPrompt.set(null);
     });
   }

@@ -26,8 +26,8 @@ This directory contains the PHP contact form handler for the portfolio.
 3. **Set permissions:**
    ```bash
    chmod 644 contact.php
-   chmod 666 rate_limit.json  # If exists
-   chmod 666 contact_logs.txt # If exists
+   chmod 666 rate_limit.json      # If exists
+   chmod 666 contact_logs.txt     # If exists
    ```
 
 ## 🔒 Security Features
@@ -90,10 +90,10 @@ Format: `[timestamp] LEVEL: message | IP: xxx | Context: {...}`
 
 ```php
 // Rate limiting (in checkRateLimit function)
-$maxRequests = 3;        // Max requests per time window
-$timeWindow = 3600;      // Time window in seconds (1 hour)
+$maxRequests = 3;           // Max requests per time window
+$timeWindow = 3600;         // Time window in seconds (1 hour)
 
 // Input limits
-$nameMaxLength = 100;    // Maximum name length
-$messageMaxLength = 2000; // Maximum message length
+$nameMaxLength = 100;       // Maximum name length
+$messageMaxLength = 2000;   // Maximum message length
 ```

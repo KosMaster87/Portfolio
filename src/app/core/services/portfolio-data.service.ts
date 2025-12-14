@@ -32,23 +32,7 @@ export class PortfolioDataService {
       category: 'fullstack',
       isFeatured: true,
     },
-    {
-      id: 'super-rando',
-      name: 'PROJECTS.super-rando-name',
-      headline: 'Javascript | CSS | HTML | PHP',
-      description: 'PROJECTS.super-rando-description',
-      image: {
-        src: '/assets/images/projects/Super~Rando.avif',
-        alt: 'PROJECTS.super-rando-alt',
-      },
-      links: {
-        live: 'https://super-rando.dev2k.org/',
-        github: 'https://github.com/KosMaster87/Super-Rando',
-      },
-      technologies: ['JavaScript', 'CSS', 'HTML', 'PHP'],
-      category: 'web-app',
-      isFeatured: true,
-    },
+
     {
       id: 'join',
       name: 'PROJECTS.join-name',
@@ -65,6 +49,23 @@ export class PortfolioDataService {
       technologies: ['JavaScript', 'CSS', 'HTML'],
       category: 'web-app',
       isFeatured: false,
+    },
+    {
+      id: 'super-rando',
+      name: 'PROJECTS.super-rando-name',
+      headline: 'Javascript | CSS | HTML | PHP',
+      description: 'PROJECTS.super-rando-description',
+      image: {
+        src: '/assets/images/projects/Super~Rando.avif',
+        alt: 'PROJECTS.super-rando-alt',
+      },
+      links: {
+        live: 'https://super-rando.dev2k.org/',
+        github: 'https://github.com/KosMaster87/Super-Rando',
+      },
+      technologies: ['JavaScript', 'CSS', 'HTML', 'PHP'],
+      category: 'web-app',
+      isFeatured: true,
     },
     {
       id: 'el-pollo-loco',

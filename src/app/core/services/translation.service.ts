@@ -5,13 +5,16 @@
  */
 
 import { HttpClient } from '@angular/common/http';
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 
 export type Language = 'de' | 'en';
 
-interface Translations {
-  [key: string]: any;
+type TranslationValue = string | TranslationObject;
+interface TranslationObject {
+  [key: string]: TranslationValue;
 }
+
+type Translations = TranslationObject;
 
 /**
  * Service for handling translations.
@@ -21,6 +24,7 @@ interface Translations {
   providedIn: 'root',
 })
 export class TranslationService {
+  private http = inject(HttpClient);
   private translations = signal<Translations>({});
   currentLang = signal<Language>('de');
 
@@ -30,7 +34,10 @@ export class TranslationService {
    */
   isLoaded = signal<boolean>(false);
 
-  constructor(private http: HttpClient) {
+  /**
+   * Constructor loads default language translations.
+   */
+  constructor() {
     this.loadTranslations('de');
   }
 
@@ -45,15 +52,6 @@ export class TranslationService {
   }
 
   /**
-   * Gets a translation by key path.
-   * @param key - Dot-notation path to translation key
-   * @returns Translated string or key if not found
-   */
-  instant(key: string): string {
-    return this.getNestedValue(this.translations(), key);
-  }
-
-  /**
    * Loads translation file for a language.
    * @param lang - Language code for JSON file to load
    */
@@ -63,11 +61,19 @@ export class TranslationService {
         this.translations.set(data);
         this.isLoaded.set(true);
       },
-      error: (err) => {
-        console.error('Failed to load translations:', err);
-        this.isLoaded.set(true); // Set to true to prevent infinite loading
+      error: () => {
+        this.isLoaded.set(true);
       },
     });
+  }
+
+  /**
+   * Gets a translation by key path.
+   * @param key - Dot-notation path to translation key
+   * @returns Translated string or key if not found
+   */
+  instant(key: string): string {
+    return this.getNestedValue(this.translations(), key);
   }
 
   /**
@@ -76,7 +82,18 @@ export class TranslationService {
    * @param path - Dot-notation path to value
    * @returns Found value or original path if not found
    */
-  private getNestedValue(obj: any, path: string): string {
-    return path.split('.').reduce((acc, part) => acc?.[part], obj) || path;
+  private getNestedValue(obj: TranslationValue, path: string): string {
+    const keys = path.split('.');
+    let current: TranslationValue = obj;
+
+    for (const key of keys) {
+      if (typeof current === 'object' && current !== null && key in current) {
+        current = current[key];
+      } else {
+        return path;
+      }
+    }
+
+    return typeof current === 'string' ? current : path;
   }
 }

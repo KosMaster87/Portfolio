@@ -7,6 +7,7 @@
 export * from './navigation.service';
 export * from './portfolio-data.service';
 export * from './scroll.service';
+export * from './seo.service';
 export * from './smooth-scroll.service';
 export * from './sw-update.service';
 export * from './theme.service';

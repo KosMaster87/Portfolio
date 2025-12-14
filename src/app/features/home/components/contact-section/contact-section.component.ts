@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 
 import { SmoothScrollService, ThemeService, TranslationService } from '@core/services';
 import { NotificationComponent, SubmitButtonComponent } from '@shared/components';
+import { environment } from '../../../../../environments/environment';
 
 /**
  * Contact section component.
@@ -77,8 +78,8 @@ export class ContactSectionComponent {
   };
 
   post = {
-    endPoint: 'https://portfolio.dev2k.org/api/contact/contact.php',
-    body: (payload: any) => JSON.stringify(payload),
+    endPoint: `${environment.apiUrl}/contact/contact.php`,
+    body: (payload: typeof this.formData) => JSON.stringify(payload),
   };
 
   /**

@@ -2,6 +2,8 @@
  * @fileoverview Theme Service for Dark/Light mode management
  * @description Manages theme state with localStorage persistence
  * @module core/services
+ * @note This service is provided at root level and lives for the entire app lifecycle.
+ * Event listeners are intentionally not cleaned up as the service persists throughout the application.
  */
 
 import { effect, Injectable, signal } from '@angular/core';

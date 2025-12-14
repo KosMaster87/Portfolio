@@ -72,6 +72,7 @@
         <h4 class="app-footer__features-heading">{{ footerData().featuresHeading }}</h4>
         <nav role="navigation" aria-label="Website features">
           <ul class="app-footer__features-list">
+            @if (installAvailable()) {
             <li class="app-footer__features-item">
               <a
                 class="app-footer__navigation-link"
@@ -84,6 +85,7 @@
                 {{ footerData().install }}
               </a>
             </li>
+            }
           </ul>
         </nav>
       </div>

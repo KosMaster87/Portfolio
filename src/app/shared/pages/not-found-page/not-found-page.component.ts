@@ -5,8 +5,8 @@
  */
 
 import { Location } from '@angular/common';
-import { Component, computed, inject } from '@angular/core';
-import { TranslationService } from '../../../core/services/translation.service';
+import { Component, computed, inject, OnInit } from '@angular/core';
+import { ScrollService, SeoService, TranslationService } from '@core/services';
 import { NavButtonComponent } from '../../components/buttons/nav-button/nav-button.component';
 
 @Component({
@@ -15,9 +15,23 @@ import { NavButtonComponent } from '../../components/buttons/nav-button/nav-butt
   templateUrl: './not-found-page.component.html',
   styleUrl: './not-found-page.component.scss',
 })
-export class NotFoundPageComponent {
+export class NotFoundPageComponent implements OnInit {
   private location = inject(Location);
   protected translationService = inject(TranslationService);
+  private seoService = inject(SeoService);
+  private scrollService = inject(ScrollService);
+
+  ngOnInit(): void {
+    this.seoService.updateMetadata({
+      title: '404 - Page Not Found - Konstantin Aksenov',
+      description:
+        'The page you are looking for could not be found. Return to homepage or explore other sections.',
+      ogTitle: '404 - Page Not Found',
+      ogUrl: 'https://portfolio.dev2k.org/404',
+    });
+
+    this.scrollService.triggerPageFlash();
+  }
 
   /**
    * Computed page content data with translations.
