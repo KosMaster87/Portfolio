@@ -32,9 +32,11 @@ jobs:
           echo "Coverage: $COVERAGE%"
           echo "COVERAGE=$COVERAGE" >> $GITHUB_ENV
 
-      - name: 📚 Generate JSDoc Documentation
+      - name: 📚 Generate TypeDoc Documentation
         run: npm run docs
-      continue-on-error: true  # Allow workflow to continue even if docs fail
+        continue-on-error: true
+
+      - name: 🏗️ Build Production
         run: npm run build -- --configuration production
 
       - name: 📁 Prepare Deployment Structure
