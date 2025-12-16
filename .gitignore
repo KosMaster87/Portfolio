@@ -47,9 +47,6 @@ Thumbs.db
 /dist
 /bazel-out
 
-# Coverage reports
-# /coverage
-
 # Firebase
 .firebase
 *-debug.log
@@ -83,8 +80,28 @@ public/api/contact/php.ini
 testem.log
 /typings
 
-# Documentation
+# Generated documentation & reports
 docs/
+/coverage
+
+# Deployment staging
+/deploy
+
+# Markdown files (documentation)
+# Exclude all markdown files by default
+*.md
+
+# But include these important ones
+!README.md
+!TESTING-REPORT.md
+!TEAM-GUIDE.md
+!DEPLOYMENT-GUIDE.md
+!CHANGELOG.md
+!CONTRIBUTING.md
+!src/app/core/README.md
+!src/app/shared/README.md
+!src/app/layout/README.md
+!src/app/features/README.md
 
 # Netlify
 .netlify/

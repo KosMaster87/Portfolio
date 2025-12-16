@@ -1,11 +1,15 @@
 # 💼 Personal Portfolio – Angular SPA
 
-[![Angular](https://img.shields.io/badge/Angular-20.3.9-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Angular](https://img.shields.io/badge/Angular-21.0-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
+[![Test Coverage](https://img.shields.io/badge/coverage-96.4%25-brightgreen?style=for-the-badge)](https://portfolio.dev2k.org/coverage/)
+[![Tests](https://img.shields.io/badge/tests-823%20passing-success?style=for-the-badge)](./TESTING-REPORT.md)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
 A fully responsive, modern portfolio website built as a Single Page Application (SPA) to showcase my skills, projects, and professional experience. Designed with a mobile-first approach and optimized for recruiters and hiring managers.
+
+[🌐 Live Demo](https://portfolio.dev2k.org) | [📊 Coverage Report](https://portfolio.dev2k.org/coverage/) | [📚 API Docs](https://portfolio.dev2k.org/jsdoc/) | [📖 Testing Guide](./TESTING-REPORT.md)
 
 ---
 
@@ -23,40 +27,44 @@ A fully responsive, modern portfolio website built as a Single Page Application 
 
 ## ✨ Features
 
-- 🎨 **Modern Design** – Clean, professional UI with smooth animations
+- 🎨 **Light/Dark/Auto Theme** – System preference detection with manual override
+- 🌍 **i18n (EN/DE)** – Multi-language support with seamless switching
 - 📱 **Fully Responsive** – Optimized for mobile, tablet, and desktop
-- 🌐 **Internationalization (i18n)** – Multi-language support (EN/DE)
+- ⚡ **PWA with Service Worker** – Offline support and app-like experience
+- ♿ **Accessible (ARIA)** – WCAG compliant with keyboard navigation
+- 🧪 **96.4% Test Coverage** – 823 passing tests with comprehensive coverage
 - 📧 **Contact Form** – Integrated PHP backend with email notifications
 - 🔒 **Security Features** – Rate limiting, XSS protection, CORS configuration
-- ⚡ **Performance** – Optimized bundle size with lazy loading
-- 🎯 **SEO Friendly** – Semantic HTML and meta tags
-- 🎭 **Smooth Animations** – Custom CSS animations and transitions
+- 🎯 **SEO Friendly** – Semantic HTML and optimized meta tags
 - 📊 **Project Showcase** – Dynamic project cards with live demos
-- 🔄 **SPA Navigation** – Client-side routing with Angular Router
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend
+**Frontend**
 
-- **Angular 20.3.9** – Progressive web framework
-- **TypeScript 5.9.3** – Type-safe JavaScript
-- **SCSS** – Advanced CSS with variables and mixins
-- **RxJS** – Reactive programming
-- **ngx-translate** – Internationalization
+- Angular 21 (Standalone, Signals, Zoneless)
+- TypeScript 5.7
+- SCSS
+- Service Worker (PWA)
 
-### Backend (Contact API)
+**Testing & Quality**
 
-- **PHP 8+** – Contact form handler
-- **Apache** – Web server with `.htaccess` configuration
+- Jasmine + Karma (823 tests)
+- 96.4% Code Coverage
+- ESLint & Prettier
 
-### Tools & Development
+**Backend**
 
-- **Angular CLI** – Project scaffolding and build
-- **Karma & Jasmine** – Testing framework
-- **Git** – Version control
-- **Figma** – Design prototyping
+- PHP 8+ (Contact API)
+- Apache with .htaccess
+
+**DevOps**
+
+- GitHub Actions (CI/CD)
+- FTP Deployment to IONOS
+- JSDoc (API Documentation)
 
 ---
 
@@ -64,303 +72,102 @@ A fully responsive, modern portfolio website built as a Single Page Application 
 
 ```
 Portfolio/
-├── public/                          # Static assets & API
-│   ├── assets/
-│   │   ├── fonts/                   # Custom fonts (Lexend, Overpass, Syne)
-│   │   ├── i18n/                    # Translation files (de.json, en.json)
-│   │   ├── images/                  # Images and project screenshots
-│   │   ├── vector/                  # SVG icons and graphics
-│   │   └── styles/                  # Font SCSS imports
+├── .github/
+│   └── workflows/
+│       └── deploy.yml               # CI/CD Pipeline (Tests, Build, Deploy)
+├── public/
 │   ├── api/
-│   │   └── contact/                 # PHP contact form API
+│   │   └── contact/                 # PHP Contact Form API
 │   │       ├── contact.php          # Production endpoint (not in Git)
 │   │       ├── contact.example.php  # Template file
 │   │       └── README.md            # API setup guide
-│   ├── .htaccess                    # Apache configuration
-│   └── media/                       # Screenshots & previews
+│   ├── fonts/                       # Overpass, Syne
+│   ├── i18n/                        # Translation files (de.json, en.json)
+│   ├── theme-dark/                  # Dark theme PWA icons
+│   ├── theme-light/                 # Light theme PWA icons
+│   └── manifest-*.webmanifest       # PWA manifests
 ├── src/
 │   ├── app/
-│   │   ├── future-modul/            # Shared components & directives
-│   │   │   ├── components/          # Reusable UI components
-│   │   │   ├── directives/          # Custom directives
-│   │   │   └── pipes/               # Custom pipes
-│   │   ├── homeprovide/             # Main content sections
-│   │   │   ├── hero/                # Hero section
-│   │   │   ├── about/               # About me section
-│   │   │   ├── skills/              # Skills showcase
-│   │   │   ├── portfolio/           # Projects portfolio
-│   │   │   └── contact/             # Contact form
-│   │   ├── pages/                   # Static pages
-│   │   │   ├── imprint/             # Legal imprint
-│   │   │   └── not-found/           # 404 page
-│   │   ├── shared/                  # Shared services & components
-│   │   │   ├── components/          # Header, Footer
-│   │   │   ├── services/            # Business logic services
-│   │   │   └── styles/              # Shared SCSS
-│   │   ├── models/                  # TypeScript interfaces
-│   │   ├── app.component.ts         # Root component
-│   │   ├── app.config.ts            # App configuration
-│   │   └── app.routes.ts            # Route definitions
+│   │   ├── core/                    # Core services & models
+│   │   │   ├── interceptors/        # HTTP interceptors
+│   │   │   ├── models/              # TypeScript interfaces
+│   │   │   ├── services/            # Business logic (8 services)
+│   │   ├── features/                # Feature modules
+│   │   │   ├── home/                # Home page sections
+│   │   │   │   ├── components/      # Hero, About, Skills, Projects, Contact
+│   │   │   │   └── pages/           # HomePage
+│   │   │   ├── legal/               # Legal pages
+│   │   │   │   └── pages/           # Imprint, Privacy, Sources
+│   │   │   ├── projects/            # Project components
+│   │   │   │   └── components/      # ProjectCard
+│   │   ├── layout/                  # App layout
+│   │   │   ├── header/              # Navigation, Theme/Lang switcher
+│   │   │   ├── footer/              # Footer, Social links
+│   │   ├── shared/                  # Reusable components
+│   │   │   ├── components/          # Buttons, UI components
+│   │   │   ├── directives/          # IconHover, NoScroll
+│   │   │   ├── pages/               # NotFoundPage (404)
+│   │   ├── app.ts                   # Root component
+│   │   ├── app.config.ts            # App configuration & providers
+│   │   ├── app.routes.ts            # Route definitions
+│   │   └── app.spec.ts              # Root component tests
+│   ├── assets/
+│   │   ├── images/                  # Profile, project screenshots
+│   │   └── screenshots/             # App previews
+│   ├── environments/                # Environment configs
+│   ├── styles/                      # Global SCSS
+│   │   ├── components/              # Component-specific styles
+│   │   ├── _fonts.scss
+│   │   ├── _layout.scss
+│   │   ├── _mixins.scss
+│   │   ├── _typography.scss
+│   │   └── _variables.scss
 │   ├── index.html                   # HTML entry point
 │   ├── main.ts                      # Application bootstrap
-│   └── styles.scss                  # Global styles
+│   └── styles.scss                  # Global styles entry
 ├── angular.json                     # Angular workspace config
+├── ngsw-config.json                 # Service Worker config
 ├── package.json                     # Dependencies & scripts
 ├── tsconfig.json                    # TypeScript config
+├── jsdoc.json                       # JSDoc configuration
+├── DEPLOYMENT-GUIDE.md              # Deployment documentation
+├── TESTING-REPORT.md                # Test coverage report
+├── TEAM-GUIDE.md                    # Developer guide
 └── README.md                        # This file
 ```
 
 ---
 
-## 🔧 Prerequisites
+## 📁 Deployment Structure
 
-Before you begin, ensure you have the following installed:
+After deployment to **portfolio.dev2k.org**, the following structure is created:
 
-- **Node.js** >= 18.x
-- **npm** >= 9.x or **yarn** >= 1.x
-- **Angular CLI** >= 20.x
-
-```bash
-# Install Angular CLI globally
-npm install -g @angular/cli@20
+```
+portfolio.dev2k.org/
+├── index.html                       # Portfolio App
+├── assets/                          # Images, fonts, i18n
+├── *.js, *.css                      # Compiled bundles
+├── .htaccess                        # Apache config (routing + security)
+├── coverage/                        # 📊 Test Coverage Report
+│   └── index.html                   # https://portfolio.dev2k.org/coverage/
+└── jsdoc/                           # 📚 API Documentation
+    └── index.html                   # https://portfolio.dev2k.org/jsdoc/
 ```
 
----
+**Live URLs:**
 
-## 📦 Installation & Setup
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/KosMaster87/Portfolio.git
-cd Portfolio
-```
-
-### 2. Install dependencies
-
-```bash
-npm install
-# or
-yarn install
-```
-
-### 3. Setup Contact API (Optional)
-
-If you want to use the contact form:
-
-```bash
-cd public/api/contact
-cp contact.example.php contact.php
-```
-
-Edit `contact.php` and replace:
-
-- `https://your-domain.com` with your actual domain
-- `your-email@example.com` with your email address
-
-See `public/api/contact/README.md` for detailed setup.
-
-### 4. Start development server
-
-```bash
-npm start
-```
-
-Navigate to `http://localhost:4200/`. The app will automatically reload when you change source files.
+- 🌐 App: [portfolio.dev2k.org](https://portfolio.dev2k.org)
+- 📊 Coverage: [portfolio.dev2k.org/coverage](https://portfolio.dev2k.org/coverage/)
+- 📚 API Docs: [portfolio.dev2k.org/jsdoc](https://portfolio.dev2k.org/jsdoc/)
 
 ---
 
-## 🎯 Available Scripts
+## 📖 Documentation
 
-| Command                       | Description                                         |
-| ----------------------------- | --------------------------------------------------- |
-| `npm start`                   | Start development server on `http://localhost:4200` |
-| `npm run build`               | Build project for production to `dist/` folder      |
-| `npm run watch`               | Build in watch mode for development                 |
-| `npm test`                    | Run unit tests via Karma                            |
-| `npm run serve:ssr:portfolio` | Serve SSR version (if configured)                   |
-
----
-
-## 🏗️ Build for Production
-
-```bash
-# Create optimized production build
-npm run build
-
-# Output will be in dist/portfolio/
-```
-
-The build artifacts will be stored in the `dist/portfolio/` directory, ready for deployment.
-
-### Build Optimization Features:
-
-- ✅ Minification & compression
-- ✅ Tree shaking for smaller bundles
-- ✅ Lazy loading for routes
-- ✅ AOT (Ahead-of-Time) compilation
-- ✅ Cache busting with content hashes
-
----
-
-## 🚀 Deployment
-
-### Deploy to Apache Server
-
-1. Build the project:
-
-   ```bash
-   npm run build
-   ```
-
-2. Upload `dist/portfolio/` contents to your web server
-
-3. Ensure `.htaccess` is in the root for SPA routing:
-
-   ```apache
-   # Already included in public/.htaccess
-   RewriteEngine On
-   RewriteCond %{REQUEST_FILENAME} !-f
-   RewriteCond %{REQUEST_FILENAME} !-d
-   RewriteCond %{REQUEST_URI} !^/api/
-   RewriteRule . /index.html [L]
-   ```
-
-4. Setup PHP contact API (see `public/api/contact/README.md`)
-
-### Other Hosting Options
-
-<details>
-<summary><strong>GitHub Pages</strong></summary>
-
-```bash
-ng build --base-href "/Portfolio/"
-# Then push dist/ to gh-pages branch
-```
-
-</details>
-
-<details>
-<summary><strong>Netlify / Vercel</strong></summary>
-
-1. Connect your GitHub repository
-2. Build command: `npm run build`
-3. Publish directory: `dist/portfolio`
-4. Add `_redirects` file for SPA routing:
-   ```
-   /*    /index.html   200
-   ```
-   </details>
-
----
-
-## 🌐 Internationalization (i18n)
-
-The portfolio supports multiple languages using `ngx-translate`.
-
-### Available Languages:
-
-- 🇬🇧 English (`en`)
-- 🇩🇪 German (`de`)
-
-### Translation Files:
-
-- `public/assets/i18n/en.json`
-- `public/assets/i18n/de.json`
-
-### Adding a New Language:
-
-1. Create new JSON file in `public/assets/i18n/`
-2. Add language selector logic in header component
-3. Update `TranslateService` configuration
-
----
-
-## 📧 Contact Form Features
-
-The integrated contact form includes:
-
-- ✅ **Rate Limiting** – 3 requests per hour per IP
-- ✅ **Email Validation** – Server-side validation
-- ✅ **Spam Protection** – Honeypot field
-- ✅ **HTML Email Templates** – Professional email design
-- ✅ **Auto-Response** – Confirmation email to sender
-- ✅ **Logging** – Request logging for debugging
-- ✅ **Security Headers** – XSS, CSRF protection
-
-See `public/api/contact/README.md` for complete documentation.
-
----
-
-## 🎨 Customization
-
-### Colors & Theme
-
-Edit global variables in `src/styles.scss`:
-
-```scss
-$primary-color: #00bc8f;
-$secondary-color: #5988ff;
-$accent-color: #ff6b6b;
-```
-
-### Fonts
-
-The portfolio uses custom fonts from `public/assets/fonts/`:
-
-- **Lexend** – Body text
-- **Overpass** – Headers
-- **Syne** – Accent text
-
----
-
-## 🧪 Testing
-
-```bash
-# Run unit tests
-npm test
-
-# Run tests with coverage
-ng test --code-coverage
-```
-
----
-
-## 📝 Project Highlights
-
-### Key Components:
-
-- **Hero Section** – Animated introduction with call-to-action
-- **About Me** – Professional background and skills
-- **Skills Grid** – Interactive technology showcase
-- **Portfolio Projects** – Filterable project cards with live demos
-- **Contact Form** – Fully functional with backend integration
-
-### Notable Features:
-
-- Custom directives for hover effects and highlighting
-- Scroll-to-section navigation
-- Responsive hamburger menu
-- Form validation with custom validators
-- Error handling with user-friendly notifications
-
----
-
-## 🤝 Contributing
-
-This is a personal portfolio project, but feedback and suggestions are welcome!
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- [TESTING-REPORT.md](./TESTING-REPORT.md) – Complete test coverage report
+- [TEAM-GUIDE.md](./TEAM-GUIDE.md) – Developer onboarding guide
+- [DEPLOYMENT-GUIDE.md](./DEPLOYMENT-GUIDE.md) – Deployment setup & CI/CD
+- [Component Docs](./src/app/) – Component-specific READMEs
 
 ---
 
@@ -374,20 +181,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - 📧 Email: konstantin.aksenov@dev2k.org
 
 ---
-
-## � Acknowledgments
-
-- Design inspiration from modern portfolio trends
-- Icons from custom SVG collection
-- Fonts from Google Fonts
-- Community feedback and support
-
----
-
-<div align="center">
-  <strong>⭐ If you like this project, please give it a star! ⭐</strong>
-</div>
-
----
-
-**Last Updated:** Dezember 2025

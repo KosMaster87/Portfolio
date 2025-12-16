@@ -1,0 +1,29 @@
+{
+  "source": {
+    "include": ["src"],
+    "includePattern": ".+\\.ts(x)?$",
+    "excludePattern": "(node_modules|dist|coverage|.spec)"
+  },
+  "plugins": ["plugins/markdown", "node_modules/jsdoc-babel"],
+  "babel": {
+    "presets": ["@babel/preset-env", "@babel/preset-typescript"]
+  },
+  "opts": {
+    "destination": "./docs",
+    "recurse": true,
+    "readme": "README.md",
+    "template": "node_modules/docdash",
+    "encoding": "utf8"
+  },
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": false,
+    "default": {
+      "outputSourceFiles": true
+    }
+  },
+  "metadata": {
+    "title": "Portfolio - API Documentation",
+    "description": "Complete API documentation for the Portfolio Angular application"
+  }
+}
