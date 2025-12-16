@@ -87,22 +87,17 @@ jobs:
           </IfModule>
           EOF
 
-      - name: 📤 Deploy to IONOS via FTP
+      - name: 📤 Deploy to IONOS via SFTP
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./deploy/
-          server-dir: /
-          protocol: ftps
-          port: 21
-          dangerous-clean-slate: false
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
+          local_path: './deploy/*'
+          remote_path: '/'
+          sftp_only: true
+          delete_remote_files: false
 
       - name: ✅ Deployment Complete
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
