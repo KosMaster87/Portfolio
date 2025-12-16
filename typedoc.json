@@ -1,0 +1,34 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["src/app"],
+  "entryPointStrategy": "expand",
+  "out": "docs",
+  "exclude": [
+    "**/*.spec.ts",
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/coverage/**"
+  ],
+  "excludePrivate": false,
+  "excludeProtected": false,
+  "excludeInternal": false,
+  "includeVersion": true,
+  "sort": ["source-order"],
+  "groupOrder": ["Classes", "Functions", "Interfaces", "*"],
+  "categorizeByGroup": true,
+  "readme": "README.md",
+  "name": "Portfolio - API Documentation",
+  "navigationLinks": {
+    "Live Demo": "https://portfolio.dev2k.org",
+    "Coverage": "https://portfolio.dev2k.org/coverage",
+    "GitHub": "https://github.com/KosMaster87/Portfolio"
+  },
+  "plugin": ["typedoc-plugin-missing-exports"],
+  "treatWarningsAsErrors": false,
+  "treatValidationWarningsAsErrors": false,
+  "validation": {
+    "notExported": false,
+    "invalidLink": false,
+    "notDocumented": false
+  }
+}
