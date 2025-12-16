@@ -25,7 +25,7 @@ config/env/.env.production
 .history/*
 
 # CI/CD
-.github/
+# .github/ - DON'T ignore! We need GitHub Actions workflows
 
 # Logs
 *.log

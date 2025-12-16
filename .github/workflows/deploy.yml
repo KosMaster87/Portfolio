@@ -1,0 +1,123 @@
+name: Build, Test & Deploy to IONOS
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-test-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📦 Install Dependencies
+        run: npm ci
+
+      - name: 🧪 Run Tests with Coverage
+        run: npm test -- --no-watch --code-coverage --browsers=ChromeHeadless
+
+      - name: 📊 Generate Coverage Badge
+        run: |
+          COVERAGE=$(grep -oP 'Lines\s*:\s*\K[\d.]+' coverage/portfolio/index.html | head -1 || echo "0")
+          echo "Coverage: $COVERAGE%"
+          echo "COVERAGE=$COVERAGE" >> $GITHUB_ENV
+
+      - name: 📚 Generate JSDoc Documentation
+        run: npm run docs
+
+      - name: 🏗️ Build Production App
+        run: npm run build -- --configuration production
+
+      - name: 📁 Prepare Deployment Structure
+        run: |
+          mkdir -p deploy
+          cp -r dist/portfolio/browser/* deploy/
+          cp -r coverage/portfolio deploy/coverage
+          cp -r docs deploy/jsdoc
+
+          # Create .htaccess for proper routing
+          cat > deploy/.htaccess << 'EOF'
+          # Angular SPA Routing
+          <IfModule mod_rewrite.c>
+            RewriteEngine On
+            RewriteBase /
+
+            # Don't rewrite coverage and jsdoc directories
+            RewriteRule ^(coverage|jsdoc)/ - [L]
+
+            # Rewrite all other requests to index.html
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteCond %{REQUEST_FILENAME} !-d
+            RewriteRule . /index.html [L]
+          </IfModule>
+
+          # Security Headers
+          <IfModule mod_headers.c>
+            Header set X-Content-Type-Options "nosniff"
+            Header set X-Frame-Options "SAMEORIGIN"
+            Header set X-XSS-Protection "1; mode=block"
+          </IfModule>
+
+          # Compression
+          <IfModule mod_deflate.c>
+            AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+          </IfModule>
+
+          # Cache Control
+          <IfModule mod_expires.c>
+            ExpiresActive On
+            ExpiresByType image/jpg "access plus 1 year"
+            ExpiresByType image/jpeg "access plus 1 year"
+            ExpiresByType image/gif "access plus 1 year"
+            ExpiresByType image/png "access plus 1 year"
+            ExpiresByType image/svg+xml "access plus 1 year"
+            ExpiresByType text/css "access plus 1 month"
+            ExpiresByType application/javascript "access plus 1 month"
+          </IfModule>
+          EOF
+
+      - name: 📤 Deploy to IONOS via FTP
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./deploy/
+          server-dir: /
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+
+      - name: ✅ Deployment Complete
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          echo "🎉 Deployment successful!"
+          echo "🌐 App: https://portfolio.dev2k.org"
+          echo "📊 Coverage: https://portfolio.dev2k.org/coverage/"
+          echo "📚 Docs: https://portfolio.dev2k.org/jsdoc/"
+
+      - name: 💬 Comment on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## ✅ Build & Test Successful\n\n- 🧪 Tests: Passed\n- 📊 Coverage: ${{ env.COVERAGE }}%\n\nReady to merge!`
+            })
