@@ -3,13 +3,13 @@
 [![Angular](https://img.shields.io/badge/Angular-21.0-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
-[![Test Coverage](https://img.shields.io/badge/coverage-96.4%25-brightgreen?style=for-the-badge)](https://portfolio.dev2k.org/coverage/)
+[![Test Coverage](https://img.shields.io/badge/coverage-96.4%25-brightgreen?style=for-the-badge)](https://portfolio.dev2k.org/coverage/index.html)
 [![Tests](https://img.shields.io/badge/tests-823%20passing-success?style=for-the-badge)](./TESTING-REPORT.md)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
 A fully responsive, modern portfolio website built as a Single Page Application (SPA) to showcase my skills, projects, and professional experience. Designed with a mobile-first approach and optimized for recruiters and hiring managers.
 
-[🌐 Live Demo](https://portfolio.dev2k.org) | [📊 Coverage Report](https://portfolio.dev2k.org/coverage/) | [📚 API Docs](https://portfolio.dev2k.org/jsdoc/) | [📖 Testing Guide](./TESTING-REPORT.md)
+[🌐 Live Demo](https://portfolio.dev2k.org) | [📊 Coverage Report](https://portfolio.dev2k.org/coverage/index.html) | [📚 API Docs](https://portfolio.dev2k.org/jsdoc/index.html) | [📖 Testing Guide](./TESTING-REPORT.md)
 
 ---
 
@@ -149,16 +149,16 @@ portfolio.dev2k.org/
 ├── *.js, *.css                      # Compiled bundles
 ├── .htaccess                        # Apache config (routing + security)
 ├── coverage/                        # 📊 Test Coverage Report
-│   └── index.html                   # https://portfolio.dev2k.org/coverage/
+│   └── index.html                   # https://portfolio.dev2k.org/coverage/index.html
 └── jsdoc/                           # 📚 API Documentation
-    └── index.html                   # https://portfolio.dev2k.org/jsdoc/
+    └── index.html                   # https://portfolio.dev2k.org/jsdoc/index.html
 ```
 
 **Live URLs:**
 
 - 🌐 App: [portfolio.dev2k.org](https://portfolio.dev2k.org)
-- 📊 Coverage: [portfolio.dev2k.org/coverage](https://portfolio.dev2k.org/coverage/)
-- 📚 API Docs: [portfolio.dev2k.org/jsdoc](https://portfolio.dev2k.org/jsdoc/)
+- 📊 Coverage: [portfolio.dev2k.org/coverage](https://portfolio.dev2k.org/coverage/index.html)
+- 📚 API Docs: [portfolio.dev2k.org/jsdoc](https://portfolio.dev2k.org/jsdoc/index.html)
 
 ---
 
@@ -181,5 +181,3 @@ portfolio.dev2k.org/
 - 📧 Email: konstantin.aksenov@dev2k.org
 
 ---
-
-

@@ -46,58 +46,24 @@ jobs:
           cp -r coverage/portfolio deploy/coverage
           cp -r docs deploy/jsdoc
 
-          # Create .htaccess for coverage and jsdoc to prevent Angular routing
-          cat > deploy/coverage/.htaccess << 'EOF'
-          # Disable parent rewrite rules
-          RewriteEngine Off
-          DirectoryIndex index.html
-          EOF
-
-          cat > deploy/jsdoc/.htaccess << 'EOF'
-          # Disable parent rewrite rules
-          RewriteEngine Off
-          DirectoryIndex index.html
-          EOF
-
-          # Create .htaccess for deployment
+          # Create simple .htaccess for deployment
           cat > deploy/.htaccess << 'EOF'
-          # ------------------------------------------------------
-          # 🔁 Apache Configuration for Angular SPA
-          # ------------------------------------------------------
           RewriteEngine On
           RewriteBase /portfolio/
           DirectoryIndex index.html
 
-          # ------------------------------------------------------
-          # 🔒 Force HTTPS
-          # ------------------------------------------------------
+          # Force HTTPS
           RewriteCond %{HTTPS} off
           RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-          # ------------------------------------------------------
-          # 📚 JSDOC & Coverage Protection - Don't redirect to index.html
-          # ------------------------------------------------------
-          RewriteCond %{REQUEST_URI} ^/portfolio/(jsdoc|coverage)/
-          RewriteRule . - [L]
-
-          # ------------------------------------------------------
-          # 🛡️ API Routes Protection - Don't redirect to index.html
-          # ------------------------------------------------------
+          # API Routes Protection - Don't redirect to index.html
           RewriteCond %{REQUEST_URI} ^/portfolio/api/
           RewriteRule . - [L]
 
-          # ------------------------------------------------------
-          # ⚙️ SPA Routing - Angular Router Fallback
-          # ------------------------------------------------------
-          # If file exists, serve it
+          # Angular SPA Routing
           RewriteCond %{REQUEST_FILENAME} !-f
-          # If directory exists, let Apache handle it (DirectoryIndex)
           RewriteCond %{REQUEST_FILENAME} !-d
-          # Not an API call
           RewriteCond %{REQUEST_URI} !^/portfolio/api/
-          # Not JSDOC or Coverage
-          RewriteCond %{REQUEST_URI} !^/portfolio/(jsdoc|coverage)/
-          # Redirect to index.html
           RewriteRule . index.html [L]
 
           # ------------------------------------------------------
@@ -146,8 +112,8 @@ jobs:
         run: |
           echo "🎉 Deployment successful!"
           echo "🌐 App: https://portfolio.dev2k.org"
-          echo "📊 Coverage: https://portfolio.dev2k.org/coverage/"
-          echo "📚 Docs: https://portfolio.dev2k.org/jsdoc/"
+          echo "📊 Coverage: https://portfolio.dev2k.org/coverage/index.html"
+          echo "📚 Docs: https://portfolio.dev2k.org/jsdoc/index.html"
 
       - name: 💬 Comment on PR
         if: github.event_name == 'pull_request'

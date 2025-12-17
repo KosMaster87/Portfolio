@@ -53,8 +53,8 @@ After deployment, the following structure is created:
 **URLs:**
 
 - 🌐 App: `https://portfolio.dev2k.org`
-- 📊 Coverage: `https://portfolio.dev2k.org/coverage/`
-- 📚 Docs: `https://portfolio.dev2k.org/jsdoc/`
+- 📊 Coverage: `https://portfolio.dev2k.org/coverage/index.html`
+- 📚 Docs: `https://portfolio.dev2k.org/jsdoc/index.html`
 
 ---
 
@@ -144,7 +144,7 @@ In the workflow log you'll see:
 ```
 ✅ Deployment successful!
 🌐 App: https://portfolio.dev2k.org
-📊 Coverage: https://portfolio.dev2k.org/coverage/
+📊 Coverage: https://portfolio.dev2k.org/coverage/index.html
 📚 Docs: https://portfolio.dev2k.org/jsdoc/
 ```
 
@@ -289,8 +289,8 @@ After the first push to `main`:
 **Check:**
 
 - ✅ `https://portfolio.dev2k.org`
-- ✅ `https://portfolio.dev2k.org/coverage/`
-- ✅ `https://portfolio.dev2k.org/jsdoc/`
+- ✅ `https://portfolio.dev2k.org/coverage/index.html`
+- ✅ `https://portfolio.dev2k.org/jsdoc/index.html`
 
 ---
 
