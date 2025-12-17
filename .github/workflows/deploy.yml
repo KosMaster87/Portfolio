@@ -53,6 +53,7 @@ jobs:
           # ------------------------------------------------------
           RewriteEngine On
           RewriteBase /portfolio/
+          DirectoryIndex index.html
 
           # ------------------------------------------------------
           # 🔒 Force HTTPS
