@@ -62,12 +62,7 @@ jobs:
           RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
           # ------------------------------------------------------
-          # 📊 Static Documentation Folders - Don't redirect
-          # ------------------------------------------------------
-          RewriteRule ^(coverage|jsdoc)($|/) - [L,NC]
-
-          # ------------------------------------------------------
-          # 🛡️ API Routes Protection - Don't redirect to index.html
+          # �️ API Routes Protection - Don't redirect to index.html
           # ------------------------------------------------------
           RewriteCond %{REQUEST_URI} ^/portfolio/api/
           RewriteRule . - [L]
@@ -75,9 +70,13 @@ jobs:
           # ------------------------------------------------------
           # ⚙️ SPA Routing - Angular Router Fallback
           # ------------------------------------------------------
+          # If file exists, serve it
           RewriteCond %{REQUEST_FILENAME} !-f
+          # If directory exists, let Apache handle it (DirectoryIndex)
           RewriteCond %{REQUEST_FILENAME} !-d
+          # Not an API call
           RewriteCond %{REQUEST_URI} !^/portfolio/api/
+          # Redirect to index.html
           RewriteRule . index.html [L]
 
           # ------------------------------------------------------
