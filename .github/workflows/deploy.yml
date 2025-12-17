@@ -53,15 +53,16 @@ jobs:
             RewriteEngine On
             RewriteBase /
 
-            # Don't rewrite coverage and jsdoc directories - they are static files
-            RewriteCond %{REQUEST_URI} ^/coverage [NC,OR]
-            RewriteCond %{REQUEST_URI} ^/jsdoc [NC]
-            RewriteRule ^ - [L]
+            # Exclude coverage and jsdoc directories FIRST (highest priority)
+            RewriteRule ^(coverage|jsdoc)($|/) - [L,NC]
 
             # Rewrite all other requests to index.html (Angular SPA)
+            # Skip if file exists
             RewriteCond %{REQUEST_FILENAME} !-f
+            # Skip if directory exists
             RewriteCond %{REQUEST_FILENAME} !-d
-            RewriteRule ^ /index.html [L]
+            # Rewrite to index.html
+            RewriteRule ^ index.html [L]
           </IfModule>
 
           # Security Headers
