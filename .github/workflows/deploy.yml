@@ -91,16 +91,16 @@ jobs:
 
       - name: 📤 Deploy to IONOS via SFTP
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        uses: appleboy/scp-action@v0.1.7
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          host: ${{ secrets.FTP_HOST }}
+          server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 22
-          source: 'deploy/*'
-          target: '/'
-          strip_components: 1
-          rm: false
+          local_path: './deploy/*'
+          remote_path: './'
+          sftp_only: true
+          delete_remote_files: false
 
       - name: ✅ Deployment Complete
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
