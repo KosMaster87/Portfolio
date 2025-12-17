@@ -46,6 +46,19 @@ jobs:
           cp -r coverage/portfolio deploy/coverage
           cp -r docs deploy/jsdoc
 
+          # Create .htaccess for coverage and jsdoc to prevent Angular routing
+          cat > deploy/coverage/.htaccess << 'EOF'
+          # Disable parent rewrite rules
+          RewriteEngine Off
+          DirectoryIndex index.html
+          EOF
+
+          cat > deploy/jsdoc/.htaccess << 'EOF'
+          # Disable parent rewrite rules
+          RewriteEngine Off
+          DirectoryIndex index.html
+          EOF
+
           # Create .htaccess for deployment
           cat > deploy/.htaccess << 'EOF'
           # ------------------------------------------------------
