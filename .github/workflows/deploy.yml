@@ -96,7 +96,7 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local_path: './deploy/*'
+          local_path: './deploy/'
           remote_path: '/'
           sftp_only: true
           delete_remote_files: false
