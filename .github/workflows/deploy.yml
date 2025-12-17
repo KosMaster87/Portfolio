@@ -109,16 +109,15 @@ jobs:
 
       - name: 📤 Deploy to IONOS via SFTP
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        uses: Dylan700/sftp-upload-action@v1.1.4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 22
-          local_path: './deploy/*'
-          remote_path: './portfolio'
-          sftp_only: true
-          delete_remote_files: false
+          uploads: |
+            ./deploy/ => ./portfolio/
+          delete: false
 
       - name: ✅ Deployment Complete
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
