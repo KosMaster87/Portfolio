@@ -52,6 +52,7 @@ jobs:
           # 🔁 Apache Configuration for Angular SPA
           # ------------------------------------------------------
           RewriteEngine On
+          RewriteBase /portfolio/
 
           # ------------------------------------------------------
           # 🔒 Force HTTPS
@@ -67,7 +68,7 @@ jobs:
           # ------------------------------------------------------
           # 🛡️ API Routes Protection - Don't redirect to index.html
           # ------------------------------------------------------
-          RewriteCond %{REQUEST_URI} ^/api/
+          RewriteCond %{REQUEST_URI} ^/portfolio/api/
           RewriteRule . - [L]
 
           # ------------------------------------------------------
@@ -75,7 +76,7 @@ jobs:
           # ------------------------------------------------------
           RewriteCond %{REQUEST_FILENAME} !-f
           RewriteCond %{REQUEST_FILENAME} !-d
-          RewriteCond %{REQUEST_URI} !^/api/
+          RewriteCond %{REQUEST_URI} !^/portfolio/api/
           RewriteRule . index.html [L]
 
           # ------------------------------------------------------
