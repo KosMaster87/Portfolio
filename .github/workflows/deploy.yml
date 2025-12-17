@@ -75,7 +75,13 @@ jobs:
           RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
           # ------------------------------------------------------
-          # �️ API Routes Protection - Don't redirect to index.html
+          # 📚 JSDOC & Coverage Protection - Don't redirect to index.html
+          # ------------------------------------------------------
+          RewriteCond %{REQUEST_URI} ^/portfolio/(jsdoc|coverage)/
+          RewriteRule . - [L]
+
+          # ------------------------------------------------------
+          # 🛡️ API Routes Protection - Don't redirect to index.html
           # ------------------------------------------------------
           RewriteCond %{REQUEST_URI} ^/portfolio/api/
           RewriteRule . - [L]
@@ -89,6 +95,8 @@ jobs:
           RewriteCond %{REQUEST_FILENAME} !-d
           # Not an API call
           RewriteCond %{REQUEST_URI} !^/portfolio/api/
+          # Not JSDOC or Coverage
+          RewriteCond %{REQUEST_URI} !^/portfolio/(jsdoc|coverage)/
           # Redirect to index.html
           RewriteRule . index.html [L]
 
