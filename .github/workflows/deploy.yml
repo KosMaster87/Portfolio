@@ -98,7 +98,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 22
           local_path: './deploy/*'
-          remote_path: './'
+          remote_path: './portfolio'
           sftp_only: true
           delete_remote_files: false
 
