@@ -1,4 +1,10 @@
-<button [type]="type()" class="icon-button" (click)="onClick()" [attr.aria-label]="ariaLabel()">
+<button
+  [type]="type()"
+  class="icon-button"
+  (click)="onClick()"
+  [attr.aria-label]="ariaLabel()"
+  [attr.title]="ariaLabel()"
+>
   <img
     [src]="arrowImage"
     [class.icon-button__arrow--dark]="isDark()"

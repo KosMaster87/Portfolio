@@ -11,6 +11,7 @@
           (keyup.space)="navigateToHome()"
           role="button"
           tabindex="0"
+          title="Go to homepage"
         >
           <img class="header__logo-icon" [src]="logoPath()" alt="dev2k Logo" draggable="false" />
           <span class="header__logo-text">dev2k</span>
@@ -78,7 +79,7 @@
           appNoScroll
         />
 
-        <label class="header__burger" for="menuToggle">
+        <label class="header__burger" for="menuToggle" title="Toggle menu">
           <span class="header__burger-line"></span>
           <span class="header__burger-line"></span>
           <span class="header__burger-line"></span>

@@ -44,7 +44,7 @@ export class NavButtonComponent {
       const route = Array.isArray(link) ? link[0] : link;
       this.navigationService.navigateToSection(frag, route);
     } else {
-      this.navigationService.navigateToHome();
+      this.navigationService.navigateToRoute(link);
     }
   }
 }

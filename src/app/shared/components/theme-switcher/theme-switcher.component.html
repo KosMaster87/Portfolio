@@ -4,6 +4,7 @@
     (click)="toggleDropdown()"
     [attr.aria-expanded]="isDropdownOpen()"
     aria-label="Theme selector"
+    title="Switch theme"
   >
     @if (currentTheme() === 'light') {
     <img src="assets/images/theme/light-mode.svg" alt="Light mode" width="20" height="20" />

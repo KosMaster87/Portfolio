@@ -15,6 +15,7 @@ export interface PageMetadata {
   ogDescription?: string;
   ogImage?: string;
   ogUrl?: string;
+  robots?: string;
 }
 
 @Injectable({
@@ -56,6 +57,11 @@ export class SeoService {
 
     if (metadata.ogUrl) {
       this.metaService.updateTag({ property: 'og:url', content: metadata.ogUrl });
+    }
+
+    // Robots meta tag (for noindex, nofollow)
+    if (metadata.robots) {
+      this.metaService.updateTag({ name: 'robots', content: metadata.robots });
     }
   }
 

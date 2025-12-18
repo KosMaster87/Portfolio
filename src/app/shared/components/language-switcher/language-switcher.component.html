@@ -4,6 +4,7 @@
     (click)="toggleDropdown()"
     [attr.aria-expanded]="isDropdownOpen()"
     [attr.aria-label]="'Language: ' + getCurrentLanguageData()?.label"
+    title="Change language"
   >
     <img
       [src]="getCurrentLanguageData()?.flag"

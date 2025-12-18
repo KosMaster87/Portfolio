@@ -23,11 +23,25 @@
       "updateMode": "prefetch",
       "resources": {
         "files": [
-          "/**/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)",
-          "/theme-light/*",
-          "/theme-dark/*"
+          "/assets/**/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif)",
+          "/fonts/**/*.(otf|ttf|woff|woff2)",
+          "/i18n/*.json",
+          "/theme-light/**/*.(png|svg)",
+          "/theme-dark/**/*.(png|svg)"
         ]
       }
     }
-  ]
+  ],
+  "dataGroups": [
+    {
+      "name": "api-contact",
+      "urls": ["/api/contact/**"],
+      "cacheConfig": {
+        "maxSize": 0,
+        "maxAge": "0u",
+        "strategy": "freshness"
+      }
+    }
+  ],
+  "navigationUrls": ["/**", "!/**/*.*", "!/**/*__*", "!/**/*__*/**"]
 }

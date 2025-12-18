@@ -18,6 +18,7 @@ import { SmoothScrollService } from '../../../../core/services';
       type="button"
       (click)="handleClick()"
       (focus)="handleFocus($event)"
+      [attr.title]="label()"
     >
       {{ label() }}
     </button>
