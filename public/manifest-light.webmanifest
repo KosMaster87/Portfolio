@@ -7,7 +7,7 @@
   "display": "standalone",
   "orientation": "any",
   "background_color": "#ffffff",
-  "theme_color": "#00bc8f",
+  "theme_color": "#ffffff",
   "categories": ["portfolio", "developer", "web development"],
   "lang": "en",
   "dir": "ltr",

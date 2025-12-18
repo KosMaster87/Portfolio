@@ -119,7 +119,7 @@ export class NavigationService {
       // Increased timeout for lazy-loaded sections (contact, etc.)
       setTimeout(() => {
         this.scrollService.scrollToFragment(sectionId);
-      }, 400);
+      }, 600);
     });
   }
 
