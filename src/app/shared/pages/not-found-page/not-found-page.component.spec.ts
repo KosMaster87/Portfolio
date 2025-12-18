@@ -69,6 +69,7 @@ describe('NotFoundPageComponent', () => {
           'The page you are looking for could not be found. Return to homepage or explore other sections.',
         ogTitle: '404 - Page Not Found',
         ogUrl: 'https://portfolio.dev2k.org/404',
+        robots: 'noindex, nofollow',
       });
     });
 
