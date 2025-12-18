@@ -115,9 +115,11 @@ export class NavigationService {
    */
   navigateToSection(sectionId: string, route: string = '/'): void {
     this.router.navigate([route]).then(() => {
+      // Wait for Angular to render the component and DOM to be ready
+      // Increased timeout for lazy-loaded sections (contact, etc.)
       setTimeout(() => {
         this.scrollService.scrollToFragment(sectionId);
-      }, 100);
+      }, 400);
     });
   }
 
