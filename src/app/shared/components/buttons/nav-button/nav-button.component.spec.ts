@@ -15,6 +15,7 @@ describe('NavButtonComponent', () => {
     navigationServiceSpy = jasmine.createSpyObj('NavigationService', [
       'navigateToHome',
       'navigateToSection',
+      'navigateToRoute',
     ]);
     themeServiceSpy = jasmine.createSpyObj('ThemeService', [], {
       activeTheme: activeThemeSignal,
@@ -260,7 +261,7 @@ describe('NavButtonComponent', () => {
   });
 
   describe('navigate()', () => {
-    it('should call navigateToHome when no fragment is provided', () => {
+    it('should call navigateToRoute when no fragment is provided', () => {
       fixture.componentRef.setInput('label', 'Home');
       fixture.componentRef.setInput('icon', 'home');
       fixture.componentRef.setInput('routerLink', '/');
@@ -268,7 +269,7 @@ describe('NavButtonComponent', () => {
 
       component.navigate();
 
-      expect(navigationServiceSpy.navigateToHome).toHaveBeenCalled();
+      expect(navigationServiceSpy.navigateToRoute).toHaveBeenCalledWith('/');
       expect(navigationServiceSpy.navigateToSection).not.toHaveBeenCalled();
     });
 
@@ -282,7 +283,7 @@ describe('NavButtonComponent', () => {
       component.navigate();
 
       expect(navigationServiceSpy.navigateToSection).toHaveBeenCalledWith('about', '/');
-      expect(navigationServiceSpy.navigateToHome).not.toHaveBeenCalled();
+      expect(navigationServiceSpy.navigateToRoute).not.toHaveBeenCalled();
     });
 
     it('should call navigateToSection when fragment is provided with array routerLink', () => {
@@ -295,7 +296,7 @@ describe('NavButtonComponent', () => {
       component.navigate();
 
       expect(navigationServiceSpy.navigateToSection).toHaveBeenCalledWith('projects', '/');
-      expect(navigationServiceSpy.navigateToHome).not.toHaveBeenCalled();
+      expect(navigationServiceSpy.navigateToRoute).not.toHaveBeenCalled();
     });
 
     it('should use first element of array routerLink for section navigation', () => {
@@ -456,7 +457,7 @@ describe('NavButtonComponent', () => {
       expect(component.navigate).toHaveBeenCalled();
     });
 
-    it('should call navigateToHome when clicked without fragment', () => {
+    it('should call navigateToRoute when clicked without fragment', () => {
       fixture.componentRef.setInput('label', 'Home');
       fixture.componentRef.setInput('icon', 'home');
       fixture.componentRef.setInput('routerLink', '/');
@@ -465,7 +466,7 @@ describe('NavButtonComponent', () => {
       const button = fixture.nativeElement.querySelector('button.nav-btn');
       button.click();
 
-      expect(navigationServiceSpy.navigateToHome).toHaveBeenCalled();
+      expect(navigationServiceSpy.navigateToRoute).toHaveBeenCalledWith('/');
     });
 
     it('should call navigateToSection when clicked with fragment', () => {
@@ -493,7 +494,7 @@ describe('NavButtonComponent', () => {
       component.navigate();
       component.navigate();
 
-      expect(navigationServiceSpy.navigateToHome).toHaveBeenCalledTimes(3);
+      expect(navigationServiceSpy.navigateToRoute).toHaveBeenCalledTimes(3);
     });
 
     it('should update icon path when icon changes', () => {
@@ -518,7 +519,7 @@ describe('NavButtonComponent', () => {
 
       component.navigate();
 
-      expect(navigationServiceSpy.navigateToHome).toHaveBeenCalled();
+      expect(navigationServiceSpy.navigateToRoute).toHaveBeenCalledWith('');
     });
 
     it('should handle empty array routerLink with fragment', () => {
