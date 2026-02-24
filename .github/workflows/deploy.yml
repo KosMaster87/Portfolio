@@ -120,9 +120,11 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
+            // COVERAGE is set in the "Run Tests & Coverage" step via GITHUB_ENV
+            const coverage = '${{ env.COVERAGE }}' || 'N/A';
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `## ✅ Build & Test Successful\n\n- 🧪 Tests: Passed\n- 📊 Coverage: ${{ env.COVERAGE }}%\n\nReady to merge!`
+              body: `## ✅ Build & Test Successful\n\n- 🧪 Tests: Passed\n- 📊 Coverage: ${coverage}%\n\nReady to merge!`
             })

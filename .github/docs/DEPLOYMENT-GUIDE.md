@@ -108,6 +108,8 @@ npm run deploy:prepare
 
 ## 📊 GitHub Actions Workflow
 
+File: [`../../.github/workflows/deploy.yml`](../workflows/deploy.yml)
+
 The pipeline runs on:
 
 - ✅ Push to `main` branch → **Deployed to IONOS**
@@ -237,7 +239,7 @@ The auto-generated `.htaccess` includes:
 
 ## 📝 Customize Workflow
 
-File: `.github/workflows/deploy.yml`
+File: [`../../.github/workflows/deploy.yml`](../workflows/deploy.yml)
 
 ### Different Deployment Directory
 
@@ -271,7 +273,7 @@ on:
 
 - [ ] GitHub Secrets set (`FTP_HOST`, `FTP_USERNAME`, `FTP_PASSWORD`)
 - [ ] JSDoc dependencies installed (`npm install`)
-- [ ] Workflow file committed (`.github/workflows/deploy.yml`)
+- [ ] Workflow file committed ([`../../.github/workflows/deploy.yml`](../workflows/deploy.yml))
 - [ ] IONOS FTP access tested
 - [ ] Domain `portfolio.dev2k.org` points to IONOS webspace
 - [ ] SSL certificate active (IONOS → SSL Manager)
@@ -294,4 +296,4 @@ After the first push to `main`:
 
 ---
 
-**Questions?** Check GitHub Actions Logs or `TEAM-GUIDE.md`
+**Questions?** Check GitHub Actions Logs or [TEAM-GUIDE.md](./TEAM-GUIDE.md)

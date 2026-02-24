@@ -128,11 +128,9 @@
     "technicalInfoTitle": "Technical Information",
     "technicalInfoText": "This website is built with Angular and modern web technologies. For technical inquiries, please contact us via the provided email address.",
     "name": "Konstantin Aksenov",
-    "street": "Concordia-Str",
-    "city": "9370 Loma Plata",
-    "country": "Paraguay",
+    "city": "26810 Westoverledingen",
+    "country": "Germany",
     "emailValue": "Konstantin.Aksenov@dev2k.org",
-    "phoneValue": "+595 994 221200",
     "websiteValue": "https://portfolio.dev2k.org/"
   },
   "PRIVACY": {

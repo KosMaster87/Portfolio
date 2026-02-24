@@ -1,7 +1,7 @@
 # Test Coverage Report - Portfolio Angular Application
 
-**Datum**: 15. Dezember 2025
-**Projekt**: Angular Portfolio
+**Date**: December 15, 2025
+**Project**: Angular Portfolio
 **Version**: Angular 21.0.0
 **Test Framework**: Jasmine + Karma
 
@@ -9,22 +9,22 @@
 
 ## Executive Summary
 
-Das Projekt verfügt über eine **vollständige Test-Abdeckung** mit **823 erfolgreichen Tests**.
+The project has **complete test coverage** with **823 successful tests**.
 
-### Coverage Metriken
+### Coverage Metrics
 
-| Kategorie      | Coverage | Details            |
-| -------------- | -------- | ------------------ |
-| **Statements** | 95.44%   | 608/637 Lines      |
-| **Branches**   | 89.43%   | 110/123 Zweige     |
-| **Functions**  | 93.95%   | 202/215 Funktionen |
-| **Lines**      | 96.40%   | 563/584 Zeilen     |
+| Category       | Coverage | Details           |
+| -------------- | -------- | ----------------- |
+| **Statements** | 95.44%   | 608/637 Lines     |
+| **Branches**   | 89.43%   | 110/123 Branches  |
+| **Functions**  | 93.95%   | 202/215 Functions |
+| **Lines**      | 96.40%   | 563/584 Lines     |
 
-### Test-Status: ✅ **ALLE TESTS BESTEHEN**
+### Test Status: ✅ **ALL TESTS PASSING**
 
 ---
 
-## Test-Kategorien
+## Test Categories
 
 ### 1. Core Services (135 Tests)
 
@@ -105,41 +105,41 @@ Das Projekt verfügt über eine **vollständige Test-Abdeckung** mit **823 erfol
 
 ---
 
-## Qualitätsmetriken
+## Quality Metrics
 
-### Test-Pyramide
+### Test Pyramid
 
 ```
 Unit Tests:           823 ✅
-Integration Tests:    In Unit Tests enthalten
-E2E Tests:           Nicht im Scope
+Integration Tests:    Included in unit tests
+E2E Tests:           Not in scope
 ```
 
 ### Best Practices
 
-- ✅ Jasmine Spy Objects für Service-Mocking
-- ✅ Signal-basierte State Management Tests
-- ✅ Accessibility Tests (ARIA Labels)
-- ✅ Theme Switching Tests (Light/Dark/Auto)
-- ✅ Internationalization Tests (i18n)
-- ✅ SEO Metadata Tests
-- ✅ Service Worker Update Tests
+- ✅ Jasmine spy objects for service mocking
+- ✅ Signal-based state management tests
+- ✅ Accessibility tests (ARIA labels)
+- ✅ Theme switching tests (Light/Dark/Auto)
+- ✅ Internationalization tests (i18n)
+- ✅ SEO metadata tests
+- ✅ Service worker update tests
 
-### Code-Stil
+### Code Style
 
-- ✅ TypeScript Strict Mode
-- ✅ ESLint Konfiguration
-- ✅ Prettier Formatting
-- ✅ Angular Best Practices
+- ✅ TypeScript strict mode
+- ✅ ESLint configuration
+- ✅ Prettier formatting
+- ✅ Angular best practices
 
 ---
 
-## CI/CD Empfehlungen
+## CI/CD Recommendations
 
-### Für GitHub Actions / GitLab CI
+### For GitHub Actions / GitLab CI
 
 ```yaml
-# Beispiel .github/workflows/test.yml
+# Example .github/workflows/test.yml
 name: Test Suite
 
 on: [push, pull_request]
@@ -162,34 +162,34 @@ jobs:
 
 ### Coverage Reporting Tools
 
-- **SonarQube**: Für Code-Qualität und Security
-- **Codecov/Coveralls**: Für Coverage-Badges
-- **Istanbul**: Bereits integriert (Angular default)
+- **SonarQube**: For code quality and security
+- **Codecov/Coveralls**: For coverage badges
+- **Istanbul**: Already integrated (Angular default)
 
 ---
 
-## Known Warnings (nicht kritisch)
+## Known Warnings (Non-Critical)
 
-Es gibt einige Warnings bei Tests ohne Expectations:
+Some tests have warnings without expectations:
 
-- ContactSection: 4 Edge-Case-Tests
-- Notification: 2 Timer-Tests
+- ContactSection: 4 edge case tests
+- Notification: 2 timer tests
 
-Diese sind intentional und testen nur auf "No Errors Thrown".
+These are **intentional** and only test for "no errors thrown".
 
 ---
 
-## Nächste Schritte
+## Next Steps
 
-### Empfehlungen für das Team
+### Recommendations for the Team
 
-1. **Coverage Badge ins README**:
+1. **Add coverage badge to README**:
 
    ```markdown
    ![Coverage](https://img.shields.io/badge/coverage-96.4%25-brightgreen)
    ```
 
-2. **Pre-Commit Hook**:
+2. **Pre-commit hook**:
 
    ```bash
    npm install --save-dev husky lint-staged
@@ -201,7 +201,7 @@ Diese sind intentional und testen nur auf "No Errors Thrown".
    }
    ```
 
-3. **Minimum Coverage Threshold** (karma.conf.js):
+3. **Minimum coverage threshold** (karma.conf.js):
    ```javascript
    coverageReporter: {
      check: {
@@ -217,16 +217,16 @@ Diese sind intentional und testen nur auf "No Errors Thrown".
 
 ---
 
-## Kontakt für Rückfragen
+## Contact for Questions
 
-Bei Fragen zum Test-Setup oder den Tests:
+For questions about the test setup or tests:
 
-- Siehe einzelne `*.spec.ts` Dateien für Details
-- Komponenten-spezifische README.md Dateien im jeweiligen Ordner
-- Test-Ausführung: `npm test`
-- Coverage-Report: `npm test -- --no-watch --code-coverage`
+- See individual `*.spec.ts` files for details
+- Component-specific README.md files in respective folders
+- Run tests: `npm test`
+- Coverage report: `npm test -- --no-watch --code-coverage`
 
 ---
 
 **Status**: ✅ Production Ready
-**Letzte Aktualisierung**: 15.12.2025
+**Last Update**: December 15, 2025

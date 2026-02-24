@@ -1,7 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ImprintPageComponent } from './imprint-page.component';
-import { ScrollService, SeoService, TranslationService } from '@core/services';
 import { signal } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ScrollService, SeoService, TranslationService } from '@core/services';
+import { ImprintPageComponent } from './imprint-page.component';
 
 describe('ImprintPageComponent', () => {
   let component: ImprintPageComponent;
@@ -133,7 +133,6 @@ describe('ImprintPageComponent', () => {
     it('should return address data', () => {
       const data = component['imprintData']();
       expect(data.name).toBe('Konstantin Aksenov');
-      expect(data.street).toBe('Street');
       expect(data.city).toBe('City');
       expect(data.country).toBe('Country');
     });
