@@ -13,6 +13,40 @@ import { Project } from '../models/project.model';
 export class PortfolioDataService {
   readonly projects: Project[] = [
     {
+      id: 'DABubble',
+      name: 'PROJECTS.DABubble-name',
+      headline: 'TypeScript | Angular | Firebase',
+      description: 'PROJECTS.DABubble-description',
+      image: {
+        src: '/assets/images/projects/DABubble.avif',
+        alt: 'PROJECTS.DABubble-alt',
+      },
+      links: {
+        live: 'https://dabubble.dev2k.org/',
+        github: 'https://github.com/KosMaster87/DABubble.git',
+      },
+      technologies: ['TypeScript', 'Angular', 'Firebase'],
+      category: 'web-app',
+      isFeatured: false,
+    },
+    {
+      id: 'join',
+      name: 'PROJECTS.join-name',
+      headline: 'Javascript | CSS | HTML',
+      description: 'PROJECTS.join-description',
+      image: {
+        src: '/assets/images/projects/Join.avif',
+        alt: 'PROJECTS.join-alt',
+      },
+      links: {
+        live: 'https://join.dev2k.org/',
+        github: 'https://github.com/KosMaster87/Join.git',
+      },
+      technologies: ['JavaScript', 'CSS', 'HTML'],
+      category: 'web-app',
+      isFeatured: false,
+    },
+    {
       id: 'lets-todo',
       name: 'PROJECTS.lets-todo-name',
       headline: 'Vanilla JS | PHP | Express | MariaDB',
@@ -31,24 +65,6 @@ export class PortfolioDataService {
       technologies: ['JavaScript', 'PHP', 'Node.js', 'REST API'],
       category: 'fullstack',
       isFeatured: true,
-    },
-
-    {
-      id: 'join',
-      name: 'PROJECTS.join-name',
-      headline: 'Javascript | CSS | HTML',
-      description: 'PROJECTS.join-description',
-      image: {
-        src: '/assets/images/projects/Join.avif',
-        alt: 'PROJECTS.join-alt',
-      },
-      links: {
-        live: 'https://join.dev2k.org/',
-        github: 'https://github.com/KosMaster87/Join.git',
-      },
-      technologies: ['JavaScript', 'CSS', 'HTML'],
-      category: 'web-app',
-      isFeatured: false,
     },
     {
       id: 'super-rando',

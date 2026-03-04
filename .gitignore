@@ -31,6 +31,12 @@ config/env/.env.production
 !.github/workflows/
 !.github/docs/
 
+# Generated documentation & reports
+# Ignore generated TypeDoc/JSDoc output in project root
+/docs/
+# But keep .github/docs/ (tracked above)
+/coverage
+
 # Logs
 *.log
 npm-debug.log*
@@ -83,12 +89,6 @@ public/api/contact/php.ini
 /libpeerconnection.log
 testem.log
 /typings
-
-# Generated documentation & reports
-# Ignore generated TypeDoc/JSDoc output in project root
-/docs/
-# But keep .github/docs/ (tracked above)
-/coverage
 
 # Deployment staging
 /deploy
