@@ -13,13 +13,13 @@ import { Project } from '../models/project.model';
 export class PortfolioDataService {
   readonly projects: Project[] = [
     {
-      id: 'DABubble',
-      name: 'PROJECTS.DABubble-name',
+      id: 'dabubble',
+      name: 'PROJECTS.dabubble-name',
       headline: 'TypeScript | Angular | Firebase',
-      description: 'PROJECTS.DABubble-description',
+      description: 'PROJECTS.dabubble-description',
       image: {
-        src: '/assets/images/projects/DABubble.avif',
-        alt: 'PROJECTS.DABubble-alt',
+        src: '/assets/images/projects/dabubble.avif',
+        alt: 'PROJECTS.dabubble-alt',
       },
       links: {
         live: 'https://dabubble.dev2k.org/',
