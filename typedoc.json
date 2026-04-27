@@ -2,13 +2,8 @@
   "$schema": "https://typedoc.org/schema.json",
   "entryPoints": ["src/app"],
   "entryPointStrategy": "expand",
-  "out": "docs",
-  "exclude": [
-    "**/*.spec.ts",
-    "**/node_modules/**",
-    "**/dist/**",
-    "**/coverage/**"
-  ],
+  "out": "docs/generated/typedoc",
+  "exclude": ["**/*.spec.ts", "**/node_modules/**", "**/dist/**", "**/coverage/**"],
   "excludePrivate": false,
   "excludeProtected": false,
   "excludeInternal": false,

@@ -4,12 +4,12 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
 [![Test Coverage](https://img.shields.io/badge/coverage-96.4%25-brightgreen?style=for-the-badge)](https://portfolio.dev2k.org/coverage/index.html)
-[![Tests](https://img.shields.io/badge/tests-823%20passing-success?style=for-the-badge)](./.github/docs/TESTING-REPORT.md)
+[![Tests](https://img.shields.io/badge/tests-823%20passing-success?style=for-the-badge)](https://portfolio.dev2k.org/coverage/index.html)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
 A fully responsive, modern portfolio website built as a Single Page Application (SPA) to showcase my skills, projects, and professional experience. Designed with a mobile-first approach and optimized for recruiters and hiring managers.
 
-[🌐 Live Demo](https://portfolio.dev2k.org) | [📊 Coverage Report](https://portfolio.dev2k.org/coverage/index.html) | [📚 API Docs](https://portfolio.dev2k.org/jsdoc/index.html) | [📖 Testing Guide](./.github/docs/TESTING-REPORT.md)
+[🌐 Live Demo](https://portfolio.dev2k.org) | [📊 Coverage Report](https://portfolio.dev2k.org/coverage/index.html) | [📚 API Docs](https://portfolio.dev2k.org/jsdoc/index.html)
 
 ---
 
@@ -73,17 +73,8 @@ A fully responsive, modern portfolio website built as a Single Page Application 
 ```
 Portfolio/
 ├── .github/
-│   ├── docs/                        # Project documentation
-│   │   ├── DEPLOYMENT-GUIDE.md      # Deployment & CI/CD setup
-│   │   ├── DIRECTIVE-TESTING.md     # Directive testing guide
-│   │   ├── FEATURE-COMPONENTS-README.md  # Feature components docs
-│   │   ├── GITHUB-ACTIONS-SETUP.md  # GitHub Actions configuration
-│   │   ├── LAYOUT-COMPONENTS-README.md   # Layout components docs
-│   │   ├── SHARED-COMPONENTS-README.md   # Shared components docs
-│   │   ├── TEAM-GUIDE.md            # Developer onboarding guide
-│   │   └── TESTING-REPORT.md        # Test coverage report
-│   └── workflows/
-│       └── deploy.yml               # CI/CD Pipeline (Tests, Build, Deploy)
+│   └── workflows/                   # CI/CD workflows
+│       └── deploy.yml               # Build, test, and deploy pipeline
 ├── public/
 │   ├── api/
 │   │   └── contact/                 # PHP Contact Form API
@@ -137,7 +128,12 @@ Portfolio/
 ├── ngsw-config.json                 # Service Worker config
 ├── package.json                     # Dependencies & scripts
 ├── tsconfig.json                    # TypeScript config
-├── jsdoc.json                       # JSDoc configuration
+├── typedoc.json                     # TypeDoc configuration
+├── docs/                            # Documentation
+│   ├── manual/                      # Handgeschriebene Doku (in Git)
+│   └── generated/                   # Generierter API-Output (gitignored)
+│       ├── typedoc/                 # TypeDoc-Output  (npm run docs:typedoc)
+│       └── jsdoc/                   # JSDoc-Output    (npm run docs:jsdoc)
 └── README.md                        # This file
 ```
 
@@ -169,19 +165,10 @@ portfolio.dev2k.org/
 
 ## 📖 Documentation
 
-### Core Documentation
+Project documentation is currently centralized in this README and the live reports:
 
-- [TESTING-REPORT.md](./.github/docs/TESTING-REPORT.md) – Complete test coverage report
-- [TEAM-GUIDE.md](./.github/docs/TEAM-GUIDE.md) – Developer onboarding guide
-- [DEPLOYMENT-GUIDE.md](./.github/docs/DEPLOYMENT-GUIDE.md) – Deployment setup & CI/CD
-- [GITHUB-ACTIONS-SETUP.md](./.github/docs/GITHUB-ACTIONS-SETUP.md) – GitHub Actions configuration
-
-### Component Documentation
-
-- [SHARED-COMPONENTS-README.md](./.github/docs/SHARED-COMPONENTS-README.md) – Reusable components
-- [LAYOUT-COMPONENTS-README.md](./.github/docs/LAYOUT-COMPONENTS-README.md) – Header & Footer
-- [FEATURE-COMPONENTS-README.md](./.github/docs/FEATURE-COMPONENTS-README.md) – Feature sections
-- [DIRECTIVE-TESTING.md](./.github/docs/DIRECTIVE-TESTING.md) – Directive testing guide
+- [Coverage Report](https://portfolio.dev2k.org/coverage/index.html)
+- [API Docs](https://portfolio.dev2k.org/jsdoc/index.html)
 
 ---
 
