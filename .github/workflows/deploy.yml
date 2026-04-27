@@ -44,7 +44,7 @@ jobs:
           mkdir -p deploy
           cp -r dist/portfolio/browser/* deploy/
           cp -r coverage/portfolio deploy/coverage
-          cp -r docs deploy/jsdoc
+          cp -r docs/generated/typedoc deploy/jsdoc
 
           # Create simple .htaccess for deployment
           cat > deploy/.htaccess << 'EOF'
