@@ -1,4 +1,4 @@
-name: Build, Test & Deploy to IONOS
+name: Build, Test & Deploy to Unraid
 
 on:
   push:
@@ -46,74 +46,25 @@ jobs:
           cp -r coverage/portfolio deploy/coverage
           cp -r docs/generated/typedoc deploy/jsdoc
 
-          # Create simple .htaccess for deployment
-          cat > deploy/.htaccess << 'EOF'
-          RewriteEngine On
-          RewriteBase /portfolio/
-          DirectoryIndex index.html
-
-          # Force HTTPS
-          RewriteCond %{HTTPS} off
-          RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-          # API Routes Protection - Don't redirect to index.html
-          RewriteCond %{REQUEST_URI} ^/portfolio/api/
-          RewriteRule . - [L]
-
-          # Angular SPA Routing
-          RewriteCond %{REQUEST_FILENAME} !-f
-          RewriteCond %{REQUEST_FILENAME} !-d
-          RewriteCond %{REQUEST_URI} !^/portfolio/api/
-          RewriteRule . index.html [L]
-
-          # ------------------------------------------------------
-          # 🚀 Cache Static Assets
-          # ------------------------------------------------------
-          <IfModule mod_expires.c>
-            ExpiresActive on
-            ExpiresByType text/css "access plus 1 year"
-            ExpiresByType application/javascript "access plus 1 year"
-            ExpiresByType image/png "access plus 1 year"
-            ExpiresByType image/jpg "access plus 1 year"
-            ExpiresByType image/jpeg "access plus 1 year"
-            ExpiresByType image/webp "access plus 1 year"
-            ExpiresByType image/avif "access plus 1 year"
-            ExpiresByType image/svg+xml "access plus 1 year"
-            ExpiresByType font/woff2 "access plus 1 year"
-            ExpiresByType application/json "access plus 0 seconds"
-          </IfModule>
-
-          # ------------------------------------------------------
-          # 🔐 Security Headers
-          # ------------------------------------------------------
-          <IfModule mod_headers.c>
-            Header always set X-Content-Type-Options nosniff
-            Header always set X-Frame-Options DENY
-            Header always set X-XSS-Protection "1; mode=block"
-            Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-            Header unset Server
-          </IfModule>
-          EOF
-
-      - name: 📤 Deploy to IONOS via SFTP
+      - name: 📤 Deploy to Unraid via rsync
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        uses: Dylan700/sftp-upload-action@v1.1.4
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 22
-          uploads: |
-            ./deploy/ => ./portfolio/
-          delete: false
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.UNRAID_DEPLOY_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "${{ secrets.UNRAID_HOST }}" >> ~/.ssh/known_hosts
+          # api/ is deployed manually (contact.php, PHPMailer & credentials are
+          # gitignored and never checked out on this runner) - never touch it here.
+          rsync -avz --delete --exclude='api/' \
+            deploy/ "root@${{ secrets.UNRAID_HOST }}:/mnt/nvme/appdata/static-sites/www/portfolio/"
 
       - name: ✅ Deployment Complete
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
           echo "🎉 Deployment successful!"
-          echo "🌐 App: https://portfolio.dev2k.org"
-          echo "📊 Coverage: https://portfolio.dev2k.org/coverage/index.html"
-          echo "📚 Docs: https://portfolio.dev2k.org/jsdoc/index.html"
+          echo "🌐 App: https://portfolio.dev2ksoftware.com"
+          echo "📊 Coverage: https://portfolio.dev2ksoftware.com/coverage/index.html"
+          echo "📚 Docs: https://portfolio.dev2ksoftware.com/jsdoc/index.html"
 
       - name: 💬 Comment on PR
         if: github.event_name == 'pull_request'
