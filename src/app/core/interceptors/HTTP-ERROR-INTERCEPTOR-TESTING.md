@@ -2,9 +2,9 @@
 
 Detaillierte Dokumentation der Test-Konzepte für den HTTP Error Interceptor.
 
-## 📊 Übersicht
+## Übersicht
 
-**16 von 16 Tests erfolgreich** ✅
+**16 von 16 Tests erfolgreich**
 
 | Kategorie           | Tests | Beschreibung                        |
 | ------------------- | ----- | ----------------------------------- |
@@ -17,7 +17,7 @@ Detaillierte Dokumentation der Test-Konzepte für den HTTP Error Interceptor.
 
 ---
 
-## 🎯 Was wird getestet?
+## Was wird getestet?
 
 ### Der Interceptor
 
@@ -41,7 +41,7 @@ export const httpErrorInterceptor: HttpInterceptorFn = (req, next) => {
 
 ---
 
-## 🔧 Test-Setup
+## Test-Setup
 
 ### beforeEach Configuration
 
@@ -98,7 +98,7 @@ nextHandler = jasmine.createSpy('next').and.returnValue(of(mockResponse));
 
 ---
 
-## ✅ Successful Requests
+## Successful Requests
 
 ### Test: Erfolgreiche Responses durchlassen
 
@@ -130,7 +130,7 @@ it('should pass through successful responses', (done) => {
 
 ---
 
-## ❌ Client-Side Errors
+## Client-Side Errors
 
 ### Was sind Client-Side Errors?
 
@@ -265,7 +265,7 @@ it('should not log client-side errors in production', (done) => {
 
 ---
 
-## 🌐 Server-Side Errors
+## Server-Side Errors
 
 ### Was sind Server-Side Errors?
 
@@ -354,7 +354,7 @@ it('should log server-side errors in non-production', (done) => {
 
 ---
 
-## 🔄 Error Propagation
+## Error Propagation
 
 ### Test: Errors werden wieder geworfen
 
@@ -430,7 +430,7 @@ it('should preserve error details', (done) => {
 
 ---
 
-## ❓ Unknown Errors
+## Unknown Errors
 
 ### Test: Errors ohne spezifischen Typ
 
@@ -461,7 +461,7 @@ it('should handle errors without specific type', (done) => {
 
 ---
 
-## 📮 Request Types
+## Request Types
 
 ### Warum verschiedene HTTP-Methoden testen?
 
@@ -500,11 +500,11 @@ it('should handle POST requests', (done) => {
 
 ---
 
-## 🔑 Wichtige Konzepte
+## Wichtige Konzepte
 
 ### 1. Datenklassen mit `new` erstellen
 
-**✅ Erlaubt:**
+**Erlaubt:**
 
 ```typescript
 new HttpRequest('GET', '/api/test');
@@ -519,7 +519,7 @@ new ErrorEvent('Network error');
 - Keine Business-Logik
 - Keine Dependencies
 
-**❌ Nicht erlaubt:**
+**Nicht erlaubt:**
 
 ```typescript
 new HttpClient(); // Service → jasmine.createSpyObj
@@ -607,7 +607,7 @@ expect(consoleErrorSpy).toHaveBeenCalledWith(
 
 ---
 
-## ✅ Best Practices
+## Best Practices
 
 ### 1. Console Mocking
 
@@ -656,11 +656,11 @@ httpErrorInterceptor(request, nextHandler).subscribe({
 ### 4. Test-Namen beschreibend
 
 ```typescript
-// ✅ Gut
+// Gut
 it('should log client-side errors in non-production', () => {});
 it('should handle 404 errors', () => {});
 
-// ❌ Schlecht
+// Schlecht
 it('works', () => {});
 it('test error', () => {});
 ```
@@ -686,7 +686,7 @@ it('should handle errors', (done) => {
 
 ---
 
-## 📚 Zusammenfassung
+## Zusammenfassung
 
 ### Was haben wir gelernt?
 
@@ -723,17 +723,17 @@ it('should handle errors', (done) => {
 
 | Feature           | Getestet | Tests  |
 | ----------------- | -------- | ------ |
-| Success Handling  | ✅       | 1      |
-| Client Errors     | ✅       | 3      |
-| Server Errors     | ✅       | 6      |
-| Error Propagation | ✅       | 2      |
-| Unknown Errors    | ✅       | 1      |
-| HTTP Methods      | ✅       | 3      |
-| **TOTAL**         | **✅**   | **16** |
+| Success Handling | | 1 |
+| Client Errors | | 3 |
+| Server Errors | | 6 |
+| Error Propagation | | 2 |
+| Unknown Errors | | 1 |
+| HTTP Methods | | 3 |
+| **TOTAL** | | **16** |
 
 ---
 
 **Stand:** 15. Dezember 2025
-**Tests:** 16/16 ✅
+**Tests:** 16/16
 **Interceptor:** http-error.interceptor.ts
 **Teil von:** 151 gesamt Tests im Projekt

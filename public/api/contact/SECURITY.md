@@ -1,6 +1,6 @@
 # Security Recommendations for PHP Contact API
 
-## Current Security Measures ✅
+## Current Security Measures
 
 Your PHP contact API already implements several good security practices:
 
@@ -10,7 +10,7 @@ Your PHP contact API already implements several good security practices:
 4. **Security Headers**: X-Content-Type-Options, X-Frame-Options, X-XSS-Protection
 5. **Logging**: Comprehensive event logging
 
-## Additional Recommendations 🔒
+## Additional Recommendations
 
 ### 1. CSRF Protection
 
@@ -104,7 +104,7 @@ function getClientIP(): string {
 }
 ```
 
-## Monitoring 📊
+## Monitoring
 
 Consider adding:
 
