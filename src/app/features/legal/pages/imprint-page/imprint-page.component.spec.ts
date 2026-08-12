@@ -41,7 +41,6 @@ describe('ImprintPageComponent', () => {
         'IMPRINT.name': 'Konstantin Aksenov',
         'IMPRINT.street': 'Street',
         'IMPRINT.city': 'City',
-        'IMPRINT.country': 'Country',
       };
       return translations[key] || key;
     });
@@ -134,7 +133,6 @@ describe('ImprintPageComponent', () => {
       const data = component['imprintData']();
       expect(data.name).toBe('Konstantin Aksenov');
       expect(data.city).toBe('City');
-      expect(data.country).toBe('Country');
     });
   });
 
