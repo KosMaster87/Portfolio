@@ -2,9 +2,9 @@ name: Build, Test & Deploy to Unraid
 
 on:
   push:
-    branches: [main]
+    branches: [main, staging]
   pull_request:
-    branches: [main]
+    branches: [main, staging, dev]
   workflow_dispatch:
 
 jobs:
@@ -46,8 +46,8 @@ jobs:
           cp -r coverage/portfolio deploy/coverage
           cp -r docs/generated/typedoc deploy/jsdoc
 
-      - name: 📤 Deploy to Unraid via rsync (through Cloudflare Access)
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      - name: ☁️ Install cloudflared
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging')
         run: |
           # ubuntu-latest is a GitHub-hosted cloud runner: it has no route to the
           # Tower's private LAN address. The Cloudflare Tunnel's public hostname
@@ -57,8 +57,11 @@ jobs:
             https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
           chmod +x cloudflared
           sudo mv cloudflared /usr/local/bin/cloudflared
-
           mkdir -p ~/.ssh
+
+      - name: 📤 Deploy to Unraid Production via rsync
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
           echo "${{ secrets.UNRAID_DEPLOY_SSH_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           cat >> ~/.ssh/config <<EOF
@@ -76,13 +79,37 @@ jobs:
           rsync -avz --delete --exclude='api/' \
             deploy/ root@deploy-portfolio.dev2ksoftware.com:/mnt/nvme/appdata/static-sites/www/portfolio/
 
-      - name: ✅ Deployment Complete
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      - name: 📤 Deploy to Unraid Staging via rsync
+        if: github.ref == 'refs/heads/staging' && github.event_name == 'push'
         run: |
-          echo "🎉 Deployment successful!"
-          echo "🌐 App: https://portfolio.dev2ksoftware.com"
-          echo "📊 Coverage: https://portfolio.dev2ksoftware.com/coverage/index.html"
-          echo "📚 Docs: https://portfolio.dev2ksoftware.com/jsdoc/index.html"
+          echo "${{ secrets.UNRAID_DEPLOY_SSH_KEY_STAGING }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          cat >> ~/.ssh/config <<EOF
+          Host deploy-portfolio.dev2ksoftware.com
+            StrictHostKeyChecking no
+            UserKnownHostsFile /dev/null
+            IdentityFile ~/.ssh/id_ed25519
+            IdentitiesOnly yes
+            ProxyCommand cloudflared access ssh --hostname %h --id ${{ secrets.CF_ACCESS_CLIENT_ID }} --secret ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
+          EOF
+          chmod 600 ~/.ssh/config
+
+          # Staging has no PHP-FPM backend - only the static build is deployed.
+          rsync -avz --delete --exclude='api/' \
+            deploy/ root@deploy-portfolio.dev2ksoftware.com:/mnt/nvme/appdata/static-sites/www/portfolio-staging/
+
+      - name: ✅ Deployment Complete
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging')
+        run: |
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            echo "🎉 Production deployment successful!"
+            echo "🌐 App: https://portfolio.dev2ksoftware.com"
+            echo "📊 Coverage: https://portfolio.dev2ksoftware.com/coverage/index.html"
+            echo "📚 Docs: https://portfolio.dev2ksoftware.com/jsdoc/index.html"
+          else
+            echo "🎉 Staging deployment successful!"
+            echo "🌐 App: https://staging-portfolio.dev2ksoftware.com"
+          fi
 
       - name: 💬 Comment on PR
         if: github.event_name == 'pull_request'
