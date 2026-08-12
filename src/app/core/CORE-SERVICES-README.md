@@ -14,7 +14,7 @@ Zentrale Services für das gesamte Portfolio.
 - Aktive Route Tracking
 - Navigation State Management
 
-**Tests**: ✅
+**Tests**:
 
 ---
 
@@ -29,7 +29,7 @@ Zentrale Services für das gesamte Portfolio.
 - Skills-Daten
 - Content Management
 
-**Tests**: ✅
+**Tests**:
 
 ---
 
@@ -44,7 +44,7 @@ Zentrale Services für das gesamte Portfolio.
 - Position Tracking
 - Scroll-to-Element
 
-**Tests**: ✅
+**Tests**:
 
 ---
 
@@ -71,7 +71,7 @@ setMetadata(config: {
 }): void
 ```
 
-**Tests**: ✅
+**Tests**:
 
 **Verwendung**:
 
@@ -107,7 +107,7 @@ scrollElementToTop(element: HTMLElement, offset?: number): void
 scrollToTop(): void
 ```
 
-**Tests**: ✅
+**Tests**:
 
 ---
 
@@ -135,7 +135,7 @@ dismissUpdate(): void
 activateUpdate(): void
 ```
 
-**Tests**: ✅
+**Tests**:
 
 **Verwendung**:
 
@@ -174,7 +174,7 @@ setTheme(theme: 'light' | 'dark' | 'auto'): void
 getTheme(): 'light' | 'dark' | 'auto'
 ```
 
-**Tests**: ✅
+**Tests**:
 
 ---
 
@@ -202,7 +202,7 @@ instant(key: string): string
 get(key: string): Observable<string>
 ```
 
-**Tests**: ✅
+**Tests**:
 
 **Verwendung**:
 
@@ -233,7 +233,7 @@ title = computed(() => this.translationService.instant('home.hero.title'));
 - Error Logging
 - User Notification
 
-**Tests**: 16 ✅
+**Tests**: 16
 
 ---
 
@@ -244,7 +244,7 @@ title = computed(() => this.translationService.instant('home.hero.title'));
 **Pfad**: `directives/icon-hover.directive.ts`
 **Zweck**: Hover-Effekte für Icons
 
-**Tests**: ✅
+**Tests**:
 
 ---
 
@@ -253,7 +253,7 @@ title = computed(() => this.translationService.instant('home.hero.title'));
 **Pfad**: `directives/no-scroll.directive.ts`
 **Zweck**: Verhindert Scrollen (z.B. bei offenen Modals)
 
-**Tests**: ✅
+**Tests**:
 
 ---
 
@@ -261,10 +261,10 @@ title = computed(() => this.translationService.instant('home.hero.title'));
 
 Alle Core Services haben vollständige Unit Tests:
 
-- **Services**: 135 Tests ✅
-- **Interceptors**: 16 Tests ✅
-- **Directives**: 22 Tests ✅
-- **Total**: 173 Tests ✅
+- **Services**: 135 Tests
+- **Interceptors**: 16 Tests
+- **Directives**: 22 Tests
+- **Total**: 173 Tests
 
 Tests ausführen:
 

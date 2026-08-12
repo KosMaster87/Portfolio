@@ -11,42 +11,42 @@ jobs:
   build-test-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Checkout Repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: 🔧 Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
-      - name: 📦 Install Dependencies
+      - name: Install Dependencies
         run: npm ci
 
-      - name: 🧪 Run Tests with Coverage
+      - name: Run Tests with Coverage
         run: npm test -- --no-watch --code-coverage --browsers=ChromeHeadless
 
-      - name: 📊 Generate Coverage Badge
+      - name: Generate Coverage Badge
         run: |
           COVERAGE=$(grep -oP 'Lines\s*:\s*\K[\d.]+' coverage/portfolio/index.html | head -1 || echo "0")
           echo "Coverage: $COVERAGE%"
           echo "COVERAGE=$COVERAGE" >> $GITHUB_ENV
 
-      - name: 📚 Generate TypeDoc Documentation
+      - name: Generate TypeDoc Documentation
         run: npm run docs
         continue-on-error: true
 
-      - name: 🏗️ Build Production
+      - name: Build Production
         run: npm run build -- --configuration production
 
-      - name: 📁 Prepare Deployment Structure
+      - name: Prepare Deployment Structure
         run: |
           mkdir -p deploy
           cp -r dist/portfolio/browser/* deploy/
           cp -r coverage/portfolio deploy/coverage
           cp -r docs/generated/typedoc deploy/jsdoc
 
-      - name: ☁️ Install cloudflared
+      - name: Install cloudflared
         if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging')
         run: |
           # ubuntu-latest is a GitHub-hosted cloud runner: it has no route to the
@@ -59,7 +59,7 @@ jobs:
           sudo mv cloudflared /usr/local/bin/cloudflared
           mkdir -p ~/.ssh
 
-      - name: 📤 Deploy to Unraid Production via rsync
+      - name: Deploy to Unraid Production via rsync
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
           echo "${{ secrets.UNRAID_DEPLOY_SSH_KEY }}" > ~/.ssh/id_ed25519
@@ -79,7 +79,7 @@ jobs:
           rsync -avz --delete --exclude='api/' \
             deploy/ root@deploy-portfolio.dev2ksoftware.com:/mnt/nvme/appdata/static-sites/www/portfolio/
 
-      - name: 📤 Deploy to Unraid Staging via rsync
+      - name: Deploy to Unraid Staging via rsync
         if: github.ref == 'refs/heads/staging' && github.event_name == 'push'
         run: |
           echo "${{ secrets.UNRAID_DEPLOY_SSH_KEY_STAGING }}" > ~/.ssh/id_ed25519
@@ -98,20 +98,20 @@ jobs:
           rsync -avz --delete --exclude='api/' \
             deploy/ root@deploy-portfolio.dev2ksoftware.com:/mnt/nvme/appdata/static-sites/www/portfolio-staging/
 
-      - name: ✅ Deployment Complete
+      - name: Deployment Complete
         if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging')
         run: |
           if [ "${{ github.ref }}" = "refs/heads/main" ]; then
-            echo "🎉 Production deployment successful!"
-            echo "🌐 App: https://portfolio.dev2ksoftware.com"
-            echo "📊 Coverage: https://portfolio.dev2ksoftware.com/coverage/index.html"
-            echo "📚 Docs: https://portfolio.dev2ksoftware.com/jsdoc/index.html"
+            echo "Production deployment successful!"
+            echo "App: https://portfolio.dev2ksoftware.com"
+            echo "Coverage: https://portfolio.dev2ksoftware.com/coverage/index.html"
+            echo "Docs: https://portfolio.dev2ksoftware.com/jsdoc/index.html"
           else
-            echo "🎉 Staging deployment successful!"
-            echo "🌐 App: https://staging-portfolio.dev2ksoftware.com"
+            echo "Staging deployment successful!"
+            echo "App: https://staging-portfolio.dev2ksoftware.com"
           fi
 
-      - name: 💬 Comment on PR
+      - name: Comment on PR
         if: github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
@@ -122,5 +122,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `## ✅ Build & Test Successful\n\n- 🧪 Tests: Passed\n- 📊 Coverage: ${coverage}%\n\nReady to merge!`
+              body: `## Build & Test Successful\n\n- Tests: Passed\n- Coverage: ${coverage}%\n\nReady to merge!`
             })

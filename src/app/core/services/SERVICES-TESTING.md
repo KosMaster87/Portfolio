@@ -2,9 +2,9 @@
 
 Umfassende Dokumentation der Testing-Konzepte und Best Practices für dieses Projekt.
 
-## 📊 Test-Übersicht
+## Test-Übersicht
 
-**135 von 135 Tests erfolgreich** ✅
+**135 von 135 Tests erfolgreich**
 
 | Service              | Tests | Konzepte                            |
 | -------------------- | ----- | ----------------------------------- |
@@ -19,7 +19,7 @@ Umfassende Dokumentation der Testing-Konzepte und Best Practices für dieses Pro
 
 ---
 
-## 🎯 Grundlegende Konzepte
+## Grundlegende Konzepte
 
 ### AAA Pattern (Arrange-Act-Assert)
 
@@ -62,7 +62,7 @@ describe('ServiceName', () => {
 
 ---
 
-## 🔧 Dependency Mocking
+## Dependency Mocking
 
 ### jasmine.createSpyObj
 
@@ -94,7 +94,7 @@ service = TestBed.inject(ServiceName);
 
 ---
 
-## 📡 HTTP Testing
+## HTTP Testing
 
 ### Setup
 
@@ -147,7 +147,7 @@ it('should handle HTTP errors', () => {
 
 ---
 
-## 🔔 Signal Testing
+## Signal Testing
 
 ### TestBed.flushEffects()
 
@@ -193,7 +193,7 @@ it('should trigger effect on signal change', () => {
 
 ---
 
-## ⏱️ Async Testing
+## ⏱Async Testing
 
 ### done() Callback
 
@@ -253,7 +253,7 @@ it('should animate smoothly', (done) => {
 
 ---
 
-## 🌐 DOM & Browser API Mocking
+## DOM & Browser API Mocking
 
 ### window Properties
 
@@ -363,7 +363,7 @@ afterEach(() => {
 
 ---
 
-## 🧭 Router Testing
+## Router Testing
 
 ### Router Mock Setup
 
@@ -409,7 +409,7 @@ it('should convert router events to signal', () => {
 
 ---
 
-## 🔄 Observable Testing
+## Observable Testing
 
 ### Subject für Mocking
 
@@ -450,7 +450,7 @@ it('should return data immediately', (done) => {
 
 ---
 
-## 🛠️ Service Worker Testing
+## Service Worker Testing
 
 ### SwUpdate Mock
 
@@ -512,7 +512,7 @@ it('should check for updates when stable', (done) => {
 
 ---
 
-## 🧪 Spezielle Testing-Patterns
+## Spezielle Testing-Patterns
 
 ### Private Method Testing
 
@@ -568,7 +568,7 @@ it('should have correct structure', () => {
 
 ---
 
-## ✅ Best Practices
+## Best Practices
 
 ### 1. Cleanup in afterEach
 
@@ -596,10 +596,10 @@ afterEach(() => {
 - Erklärt das erwartete Verhalten
 
 ```typescript
-// ✅ Gut
+// Gut
 it('should return empty array when no items match filter', () => {});
 
-// ❌ Schlecht
+// Schlecht
 it('works', () => {});
 it('test filter', () => {});
 ```
@@ -607,11 +607,11 @@ it('test filter', () => {});
 ### 3. Ein Konzept pro Test
 
 ```typescript
-// ✅ Gut
+// Gut
 it('should validate email format', () => {});
 it('should trim whitespace', () => {});
 
-// ❌ Schlecht
+// Schlecht
 it('should validate and trim email', () => {});
 ```
 
@@ -646,12 +646,12 @@ it('should calculate total', () => {
 Test-Namen sind die Dokumentation:
 
 ```typescript
-// ✅ Gut
+// Gut
 it('should return null when user is not found', () => {
   expect(service.getUser('invalid')).toBeNull();
 });
 
-// ❌ Schlecht
+// Schlecht
 it('test user retrieval', () => {
   // Test if user is null when not found
   expect(service.getUser('invalid')).toBeNull();
@@ -671,18 +671,18 @@ describe('Edge cases', () => {
 
 ---
 
-## 🚫 Häufige Fehler
+## Häufige Fehler
 
 ### 1. Fehlende TestBed.flushEffects()
 
 ```typescript
-// ❌ Falsch
+// Falsch
 it('should update signal', () => {
   service.updateValue('new');
   expect(service.value()).toBe('new'); // Schlägt fehl!
 });
 
-// ✅ Richtig
+// Richtig
 it('should update signal', () => {
   service.updateValue('new');
   TestBed.flushEffects();
@@ -693,12 +693,12 @@ it('should update signal', () => {
 ### 2. Fehlende httpMock.verify()
 
 ```typescript
-// ❌ Falsch
+// Falsch
 afterEach(() => {
   // Vergessen httpMock zu verifizieren
 });
 
-// ✅ Richtig
+// Richtig
 afterEach(() => {
   httpMock.verify(); // Prüft auf pending requests
 });
@@ -707,13 +707,13 @@ afterEach(() => {
 ### 3. DOM Mock nicht aufgeräumt
 
 ```typescript
-// ❌ Falsch - Browser UI bricht
+// Falsch - Browser UI bricht
 beforeEach(() => {
   Object.defineProperty(document, 'body', { value: mockBody });
 });
 // Kein cleanup!
 
-// ✅ Richtig
+// Richtig
 let originalBody: HTMLElement;
 
 beforeEach(() => {
@@ -729,12 +729,12 @@ afterEach(() => {
 ### 4. window.location.reload() nicht gemockt
 
 ```typescript
-// ❌ Problem - Endlosschleife!
+// Problem - Endlosschleife!
 it('should reload page', () => {
   service.activateUpdate(); // Ruft window.location.reload() auf
 });
 
-// ✅ Lösung - Funktion nicht direkt testen
+// Lösung - Funktion nicht direkt testen
 it('should call activateUpdate', () => {
   expect(swUpdateSpy.activateUpdate).toHaveBeenCalled();
 });
@@ -743,13 +743,13 @@ it('should call activateUpdate', () => {
 ### 5. Async ohne done() oder fakeAsync
 
 ```typescript
-// ❌ Falsch
+// Falsch
 it('should complete async', () => {
   service.asyncMethod();
   expect(service.done).toBe(true); // Zu früh!
 });
 
-// ✅ Richtig
+// Richtig
 it('should complete async', (done) => {
   service.asyncMethod();
   setTimeout(() => {
@@ -761,7 +761,7 @@ it('should complete async', (done) => {
 
 ---
 
-## 📚 Weiterführende Ressourcen
+## Weiterführende Ressourcen
 
 ### Offizielle Dokumentation
 
@@ -791,7 +791,7 @@ ng test --include='**/seo.service.spec.ts'
 
 ---
 
-## 📝 Test-Template
+## Test-Template
 
 Starter-Template für neue Service-Tests:
 
@@ -851,5 +851,5 @@ describe('ServiceName', () => {
 ---
 
 **Stand:** 15. Dezember 2025
-**Tests:** 135/135 ✅
+**Tests:** 135/135
 **Coverage:** Alle 8 Core Services vollständig getestet

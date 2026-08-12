@@ -23,9 +23,9 @@ docs/
 
 | Ordner              | Wer schreibt hier? | Im Git? |
 | ------------------- | ------------------ | ------- |
-| `manual/`           | Nur du             | ✅ ja   |
-| `generated/typedoc` | TypeDoc-Tool       | ❌ nein |
-| `generated/jsdoc`   | JSDoc-Tool         | ❌ nein |
+| `manual/` | Nur du | ja |
+| `generated/typedoc` | TypeDoc-Tool | nein |
+| `generated/jsdoc` | JSDoc-Tool | nein |
 
 ---
 

@@ -2,14 +2,14 @@
 
 This directory contains the PHP contact form handler for the portfolio.
 
-## 📁 Files
+## Files
 
 - `contact.php` - **Production file (not in Git)** - Contains real credentials
 - `contact.example.php` - Example template with placeholders
 - `rate_limit.json` - Rate limiting data (auto-generated, not in Git)
 - `contact_logs.txt` - Contact form logs (auto-generated, not in Git)
 
-## 🚀 Setup
+## Setup
 
 1. **Copy the example file:**
 
@@ -30,17 +30,17 @@ This directory contains the PHP contact form handler for the portfolio.
    chmod 666 contact_logs.txt     # If exists
    ```
 
-## 🔒 Security Features
+## Security Features
 
-- ✅ Rate limiting (3 requests per hour per IP)
-- ✅ Input validation and sanitization
-- ✅ XSS protection headers
-- ✅ Email validation
-- ✅ Spam honeypot support
-- ✅ Request logging
-- ✅ CORS protection
+- Rate limiting (3 requests per hour per IP)
+- Input validation and sanitization
+- XSS protection headers
+- Email validation
+- Spam honeypot support
+- Request logging
+- CORS protection
 
-## 📧 Email Features
+## Email Features
 
 ### For You (Site Owner):
 
@@ -56,7 +56,7 @@ This directory contains the PHP contact form handler for the portfolio.
 - Contact information
 - Link back to portfolio
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Email not sending:
 
@@ -75,7 +75,7 @@ This directory contains the PHP contact form handler for the portfolio.
 1. Verify `Access-Control-Allow-Origin` matches your domain
 2. Check server allows `.htaccess` overrides
 
-## 📝 Logs
+## Logs
 
 Check `contact_logs.txt` for:
 
@@ -86,7 +86,7 @@ Check `contact_logs.txt` for:
 
 Format: `[timestamp] LEVEL: message | IP: xxx | Context: {...}`
 
-## 🔧 Configuration
+## Configuration
 
 ```php
 // Rate limiting (in checkRateLimit function)

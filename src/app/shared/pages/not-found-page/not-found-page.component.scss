@@ -34,12 +34,6 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
       animation: pulse 2s ease-in-out infinite alternate;
     }
-
-    .error-icon {
-      font-size: 3rem;
-      animation: bounce 2s ease-in-out infinite;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-    }
   }
 
   .error-message {
@@ -107,22 +101,6 @@
     }
     to {
       transform: scale(1.05);
-    }
-  }
-
-  @keyframes bounce {
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-      transform: translateY(0);
-    }
-    40% {
-      transform: translateY(-10px);
-    }
-    60% {
-      transform: translateY(-5px);
     }
   }
 
