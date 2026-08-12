@@ -117,7 +117,7 @@ export class FooterComponent implements OnInit, OnDestroy {
       },
       {
         name: 'Email',
-        url: 'mailto:konstantin.aksenov@dev2k.org',
+        url: 'mailto:konstantin@dev2ksoftware.com',
         iconPath: '/assets/images/vector/social/email.svg',
         ariaLabel: t.instant('FOOTER.emailAria'),
         hoverColor: 'email',

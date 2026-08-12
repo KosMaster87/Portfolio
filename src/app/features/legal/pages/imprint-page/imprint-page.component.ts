@@ -56,7 +56,6 @@ export class ImprintPageComponent implements OnInit {
       technicalInfoText: t.instant('IMPRINT.technicalInfoText'),
       name: t.instant('IMPRINT.name'),
       city: t.instant('IMPRINT.city'),
-      country: t.instant('IMPRINT.country'),
       emailValue: t.instant('IMPRINT.emailValue'),
       phoneValue: t.instant('IMPRINT.phoneValue'),
       websiteValue: t.instant('IMPRINT.websiteValue'),

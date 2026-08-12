@@ -10,7 +10,7 @@
     "title": "Software",
     "titleDeveloper": "Entwickler",
     "description": "Ich entwickle moderne Webanwendungen und digitale Lösungen mit Leidenschaft für Clean Code und User Experience.",
-    "email": "konstantin.aksenov@dev2k.org",
+    "email": "konstantin@dev2ksoftware.com",
     "ctaButton": "Nachricht senden",
     "scrollDown": "Scroll",
     "scrollDownSub": "Runter"
@@ -131,10 +131,9 @@
     "technicalInfoTitle": "Technische Informationen",
     "technicalInfoText": "Diese Website wurde mit Angular und modernen Webtechnologien erstellt. Für technische Anfragen kontaktieren Sie uns bitte über die angegebene E-Mail-Adresse.",
     "name": "Konstantin Aksenov",
-    "city": "26810 Westoverledingen",
-    "country": "Deutschland",
-    "emailValue": "Konstantin.Aksenov@dev2k.org",
-    "websiteValue": "https://portfolio.dev2k.org/"
+    "city": "Remote",
+    "emailValue": "konstantin@dev2ksoftware.com",
+    "websiteValue": "https://portfolio.dev2ksoftware.com/"
   },
   "PRIVACY": {
     "pageTitle": "Datenschutzerklärung",
@@ -198,7 +197,7 @@
     "contactPrivacyTitle": "Kontaktieren Sie uns zum Datenschutz",
     "contactPrivacyText": "Wenn Sie Fragen zu dieser Datenschutzerklärung oder zur Handhabung Ihrer personenbezogenen Daten haben, kontaktieren Sie uns bitte:",
     "contactPrivacyEmail": "E-Mail:",
-    "contactPrivacyEmailValue": "Konstantin.Aksenov@dev2k.org",
+    "contactPrivacyEmailValue": "konstantin@dev2ksoftware.com",
     "contactPrivacyForm": "Kontaktformular:",
     "contactPrivacyFormText": "Nutzen Sie unser Website-Kontaktformular",
     "contactPrivacyMail": "Post:",
