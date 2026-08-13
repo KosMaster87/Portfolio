@@ -22,24 +22,18 @@ describe('ImprintPageComponent', () => {
     translationServiceSpy.instant.and.callFake((key: string) => {
       const translations: Record<string, string> = {
         'IMPRINT.pageTitle': 'Impressum',
-        'IMPRINT.lead': 'Legal information',
+        'IMPRINT.lead': 'Service Provider Information',
         'IMPRINT.contactInfoTitle': 'Contact Information',
         'IMPRINT.responsibleForContent': 'Responsible for content',
         'IMPRINT.contactTitle': 'Contact',
         'IMPRINT.email': 'Email',
-        'IMPRINT.phone': 'Phone',
         'IMPRINT.website': 'Website',
-        'IMPRINT.disclaimerTitle': 'Disclaimer',
-        'IMPRINT.liabilityForContentTitle': 'Liability for Content',
-        'IMPRINT.liabilityForContentText': 'Content liability text',
-        'IMPRINT.liabilityForLinksTitle': 'Liability for Links',
-        'IMPRINT.liabilityForLinksText': 'Links liability text',
-        'IMPRINT.copyrightTitle': 'Copyright',
-        'IMPRINT.copyrightText': 'Copyright text',
         'IMPRINT.technicalInfoTitle': 'Technical Information',
         'IMPRINT.technicalInfoText': 'Technical info text',
+        'IMPRINT.company': 'Dev2K Software',
+        'IMPRINT.soleProprietor': 'Sole proprietor',
         'IMPRINT.name': 'Konstantin Aksenov',
-        'IMPRINT.street': 'Street',
+        'IMPRINT.ruc': 'RUC: 8976420-0',
         'IMPRINT.city': 'City',
       };
       return translations[key] || key;
@@ -74,7 +68,7 @@ describe('ImprintPageComponent', () => {
         description:
           "Legal information and contact details for Konstantin Aksenov's portfolio website.",
         ogTitle: 'Impressum - Konstantin Aksenov',
-        ogUrl: 'https://portfolio.dev2k.org/imprint',
+        ogUrl: 'https://portfolio.dev2ksoftware.com/imprint',
       });
     });
 
@@ -93,7 +87,7 @@ describe('ImprintPageComponent', () => {
     it('should return page title and lead', () => {
       const data = component['imprintData']();
       expect(data.pageTitle).toBe('Impressum');
-      expect(data.lead).toBe('Legal information');
+      expect(data.lead).toBe('Service Provider Information');
     });
 
     it('should return contact information fields', () => {
@@ -106,21 +100,7 @@ describe('ImprintPageComponent', () => {
     it('should return contact details', () => {
       const data = component['imprintData']();
       expect(data.email).toBe('Email');
-      expect(data.phone).toBe('Phone');
       expect(data.website).toBe('Website');
-    });
-
-    it('should return disclaimer sections', () => {
-      const data = component['imprintData']();
-      expect(data.disclaimerTitle).toBe('Disclaimer');
-      expect(data.liabilityForContentTitle).toBe('Liability for Content');
-      expect(data.liabilityForLinksTitle).toBe('Liability for Links');
-    });
-
-    it('should return copyright information', () => {
-      const data = component['imprintData']();
-      expect(data.copyrightTitle).toBe('Copyright');
-      expect(data.copyrightText).toBe('Copyright text');
     });
 
     it('should return technical information', () => {
@@ -129,9 +109,12 @@ describe('ImprintPageComponent', () => {
       expect(data.technicalInfoText).toBe('Technical info text');
     });
 
-    it('should return address data', () => {
+    it('should return provider data', () => {
       const data = component['imprintData']();
+      expect(data.company).toBe('Dev2K Software');
+      expect(data.soleProprietor).toBe('Sole proprietor');
       expect(data.name).toBe('Konstantin Aksenov');
+      expect(data.ruc).toBe('RUC: 8976420-0');
       expect(data.city).toBe('City');
     });
   });
