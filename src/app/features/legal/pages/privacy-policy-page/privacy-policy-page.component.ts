@@ -108,8 +108,6 @@ export class PrivacyPolicyPageComponent implements OnInit {
       contactPrivacyEmailValue: t.instant('PRIVACY.contactPrivacyEmailValue'),
       contactPrivacyForm: t.instant('PRIVACY.contactPrivacyForm'),
       contactPrivacyFormText: t.instant('PRIVACY.contactPrivacyFormText'),
-      contactPrivacyMail: t.instant('PRIVACY.contactPrivacyMail'),
-      contactPrivacyMailValue: t.instant('PRIVACY.contactPrivacyMailValue'),
       policyUpdatesTitle: t.instant('PRIVACY.policyUpdatesTitle'),
       policyUpdatesText: t.instant('PRIVACY.policyUpdatesText'),
     };
