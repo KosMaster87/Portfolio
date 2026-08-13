@@ -13,7 +13,9 @@
             <div class="info-item">
               <h3>{{ imprintData().responsibleForContent }}</h3>
               <p>
-                {{ imprintData().name }}<br />
+                {{ imprintData().company }}<br />
+                {{ imprintData().soleProprietor }}: {{ imprintData().name }}<br />
+                {{ imprintData().ruc }}<br />
                 {{ imprintData().city }}
               </p>
             </div>
@@ -25,25 +27,6 @@
                 <strong>{{ imprintData().website }}</strong> {{ imprintData().websiteValue }}
               </p>
             </div>
-          </div>
-        </section>
-
-        <section class="legal-info">
-          <h2>{{ imprintData().disclaimerTitle }}</h2>
-
-          <div class="disclaimer-section">
-            <h3>{{ imprintData().liabilityForContentTitle }}</h3>
-            <p>{{ imprintData().liabilityForContentText }}</p>
-          </div>
-
-          <div class="disclaimer-section">
-            <h3>{{ imprintData().liabilityForLinksTitle }}</h3>
-            <p>{{ imprintData().liabilityForLinksText }}</p>
-          </div>
-
-          <div class="disclaimer-section">
-            <h3>{{ imprintData().copyrightTitle }}</h3>
-            <p>{{ imprintData().copyrightText }}</p>
           </div>
         </section>
 

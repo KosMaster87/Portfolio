@@ -24,7 +24,7 @@ export class ImprintPageComponent implements OnInit {
       description:
         "Legal information and contact details for Konstantin Aksenov's portfolio website.",
       ogTitle: 'Impressum - Konstantin Aksenov',
-      ogUrl: 'https://portfolio.dev2k.org/imprint',
+      ogUrl: 'https://portfolio.dev2ksoftware.com/imprint',
     });
 
     this.scrollService.triggerPageFlash();
@@ -43,21 +43,15 @@ export class ImprintPageComponent implements OnInit {
       responsibleForContent: t.instant('IMPRINT.responsibleForContent'),
       contactTitle: t.instant('IMPRINT.contactTitle'),
       email: t.instant('IMPRINT.email'),
-      phone: t.instant('IMPRINT.phone'),
       website: t.instant('IMPRINT.website'),
-      disclaimerTitle: t.instant('IMPRINT.disclaimerTitle'),
-      liabilityForContentTitle: t.instant('IMPRINT.liabilityForContentTitle'),
-      liabilityForContentText: t.instant('IMPRINT.liabilityForContentText'),
-      liabilityForLinksTitle: t.instant('IMPRINT.liabilityForLinksTitle'),
-      liabilityForLinksText: t.instant('IMPRINT.liabilityForLinksText'),
-      copyrightTitle: t.instant('IMPRINT.copyrightTitle'),
-      copyrightText: t.instant('IMPRINT.copyrightText'),
       technicalInfoTitle: t.instant('IMPRINT.technicalInfoTitle'),
       technicalInfoText: t.instant('IMPRINT.technicalInfoText'),
+      company: t.instant('IMPRINT.company'),
+      soleProprietor: t.instant('IMPRINT.soleProprietor'),
       name: t.instant('IMPRINT.name'),
+      ruc: t.instant('IMPRINT.ruc'),
       city: t.instant('IMPRINT.city'),
       emailValue: t.instant('IMPRINT.emailValue'),
-      phoneValue: t.instant('IMPRINT.phoneValue'),
       websiteValue: t.instant('IMPRINT.websiteValue'),
     };
   });
