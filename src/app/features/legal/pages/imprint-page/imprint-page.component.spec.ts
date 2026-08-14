@@ -33,7 +33,6 @@ describe('ImprintPageComponent', () => {
         'IMPRINT.company': 'Dev2K Software',
         'IMPRINT.soleProprietor': 'Sole proprietor',
         'IMPRINT.name': 'Konstantin Aksenov',
-        'IMPRINT.ruc': 'RUC: 8976420-0',
         'IMPRINT.city': 'City',
       };
       return translations[key] || key;
@@ -114,7 +113,6 @@ describe('ImprintPageComponent', () => {
       expect(data.company).toBe('Dev2K Software');
       expect(data.soleProprietor).toBe('Sole proprietor');
       expect(data.name).toBe('Konstantin Aksenov');
-      expect(data.ruc).toBe('RUC: 8976420-0');
       expect(data.city).toBe('City');
     });
   });
