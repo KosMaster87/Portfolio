@@ -21,7 +21,7 @@
       "labels": ["major-update", "manual-review"]
     },
     {
-      "description": "Angular-Pakete nur gemeinsam heben. Einzelne PRs erzeugen inkonsistente Staende (CLI 22 mit Core 21). Major-Spruenge laufen ueber 'ng update', nicht ueber Renovate.",
+      "description": "Angular-Pakete nur gemeinsam heben. Einzelne PRs erzeugen inkonsistente Stände (CLI 22 mit Core 21). Major-Sprünge laufen über 'ng update', nicht über Renovate.",
       "matchPackageNames": ["@angular/**"],
       "groupName": "angular",
       "automerge": false,
