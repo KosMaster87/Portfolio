@@ -326,7 +326,7 @@ describe('ProjectCardComponent', () => {
       expect(window.open).toHaveBeenCalledWith(
         'https://example.com',
         '_blank',
-        'noopener,noreferrer'
+        'noopener,noreferrer',
       );
     });
 
@@ -336,7 +336,7 @@ describe('ProjectCardComponent', () => {
       expect(window.open).toHaveBeenCalledWith(
         'https://github.com/user/repo',
         '_blank',
-        'noopener,noreferrer'
+        'noopener,noreferrer',
       );
     });
   });

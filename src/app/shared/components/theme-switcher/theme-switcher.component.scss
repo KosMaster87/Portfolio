@@ -98,7 +98,9 @@
     svg,
     img {
       flex-shrink: 0;
-      transition: transform var(--transition-base), filter var(--transition-base);
+      transition:
+        transform var(--transition-base),
+        filter var(--transition-base);
       filter: var(--filter-icon-muted);
     }
 

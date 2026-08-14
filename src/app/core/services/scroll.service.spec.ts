@@ -77,7 +77,7 @@ describe('ScrollService', () => {
 
       expect(smoothScrollServiceSpy.scrollElementToTop).toHaveBeenCalledWith(
         mockElement,
-        jasmine.any(Number)
+        jasmine.any(Number),
       );
     });
 
@@ -117,7 +117,7 @@ describe('ScrollService', () => {
 
       expect(smoothScrollServiceSpy.scrollElementToTop).toHaveBeenCalledWith(
         mockBody,
-        jasmine.any(Number)
+        jasmine.any(Number),
       );
     });
 
@@ -168,7 +168,7 @@ describe('ScrollService', () => {
       const expectedDuration = Math.min(800 * 0.9, 1800);
       expect(mockStyle.setProperty).toHaveBeenCalledWith(
         '--flash-duration',
-        `${expectedDuration}ms`
+        `${expectedDuration}ms`,
       );
     });
   });
@@ -222,7 +222,7 @@ describe('ScrollService', () => {
       const expectedDuration = Math.min(1000 * 0.9, 1800);
       expect(mockStyle.setProperty).toHaveBeenCalledWith(
         '--flash-duration',
-        `${expectedDuration}ms`
+        `${expectedDuration}ms`,
       );
     });
 

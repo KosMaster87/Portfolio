@@ -8,14 +8,14 @@
     <span class="notification__message">{{ message() }}</span>
 
     @if (actionText()) {
-    <button
-      type="button"
-      class="notification__action"
-      (click)="onAction()"
-      [attr.tabindex]="show() ? '0' : '-1'"
-    >
-      {{ actionText() }}
-    </button>
+      <button
+        type="button"
+        class="notification__action"
+        (click)="onAction()"
+        [attr.tabindex]="show() ? '0' : '-1'"
+      >
+        {{ actionText() }}
+      </button>
     }
   </div>
 

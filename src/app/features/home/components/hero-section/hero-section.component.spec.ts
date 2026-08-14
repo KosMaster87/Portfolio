@@ -58,7 +58,7 @@ describe('HeroSectionComponent', () => {
           titleDeveloper: jasmine.any(String),
           description: jasmine.any(String),
           ctaText: jasmine.any(String),
-        })
+        }),
       );
     });
 

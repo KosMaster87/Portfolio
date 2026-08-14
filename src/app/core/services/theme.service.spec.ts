@@ -238,7 +238,7 @@ describe('ThemeService', () => {
 
       expect(manifestLinkSpy.setAttribute).toHaveBeenCalledWith(
         'href',
-        '/manifest-light.webmanifest'
+        '/manifest-light.webmanifest',
       );
     });
 
@@ -248,7 +248,7 @@ describe('ThemeService', () => {
 
       expect(manifestLinkSpy.setAttribute).toHaveBeenCalledWith(
         'href',
-        '/manifest-dark.webmanifest'
+        '/manifest-dark.webmanifest',
       );
     });
   });

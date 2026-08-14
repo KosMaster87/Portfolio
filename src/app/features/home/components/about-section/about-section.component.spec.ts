@@ -62,7 +62,7 @@ describe('AboutSectionComponent', () => {
           paragraph1: jasmine.any(String),
           paragraph2: jasmine.any(String),
           ctaText: jasmine.any(String),
-        })
+        }),
       );
     });
 

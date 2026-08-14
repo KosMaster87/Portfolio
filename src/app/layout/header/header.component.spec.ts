@@ -29,7 +29,7 @@ describe('HeaderComponent', () => {
           { sectionId: 'projects', label: 'MENU.projects' },
           { sectionId: 'contact', label: 'MENU.contact' },
         ],
-      }
+      },
     );
     themeServiceSpy = jasmine.createSpyObj('ThemeService', [], {
       activeTheme: activeThemeSignal,
@@ -175,7 +175,7 @@ describe('HeaderComponent', () => {
         {
           isOnHomePage: isOnHomePageSignal,
           menuItems: [],
-        }
+        },
       );
 
       TestBed.configureTestingModule({

@@ -61,7 +61,7 @@
       gap: var(--space-16);
     }
   }
-  
+
   &__content {
     grid-area: content;
     display: flex;
@@ -142,7 +142,10 @@
     text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      box-shadow 0.3s ease;
     box-shadow: 0px 4px 4px 0px var(--color-primary-darker);
 
     &:hover {

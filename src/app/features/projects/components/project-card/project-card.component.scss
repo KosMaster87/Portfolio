@@ -38,7 +38,9 @@
     gap: var(--space-4);
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition:
+      opacity 1s ease-out,
+      transform 1s ease-out;
   }
 
   // Fade-up animation when card becomes visible
@@ -71,7 +73,10 @@
     height: clamp(2rem, 4.5vw, 3.2rem);
     display: none; // Hidden by default on mobile
     transform-origin: center;
-    transition: transform 1s ease, opacity 0.2s ease, filter 0.3s ease;
+    transition:
+      transform 1s ease,
+      opacity 0.2s ease,
+      filter 0.3s ease;
     opacity: 0;
     z-index: 15;
     pointer-events: none;
@@ -97,7 +102,9 @@
     width: 100%;
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition:
+      opacity 1s ease-out,
+      transform 1s ease-out;
   }
 
   &__info--active {
@@ -287,7 +294,9 @@
       gap: var(--space-2);
       opacity: 0;
       transform: translateX(-30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
     }
 
     // Even cards: Arrow at right
@@ -299,7 +308,9 @@
       }
 
       ::ng-deep app-decorative-border .decorative-border {
-        transition: transform 0.8s ease, border-color 0.8s ease;
+        transition:
+          transform 0.8s ease,
+          border-color 0.8s ease;
       }
 
       .project-card__image-wrapper:hover ::ng-deep app-decorative-border .decorative-border {
@@ -346,7 +357,9 @@
       }
 
       ::ng-deep app-decorative-border .decorative-border {
-        transition: transform 0.8s ease, border-color 0.8s ease;
+        transition:
+          transform 0.8s ease,
+          border-color 0.8s ease;
       }
 
       .project-card__image-wrapper:hover ::ng-deep app-decorative-border .decorative-border {

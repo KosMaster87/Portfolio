@@ -162,7 +162,7 @@ describe('ProjectButtonComponent', () => {
 
       expect(smoothScrollServiceSpy.scrollElementToCenter).toHaveBeenCalledWith(
         jasmine.any(HTMLElement),
-        1000
+        1000,
       );
 
       document.body.removeChild(card);

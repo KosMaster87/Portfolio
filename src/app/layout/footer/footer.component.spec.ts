@@ -26,7 +26,7 @@ describe('FooterComponent', () => {
           { sectionId: 'projects', label: 'MENU.projects' },
           { sectionId: 'contact', label: 'MENU.contact' },
         ],
-      }
+      },
     );
     translationServiceSpy = jasmine.createSpyObj('TranslationService', ['instant'], {
       currentLang: currentLangSignal,
@@ -53,7 +53,7 @@ describe('FooterComponent', () => {
     if (component['beforeInstallHandler']) {
       window.removeEventListener(
         'beforeinstallprompt',
-        component['beforeInstallHandler'] as EventListener
+        component['beforeInstallHandler'] as EventListener,
       );
     }
   });
@@ -123,7 +123,7 @@ describe('FooterComponent', () => {
           install: jasmine.any(String),
           backToTop: jasmine.any(String),
           backToTopAria: jasmine.any(String),
-        })
+        }),
       );
     });
   });
@@ -237,7 +237,7 @@ describe('FooterComponent', () => {
       component.ngOnInit();
       expect(window.addEventListener).toHaveBeenCalledWith(
         'beforeinstallprompt',
-        jasmine.any(Function)
+        jasmine.any(Function),
       );
     });
 
@@ -267,7 +267,7 @@ describe('FooterComponent', () => {
       component.ngOnDestroy();
       expect(window.removeEventListener).toHaveBeenCalledWith(
         'beforeinstallprompt',
-        jasmine.any(Function)
+        jasmine.any(Function),
       );
     });
 

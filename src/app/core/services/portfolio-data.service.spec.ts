@@ -56,7 +56,7 @@ describe('PortfolioDataService', () => {
             id: jasmine.any(String),
             name: jasmine.any(String),
             headline: jasmine.any(String),
-          })
+          }),
         );
       });
     });

@@ -193,7 +193,9 @@
     border-bottom: 3px solid var(--color-text-primary);
     border-radius: 2px;
     padding: var(--space-4);
-    transition: border-color 0.9s ease, box-shadow 0.9s ease;
+    transition:
+      border-color 0.9s ease,
+      box-shadow 0.9s ease;
     outline: none;
     cursor: pointer;
 
