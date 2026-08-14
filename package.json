@@ -12,6 +12,7 @@
     "docs:serve": "npm run docs && npx http-server docs/generated/typedoc -p 8081",
     "format": "prettier --write \"src/**/*.{ts,html,scss,json}\"",
     "format:check": "prettier --check \"src/**/*.{ts,html,scss,json}\"",
+    "lint": "eslint .",
     "deploy:prepare": "npm run build && npm run test:ci && npm run docs"
   },
   "prettier": {
@@ -44,7 +45,11 @@
     "@angular/build": "^21.2.3",
     "@angular/cli": "^21.2.3",
     "@angular/compiler-cli": "^21.2.5",
+    "@eslint/js": "^10.0.1",
     "@types/jasmine": "~5.1.0",
+    "angular-eslint": "^21.4.0",
+    "eslint": "^10.8.1",
+    "eslint-config-prettier": "^10.1.8",
     "jasmine-core": "~5.9.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -54,6 +59,7 @@
     "prettier": "^3.9.6",
     "typedoc": "^0.28.15",
     "typedoc-plugin-missing-exports": "^4.1.2",
-    "typescript": "~5.9.2"
+    "typescript": "~5.9.2",
+    "typescript-eslint": "^8.67.0"
   }
 }

@@ -4,6 +4,9 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
   "css.validate": false,
   "scss.validate": false,
   "typescript.tsdk": "node_modules/typescript/lib"
