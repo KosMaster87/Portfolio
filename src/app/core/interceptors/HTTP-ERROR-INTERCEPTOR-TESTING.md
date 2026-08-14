@@ -27,7 +27,7 @@ export const httpErrorInterceptor: HttpInterceptorFn = (req, next) => {
     catchError((error: HttpErrorResponse) => {
       // Error handling logic
       return throwError(() => error);
-    })
+    }),
   );
 };
 ```
@@ -204,7 +204,7 @@ it('should log client-side errors in non-production', (done) => {
       expect(consoleErrorSpy).toHaveBeenCalledWith(
         'HTTP Error:',
         jasmine.stringContaining('Error: Connection failed'),
-        errorResponse
+        errorResponse,
       );
       (environment as any).production = originalProduction;
       done();
@@ -232,7 +232,7 @@ const originalProduction = environment.production;
 expect(consoleErrorSpy).toHaveBeenCalledWith(
   'HTTP Error:',
   jasmine.stringContaining('Error: Connection failed'),
-  errorResponse
+  errorResponse,
 );
 ```
 
@@ -347,7 +347,7 @@ it('should log server-side errors in non-production', (done) => {
   expect(consoleErrorSpy).toHaveBeenCalledWith(
     'HTTP Error:',
     jasmine.stringContaining('Error Code: 500'),
-    errorResponse
+    errorResponse,
   );
 });
 ```
@@ -595,7 +595,7 @@ const originalProduction = environment.production;
 expect(consoleErrorSpy).toHaveBeenCalledWith(
   'HTTP Error:',
   jasmine.stringContaining('Error Code: 500'),
-  errorResponse
+  errorResponse,
 );
 ```
 
@@ -723,13 +723,13 @@ it('should handle errors', (done) => {
 
 | Feature           | Getestet | Tests  |
 | ----------------- | -------- | ------ |
-| Success Handling | | 1 |
-| Client Errors | | 3 |
-| Server Errors | | 6 |
-| Error Propagation | | 2 |
-| Unknown Errors | | 1 |
-| HTTP Methods | | 3 |
-| **TOTAL** | | **16** |
+| Success Handling  |          | 1      |
+| Client Errors     |          | 3      |
+| Server Errors     |          | 6      |
+| Error Propagation |          | 2      |
+| Unknown Errors    |          | 1      |
+| HTTP Methods      |          | 3      |
+| **TOTAL**         |          | **16** |
 
 ---
 

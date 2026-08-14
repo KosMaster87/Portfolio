@@ -10,17 +10,17 @@
   <app-scroll-arrow direction="down" targetFragment="projects" rotate="left"> </app-scroll-arrow>
 
   @defer (prefetch on idle) {
-  <app-projects-section></app-projects-section>
+    <app-projects-section></app-projects-section>
   } @placeholder (minimum 500ms) {
-  <div class="section-skeleton" id="projects">
-    <div class="skeleton-content">
-      <div class="skeleton-title"></div>
-      <div class="skeleton-cards">
-        <div class="skeleton-card"></div>
-        <div class="skeleton-card"></div>
+    <div class="section-skeleton" id="projects">
+      <div class="skeleton-content">
+        <div class="skeleton-title"></div>
+        <div class="skeleton-cards">
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+        </div>
       </div>
     </div>
-  </div>
   }
 
   <app-scroll-arrow direction="down" targetFragment="contact" rotate="right"> </app-scroll-arrow>

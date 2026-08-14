@@ -46,13 +46,13 @@ export class ProjectCardComponent implements AfterViewInit, OnDestroy {
   protected arrowImage = computed(() =>
     this.themeService.activeTheme() === 'dark'
       ? '/assets/images/vector/arrows/arrow-light.svg'
-      : '/assets/images/vector/arrows/arrow-dark.svg'
+      : '/assets/images/vector/arrows/arrow-dark.svg',
   );
   protected borderColor = computed(() =>
-    this.themeService.activeTheme() === 'dark' ? 'var(--color-primary)' : '#000000'
+    this.themeService.activeTheme() === 'dark' ? 'var(--color-primary)' : '#000000',
   );
   protected decorativeBorderOffset = computed(() =>
-    this.isEven() ? { x: 8, y: 8 } : { x: -8, y: 8 }
+    this.isEven() ? { x: 8, y: 8 } : { x: -8, y: 8 },
   );
 
   ngAfterViewInit(): void {

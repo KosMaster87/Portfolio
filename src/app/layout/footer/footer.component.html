@@ -1,193 +1,193 @@
 <footer class="app-footer">
   @if (translationService.isLoaded()) {
-  <div class="app-footer__wrapper">
-    <div class="app-footer__content">
-      <div class="app-footer__brand">
-        <h3 class="brand-title">Portfolio<span class="brand-accent">.</span></h3>
-        <p class="brand-description">
-          {{ footerData().brandDescription }}
-        </p>
-      </div>
-      <div class="app-footer__navigation">
-        <h4 class="app-footer__navigation-heading">{{ footerData().navigationHeading }}</h4>
-        <nav role="navigation" aria-label="Footer navigation">
-          <ul class="app-footer__navigation-list">
-            <li class="app-footer__navigation-item">
-              <a
-                (click)="navigateToHome()"
-                (keydown.space)="$event.preventDefault()"
-                (keyup.enter)="navigateToHome()"
-                (keyup.space)="navigateToHome()"
-                class="app-footer__navigation-link"
-                tabindex="0"
-              >
-                {{ footerData().home }}
-              </a>
-            </li>
-            @for (item of menuItems; track item.sectionId) {
-            <li class="app-footer__navigation-item">
-              <a
-                (click)="navigateToSection(item.sectionId)"
-                (keydown.space)="$event.preventDefault()"
-                (keyup.enter)="navigateToSection(item.sectionId)"
-                (keyup.space)="navigateToSection(item.sectionId)"
-                class="app-footer__navigation-link"
-                tabindex="0"
-              >
-                {{ translate(item.label) }}
-              </a>
-            </li>
-            }
-          </ul>
-        </nav>
-      </div>
-
-      <div class="app-footer__social">
-        <h4 class="app-footer__social-heading">{{ footerData().socialHeading }}</h4>
-        <div class="social-links">
-          @for (social of socialLinks(); track social.name) {
-          <a
-            [href]="social.url"
-            [attr.aria-label]="social.ariaLabel"
-            [attr.title]="'Visit my ' + social.name + ' profile'"
-            [class]="'social-link social-link--' + social.hoverColor"
-            target="_blank"
-            rel="noopener noreferrer"
-            (keydown.space)="$event.preventDefault()"
-            (keyup.space)="handleSpaceKey($event)"
-            tabindex="0"
-          >
-            <img
-              [src]="social.iconPath"
-              [alt]="social.name + ' icon'"
-              class="social-icon"
-              draggable="false"
-            />
-            <span class="social-name">{{ social.name }}</span>
-          </a>
-          }
-        </div>
-      </div>
-
-      <div class="app-footer__features">
-        <h4 class="app-footer__features-heading">{{ footerData().featuresHeading }}</h4>
-        <nav role="navigation" aria-label="Website features">
-          <ul class="app-footer__features-list">
-            @if (installAvailable()) {
-            <li class="app-footer__features-item">
-              <a
-                class="app-footer__navigation-link"
-                (click)="installPWA()"
-                (keydown.space)="$event.preventDefault()"
-                (keyup.enter)="installPWA()"
-                (keyup.space)="installPWA()"
-                tabindex="0"
-              >
-                {{ footerData().install }}
-              </a>
-            </li>
-            }
-          </ul>
-        </nav>
-      </div>
-
-      <div class="app-footer__legal">
-        <h4 class="app-footer__legal-heading">{{ footerData().legalHeading }}</h4>
-        <nav role="navigation" aria-label="Legal navigation">
-          <ul class="app-footer__legal-list">
-            <li class="app-footer__legal-item">
-              <a
-                (click)="navigateToRoute('/imprint')"
-                (keydown.space)="$event.preventDefault()"
-                (keyup.enter)="navigateToRoute('/imprint')"
-                (keyup.space)="navigateToRoute('/imprint')"
-                class="app-footer__legal-link"
-                tabindex="0"
-              >
-                {{ footerData().imprint }}
-              </a>
-            </li>
-            <li class="app-footer__legal-item">
-              <a
-                (click)="navigateToRoute('/privacy-policy')"
-                (keydown.space)="$event.preventDefault()"
-                (keyup.enter)="navigateToRoute('/privacy-policy')"
-                (keyup.space)="navigateToRoute('/privacy-policy')"
-                class="app-footer__legal-link"
-                tabindex="0"
-              >
-                {{ footerData().privacy }}
-              </a>
-            </li>
-            <li class="app-footer__legal-item">
-              <a
-                (click)="navigateToRoute('/sources')"
-                (keydown.space)="$event.preventDefault()"
-                (keyup.enter)="navigateToRoute('/sources')"
-                (keyup.space)="navigateToRoute('/sources')"
-                class="app-footer__legal-link"
-                tabindex="0"
-              >
-                {{ footerData().sources }}
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-
-    <div class="app-footer__bottom">
-      <div class="app-footer__bottom-content">
-        <div class="app-footer__copyright">
-          <p>
-            &copy; {{ currentYear }} {{ footerData().copyright }}
-            <span class="heart" [attr.aria-label]="footerData().love">❤️</span>
-            {{ footerData().and }}
-            <a
-              href="https://angular.dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="angular-link"
-              tabindex="0"
-              (keydown.space)="$event.preventDefault()"
-              (keyup.space)="handleSpaceKey($event)"
-              ><strong>{{ footerData().angular }}</strong></a
-            >.
+    <div class="app-footer__wrapper">
+      <div class="app-footer__content">
+        <div class="app-footer__brand">
+          <h3 class="brand-title">Portfolio<span class="brand-accent">.</span></h3>
+          <p class="brand-description">
+            {{ footerData().brandDescription }}
           </p>
         </div>
-
-        <div class="app-footer__tech-stack">
-          <p class="tech-info">
-            {{ footerData().builtWith }}
-            <a
-              href="https://www.typescriptlang.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="tech-item"
-              tabindex="0"
-              (keydown.space)="$event.preventDefault()"
-              (keyup.space)="handleSpaceKey($event)"
-              >{{ footerData().typescript }}</a
-            >
-            &
-            <a
-              href="https://sass-lang.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="tech-item"
-              tabindex="0"
-              (keydown.space)="$event.preventDefault()"
-              (keyup.space)="handleSpaceKey($event)"
-              >{{ footerData().scss }}</a
-            >
-          </p>
+        <div class="app-footer__navigation">
+          <h4 class="app-footer__navigation-heading">{{ footerData().navigationHeading }}</h4>
+          <nav role="navigation" aria-label="Footer navigation">
+            <ul class="app-footer__navigation-list">
+              <li class="app-footer__navigation-item">
+                <a
+                  (click)="navigateToHome()"
+                  (keydown.space)="$event.preventDefault()"
+                  (keyup.enter)="navigateToHome()"
+                  (keyup.space)="navigateToHome()"
+                  class="app-footer__navigation-link"
+                  tabindex="0"
+                >
+                  {{ footerData().home }}
+                </a>
+              </li>
+              @for (item of menuItems; track item.sectionId) {
+                <li class="app-footer__navigation-item">
+                  <a
+                    (click)="navigateToSection(item.sectionId)"
+                    (keydown.space)="$event.preventDefault()"
+                    (keyup.enter)="navigateToSection(item.sectionId)"
+                    (keyup.space)="navigateToSection(item.sectionId)"
+                    class="app-footer__navigation-link"
+                    tabindex="0"
+                  >
+                    {{ translate(item.label) }}
+                  </a>
+                </li>
+              }
+            </ul>
+          </nav>
         </div>
 
-        <div class="app-footer__back-to-top">
-          <app-icon-button [ariaLabel]="footerData().backToTopAria" (clicked)="scrollToTop()" />
+        <div class="app-footer__social">
+          <h4 class="app-footer__social-heading">{{ footerData().socialHeading }}</h4>
+          <div class="social-links">
+            @for (social of socialLinks(); track social.name) {
+              <a
+                [href]="social.url"
+                [attr.aria-label]="social.ariaLabel"
+                [attr.title]="'Visit my ' + social.name + ' profile'"
+                [class]="'social-link social-link--' + social.hoverColor"
+                target="_blank"
+                rel="noopener noreferrer"
+                (keydown.space)="$event.preventDefault()"
+                (keyup.space)="handleSpaceKey($event)"
+                tabindex="0"
+              >
+                <img
+                  [src]="social.iconPath"
+                  [alt]="social.name + ' icon'"
+                  class="social-icon"
+                  draggable="false"
+                />
+                <span class="social-name">{{ social.name }}</span>
+              </a>
+            }
+          </div>
+        </div>
+
+        <div class="app-footer__features">
+          <h4 class="app-footer__features-heading">{{ footerData().featuresHeading }}</h4>
+          <nav role="navigation" aria-label="Website features">
+            <ul class="app-footer__features-list">
+              @if (installAvailable()) {
+                <li class="app-footer__features-item">
+                  <a
+                    class="app-footer__navigation-link"
+                    (click)="installPWA()"
+                    (keydown.space)="$event.preventDefault()"
+                    (keyup.enter)="installPWA()"
+                    (keyup.space)="installPWA()"
+                    tabindex="0"
+                  >
+                    {{ footerData().install }}
+                  </a>
+                </li>
+              }
+            </ul>
+          </nav>
+        </div>
+
+        <div class="app-footer__legal">
+          <h4 class="app-footer__legal-heading">{{ footerData().legalHeading }}</h4>
+          <nav role="navigation" aria-label="Legal navigation">
+            <ul class="app-footer__legal-list">
+              <li class="app-footer__legal-item">
+                <a
+                  (click)="navigateToRoute('/imprint')"
+                  (keydown.space)="$event.preventDefault()"
+                  (keyup.enter)="navigateToRoute('/imprint')"
+                  (keyup.space)="navigateToRoute('/imprint')"
+                  class="app-footer__legal-link"
+                  tabindex="0"
+                >
+                  {{ footerData().imprint }}
+                </a>
+              </li>
+              <li class="app-footer__legal-item">
+                <a
+                  (click)="navigateToRoute('/privacy-policy')"
+                  (keydown.space)="$event.preventDefault()"
+                  (keyup.enter)="navigateToRoute('/privacy-policy')"
+                  (keyup.space)="navigateToRoute('/privacy-policy')"
+                  class="app-footer__legal-link"
+                  tabindex="0"
+                >
+                  {{ footerData().privacy }}
+                </a>
+              </li>
+              <li class="app-footer__legal-item">
+                <a
+                  (click)="navigateToRoute('/sources')"
+                  (keydown.space)="$event.preventDefault()"
+                  (keyup.enter)="navigateToRoute('/sources')"
+                  (keyup.space)="navigateToRoute('/sources')"
+                  class="app-footer__legal-link"
+                  tabindex="0"
+                >
+                  {{ footerData().sources }}
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="app-footer__bottom">
+        <div class="app-footer__bottom-content">
+          <div class="app-footer__copyright">
+            <p>
+              &copy; {{ currentYear }} {{ footerData().copyright }}
+              <span class="heart" [attr.aria-label]="footerData().love">❤️</span>
+              {{ footerData().and }}
+              <a
+                href="https://angular.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="angular-link"
+                tabindex="0"
+                (keydown.space)="$event.preventDefault()"
+                (keyup.space)="handleSpaceKey($event)"
+                ><strong>{{ footerData().angular }}</strong></a
+              >.
+            </p>
+          </div>
+
+          <div class="app-footer__tech-stack">
+            <p class="tech-info">
+              {{ footerData().builtWith }}
+              <a
+                href="https://www.typescriptlang.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="tech-item"
+                tabindex="0"
+                (keydown.space)="$event.preventDefault()"
+                (keyup.space)="handleSpaceKey($event)"
+                >{{ footerData().typescript }}</a
+              >
+              &
+              <a
+                href="https://sass-lang.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="tech-item"
+                tabindex="0"
+                (keydown.space)="$event.preventDefault()"
+                (keyup.space)="handleSpaceKey($event)"
+                >{{ footerData().scss }}</a
+              >
+            </p>
+          </div>
+
+          <div class="app-footer__back-to-top">
+            <app-icon-button [ariaLabel]="footerData().backToTopAria" (clicked)="scrollToTop()" />
+          </div>
         </div>
       </div>
     </div>
-  </div>
   }
 </footer>

@@ -75,7 +75,7 @@ describe('httpErrorInterceptor', () => {
           expect(consoleErrorSpy).toHaveBeenCalledWith(
             'HTTP Error:',
             jasmine.stringContaining('Error: Connection failed'),
-            errorResponse
+            errorResponse,
           );
           (environment as any).production = originalProduction;
           done();
@@ -165,7 +165,7 @@ describe('httpErrorInterceptor', () => {
           expect(consoleErrorSpy).toHaveBeenCalledWith(
             'HTTP Error:',
             jasmine.stringContaining('Error Code: 500'),
-            errorResponse
+            errorResponse,
           );
           (environment as any).production = originalProduction;
           done();

@@ -114,7 +114,7 @@ describe('HomePageComponent', () => {
     it('should render core sections in correct order', () => {
       fixture.detectChanges();
       const sections = fixture.nativeElement.querySelectorAll(
-        'app-hero-section, app-about-section, app-skills-section, app-contact-section'
+        'app-hero-section, app-about-section, app-skills-section, app-contact-section',
       );
       expect(sections.length).toBe(4);
     });

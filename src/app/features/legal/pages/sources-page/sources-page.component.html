@@ -1,61 +1,61 @@
 <div class="sources-page" tabindex="-1">
   @if (translationService.isLoaded()) {
-  <div class="container">
-    <header class="page-header">
-      <h1>{{ sourcesData().pageTitle }}</h1>
-      <p class="lead">{{ sourcesData().lead }}</p>
-    </header>
+    <div class="container">
+      <header class="page-header">
+        <h1>{{ sourcesData().pageTitle }}</h1>
+        <p class="lead">{{ sourcesData().lead }}</p>
+      </header>
 
-    <main class="sources-content">
-      <section class="icon-sources">
-        <h2>{{ sourcesData().iconsTitle }}</h2>
-        <p>{{ sourcesData().iconsText }}</p>
+      <main class="sources-content">
+        <section class="icon-sources">
+          <h2>{{ sourcesData().iconsTitle }}</h2>
+          <p>{{ sourcesData().iconsText }}</p>
 
-        <ul>
-          <li>
-            <a
-              href="https://www.flaticon.com/"
-              target="_blank"
-              (keydown.space)="$event.preventDefault()"
-              (keyup.space)="handleSpaceKey($event)"
-              rel="noopener noreferrer"
-              tabindex="0"
-            >
-              {{ sourcesData().flaticon }}
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.svgrepo.com/"
-              target="_blank"
-              (keydown.space)="$event.preventDefault()"
-              (keyup.space)="handleSpaceKey($event)"
-              rel="noopener noreferrer"
-              tabindex="0"
-            >
-              {{ sourcesData().svgRepo }}
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.iconpacks.net/"
-              target="_blank"
-              (keydown.space)="$event.preventDefault()"
-              (keyup.space)="handleSpaceKey($event)"
-              rel="noopener noreferrer"
-              tabindex="0"
-            >
-              {{ sourcesData().iconPacks }}
-            </a>
-          </li>
-        </ul>
-      </section>
+          <ul>
+            <li>
+              <a
+                href="https://www.flaticon.com/"
+                target="_blank"
+                (keydown.space)="$event.preventDefault()"
+                (keyup.space)="handleSpaceKey($event)"
+                rel="noopener noreferrer"
+                tabindex="0"
+              >
+                {{ sourcesData().flaticon }}
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.svgrepo.com/"
+                target="_blank"
+                (keydown.space)="$event.preventDefault()"
+                (keyup.space)="handleSpaceKey($event)"
+                rel="noopener noreferrer"
+                tabindex="0"
+              >
+                {{ sourcesData().svgRepo }}
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.iconpacks.net/"
+                target="_blank"
+                (keydown.space)="$event.preventDefault()"
+                (keyup.space)="handleSpaceKey($event)"
+                rel="noopener noreferrer"
+                tabindex="0"
+              >
+                {{ sourcesData().iconPacks }}
+              </a>
+            </li>
+          </ul>
+        </section>
 
-      <div class="license-section">
-        <h2>{{ sourcesData().licenseTitle }}</h2>
-        <p>{{ sourcesData().licenseText }}</p>
-      </div>
-    </main>
-  </div>
+        <div class="license-section">
+          <h2>{{ sourcesData().licenseTitle }}</h2>
+          <p>{{ sourcesData().licenseText }}</p>
+        </div>
+      </main>
+    </div>
   }
 </div>

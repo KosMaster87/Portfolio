@@ -39,9 +39,9 @@ export class NavigationService {
     this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd),
       map((event: NavigationEnd) => event.urlAfterRedirects.split('#')[0]),
-      startWith(this.router.url.split('#')[0])
+      startWith(this.router.url.split('#')[0]),
     ),
-    { initialValue: '/' }
+    { initialValue: '/' },
   );
 
   /**

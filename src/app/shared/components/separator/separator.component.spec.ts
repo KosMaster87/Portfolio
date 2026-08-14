@@ -147,7 +147,7 @@ describe('SeparatorComponent', () => {
       const classes = component.getSeparatorClasses();
 
       expect(classes).toBe(
-        'separator separator--vertical separator--dashed separator--large separator--primary'
+        'separator separator--vertical separator--dashed separator--large separator--primary',
       );
     });
 

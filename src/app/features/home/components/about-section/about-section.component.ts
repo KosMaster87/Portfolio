@@ -42,7 +42,7 @@ export class AboutSectionComponent {
    * Light theme: black, Dark theme: primary-dark
    */
   protected borderColor = computed(() =>
-    this.themeService.activeTheme() === 'dark' ? 'var(--color-primary)' : '#000000'
+    this.themeService.activeTheme() === 'dark' ? 'var(--color-primary)' : '#000000',
   );
 
   /**

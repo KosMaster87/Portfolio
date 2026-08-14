@@ -20,7 +20,7 @@ describe('App', () => {
       {
         showUpdateNotification: signal(false),
         updateMessage: signal(''),
-      }
+      },
     );
 
     translationServiceSpy = jasmine.createSpyObj('TranslationService', ['instant'], {
@@ -133,7 +133,7 @@ describe('App', () => {
 
     it('should have correct component structure', () => {
       const components = fixture.nativeElement.querySelectorAll(
-        'router-outlet, app-header, app-footer, app-notification'
+        'router-outlet, app-header, app-footer, app-notification',
       );
       expect(components.length).toBe(4);
     });

@@ -12,9 +12,12 @@
   border-style: solid;
   border-color: transparent;
   pointer-events: none;
-  transition: transform 0.8s ease, border-color 0.8s ease, opacity 0.7s ease;
+  transition:
+    transform 0.8s ease,
+    border-color 0.8s ease,
+    opacity 0.7s ease;
   opacity: 1;
-  
+
   @media screen and (max-width: 300px) {
     width: clamp(120px, 40vw + 2rem, 180px);
   }

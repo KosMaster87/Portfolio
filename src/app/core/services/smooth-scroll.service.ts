@@ -29,7 +29,7 @@ export class SmoothScrollService {
     const startTime = performance.now();
 
     this.animationFrameId = requestAnimationFrame((currentTime) =>
-      this.animateScroll(currentTime, startTime, startScroll, distance, duration)
+      this.animateScroll(currentTime, startTime, startScroll, distance, duration),
     );
   }
 
@@ -42,7 +42,7 @@ export class SmoothScrollService {
     startTime: number,
     startScroll: number,
     distance: number,
-    duration: number
+    duration: number,
   ): void {
     const elapsed = currentTime - startTime;
     const progress = Math.min(elapsed / duration, 1);
@@ -52,7 +52,7 @@ export class SmoothScrollService {
 
     if (progress < 1) {
       this.animationFrameId = requestAnimationFrame((time) =>
-        this.animateScroll(time, startTime, startScroll, distance, duration)
+        this.animateScroll(time, startTime, startScroll, distance, duration),
       );
     } else {
       this.animationFrameId = null;
