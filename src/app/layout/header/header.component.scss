@@ -79,6 +79,20 @@
   &__logo-text {
     font-family: var(--font-secondary);
     font-weight: var(--font-weight-extrabold);
+
+    &--short {
+      display: none;
+    }
+
+    @media screen and (max-width: 530px) {
+      &--full {
+        display: none;
+      }
+
+      &--short {
+        display: inline;
+      }
+    }
   }
 
   &__nav {

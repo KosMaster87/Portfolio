@@ -305,11 +305,18 @@ describe('HeaderComponent', () => {
       expect(logo.getAttribute('src')).toBe('/theme-dark/icon-96.png');
     });
 
-    it('should render logo text', () => {
-      const logoText = fixture.nativeElement.querySelector('.header__logo-text');
+    it('should render full logo text', () => {
+      const logoText = fixture.nativeElement.querySelector('.header__logo-text--full');
 
       expect(logoText).toBeTruthy();
       expect(logoText.textContent.trim()).toBe('Developer2K');
+    });
+
+    it('should render short logo text for narrow viewports', () => {
+      const logoTextShort = fixture.nativeElement.querySelector('.header__logo-text--short');
+
+      expect(logoTextShort).toBeTruthy();
+      expect(logoTextShort.textContent.trim()).toBe('D2K');
     });
 
     it('should render language switcher', () => {
