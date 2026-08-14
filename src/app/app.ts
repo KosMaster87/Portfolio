@@ -7,7 +7,7 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { SwUpdateService, TranslationService } from './core/services';
+import { AnalyticsService, SwUpdateService, TranslationService } from './core/services';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { NotificationComponent } from './shared/components';
@@ -22,11 +22,13 @@ export class App {
   protected readonly title = signal('portfolio-remaster');
   protected swUpdateService = inject(SwUpdateService);
   private translationService = inject(TranslationService);
+  private analyticsService = inject(AnalyticsService);
 
   protected updateActionText = computed(() => this.translationService.instant('UPDATE.action'));
 
   constructor() {
     this.swUpdateService.initialize();
+    this.analyticsService.init();
   }
 
   /**
