@@ -247,6 +247,18 @@
   animation: glow-nginx 1s forwards;
 }
 
+.claude.hover-effect {
+  animation: glow-claude 1s forwards;
+}
+
+.openai.hover-effect {
+  animation: glow-openai 1s forwards;
+}
+
+.gitlab.hover-effect {
+  animation: glow-gitlab 1s forwards;
+}
+
 @keyframes glow-angular {
   0% {
     filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.5));
@@ -532,5 +544,41 @@
   }
   100% {
     filter: drop-shadow(0 0 5px rgba(0, 150, 57, 0.5));
+  }
+}
+
+@keyframes glow-claude {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(217, 119, 87, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(217, 119, 87, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(217, 119, 87, 0.5));
+  }
+}
+
+@keyframes glow-openai {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(160, 160, 160, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(160, 160, 160, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(160, 160, 160, 0.5));
+  }
+}
+
+@keyframes glow-gitlab {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(252, 109, 38, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(252, 109, 38, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(252, 109, 38, 0.5));
   }
 }

@@ -49,5 +49,8 @@ export class SkillsSectionComponent {
     { name: 'Cloudflare', icon: 'icon-cloudflare.svg', cssClass: 'cloudflare' },
     { name: 'GitHub Actions', icon: 'icon-github-actions.svg', cssClass: 'githubActions' },
     { name: 'nginx', icon: 'icon-nginx.svg', cssClass: 'nginx' },
+    { name: 'Claude', icon: 'icon-claude.svg', cssClass: 'claude' },
+    { name: 'OpenAI Codex', icon: 'icon-openai.svg', cssClass: 'openai' },
+    { name: 'GitLab', icon: 'icon-gitlab.svg', cssClass: 'gitlab' },
   ];
 }
