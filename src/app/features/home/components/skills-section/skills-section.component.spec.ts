@@ -44,8 +44,8 @@ describe('SkillsSectionComponent', () => {
   });
 
   describe('skills array', () => {
-    it('should have 18 skills', () => {
-      expect(component['skills'].length).toBe(18);
+    it('should have 24 skills', () => {
+      expect(component['skills'].length).toBe(24);
     });
 
     it('should contain Angular skill', () => {
@@ -85,6 +85,42 @@ describe('SkillsSectionComponent', () => {
       const docker = component['skills'].find((s) => s.name === 'Docker');
       expect(docker).toBeDefined();
       expect(docker!.icon).toBe('icon-docker.svg');
+    });
+
+    it('should contain Unraid skill', () => {
+      const unraid = component['skills'].find((s) => s.name === 'Unraid');
+      expect(unraid).toBeDefined();
+      expect(unraid!.icon).toBe('icon-unraid.svg');
+    });
+
+    it('should contain n8n skill', () => {
+      const n8n = component['skills'].find((s) => s.name === 'n8n');
+      expect(n8n).toBeDefined();
+      expect(n8n!.icon).toBe('icon-n8n.svg');
+    });
+
+    it('should contain Ollama skill', () => {
+      const ollama = component['skills'].find((s) => s.name === 'Ollama');
+      expect(ollama).toBeDefined();
+      expect(ollama!.icon).toBe('icon-ollama.svg');
+    });
+
+    it('should contain Cloudflare skill', () => {
+      const cloudflare = component['skills'].find((s) => s.name === 'Cloudflare');
+      expect(cloudflare).toBeDefined();
+      expect(cloudflare!.icon).toBe('icon-cloudflare.svg');
+    });
+
+    it('should contain GitHub Actions skill', () => {
+      const githubActions = component['skills'].find((s) => s.name === 'GitHub Actions');
+      expect(githubActions).toBeDefined();
+      expect(githubActions!.icon).toBe('icon-github-actions.svg');
+    });
+
+    it('should contain nginx skill', () => {
+      const nginx = component['skills'].find((s) => s.name === 'nginx');
+      expect(nginx).toBeDefined();
+      expect(nginx!.icon).toBe('icon-nginx.svg');
     });
 
     it('should have all required properties for each skill', () => {

@@ -1,4 +1,4 @@
-# Portfolio — Angular SPA
+# Portfolio - Angular SPA
 
 Persönliche Portfolio-Website von Konstantin Aksenov, Dev2K Software.
 

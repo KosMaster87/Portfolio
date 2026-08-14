@@ -104,7 +104,9 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    transition: filter 0.3s ease-in-out, transform 0.3s ease;
+    transition:
+      filter 0.3s ease-in-out,
+      transform 0.3s ease;
   }
 
   &:hover &__icon {
@@ -219,6 +221,30 @@
 
 .php.hover-effect {
   animation: glow-php 1s forwards;
+}
+
+.unraid.hover-effect {
+  animation: glow-unraid 1s forwards;
+}
+
+.n8n.hover-effect {
+  animation: glow-n8n 1s forwards;
+}
+
+.ollama.hover-effect {
+  animation: glow-ollama 1s forwards;
+}
+
+.cloudflare.hover-effect {
+  animation: glow-cloudflare 1s forwards;
+}
+
+.githubActions.hover-effect {
+  animation: glow-githubActions 1s forwards;
+}
+
+.nginx.hover-effect {
+  animation: glow-nginx 1s forwards;
 }
 
 @keyframes glow-angular {
@@ -434,5 +460,77 @@
   }
   100% {
     filter: drop-shadow(0 0 5px rgba(120, 133, 194, 0.5));
+  }
+}
+
+@keyframes glow-unraid {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(241, 90, 44, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(241, 90, 44, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(241, 90, 44, 0.5));
+  }
+}
+
+@keyframes glow-n8n {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(234, 75, 113, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(234, 75, 113, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(234, 75, 113, 0.5));
+  }
+}
+
+@keyframes glow-ollama {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(160, 160, 160, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(160, 160, 160, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(160, 160, 160, 0.5));
+  }
+}
+
+@keyframes glow-cloudflare {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(243, 128, 32, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(243, 128, 32, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(243, 128, 32, 0.5));
+  }
+}
+
+@keyframes glow-githubActions {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(32, 136, 255, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(32, 136, 255, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(32, 136, 255, 0.5));
+  }
+}
+
+@keyframes glow-nginx {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(0, 150, 57, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(0, 150, 57, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(0, 150, 57, 0.5));
   }
 }
