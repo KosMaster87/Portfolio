@@ -1,15 +1,15 @@
-# manual — Handgeschriebene Projektdokumentation
+# manual - Handwritten project documentation
 
-Hier liegt die handgeschriebene Wissensbasis des Portfolio-Projekts.
+This is the handwritten knowledge base of the Portfolio project.
 
-**Nur Menschen schreiben hier. Kein Generator-Output.**
+**Only humans write here. No generator output.**
 
 ---
 
-## Mögliche Inhalte
+## Possible contents
 
-- `architecture.md` — Komponentenstruktur, Datenfluß, Design-Entscheidungen (ADRs)
-- `setup.md` — Lokale Einrichtung, Deployment-Ablauf, Secrets
-- `changelog.md` — Manuelle Änderungshistorie (ergänzend zu Git-Log)
-- `performance.md` — Messergebnisse, Optimierungen, Trade-off-Begründungen
-- `testing.md` — Teststrategie, Abdeckungsziele, bekannte Lücken
+- `architecture.md` - component structure, data flow, design decisions (ADRs)
+- `setup.md` - local setup, deployment process, secrets
+- `changelog.md` - manual change history (complements the Git log)
+- `performance.md` - measurement results, optimizations, trade-off rationale
+- `testing.md` - test strategy, coverage goals, known gaps

@@ -1,45 +1,45 @@
-# docs — Struktur & Herkunft
+# docs - structure & origin
 
-> **Herkunft bestimmt den Ordner.**
-> Du hast es geschrieben → `manual/`. Ein Tool hat es erzeugt → `generated/`.
-> Niemals mischen.
+> **Origin determines the folder.**
+> You wrote it → `manual/`. A tool generated it → `generated/`.
+> Never mix them.
 
 ---
 
-## Ordnerübersicht
+## Folder overview
 
 ```
 docs/
-├── manual/          ← Handgeschriebene Markdown-Doku (immer im Git)
-├── generated/       ← Tool-Output (in .gitignore, nie manuell editieren)
-│   ├── typedoc/     ← TypeDoc-Output  (npm run docs:typedoc)
-│   └── jsdoc/       ← JSDoc-Output    (npm run docs:jsdoc)
-└── README.md        ← Diese Datei
+├── manual/          ← Handwritten Markdown docs (always in Git)
+├── generated/       ← Tool output (in .gitignore, never edit manually)
+│   ├── typedoc/     ← TypeDoc output  (npm run docs:typedoc)
+│   └── jsdoc/       ← JSDoc output    (npm run docs:jsdoc)
+└── README.md        ← This file
 ```
 
 ---
 
-## Regeln
+## Rules
 
-| Ordner              | Wer schreibt hier? | Im Git? |
-| ------------------- | ------------------ | ------- |
-| `manual/` | Nur du | ja |
-| `generated/typedoc` | TypeDoc-Tool | nein |
-| `generated/jsdoc` | JSDoc-Tool | nein |
+| Folder              | Who writes here? | In Git? |
+| ------------------- | ---------------- | ------- |
+| `manual/`           | You only         | yes     |
+| `generated/typedoc` | TypeDoc tool     | no      |
+| `generated/jsdoc`   | JSDoc tool       | no      |
 
 ---
 
-## Befehle
+## Commands
 
 ```bash
-npm run docs        # TypeDoc-API-Doku erzeugen → docs/generated/typedoc/
-npm run docs:serve  # TypeDoc lokal ansehen (http://localhost:8081)
+npm run docs        # Generate TypeDoc API docs → docs/generated/typedoc/
+npm run docs:serve  # View TypeDoc locally (http://localhost:8081)
 ```
 
 ---
 
 ## Deployment
 
-Im CI/CD-Workflow wird `docs/generated/typedoc/` als `jsdoc/` auf den Server kopiert:
+In the CI/CD workflow, `docs/generated/typedoc/` is copied to the server as `jsdoc/`:
 
 - **Live:** https://portfolio.dev2k.org/jsdoc/index.html
