@@ -21,6 +21,12 @@
                   class="app-footer__navigation-link"
                   tabindex="0"
                 >
+                  <img
+                    src="/assets/images/vector/menu/home.svg"
+                    alt=""
+                    class="nav-icon"
+                    draggable="false"
+                  />
                   {{ footerData().home }}
                 </a>
               </li>
@@ -34,6 +40,12 @@
                     class="app-footer__navigation-link"
                     tabindex="0"
                   >
+                    <img
+                      [src]="'/assets/images/vector/menu/' + item.sectionId + '.svg'"
+                      alt=""
+                      class="nav-icon"
+                      draggable="false"
+                    />
                     {{ translate(item.label) }}
                   </a>
                 </li>
@@ -83,6 +95,12 @@
                     (keyup.space)="installPWA()"
                     tabindex="0"
                   >
+                    <img
+                      src="/assets/images/vector/menu/install.svg"
+                      alt=""
+                      class="nav-icon"
+                      draggable="false"
+                    />
                     {{ footerData().install }}
                   </a>
                 </li>
@@ -104,6 +122,12 @@
                   class="app-footer__legal-link"
                   tabindex="0"
                 >
+                  <img
+                    src="/assets/images/vector/menu/imprint.svg"
+                    alt=""
+                    class="nav-icon"
+                    draggable="false"
+                  />
                   {{ footerData().imprint }}
                 </a>
               </li>
@@ -116,6 +140,12 @@
                   class="app-footer__legal-link"
                   tabindex="0"
                 >
+                  <img
+                    src="/assets/images/vector/menu/privacy.svg"
+                    alt=""
+                    class="nav-icon"
+                    draggable="false"
+                  />
                   {{ footerData().privacy }}
                 </a>
               </li>
@@ -128,6 +158,12 @@
                   class="app-footer__legal-link"
                   tabindex="0"
                 >
+                  <img
+                    src="/assets/images/vector/menu/sources.svg"
+                    alt=""
+                    class="nav-icon"
+                    draggable="false"
+                  />
                   {{ footerData().sources }}
                 </a>
               </li>

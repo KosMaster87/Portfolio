@@ -100,6 +100,8 @@
       font-size: var(--font-size-lg);
       font-weight: var(--font-weight-semibold);
       color: var(--color-text-primary);
+      line-height: var(--line-height-normal);
+      min-height: calc(var(--font-size-lg) * var(--line-height-normal) * 2);
       margin: 0 0 var(--space-4) 0;
     }
 
@@ -114,19 +116,37 @@
     }
 
     &-link {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
       font-family: var(--font-primary);
       font-size: var(--font-size-base);
       font-weight: var(--font-weight-medium);
       color: var(--color-text-muted);
       text-decoration: none;
-      transition: color var(--transition-base);
-      cursor: pointer;
-      padding: 2px 4px;
-      margin: -2px -4px;
-      border-radius: var(--radius-sm);
+      padding: var(--space-2) var(--space-3);
+      margin: 0 calc(-1 * var(--space-3));
+      border-radius: var(--radius-md);
+      transition: all var(--transition-base);
+
+      .nav-icon {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        display: block;
+        margin-top: 2px;
+        filter: var(--filter-icon-muted);
+        transition: filter var(--transition-base);
+      }
 
       &:hover {
         color: var(--color-primary);
+        background: var(--color-primary-darker);
+        transform: translateX(4px);
+
+        .nav-icon {
+          filter: var(--filter-icon-primary);
+        }
       }
 
       @include focus-visible;
