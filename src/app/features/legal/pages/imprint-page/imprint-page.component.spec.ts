@@ -30,7 +30,7 @@ describe('ImprintPageComponent', () => {
         'IMPRINT.website': 'Website',
         'IMPRINT.technicalInfoTitle': 'Technical Information',
         'IMPRINT.technicalInfoText': 'Technical info text',
-        'IMPRINT.company': 'Dev2K Software',
+        'IMPRINT.company': 'Developer2K Software',
         'IMPRINT.soleProprietor': 'Sole proprietor',
         'IMPRINT.name': 'Konstantin Aksenov',
         'IMPRINT.city': 'City',
@@ -110,7 +110,7 @@ describe('ImprintPageComponent', () => {
 
     it('should return provider data', () => {
       const data = component['imprintData']();
-      expect(data.company).toBe('Dev2K Software');
+      expect(data.company).toBe('Developer2K Software');
       expect(data.soleProprietor).toBe('Sole proprietor');
       expect(data.name).toBe('Konstantin Aksenov');
       expect(data.city).toBe('City');
