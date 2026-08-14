@@ -10,6 +10,8 @@
     "test:ci": "CHROME_BIN=/usr/bin/chromium-browser ng test --no-watch --code-coverage --browsers=ChromeHeadless",
     "docs": "typedoc",
     "docs:serve": "npm run docs && npx http-server docs/generated/typedoc -p 8081",
+    "format": "prettier --write \"src/**/*.{ts,html,scss,json}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,html,scss,json}\"",
     "deploy:prepare": "npm run build && npm run test:ci && npm run docs"
   },
   "prettier": {
@@ -49,6 +51,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "prettier": "^3.9.6",
     "typedoc": "^0.28.15",
     "typedoc-plugin-missing-exports": "^4.1.2",
     "typescript": "~5.9.2"

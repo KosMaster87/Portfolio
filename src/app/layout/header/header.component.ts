@@ -62,7 +62,6 @@ export class HeaderComponent {
    */
   scrollToSection(sectionId: string): void {
     if (this.isMenuOpen()) {
-
       setTimeout(() => {
         this.closeMenu();
 
