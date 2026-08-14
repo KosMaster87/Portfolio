@@ -1,184 +1,88 @@
-# Personal Portfolio – Angular SPA
+# Portfolio — Angular SPA
 
-[![Angular](https://img.shields.io/badge/Angular-21.0-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
-[![Test Coverage](https://img.shields.io/badge/coverage-96.4%25-brightgreen?style=for-the-badge)](https://portfolio.dev2k.org/coverage/index.html)
-[![Tests](https://img.shields.io/badge/tests-823%20passing-success?style=for-the-badge)](https://portfolio.dev2k.org/coverage/index.html)
-[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+Persönliche Portfolio-Website von Konstantin Aksenov, Dev2K Software.
 
-A fully responsive, modern portfolio website built as a Single Page Application (SPA) to showcase my skills, projects, and professional experience. Designed with a mobile-first approach and optimized for recruiters and hiring managers.
+## Goal
 
-[Live Demo](https://portfolio.dev2k.org) | [Coverage Report](https://portfolio.dev2k.org/coverage/index.html) | [API Docs](https://portfolio.dev2k.org/jsdoc/index.html)
+Die Seite zeigt Fähigkeiten, Projekte und Werdegang für Recruiter und potenzielle
+Auftraggeber — als Single-Page-Application, mobile-first, zweisprachig (DE/EN).
 
----
-
-## Live Demo
-
-**[portfolio.dev2k.org](https://portfolio.dev2k.org)**
-
----
+Primäre Domain: `https://portfolio.dev2ksoftware.com`
 
 ## Preview
 
 ![Portfolio Screenshot](./src/assets/images/preview-portfolio.png)
 
----
-
-## Features
-
-- **Light/Dark/Auto Theme** – System preference detection with manual override
-- **i18n (EN/DE)** – Multi-language support with seamless switching
-- **Fully Responsive** – Optimized for mobile, tablet, and desktop
-- **PWA with Service Worker** – Offline support and app-like experience
-- **Accessible (ARIA)** – WCAG compliant with keyboard navigation
-- **96.4% Test Coverage** – 823 passing tests with comprehensive coverage
-- **Contact Form** – Integrated PHP backend with email notifications
-- **Security Features** – Rate limiting, XSS protection, CORS configuration
-- **SEO Friendly** – Semantic HTML and optimized meta tags
-- **Project Showcase** – Dynamic project cards with live demos
-
----
-
 ## Tech Stack
 
-**Frontend**
+| Layer     | Technology                                                |
+| --------- | --------------------------------------------------------- |
+| Framework | Angular 21 SPA, standalone components, signals, zoneless  |
+| Styling   | SCSS                                                      |
+| i18n      | Lokale JSON-Übersetzungen in `public/i18n/`               |
+| PWA       | Angular Service Worker mit Hell-/Dunkel-Manifest          |
+| Testing   | Jasmine + Karma über den Angular-Test-Builder             |
+| Backend   | PHP-FPM (Kontaktformular), eigener Container              |
+| CI/CD     | GitHub Actions                                            |
+| Hosting   | Self-hosted auf Unraid über Cloudflare Tunnel und NPMplus |
+| Domain    | `portfolio.dev2ksoftware.com`                             |
 
-- Angular 21 (Standalone, Signals, Zoneless)
-- TypeScript 5.7
-- SCSS
-- Service Worker (PWA)
+## Sections
 
-**Testing & Quality**
+| Section  | Purpose                                     |
+| -------- | ------------------------------------------- |
+| Hero     | Name, Rolle, Kontakt-CTA                    |
+| About    | Kurzvorstellung, Dev2K Software, Tech-Stack |
+| Skills   | Technologie-Icons nach Kategorie            |
+| Projects | Projektkarten mit Live-Demo-Links           |
+| Contact  | Kontaktformular + Direkt-Mail               |
+| Legal    | Impressum, Datenschutz, Quellenangaben      |
 
-- Jasmine + Karma (823 tests)
-- 96.4% Code Coverage
-- ESLint & Prettier
+## Development
 
-**Backend**
-
-- PHP 8+ (Contact API)
-- Apache with .htaccess
-
-**DevOps**
-
-- GitHub Actions (CI/CD)
-- FTP Deployment to IONOS
-- JSDoc (API Documentation)
-
----
-
-## Project Structure
-
-```
-Portfolio/
-├── .github/
-│   └── workflows/                   # CI/CD workflows
-│       └── deploy.yml               # Build, test, and deploy pipeline
-├── public/
-│   ├── api/
-│   │   └── contact/                 # PHP Contact Form API
-│   │       ├── contact.php          # Production endpoint (not in Git)
-│   │       └── contact.example.php  # Template file
-│   ├── fonts/                       # Overpass, Syne
-│   ├── i18n/                        # Translation files (de.json, en.json)
-│   ├── theme-dark/                  # Dark theme PWA icons
-│   ├── theme-light/                 # Light theme PWA icons
-│   └── manifest-*.webmanifest       # PWA manifests
-├── src/
-│   ├── app/
-│   │   ├── core/                    # Core services & models
-│   │   │   ├── interceptors/        # HTTP interceptors
-│   │   │   ├── models/              # TypeScript interfaces
-│   │   │   ├── services/            # Business logic (8 services)
-│   │   ├── features/                # Feature modules
-│   │   │   ├── home/                # Home page sections
-│   │   │   │   ├── components/      # Hero, About, Skills, Projects, Contact
-│   │   │   │   └── pages/           # HomePage
-│   │   │   ├── legal/               # Legal pages
-│   │   │   │   └── pages/           # Imprint, Privacy, Sources
-│   │   │   ├── projects/            # Project components
-│   │   │   │   └── components/      # ProjectCard
-│   │   ├── layout/                  # App layout
-│   │   │   ├── header/              # Navigation, Theme/Lang switcher
-│   │   │   ├── footer/              # Footer, Social links
-│   │   ├── shared/                  # Reusable components
-│   │   │   ├── components/          # Buttons, UI components
-│   │   │   ├── directives/          # IconHover, NoScroll
-│   │   │   ├── pages/               # NotFoundPage (404)
-│   │   ├── app.ts                   # Root component
-│   │   ├── app.config.ts            # App configuration & providers
-│   │   ├── app.routes.ts            # Route definitions
-│   │   └── app.spec.ts              # Root component tests
-│   ├── assets/
-│   │   ├── images/                  # Profile, project screenshots
-│   │   └── screenshots/             # App previews
-│   ├── environments/                # Environment configs
-│   ├── styles/                      # Global SCSS
-│   │   ├── components/              # Component-specific styles
-│   │   ├── _fonts.scss
-│   │   ├── _layout.scss
-│   │   ├── _mixins.scss
-│   │   ├── _typography.scss
-│   │   └── _variables.scss
-│   ├── index.html                   # HTML entry point
-│   ├── main.ts                      # Application bootstrap
-│   └── styles.scss                  # Global styles entry
-├── angular.json                     # Angular workspace config
-├── ngsw-config.json                 # Service Worker config
-├── package.json                     # Dependencies & scripts
-├── tsconfig.json                    # TypeScript config
-├── typedoc.json                     # TypeDoc configuration
-├── docs/                            # Documentation
-│   ├── manual/                      # Handgeschriebene Doku (in Git)
-│   └── generated/                   # Generierter API-Output (gitignored)
-│       ├── typedoc/                 # TypeDoc-Output  (npm run docs:typedoc)
-│       └── jsdoc/                   # JSDoc-Output    (npm run docs:jsdoc)
-└── README.md                        # This file
+```bash
+cd portfolio
+npm ci
+npm start
 ```
 
----
+App läuft dann auf `http://localhost:4200`.
 
-## Deployment Structure
+## Checks
 
-After deployment to **portfolio.dev2k.org**, the following structure is created:
-
-```
-portfolio.dev2k.org/
-├── index.html                       # Portfolio App
-├── assets/                          # Images, fonts, i18n
-├── *.js, *.css                      # Compiled bundles
-├── .htaccess                        # Apache config (routing + security)
-├── coverage/ # Test Coverage Report
-│   └── index.html                   # https://portfolio.dev2k.org/coverage/index.html
-└── jsdoc/ # API Documentation
-    └── index.html                   # https://portfolio.dev2k.org/jsdoc/index.html
+```bash
+npm run test:ci        # Headless-Tests mit Coverage
+npm run build           # Produktions-Build
+npm run docs             # TypeDoc-API-Dokumentation
+npm run deploy:prepare  # Build + Tests + Doku nacheinander
 ```
 
-**Live URLs:**
+`npm run test:ci` erwartet Chromium unter `/usr/bin/chromium-browser`.
 
-- App: [portfolio.dev2k.org](https://portfolio.dev2k.org)
-- Coverage: [portfolio.dev2k.org/coverage](https://portfolio.dev2k.org/coverage/index.html)
-- API Docs: [portfolio.dev2k.org/jsdoc](https://portfolio.dev2k.org/jsdoc/index.html)
+## Git-Flow
 
----
+`main → staging → dev → feature/*`, GitHub-Ruleset auf allen drei Hauptbranches
+(PR-Pflicht, kein Force-Push). Dependency-Updates laufen über Renovate
+(`renovate.json`) — Patch/Pin/Digest automatisch, Minor/Major und `@angular/*`
+warten auf Freigabe.
 
-## Documentation
+## Deployment Target
 
-Project documentation is currently centralized in this README and the live reports:
+```text
+GitHub Actions (main / staging Push)
+  -> cloudflared access ssh (Cloudflare Access, Service Token)
+  -> Tunnel `unraid-tower`
+  -> sshd auf dem Tower-Host, erzwungenes rsync-Skript
+  -> /mnt/nvme/appdata/static-sites/www/portfolio(-staging)/
+  -> static-sites nginx-Container
+       -> statische Dateien direkt
+       -> /api/contact/contact.php per fastcgi_pass -> portfolio-php (PHP-FPM)
+```
 
-- [Coverage Report](https://portfolio.dev2k.org/coverage/index.html)
-- [API Docs](https://portfolio.dev2k.org/jsdoc/index.html)
+Volle Architektur-Doku: [`docs/manual/`](./docs/manual/) und
+`dev2k-wiki/projekte/portfolio-architektur.md`.
 
----
+## Developer
 
-## Author
-
-**Konstantin Aksenov**
-
-- Portfolio: [portfolio.dev2k.org](https://portfolio.dev2k.org)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/konstantin-aksenov-802b88190/)
-- GitHub: [@KosMaster87](https://github.com/KosMaster87)
-- Email: konstantin.aksenov@dev2k.org
-
----
+Konstantin Aksenov
+Dev2K Software
