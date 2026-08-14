@@ -44,8 +44,8 @@ describe('SkillsSectionComponent', () => {
   });
 
   describe('skills array', () => {
-    it('should have 24 skills', () => {
-      expect(component['skills'].length).toBe(24);
+    it('should have 27 skills', () => {
+      expect(component['skills'].length).toBe(27);
     });
 
     it('should contain Angular skill', () => {
@@ -121,6 +121,24 @@ describe('SkillsSectionComponent', () => {
       const nginx = component['skills'].find((s) => s.name === 'nginx');
       expect(nginx).toBeDefined();
       expect(nginx!.icon).toBe('icon-nginx.svg');
+    });
+
+    it('should contain Claude skill', () => {
+      const claude = component['skills'].find((s) => s.name === 'Claude');
+      expect(claude).toBeDefined();
+      expect(claude!.icon).toBe('icon-claude.svg');
+    });
+
+    it('should contain OpenAI Codex skill', () => {
+      const openai = component['skills'].find((s) => s.name === 'OpenAI Codex');
+      expect(openai).toBeDefined();
+      expect(openai!.icon).toBe('icon-openai.svg');
+    });
+
+    it('should contain GitLab skill', () => {
+      const gitlab = component['skills'].find((s) => s.name === 'GitLab');
+      expect(gitlab).toBeDefined();
+      expect(gitlab!.icon).toBe('icon-gitlab.svg');
     });
 
     it('should have all required properties for each skill', () => {
