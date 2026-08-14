@@ -43,5 +43,11 @@ export class SkillsSectionComponent {
     { name: 'PHP', icon: 'icon-php.svg', cssClass: 'php' },
     { name: 'Scrum', icon: 'icon-scrum.svg', cssClass: 'scrum' },
     { name: 'WordPress', icon: 'icon-wp.svg', cssClass: 'wordPress' },
+    { name: 'Unraid', icon: 'icon-unraid.svg', cssClass: 'unraid' },
+    { name: 'n8n', icon: 'icon-n8n.svg', cssClass: 'n8n' },
+    { name: 'Ollama', icon: 'icon-ollama.svg', cssClass: 'ollama' },
+    { name: 'Cloudflare', icon: 'icon-cloudflare.svg', cssClass: 'cloudflare' },
+    { name: 'GitHub Actions', icon: 'icon-github-actions.svg', cssClass: 'githubActions' },
+    { name: 'nginx', icon: 'icon-nginx.svg', cssClass: 'nginx' },
   ];
 }
