@@ -49,7 +49,6 @@ export class ImprintPageComponent implements OnInit {
       company: t.instant('IMPRINT.company'),
       soleProprietor: t.instant('IMPRINT.soleProprietor'),
       name: t.instant('IMPRINT.name'),
-      ruc: t.instant('IMPRINT.ruc'),
       city: t.instant('IMPRINT.city'),
       emailValue: t.instant('IMPRINT.emailValue'),
       websiteValue: t.instant('IMPRINT.websiteValue'),
