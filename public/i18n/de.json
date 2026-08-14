@@ -17,8 +17,8 @@
   },
   "ABOUT": {
     "heading": "Über mich",
-    "paragraph1": "Hallo, ich bin Konstantin - Meine Leidenschaft gilt der Entwicklung skalierbarer Webanwendungen, von der Benutzeroberfläche bis zur Server-Infrastruktur.",
-    "paragraph2": "Mit Expertise in JavaScript, Angular und Node.js baue ich nicht nur ansprechende Frontends, sondern auch robuste Backend-Systeme und DevOps-Lösungen.",
+    "paragraph1": "Hallo, ich bin Konstantin. Mit Dev2K Software betreibe ich mein eigenes kleines Unternehmen für Webentwicklung.",
+    "paragraph2": "Ich arbeite mit Angular, TypeScript und Node.js und betreibe daneben einen eigenen Homelab-Server, auf dem GitLab, n8n und mehrere selbstgehostete KI-Werkzeuge laufen.",
     "ctaButton": "Lass uns reden"
   },
   "SKILLS": {
