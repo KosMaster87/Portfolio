@@ -1,5 +1,5 @@
 /**
- * @fileoverview AnalyticsService — selfhosted Umami script injection
+ * @fileoverview AnalyticsService - selfhosted Umami script injection
  * @description Injects the Umami tracking script into <head> at app startup, mirroring how
  * SeoService manages meta tags. Cookie-less by design (Umami default config), so this needs
  * no consent banner.
@@ -14,7 +14,7 @@ import { ANALYTICS } from '@core/constants/analytics';
 export class AnalyticsService {
   /**
    * Injects the Umami script tag once, on app startup.
-   * No-ops when `ANALYTICS.umamiWebsiteId` is empty — see analytics.ts for why.
+   * No-ops when `ANALYTICS.umamiWebsiteId` is empty - see analytics.ts for why.
    */
   init(): void {
     if (!ANALYTICS.umamiWebsiteId) {
