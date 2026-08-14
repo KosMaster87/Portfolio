@@ -309,7 +309,7 @@ describe('HeaderComponent', () => {
       const logoText = fixture.nativeElement.querySelector('.header__logo-text');
 
       expect(logoText).toBeTruthy();
-      expect(logoText.textContent.trim()).toBe('dev2k');
+      expect(logoText.textContent.trim()).toBe('Developer2K');
     });
 
     it('should render language switcher', () => {
