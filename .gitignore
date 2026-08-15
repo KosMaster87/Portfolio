@@ -1,5 +1,6 @@
 # Dependencies
 node_modules/
+.pnpm-store/
 
 # Angular environment files with secrets (if any)
 # src/environments/environment.local.ts

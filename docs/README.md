@@ -12,8 +12,8 @@
 docs/
 ├── manual/          ← Handwritten Markdown docs (always in Git)
 ├── generated/       ← Tool output (in .gitignore, never edit manually)
-│   ├── typedoc/     ← TypeDoc output  (npm run docs:typedoc)
-│   └── jsdoc/       ← JSDoc output    (npm run docs:jsdoc)
+│   ├── typedoc/     ← TypeDoc output  (pnpm run docs:typedoc)
+│   └── jsdoc/       ← JSDoc output    (pnpm run docs:jsdoc)
 └── README.md        ← This file
 ```
 
@@ -32,8 +32,8 @@ docs/
 ## Commands
 
 ```bash
-npm run docs        # Generate TypeDoc API docs → docs/generated/typedoc/
-npm run docs:serve  # View TypeDoc locally (http://localhost:8081)
+pnpm run docs        # Generate TypeDoc API docs → docs/generated/typedoc/
+pnpm run docs:serve  # View TypeDoc locally (http://localhost:8081)
 ```
 
 ---

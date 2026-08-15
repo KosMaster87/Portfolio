@@ -42,8 +42,8 @@ Primary domain: `https://portfolio.dev2ksoftware.com`
 
 ```bash
 cd portfolio
-npm ci
-npm start
+pnpm install
+pnpm start
 ```
 
 The app then runs on `http://localhost:4200`.
@@ -51,13 +51,13 @@ The app then runs on `http://localhost:4200`.
 ## Checks
 
 ```bash
-npm run test:ci        # Headless tests with coverage
-npm run build           # Production build
-npm run docs             # TypeDoc API documentation
-npm run deploy:prepare  # Build + tests + docs in sequence
+pnpm run test:ci        # Headless tests with coverage
+pnpm run build           # Production build
+pnpm run docs             # TypeDoc API documentation
+pnpm run deploy:prepare  # Build + tests + docs in sequence
 ```
 
-`npm run test:ci` expects Chromium at `/usr/bin/chromium-browser`.
+`pnpm run test:ci` expects Chromium at `/usr/bin/chromium-browser`.
 
 ## Git-Flow
 
