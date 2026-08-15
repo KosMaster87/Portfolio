@@ -9,25 +9,16 @@
     "test": "ng test",
     "test:ci": "CHROME_BIN=/usr/bin/chromium-browser ng test --no-watch --code-coverage --browsers=ChromeHeadless",
     "docs": "typedoc",
-    "docs:serve": "npm run docs && npx http-server docs/generated/typedoc -p 8081",
+    "docs:serve": "pnpm run docs && npx http-server docs/generated/typedoc -p 8081",
     "format": "prettier --write \"src/**/*.{ts,html,scss,json}\"",
     "format:check": "prettier --check \"src/**/*.{ts,html,scss,json}\"",
     "lint": "eslint .",
-    "deploy:prepare": "npm run build && npm run test:ci && npm run docs"
-  },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "overrides": [
-      {
-        "files": "*.html",
-        "options": {
-          "parser": "angular"
-        }
-      }
-    ]
+    "deploy:prepare": "pnpm run build && pnpm run test:ci && pnpm run docs"
   },
   "private": true,
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
+  },
   "dependencies": {
     "@angular/common": "^21.2.5",
     "@angular/compiler": "^21.2.5",
@@ -61,5 +52,6 @@
     "typedoc-plugin-missing-exports": "^4.1.2",
     "typescript": "~5.9.2",
     "typescript-eslint": "^8.67.0"
-  }
+  },
+  "packageManager": "pnpm@11.21.0+sha512.521705bce689924eac72f5a3587122f362689ef6571e55ba80076fd637c11132ecffada26fad4ea79c485bfddbfd3d5a2a5b05805a77e893de71ec8a6cca3bb1"
 }
