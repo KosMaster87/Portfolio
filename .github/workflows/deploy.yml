@@ -27,7 +27,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Run Tests with Coverage
-        run: pnpm test -- --no-watch --code-coverage --browsers=ChromeHeadless
+        run: pnpm test --no-watch --code-coverage --browsers=ChromeHeadless
 
       - name: Generate Coverage Badge
         run: |
@@ -40,7 +40,7 @@ jobs:
         continue-on-error: true
 
       - name: Build Production
-        run: pnpm run build -- --configuration production
+        run: pnpm run build --configuration production
 
       - name: Prepare Deployment Structure
         run: |
