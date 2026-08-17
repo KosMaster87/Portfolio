@@ -26,7 +26,7 @@ export class SourcesPageComponent implements OnInit {
       keywords: 'sources, attributions, credits, icons, graphics, licenses',
       ogTitle: 'Sources & Attributions',
       ogDescription: 'Credits for visual resources used on this website',
-      ogUrl: 'https://portfolio.dev2k.org/sources',
+      ogUrl: 'https://portfolio.dev2ksoftware.com/sources',
     });
 
     this.scrollService.triggerPageFlash();

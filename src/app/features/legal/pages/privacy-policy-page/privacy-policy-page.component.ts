@@ -26,7 +26,7 @@ export class PrivacyPolicyPageComponent implements OnInit {
       keywords: 'privacy policy, data protection, GDPR, cookies, data security',
       ogTitle: 'Privacy Policy - Konstantin Aksenov',
       ogDescription: 'Privacy policy and data protection information',
-      ogUrl: 'https://portfolio.dev2k.org/privacy-policy',
+      ogUrl: 'https://portfolio.dev2ksoftware.com/privacy-policy',
     });
 
     this.scrollService.triggerPageFlash();

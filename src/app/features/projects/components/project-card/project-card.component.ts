@@ -100,7 +100,7 @@ export class ProjectCardComponent implements AfterViewInit, OnDestroy {
    * @returns Button label text
    */
   protected getGithubLabel(index: number): string {
-    const labels = ['Frontend', 'Backend', 'GitHub'];
-    return labels[index] || `GitHub ${index + 1}`;
+    const githubLabel = this.translationService.instant('PROJECTS.githubButton');
+    return index === 0 ? githubLabel : `${githubLabel} ${index + 1}`;
   }
 }
