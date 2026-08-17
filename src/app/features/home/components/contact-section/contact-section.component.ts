@@ -10,7 +10,8 @@ import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { SmoothScrollService, ThemeService, TranslationService } from '@core/services';
-import { NotificationComponent, SubmitButtonComponent } from '@shared/components';
+import { SubmitButtonComponent } from '@shared/components';
+import { NotificationComponent } from '@ui/public-api';
 import { environment } from '../../../../../environments/environment';
 
 /**

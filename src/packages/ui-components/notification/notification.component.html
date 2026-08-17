@@ -1,0 +1,40 @@
+<div
+  class="dev2k-notification"
+  [class.dev2k-notification--show]="show()"
+  [class.dev2k-notification--success]="type() === 'success'"
+  [class.dev2k-notification--error]="type() === 'error'"
+>
+  <div class="dev2k-notification__content">
+    <span class="dev2k-notification__message">{{ message() }}</span>
+
+    @if (actionText()) {
+      <button
+        type="button"
+        class="dev2k-notification__action"
+        (click)="onAction()"
+        [attr.tabindex]="show() ? '0' : '-1'"
+      >
+        {{ actionText() }}
+      </button>
+    }
+  </div>
+
+  <button
+    type="button"
+    class="dev2k-notification__close"
+    (click)="onClose()"
+    aria-label="Close notification"
+    [attr.tabindex]="show() ? '0' : '-1'"
+  >
+    &times;
+  </button>
+
+  @if (!persist()) {
+    <div
+      class="dev2k-notification__progress-bar"
+      [class.dev2k-notification__progress-bar--success]="type() === 'success'"
+      [class.dev2k-notification__progress-bar--error]="type() === 'error'"
+      [style.animation-duration.ms]="duration()"
+    ></div>
+  }
+</div>
