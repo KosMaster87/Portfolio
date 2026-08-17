@@ -78,6 +78,12 @@
     "privacy": "Privacy",
     "sources": "Sources"
   },
+  "THEME": {
+    "toggle": "Switch theme",
+    "light": "Light",
+    "dark": "Dark",
+    "auto": "Auto"
+  },
   "FOOTER": {
     "brandDescription": "Building modern web applications with passion for clean code and great user experiences.",
     "navigationHeading": "Navigation",

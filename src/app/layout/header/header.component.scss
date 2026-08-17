@@ -1,3 +1,4 @@
+@use 'scss-library/abstracts/mixins-utilities' as utils;
 @use '../../../styles/mixins' as *;
 @use '../../../styles/components/buttons/btn-hamburger' as *;
 @use '../../../styles/components/buttons/btn-menu-primary' as *;
@@ -60,10 +61,7 @@
       color: var(--color-primary);
     }
 
-    &:focus-visible {
-      outline: 2px solid var(--color-primary);
-      outline-offset: 2px;
-    }
+    @include utils.focus-visible;
   }
 
   &__logo-icon {
@@ -131,7 +129,7 @@
     -webkit-user-select: none;
     border-radius: var(--radius-sm);
 
-    @include focus-visible;
+    @include utils.focus-visible;
     -webkit-user-drag: none;
     background: none;
     border: none;
@@ -180,41 +178,35 @@
     }
   }
 
-  &__menu-toggle {
-    display: none;
-  }
-
   &__burger {
     @include btn-hamburger;
     position: relative;
     z-index: 1;
 
-    @include focus-visible;
+    @include utils.focus-visible;
   }
 
   &__burger-line {
     @include btn-hamburger-line;
   }
 
-  &__menu-toggle:checked {
-    ~ .header__burger {
-      .header__burger-line {
-        &:nth-child(1) {
-          transform: translateY(var(--btn-hamburger-offset)) rotate(45deg);
-        }
+  &__hamburger--open {
+    .header__burger-line {
+      &:nth-child(1) {
+        transform: translateY(var(--btn-hamburger-offset)) rotate(45deg);
+      }
 
-        &:nth-child(2) {
-          opacity: 0;
-          transform: translateX(-10px) scale(0.8);
-        }
+      &:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-10px) scale(0.8);
+      }
 
-        &:nth-child(3) {
-          transform: translateY(calc(var(--btn-hamburger-offset) * -1)) rotate(-45deg);
-        }
+      &:nth-child(3) {
+        transform: translateY(calc(var(--btn-hamburger-offset) * -1)) rotate(-45deg);
       }
     }
 
-    ~ .header__menu {
+    .header__menu {
       opacity: 1;
       transform: scale(1);
       visibility: visible;
@@ -291,7 +283,7 @@
     border: none;
     width: 100%;
 
-    @include focus-visible;
+    @include utils.focus-visible;
 
     * {
       pointer-events: none;
@@ -310,7 +302,7 @@
       border: none;
       width: 100%;
 
-      @include focus-visible;
+      @include utils.focus-visible;
 
       * {
         pointer-events: none;

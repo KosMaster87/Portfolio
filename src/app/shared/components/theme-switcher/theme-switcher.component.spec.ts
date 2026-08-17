@@ -1,20 +1,26 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ThemeSwitcherComponent } from './theme-switcher.component';
-import { ThemeService } from '../../../core/services';
+import { ThemeService, TranslationService } from '../../../core/services';
 
 describe('ThemeSwitcherComponent', () => {
   let component: ThemeSwitcherComponent;
   let fixture: ComponentFixture<ThemeSwitcherComponent>;
   let themeServiceSpy: jasmine.SpyObj<ThemeService>;
+  let translationServiceSpy: jasmine.SpyObj<TranslationService>;
 
   beforeEach(() => {
     themeServiceSpy = jasmine.createSpyObj('ThemeService', ['setTheme'], {
       currentTheme: jasmine.createSpy('currentTheme').and.returnValue('light'),
     });
+    translationServiceSpy = jasmine.createSpyObj('TranslationService', ['instant']);
+    translationServiceSpy.instant.and.callFake((key: string) => key);
 
     TestBed.configureTestingModule({
       imports: [ThemeSwitcherComponent],
-      providers: [{ provide: ThemeService, useValue: themeServiceSpy }],
+      providers: [
+        { provide: ThemeService, useValue: themeServiceSpy },
+        { provide: TranslationService, useValue: translationServiceSpy },
+      ],
     });
 
     fixture = TestBed.createComponent(ThemeSwitcherComponent);
@@ -283,7 +289,7 @@ describe('ThemeSwitcherComponent', () => {
 
       const img = fixture.nativeElement.querySelector('.theme-switcher__toggle img');
 
-      expect(img.alt).toBe('Light mode');
+      expect(img.alt).toBe('');
       expect(img.src).toContain('light-mode.svg');
     });
 
@@ -295,7 +301,10 @@ describe('ThemeSwitcherComponent', () => {
       TestBed.resetTestingModule();
       TestBed.configureTestingModule({
         imports: [ThemeSwitcherComponent],
-        providers: [{ provide: ThemeService, useValue: darkThemeService }],
+        providers: [
+          { provide: ThemeService, useValue: darkThemeService },
+          { provide: TranslationService, useValue: translationServiceSpy },
+        ],
       });
 
       const darkFixture = TestBed.createComponent(ThemeSwitcherComponent);
@@ -303,7 +312,7 @@ describe('ThemeSwitcherComponent', () => {
 
       const img = darkFixture.nativeElement.querySelector('.theme-switcher__toggle img');
 
-      expect(img.alt).toBe('Dark mode');
+      expect(img.alt).toBe('');
       expect(img.src).toContain('dark-mode.svg');
     });
 
@@ -315,7 +324,10 @@ describe('ThemeSwitcherComponent', () => {
       TestBed.resetTestingModule();
       TestBed.configureTestingModule({
         imports: [ThemeSwitcherComponent],
-        providers: [{ provide: ThemeService, useValue: autoThemeService }],
+        providers: [
+          { provide: ThemeService, useValue: autoThemeService },
+          { provide: TranslationService, useValue: translationServiceSpy },
+        ],
       });
 
       const autoFixture = TestBed.createComponent(ThemeSwitcherComponent);
@@ -323,7 +335,7 @@ describe('ThemeSwitcherComponent', () => {
 
       const img = autoFixture.nativeElement.querySelector('.theme-switcher__toggle img');
 
-      expect(img.alt).toBe('Auto mode');
+      expect(img.alt).toBe('');
       expect(img.src).toContain('computer.svg');
     });
 

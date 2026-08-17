@@ -1,17 +1,23 @@
-<div class="theme-switcher" (focusout)="onFocusOut($event)">
+<!-- eslint-disable-next-line @angular-eslint/template/interactive-supports-focus -->
+<div
+  class="theme-switcher"
+  (focusout)="onFocusOut($event)"
+  (keydown.escape)="closeDropdownAndRefocusToggle()"
+>
   <button
+    #toggleBtn
     class="theme-switcher__toggle"
     (click)="toggleDropdown()"
     [attr.aria-expanded]="isDropdownOpen()"
-    aria-label="Theme selector"
-    title="Switch theme"
+    [attr.aria-label]="translate('THEME.toggle')"
+    [attr.title]="translate('THEME.toggle')"
   >
     @if (currentTheme() === 'light') {
-      <img src="assets/images/theme/light-mode.svg" alt="Light mode" width="20" height="20" />
+      <img src="assets/images/theme/light-mode.svg" alt="" width="20" height="20" />
     } @else if (currentTheme() === 'dark') {
-      <img src="assets/images/theme/dark-mode.svg" alt="Dark mode" width="20" height="20" />
+      <img src="assets/images/theme/dark-mode.svg" alt="" width="20" height="20" />
     } @else {
-      <img src="assets/images/theme/computer.svg" alt="Auto mode" width="20" height="20" />
+      <img src="assets/images/theme/computer.svg" alt="" width="20" height="20" />
     }
   </button>
 
@@ -23,7 +29,7 @@
         (click)="switchTheme('light')"
       >
         <img src="assets/images/theme/light-mode.svg" alt="" width="16" height="16" />
-        <span>Light</span>
+        <span>{{ translate('THEME.light') }}</span>
       </button>
       <button
         class="theme-switcher__option"
@@ -31,7 +37,7 @@
         (click)="switchTheme('dark')"
       >
         <img src="assets/images/theme/dark-mode.svg" alt="" width="16" height="16" />
-        <span>Dark</span>
+        <span>{{ translate('THEME.dark') }}</span>
       </button>
       <button
         class="theme-switcher__option"
@@ -39,7 +45,7 @@
         (click)="switchTheme('auto')"
       >
         <img src="assets/images/theme/computer.svg" alt="" width="16" height="16" />
-        <span>Auto</span>
+        <span>{{ translate('THEME.auto') }}</span>
       </button>
     </div>
   }

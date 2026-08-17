@@ -1,3 +1,4 @@
+@use 'scss-library/abstracts/mixins-utilities' as utils;
 @use '../../../../styles/mixins' as *;
 
 :host {
@@ -28,10 +29,7 @@
       border-color: var(--color-primary);
     }
 
-    &:focus-visible {
-      outline: 2px solid var(--color-primary);
-      outline-offset: 2px;
-    }
+    @include utils.focus-visible;
   }
 
   &__flag {
@@ -59,18 +57,8 @@
     right: 0;
     top: calc(100% + var(--space-2));
     z-index: 100;
-    animation: fadeIn 200ms ease-out;
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-8px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    @include utils.dropdown-fade-in;
   }
 
   &__option {
@@ -104,10 +92,7 @@
       color: var(--color-primary);
     }
 
-    &:focus-visible {
-      outline: 2px solid var(--color-primary);
-      outline-offset: 2px;
-    }
+    @include utils.focus-visible;
   }
 
   &__option-flag {

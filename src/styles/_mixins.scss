@@ -146,13 +146,8 @@
   transition-timing-function: var(--ease-in-out);
 }
 
-@mixin focus-ring($color: var(--color-primary)) {
-  outline: 2px solid $color;
-  outline-offset: 2px;
-}
-
-@mixin focus-visible {
-  &:focus-visible {
-    @include focus-ring;
-  }
-}
+// focus-ring/focus-visible removed - use scss-library's version instead
+// (`@use 'scss-library/abstracts/mixins-utilities' as utils;` + `@include utils.focus-visible;`).
+// It was a near-byte-identical duplicate; `--primary-color: var(--color-primary);` in
+// _variables.scss bridges the token name so the shared mixin resolves to this project's own
+// brand color without needing a project-specific override.

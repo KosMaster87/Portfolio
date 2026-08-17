@@ -78,6 +78,12 @@
     "privacy": "Datenschutz",
     "sources": "Quellenangaben"
   },
+  "THEME": {
+    "toggle": "Theme wechseln",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "auto": "Automatisch"
+  },
   "FOOTER": {
     "brandDescription": "Entwicklung moderner Webanwendungen mit Leidenschaft für Clean Code und großartige User Experience.",
     "navigationHeading": "Navigation",

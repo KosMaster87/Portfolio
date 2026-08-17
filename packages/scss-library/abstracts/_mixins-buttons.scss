@@ -10,6 +10,13 @@
 
 /**
  * Reset all browser button styles
+ *
+ * Removes the outline only for pointer-triggered focus (`:focus:not(:focus-visible)`) and
+ * replaces it with a real, branded ring for keyboard focus (`:focus-visible`) - never a bare
+ * `:focus { outline: none; }` with nothing to replace it. Every component built on this
+ * mixin (via button-base or directly) gets working Tab-visible focus for free; see
+ * ../README.md "Accessibility: reset-button and focus-visible" for the incident that made
+ * this the default instead of opt-in.
  */
 @mixin reset-button {
   background: none;
@@ -20,8 +27,13 @@
   color: inherit;
   cursor: pointer;
 
-  &:focus {
+  &:focus:not(:focus-visible) {
     outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
   }
 }
 
@@ -48,7 +60,7 @@
   min-height: var(--button-min-height);
   padding: var(--space-3) var(--space-6);
   // Border reserved (even when transparent) so a variant that adds a visible
-  // border never ends up a different box size than one that doesn't — both
+  // border never ends up a different box size than one that doesn't - both
   // already pay for the same 2px, box-sizing: border-box just hides it.
   border: var(--border-2) solid transparent;
   border-radius: var(--button-radius);
@@ -195,4 +207,110 @@
  */
 @mixin button-full {
   width: 100%;
+}
+
+/* ============================================================================
+   HAMBURGER MENU BUTTON
+   ========================================================================== */
+
+/**
+ * Animated hamburger button - three lines that morph into an X via `--open`. Ported from
+ * Portfolio's original implementation (src/styles/components/buttons/_btn-hamburger.scss),
+ * responsive scale (three breakpoints) kept so both projects render identically.
+ * Themeable via the CSS custom properties below - override any of them per project before
+ * including the mixin, the defaults already pull from this library's own tokens.
+ *
+ * Usage:
+ *   <button class="hamburger" [class.hamburger--open]="isOpen()">
+ *     <span class="hamburger__line"></span>
+ *     <span class="hamburger__line"></span>
+ *     <span class="hamburger__line"></span>
+ *   </button>
+ *
+ *   .hamburger { @include btn.hamburger; }
+ *   .hamburger__line { @include btn.hamburger-line; }
+ */
+:root {
+  --hamburger-size: 32px;
+  --hamburger-padding: 4px;
+  --hamburger-line-height: 2.5px;
+  --hamburger-line-width: 100%;
+  --hamburger-line-radius: 2px;
+  --hamburger-gap: 5px;
+  --hamburger-offset: 7.5px;
+  --hamburger-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --hamburger-line-color: var(--text-primary);
+  --hamburger-bg: transparent;
+}
+
+@media screen and (min-width: 720px) {
+  :root {
+    --hamburger-size: 36px;
+    --hamburger-padding: 5px;
+    --hamburger-line-height: 3px;
+    --hamburger-gap: 6px;
+    --hamburger-offset: 9px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --hamburger-size: 40px;
+    --hamburger-padding: 6px;
+    --hamburger-line-height: 3px;
+    --hamburger-gap: 7px;
+    --hamburger-offset: 10px;
+  }
+}
+
+@mixin hamburger {
+  width: var(--hamburger-size);
+  height: var(--hamburger-size);
+  padding: var(--hamburger-padding);
+  background: var(--hamburger-bg);
+  border: none;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--hamburger-gap);
+  transition: background-color var(--hamburger-transition);
+
+  span {
+    display: block;
+    width: var(--hamburger-line-width);
+    height: var(--hamburger-line-height);
+    background-color: var(--hamburger-line-color);
+    border-radius: var(--hamburger-line-radius);
+    transition: transform var(--hamburger-transition);
+  }
+
+  &--open {
+    span:nth-child(1) {
+      transform: translateY(var(--hamburger-offset)) rotate(45deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    span:nth-child(3) {
+      transform: translateY(calc(-1 * var(--hamburger-offset))) rotate(-45deg);
+    }
+  }
+}
+
+/**
+ * Standalone line style, for when the three `span`s need styling outside the `hamburger`
+ * mixin's own `span` selector (e.g. a BEM-named `&__line` element).
+ */
+@mixin hamburger-line {
+  display: block;
+  width: var(--hamburger-line-width);
+  height: var(--hamburger-line-height);
+  background-color: var(--hamburger-line-color);
+  border-radius: var(--hamburger-line-radius);
+  transition: transform var(--hamburger-transition);
 }
