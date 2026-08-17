@@ -35,7 +35,7 @@ describe('ProjectCardComponent', () => {
         alt: 'Join Project',
       },
       links: {
-        live: 'https://join.dev2k.org',
+        live: 'https://join.dev2ksoftware.com',
         github: 'https://github.com/user/join',
       },
       category: 'Web Development',
@@ -342,19 +342,18 @@ describe('ProjectCardComponent', () => {
   });
 
   describe('getGithubLabel()', () => {
-    it('should return Frontend for index 0', () => {
-      expect(component['getGithubLabel'](0)).toBe('Frontend');
+    beforeEach(() => {
+      translationServiceSpy.instant.and.returnValue('GitHub');
     });
 
-    it('should return Backend for index 1', () => {
-      expect(component['getGithubLabel'](1)).toBe('Backend');
+    it('should return the translated GitHub label for index 0', () => {
+      expect(component['getGithubLabel'](0)).toBe('GitHub');
+      expect(translationServiceSpy.instant).toHaveBeenCalledWith('PROJECTS.githubButton');
     });
 
-    it('should return GitHub for index 2', () => {
-      expect(component['getGithubLabel'](2)).toBe('GitHub');
-    });
-
-    it('should return generic label for higher indices', () => {
+    it('should return a numbered GitHub label for higher indices', () => {
+      expect(component['getGithubLabel'](1)).toBe('GitHub 2');
+      expect(component['getGithubLabel'](2)).toBe('GitHub 3');
       expect(component['getGithubLabel'](3)).toBe('GitHub 4');
       expect(component['getGithubLabel'](4)).toBe('GitHub 5');
     });

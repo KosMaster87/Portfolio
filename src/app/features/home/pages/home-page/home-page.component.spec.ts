@@ -40,8 +40,8 @@ describe('HomePageComponent', () => {
           'Software Developer, Angular Developer, TypeScript, Web Development, Portfolio, Konstantin Aksenov',
         ogTitle: 'Konstantin Aksenov - Software Developer',
         ogDescription: 'Professional portfolio showcasing modern web development projects',
-        ogImage: 'https://portfolio.dev2k.org/assets/screenshots/desktop-home.png',
-        ogUrl: 'https://portfolio.dev2k.org',
+        ogImage: 'https://portfolio.dev2ksoftware.com/assets/screenshots/desktop-home.png',
+        ogUrl: 'https://portfolio.dev2ksoftware.com',
       });
     });
 

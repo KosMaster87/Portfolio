@@ -14,8 +14,8 @@
   "readme": "README.md",
   "name": "Portfolio - API Documentation",
   "navigationLinks": {
-    "Live Demo": "https://portfolio.dev2k.org",
-    "Coverage": "https://portfolio.dev2k.org/coverage",
+    "Live Demo": "https://portfolio.dev2ksoftware.com",
+    "Coverage": "https://portfolio.dev2ksoftware.com/coverage",
     "GitHub": "https://github.com/KosMaster87/Portfolio"
   },
   "plugin": ["typedoc-plugin-missing-exports"],

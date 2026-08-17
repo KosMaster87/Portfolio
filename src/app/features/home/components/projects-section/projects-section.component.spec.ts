@@ -23,7 +23,7 @@ describe('ProjectsSectionComponent', () => {
         description: 'Task management application',
         technologies: ['Angular', 'TypeScript', 'Firebase'],
         image: { src: '/assets/images/projects/Join.avif', alt: 'Join' },
-        links: { github: 'https://github.com/user/join', live: 'https://join.dev2k.org' },
+        links: { github: 'https://github.com/user/join', live: 'https://join.dev2ksoftware.com' },
         category: 'Web Development',
         isFeatured: true,
       },
