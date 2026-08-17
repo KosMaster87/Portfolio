@@ -5,8 +5,8 @@
  */
 
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, inject, signal } from '@angular/core';
-import { ThemeService } from '../../../core/services';
+import { Component, ElementRef, HostListener, inject, signal, viewChild } from '@angular/core';
+import { ThemeService, TranslationService } from '../../../core/services';
 
 @Component({
   selector: 'app-theme-switcher',
@@ -16,8 +16,18 @@ import { ThemeService } from '../../../core/services';
 })
 export class ThemeSwitcherComponent {
   private themeService = inject(ThemeService);
+  private translationService = inject(TranslationService);
+  private readonly toggleBtn = viewChild.required<ElementRef<HTMLButtonElement>>('toggleBtn');
   isDropdownOpen = signal(false);
   currentTheme = () => this.themeService.currentTheme();
+
+  /**
+   * Returns the translated string for the given dot-notation key.
+   * @param key - Dot-notation translation key (e.g. 'THEME.light')
+   */
+  translate(key: string): string {
+    return this.translationService.instant(key);
+  }
 
   /**
    * Toggle dropdown visibility
@@ -31,6 +41,16 @@ export class ThemeSwitcherComponent {
    */
   closeDropdown(): void {
     this.isDropdownOpen.set(false);
+  }
+
+  /**
+   * Closes the dropdown on Escape and returns focus to the toggle button - without this,
+   * focus would be left on a now-hidden (and therefore untabbable) option, silently dropping
+   * the user's keyboard focus back to the very start of the page.
+   */
+  closeDropdownAndRefocusToggle(): void {
+    this.closeDropdown();
+    this.toggleBtn().nativeElement.focus();
   }
 
   /**

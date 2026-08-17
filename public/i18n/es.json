@@ -78,6 +78,12 @@
     "privacy": "Privacidad",
     "sources": "Fuentes"
   },
+  "THEME": {
+    "toggle": "Cambiar tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "auto": "Automático"
+  },
   "FOOTER": {
     "brandDescription": "Desarrollo de aplicaciones web modernas con pasión por el código limpio y una gran experiencia de usuario.",
     "navigationHeading": "Navegación",

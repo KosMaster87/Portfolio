@@ -1,5 +1,11 @@
-<div class="language-switcher" (focusout)="onFocusOut($event)">
+<!-- eslint-disable-next-line @angular-eslint/template/interactive-supports-focus -->
+<div
+  class="language-switcher"
+  (focusout)="onFocusOut($event)"
+  (keydown.escape)="closeDropdownAndRefocusToggle()"
+>
   <button
+    #toggleBtn
     class="language-switcher__toggle"
     (click)="toggleDropdown()"
     [attr.aria-expanded]="isDropdownOpen()"

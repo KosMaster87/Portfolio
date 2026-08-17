@@ -5,7 +5,7 @@
  */
 
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, inject, signal } from '@angular/core';
+import { Component, ElementRef, HostListener, inject, signal, viewChild } from '@angular/core';
 import { Language, TranslationService } from '../../../core/services';
 
 @Component({
@@ -16,6 +16,7 @@ import { Language, TranslationService } from '../../../core/services';
 })
 export class LanguageSwitcherComponent {
   private translationService = inject(TranslationService);
+  private readonly toggleBtn = viewChild.required<ElementRef<HTMLButtonElement>>('toggleBtn');
   isDropdownOpen = signal(false);
 
   currentLanguage = () => this.translationService.currentLang();
@@ -49,6 +50,16 @@ export class LanguageSwitcherComponent {
    */
   closeDropdown(): void {
     this.isDropdownOpen.set(false);
+  }
+
+  /**
+   * Closes the dropdown on Escape and returns focus to the toggle button - without this,
+   * focus would be left on a now-hidden (and therefore untabbable) option, silently dropping
+   * the user's keyboard focus back to the very start of the page.
+   */
+  closeDropdownAndRefocusToggle(): void {
+    this.closeDropdown();
+    this.toggleBtn().nativeElement.focus();
   }
 
   /**
