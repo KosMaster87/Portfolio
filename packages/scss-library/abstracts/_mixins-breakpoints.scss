@@ -1,0 +1,133 @@
+/**
+ * @fileoverview Responsive Breakpoints Mixins
+ * @description Reusable responsive breakpoint mixins for different device sizes
+ * @module mixins-breakpoints
+ */
+
+/* ============================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/**
+ * Mobile Portrait (default) - 320px+
+ * Base mobile styles, no media query needed
+ *
+ * @example
+ * .element {
+ *   @include mobile-portrait {
+ *     font-size: 14px;
+ *   }
+ * }
+ */
+@mixin mobile-portrait {
+  @content;
+}
+
+/**
+ * Mobile Landscape - 568px+
+ * Foldable/Compact phones in landscape orientation
+ */
+@mixin mobile-landscape {
+  @media screen and (min-width: 568px) {
+    @content;
+  }
+}
+
+/**
+ * Tablet - 768px+
+ * Tablets in portrait orientation
+ */
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+/**
+ * Tablet Landscape - 1024px+
+ * Tablets in landscape orientation
+ */
+@mixin tablet-landscape {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+/**
+ * Laptop - 1280px+
+ * Small laptops and desktops
+ */
+@mixin laptop {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+/**
+ * Desktop - 1440px+
+ * Standard desktop screens
+ */
+@mixin desktop {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+/**
+ * Large Desktop - 1920px+
+ * Large desktop screens and monitors
+ */
+@mixin desktop-large {
+  @media screen and (min-width: 1920px) {
+    @content;
+  }
+}
+
+/**
+ * Custom Breakpoint
+ * Define your own breakpoint
+ *
+ * @param {number} $min - Minimum width in pixels
+ * @example
+ * .element {
+ *   @include breakpoint(900px) {
+ *     display: grid;
+ *   }
+ * }
+ */
+@mixin breakpoint($min) {
+  @media screen and (min-width: $min) {
+    @content;
+  }
+}
+
+/**
+ * Custom Breakpoint Range
+ * Define a breakpoint range with min and max
+ *
+ * @param {number} $min - Minimum width in pixels
+ * @param {number} $max - Maximum width in pixels
+ */
+@mixin breakpoint-range($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+/**
+ * Reduced Motion
+ * Wraps content in a prefers-reduced-motion: no-preference query.
+ * Use for all animations and transitions to respect user accessibility settings.
+ *
+ * @example
+ * .element {
+ *   @include reduced-motion {
+ *     transition: transform var(--transition-base);
+ *   }
+ * }
+ */
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}

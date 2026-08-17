@@ -1,16 +1,18 @@
 /**
- * @fileoverview Notification component for displaying success/error messages.
- * @description Toast-style notification that slides in from the right with auto-dismiss and progress bar.
- * @module shared/components/notification
+ * @fileoverview Toast-style notification component
+ * @description Slides in, auto-dismisses with a progress bar unless `persist` is set (used
+ * for cases that require an explicit user action, like an unrecoverable service worker
+ * state). Self-contained styling via CSS custom properties with sane fallbacks - picks up a
+ * consuming app's `scss-library` toast tokens automatically where present.
  */
 
 import { Component, effect, input, output } from '@angular/core';
 
 @Component({
-  selector: 'app-notification',
+  selector: 'dev2k-notification',
   imports: [],
-  templateUrl: './notification.html',
-  styleUrl: './notification.scss',
+  templateUrl: './notification.component.html',
+  styleUrl: './notification.component.scss',
 })
 export class NotificationComponent {
   show = input.required<boolean>();
@@ -18,6 +20,8 @@ export class NotificationComponent {
   type = input<'success' | 'error'>('success');
   duration = input<number>(5000);
   actionText = input<string>('');
+  /** Suppresses the auto-dismiss timer - the visitor must act explicitly. */
+  persist = input<boolean>(false);
   closed = output<void>();
   action = output<void>();
 
@@ -27,12 +31,9 @@ export class NotificationComponent {
     this.setupAutoDismiss();
   }
 
-  /**
-   * Setup auto-dismiss effect
-   */
   private setupAutoDismiss(): void {
     effect(() => {
-      if (this.show()) {
+      if (this.show() && !this.persist()) {
         this.startAutoDismiss();
       } else {
         this.clearAutoDismiss();
@@ -40,9 +41,6 @@ export class NotificationComponent {
     });
   }
 
-  /**
-   * Start auto-dismiss timer
-   */
   private startAutoDismiss(): void {
     this.clearAutoDismiss();
     this.timeoutId = setTimeout(() => {
@@ -50,9 +48,6 @@ export class NotificationComponent {
     }, this.duration());
   }
 
-  /**
-   * Clear auto-dismiss timer
-   */
   private clearAutoDismiss(): void {
     if (this.timeoutId) {
       clearTimeout(this.timeoutId);
@@ -60,17 +55,11 @@ export class NotificationComponent {
     }
   }
 
-  /**
-   * Handle notification close
-   */
   onClose(): void {
     this.clearAutoDismiss();
     this.closed.emit();
   }
 
-  /**
-   * Handle action button click
-   */
   onAction(): void {
     this.clearAutoDismiss();
     this.action.emit();

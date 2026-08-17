@@ -1,0 +1,36 @@
+/**
+ * @fileoverview SCSS Library Main Entry Point
+ * @description Reusable SCSS framework with CSS Custom Properties and modern mixins
+ * @module scss-library
+ * @version 1.0.0
+ */
+
+// ============================================
+// @dev2k/scss-library
+// Wiederverwendbare SCSS-Bibliothek
+// ============================================
+//
+// Diese Library basiert auf:
+// - CSS Custom Properties (--variable) statt SCSS-Variablen
+// - Modulare Mixins für Breakpoints, Flexbox, Layout, Typography
+// - 7-1 Pattern mit modernen SCSS-Features (@use/@forward)
+//
+// Usage:
+// @use 'path/to/scss-library' as lib;
+//
+// ============================================
+
+// 1️⃣ ABSTRACTS
+// Variablen, Mixins, Funktionen
+// Verfügbar als lib.$variable oder lib.mixin()
+@forward "abstracts";
+
+// 2️⃣ BASE
+// Reset, Typography, globale Styles
+// Optional: @use 'scss-library/base';
+@forward "base";
+
+// 3️⃣ UTILS
+// Helper-Klassen und Utilities
+// Optional: @use 'scss-library/utils';
+@forward "utils";

@@ -1,3 +1,11 @@
+// This project now sits on top of the shared `scss-library` (@use 'scss-library'; in
+// styles.scss, loaded before this file). Every token below either has no scss-library
+// equivalent (brand colors, fonts, hero/icon/divider sizes - all Portfolio-specific) or its
+// value genuinely differs from scss-library's default scale (radius, shadow, container,
+// breakpoint, letter-spacing, line-height-tight/-relaxed) and is kept here deliberately so
+// the site keeps its existing look. Everything that WAS byte-identical (space, font-size,
+// font-weight, z-index, transition/ease scales) was removed in favor of the shared source -
+// see the inline comments below for exactly what and why.
 :root {
   --color-primary: rgb(0, 188, 143);
   --color-primary-light: rgb(30 180 140);
@@ -29,6 +37,13 @@
   --color-warning: #ff9800;
   --color-info: #2196f3;
 
+  // scss-library's toast mixins (used by the shared NotificationComponent) read
+  // --toast-bg-success/-error, which default to scss-library's own generic --success/--error.
+  // Point them at Portfolio's actual brand colors instead so the update banner matches the
+  // rest of the site.
+  --toast-bg-success: var(--color-success);
+  --toast-bg-error: var(--color-error);
+
   --color-form-valid: rgb(0, 188, 143);
   --color-form-valid-hover: rgb(1, 108, 83);
 
@@ -45,20 +60,8 @@
   --color-button-disabled: rgba(144, 22, 44, 0.13);
   --color-button-enabled: rgba(0, 171, 131, 0.159);
 
-  --space-0: 0;
-  --space-0-5: 0.125rem;
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.25rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-10: 2.5rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
-  --space-20: 5rem;
-  --space-24: 6rem;
+  // --space-* scale now comes from scss-library (@use 'scss-library' in styles.scss,
+  // loaded before this file) - values were byte-identical, so this removal changes nothing.
 
   --space-section-small: clamp(40px, 4vw, 70px);
   --space-section-medium: clamp(70px, 6vw, 160px);
@@ -69,15 +72,7 @@
   --font-secondary: 'Syne', Georgia, serif;
   --font-code: 'Fira Code', 'Courier New', monospace;
 
-  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-  --font-size-sm: clamp(0.875rem, 0.825rem + 0.25vw, 1rem);
-  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  --font-size-lg: clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem);
-  --font-size-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
-  --font-size-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 2rem);
-  --font-size-3xl: clamp(1.875rem, 1.65rem + 1.125vw, 2.5rem);
-  --font-size-4xl: clamp(2.25rem, 1.95rem + 1.5vw, 3rem);
-  --font-size-5xl: clamp(3rem, 2.55rem + 2.25vw, 4rem);
+  // --font-size-{xs..5xl} scale now comes from scss-library - values were byte-identical.
 
   --font-size-hero-title: clamp(28px, 2.5vw + 1rem, 80px);
   --font-size-hero-title-landscape: clamp(20px, 2vw + 1rem, 50px);
@@ -91,19 +86,14 @@
 
   --font-size-404: clamp(4rem, 10vw, 8rem);
 
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
+  // --font-weight-* scale now comes from scss-library - values were byte-identical.
 
-  --line-height-tight: 1.25;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.75;
+  // --line-height-tight is overridden again further down (1.3, not scss-library's 1.25) -
+  // --line-height-normal (1.5) matches scss-library exactly and was removed.
+  --line-height-relaxed: 1.75; // scss-library's is 1.625 - kept, values differ
 
-  --letter-spacing-tight: -0.07rem;
-  --letter-spacing-normal: 0;
+  // --letter-spacing-tight/-normal are overridden again further down with the final values
+  // that actually apply - scss-library uses a different (em-based) scale entirely.
   --letter-spacing-wide: 0.025rem;
 
   --container-sm: 640px;
@@ -118,13 +108,8 @@
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1440px;
 
-  --z-dropdown: 100;
-  --z-sticky: 200;
-  --z-fixed: 300;
-  --z-modal-backdrop: 400;
-  --z-modal: 500;
-  --z-popover: 600;
-  --z-tooltip: 700;
+  // --z-* scale now comes from scss-library - values were byte-identical (it also adds
+  // --z-base and --z-toast, which the shared NotificationComponent picks up automatically).
 
   --radius-none: 0;
   --radius-xs: 2px;
@@ -186,14 +171,7 @@
 
   --color-arrow-fill: var(--color-text-primary);
 
-  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slower: 500ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  --ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  // --transition-* and --ease-* now come from scss-library - values were byte-identical.
 }
 
 @media screen and (min-width: 720px) {

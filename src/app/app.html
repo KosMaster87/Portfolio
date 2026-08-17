@@ -7,13 +7,14 @@
 
   <app-footer></app-footer>
 
-  <app-notification
-    [show]="swUpdateService.showUpdateNotification()"
-    [message]="swUpdateService.updateMessage()"
-    [type]="'success'"
+  <dev2k-notification
+    [show]="swUpdateService.notification().show"
+    [message]="swUpdateService.notification().message"
+    [type]="swUpdateService.notification().type"
+    [actionText]="swUpdateService.notification().actionText"
+    [persist]="swUpdateService.notification().persist"
     [duration]="30000"
-    [actionText]="updateActionText()"
-    (action)="onUpdateAccepted()"
-    (closed)="onUpdateDismissed()"
+    (action)="swUpdateService.onAction()"
+    (closed)="swUpdateService.dismiss()"
   />
 </div>
