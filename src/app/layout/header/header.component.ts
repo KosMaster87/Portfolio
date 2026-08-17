@@ -4,31 +4,22 @@
  * @module layout/header
  */
 
-import { Component, computed, inject, signal } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, computed, ElementRef, inject, signal, viewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { NavigationService, ThemeService, TranslationService } from '../../core/services';
 import { LanguageSwitcherComponent } from '../../shared/components/language-switcher/language-switcher.component';
 import { ThemeSwitcherComponent } from '../../shared/components/theme-switcher/theme-switcher.component';
-import { NoScrollDirective } from '../../shared/directives';
 
 /**
  * Header component.
  * Main navigation header with smart routing, language switcher, theme switcher,
  * and responsive hamburger menu for mobile devices.
  * Uses NavigationService for centralized navigation logic.
- * NoScrollDirective prevents body scroll when mobile menu is open.
  */
 @Component({
   selector: 'app-header',
-  imports: [
-    RouterModule,
-    FormsModule,
-    NoScrollDirective,
-    ThemeSwitcherComponent,
-    LanguageSwitcherComponent,
-  ],
+  imports: [RouterModule, ThemeSwitcherComponent, LanguageSwitcherComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -39,6 +30,8 @@ export class HeaderComponent {
 
   isMenuOpen = signal(false);
   isOnHomePage = this.navigationService.isOnHomePage;
+
+  private readonly hamburgerBtn = viewChild.required<ElementRef<HTMLButtonElement>>('hamburgerBtn');
 
   /**
    * Computed logo path based on active theme.
@@ -91,6 +84,7 @@ export class HeaderComponent {
    */
   toggleMenu(): void {
     this.isMenuOpen.update((state) => !state);
+    document.body.classList.toggle('no-scroll', this.isMenuOpen());
   }
 
   /**
@@ -108,6 +102,33 @@ export class HeaderComponent {
   navigateToRoute(route: string): void {
     this.closeMenu();
     this.navigationService.navigateToRoute(route);
+  }
+
+  /**
+   * Closes the mobile menu on Escape and returns focus to the burger button - without this,
+   * focus would be left on a now-hidden (and therefore untabbable) menu link, silently
+   * dropping the user's keyboard focus back to the very start of the page. Matches
+   * dev2k-page's HeaderComponent.closeMenuAndRefocusHamburger().
+   */
+  closeMenuAndRefocusBurger(): void {
+    this.closeMenu();
+    this.hamburgerBtn().nativeElement.focus();
+  }
+
+  /**
+   * Closes the mobile menu when keyboard focus moves outside "burger + menu" entirely - Tab
+   * past the last item, or Shift+Tab back past the burger itself. Bound on the wrapper around
+   * both, so moving focus between the burger and the menu links (in either direction) does not
+   * count as "leaving". Matches dev2k-page's HeaderComponent.onNavFocusOut().
+   * @param event - The focusout event bubbling up from the burger or a menu link
+   */
+  onMenuFocusOut(event: FocusEvent): void {
+    const nextFocused = event.relatedTarget;
+    const wrapper = event.currentTarget as HTMLElement;
+    if (nextFocused instanceof Node && wrapper.contains(nextFocused)) {
+      return;
+    }
+    this.closeMenu();
   }
 
   /**

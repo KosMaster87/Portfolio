@@ -5,4 +5,3 @@
  */
 
 export * from './icon-hover.directive';
-export * from './no-scroll.directive';

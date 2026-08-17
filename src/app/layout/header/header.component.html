@@ -80,22 +80,34 @@
           </nav>
         }
 
-        <div class="header__hamburger">
-          <input
-            type="checkbox"
-            id="menuToggle"
-            class="header__menu-toggle"
-            [(ngModel)]="isMenuOpen"
-            appNoScroll
-          />
+        <!-- eslint-disable-next-line @angular-eslint/template/interactive-supports-focus -->
+        <div
+          class="header__hamburger"
+          [class.header__hamburger--open]="isMenuOpen()"
+          (focusout)="onMenuFocusOut($event)"
+          (keydown.escape)="closeMenuAndRefocusBurger()"
+        >
+          <button
+            #hamburgerBtn
+            type="button"
+            class="header__burger"
+            (click)="toggleMenu()"
+            [attr.aria-expanded]="isMenuOpen()"
+            aria-controls="mobile-menu"
+            aria-label="Toggle menu"
+            title="Toggle menu"
+          >
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+          </button>
 
-          <label class="header__burger" for="menuToggle" title="Toggle menu">
-            <span class="header__burger-line"></span>
-            <span class="header__burger-line"></span>
-            <span class="header__burger-line"></span>
-          </label>
-
-          <nav class="header__menu" role="navigation" aria-label="Mobile navigation">
+          <nav
+            id="mobile-menu"
+            class="header__menu"
+            role="navigation"
+            aria-label="Mobile navigation"
+          >
             <ul class="header__menu-list">
               @if (isOnHomePage()) {
                 @for (item of menuItems; track item.sectionId) {
