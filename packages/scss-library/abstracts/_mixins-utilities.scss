@@ -67,12 +67,17 @@
  * @param {string} $track-color - Track background color
  * @param {string} $thumb-color - Thumb color
  * @param {string} $thumb-hover-color - Thumb hover color
+ * @param {string} $thumb-border - Optional thumb border (default: none), e.g.
+ *   `2px solid var(--background-primary)` for a "floating pill" look where the border matches
+ *   the track and visually insets the thumb - used by Dev2K-Home-Page/Portfolio, opt-in so
+ *   existing callers (e.g. DA-Bubble) keep their current borderless thumb unchanged.
  */
 @mixin custom-scrollbar(
   $width: 8px,
   $track-color: transparent,
   $thumb-color: var(--border-color),
-  $thumb-hover-color: var(--text-secondary)
+  $thumb-hover-color: var(--text-secondary),
+  $thumb-border: none
 ) {
   &::-webkit-scrollbar {
     width: $width;
@@ -85,6 +90,7 @@
   &::-webkit-scrollbar-thumb {
     background: $thumb-color;
     border-radius: calc($width / 2);
+    border: $thumb-border;
 
     &:hover {
       background: $thumb-hover-color;
@@ -212,4 +218,29 @@
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000px;
+}
+
+/**
+ * Dropdown/popover open animation - fade in with a slight upward slide. Extracted from an
+ * identical `fadeIn` keyframe that Portfolio had defined twice (its language- and
+ * theme-switcher dropdowns) - the library-namespaced keyframe name avoids colliding with any
+ * other `fadeIn` a project might define elsewhere.
+ *
+ * @param {string} $duration - Animation duration (default: 200ms)
+ * @param {string} $distance - Vertical slide-in distance (default: 8px)
+ */
+@mixin dropdown-fade-in($duration: 200ms, $distance: 8px) {
+  animation: dropdown-fade-in #{$duration} ease-out;
+
+  @keyframes dropdown-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-#{$distance});
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
