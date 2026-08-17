@@ -22,8 +22,8 @@ export class PortfolioDataService {
         alt: 'PROJECTS.dabubble-alt',
       },
       links: {
-        live: 'https://dabubble.dev2k.org/',
-        github: 'https://github.com/KosMaster87/DABubble.git',
+        live: 'https://dabubble.dev2ksoftware.com/',
+        github: 'https://github.com/KosMaster87/DA-Bubble',
       },
       technologies: ['TypeScript', 'Angular', 'Firebase'],
       category: 'web-app',
@@ -39,8 +39,8 @@ export class PortfolioDataService {
         alt: 'PROJECTS.join-alt',
       },
       links: {
-        live: 'https://join.dev2k.org/',
-        github: 'https://github.com/KosMaster87/Join.git',
+        live: 'https://join.dev2ksoftware.com/',
+        github: 'https://github.com/KosMaster87/Join',
       },
       technologies: ['JavaScript', 'CSS', 'HTML'],
       category: 'web-app',
@@ -56,11 +56,8 @@ export class PortfolioDataService {
         alt: 'PROJECTS.lets-todo-alt',
       },
       links: {
-        live: 'https://lets-todo.dev2k.org/',
-        github: [
-          'https://github.com/KosMaster87/lets-todo-app',
-          'https://github.com/KosMaster87/lets-todo-api',
-        ],
+        live: 'https://lets-todo.dev2ksoftware.com/',
+        github: 'https://github.com/KosMaster87/Lets-Todo',
       },
       technologies: ['JavaScript', 'PHP', 'Node.js', 'REST API'],
       category: 'fullstack',
@@ -76,7 +73,7 @@ export class PortfolioDataService {
         alt: 'PROJECTS.super-rando-alt',
       },
       links: {
-        live: 'https://super-rando.dev2k.org/',
+        live: 'https://super-rando.dev2ksoftware.com/',
         github: 'https://github.com/KosMaster87/Super-Rando',
       },
       technologies: ['JavaScript', 'CSS', 'HTML', 'PHP'],
@@ -93,8 +90,8 @@ export class PortfolioDataService {
         alt: 'PROJECTS.loco-alt',
       },
       links: {
-        live: 'https://el-pollo-loco.dev2k.org/',
-        github: 'https://github.com/KosMaster87/El-pollo-loco.git',
+        live: 'https://el-pollo-loco.dev2ksoftware.com/',
+        github: 'https://github.com/KosMaster87/El-pollo-loco',
       },
       technologies: ['JavaScript', 'CSS', 'HTML'],
       category: 'web-app',

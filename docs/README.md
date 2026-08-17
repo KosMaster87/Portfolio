@@ -42,4 +42,4 @@ pnpm run docs:serve  # View TypeDoc locally (http://localhost:8081)
 
 In the CI/CD workflow, `docs/generated/typedoc/` is copied to the server as `jsdoc/`:
 
-- **Live:** https://portfolio.dev2k.org/jsdoc/index.html
+- **Live:** https://portfolio.dev2ksoftware.com/jsdoc/index.html
