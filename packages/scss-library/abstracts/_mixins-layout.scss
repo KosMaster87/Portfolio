@@ -1,0 +1,176 @@
+/**
+ * @fileoverview Layout Mixins
+ * @description Reusable layout mixins for containers and responsive layouts
+ * @module mixins-layout
+ */
+
+/* ============================================================================
+   LAYOUT MIXINS
+   ========================================================================== */
+
+/**
+ * Container with responsive padding
+ *
+ * @param {string} $max-width - Maximum container width (default: var(--container-2xl))
+ *
+ * @example
+ * .container {
+ *   @include container;
+ * }
+ *
+ * .container-sm {
+ *   @include container(var(--container-md));
+ * }
+ */
+@mixin container($max-width: var(--container-2xl)) {
+  width: 100%;
+  max-width: $max-width;
+  margin-inline: auto;
+
+  // Mobile Portrait - 320px+
+  padding-inline: var(--space-4);
+
+  // Tablet (portrait) - 768px+
+  @media screen and (min-width: 768px) {
+    padding-inline: var(--space-6);
+  }
+
+  // Tablet (landscape) - 1024px+
+  @media screen and (min-width: 1024px) {
+    padding-inline: var(--space-8);
+  }
+
+  // Desktop - 1440px+
+  @media screen and (min-width: 1440px) {
+    padding-inline: var(--space-10);
+  }
+}
+
+/**
+ * Full-width container (edge-to-edge)
+ */
+@mixin container-full {
+  width: 100%;
+  max-width: 100%;
+  padding-inline: 0;
+}
+
+/**
+ * Grid container with auto-fit columns
+ *
+ * @param {string} $min-width - Minimum column width (default: 250px)
+ * @param {string} $gap - Gap between columns (default: var(--space-4))
+ *
+ * @example
+ * .grid {
+ *   @include grid-auto-fit(300px, var(--space-6));
+ * }
+ */
+@mixin grid-auto-fit($min-width: 250px, $gap: var(--space-4)) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+/**
+ * Grid container with auto-fill columns
+ *
+ * @param {string} $min-width - Minimum column width (default: 250px)
+ * @param {string} $gap - Gap between columns (default: var(--space-4))
+ */
+@mixin grid-auto-fill($min-width: 250px, $gap: var(--space-4)) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+/**
+ * Grid container with fixed columns
+ *
+ * @param {number} $columns - Number of columns (default: 12)
+ * @param {string} $gap - Gap between columns (default: var(--space-4))
+ */
+@mixin grid-columns($columns: 12, $gap: var(--space-4)) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+/**
+ * Aspect ratio container
+ *
+ * @param {number} $width - Width ratio (default: 16)
+ * @param {number} $height - Height ratio (default: 9)
+ *
+ * @example
+ * .video-container {
+ *   @include aspect-ratio(16, 9);
+ * }
+ */
+@mixin aspect-ratio($width: 16, $height: 9) {
+  aspect-ratio: #{$width} / #{$height};
+}
+
+/**
+ * Card base
+ * Consistent card surface used across all projects.
+ *
+ * @param {string} $padding - Inner padding (default: var(--space-6))
+ * @param {string} $radius  - Border radius (default: var(--radius-xl))
+ *
+ * @example
+ * .card {
+ *   @include card;
+ * }
+ */
+@mixin card($padding: var(--space-6), $radius: var(--radius-xl)) {
+  background-color: var(--background-secondary);
+  border: var(--border-1) solid var(--border-color);
+  border-radius: $radius;
+  padding: $padding;
+  box-shadow: var(--shadow-sm);
+}
+
+/**
+ * Section layout
+ * Standard vertical spacing for full-width page sections.
+ *
+ * @param {string} $size - Section size: sm | md | lg (default: md)
+ *
+ * @example
+ * .section {
+ *   @include section;
+ * }
+ */
+@mixin section($size: md) {
+  width: 100%;
+
+  @if $size == sm {
+    padding-block: var(--space-section-sm);
+  } @else if $size == lg {
+    padding-block: var(--space-section-lg);
+  } @else {
+    padding-block: var(--space-section-md);
+  }
+}
+
+/**
+ * Center element with position absolute
+ */
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/**
+ * Cover entire parent container
+ */
+@mixin absolute-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

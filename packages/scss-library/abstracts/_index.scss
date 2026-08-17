@@ -1,0 +1,21 @@
+/**
+ * @fileoverview Abstracts Index
+ * @description Central hub for all abstract modules (variables, mixins, functions)
+ * @module abstracts
+ */
+
+/* ============================================================================
+   ABSTRACTS - Variables, Mixins & Functions
+   ========================================================================== */
+
+// 1️⃣ Variables - CSS Custom Properties
+@forward "variables";
+
+// 2️⃣ Mixins - All mixin modules
+@forward "mixins-breakpoints";
+@forward "mixins-flexbox";
+@forward "mixins-layout";
+@forward "mixins-typography";
+@forward "mixins-buttons";
+@forward "mixins-utilities";
+@forward "mixins-components";

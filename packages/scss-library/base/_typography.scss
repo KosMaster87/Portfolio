@@ -1,0 +1,234 @@
+/**
+ * @fileoverview Typography Styles
+ * @description Base typography styles using CSS Custom Properties
+ * @module typography
+ */
+
+@use "../abstracts/mixins-typography" as *;
+@use "../abstracts/mixins-utilities" as *;
+
+/* ============================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
+/**
+ * Headings
+ */
+h1 {
+  @include heading-1;
+  margin-bottom: var(--space-6);
+}
+
+h2 {
+  @include heading-2;
+  margin-bottom: var(--space-5);
+}
+
+h3 {
+  @include heading-3;
+  margin-bottom: var(--space-4);
+}
+
+h4 {
+  @include heading-4;
+  margin-bottom: var(--space-4);
+}
+
+h5 {
+  @include heading-5;
+  margin-bottom: var(--space-3);
+}
+
+h6 {
+  @include heading-6;
+  margin-bottom: var(--space-3);
+}
+
+/**
+ * Paragraphs
+ */
+p {
+  margin-bottom: var(--space-4);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/**
+ * Links
+ */
+a {
+  color: var(--primary-color);
+  @include transition(color);
+  @include focus-visible;
+
+  &:hover {
+    color: var(--primary-dark);
+  }
+
+  &:active {
+    color: var(--primary-dark);
+  }
+}
+
+/**
+ * Lists
+ */
+ul,
+ol {
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-6);
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+/**
+ * Blockquotes
+ */
+blockquote {
+  padding-left: var(--space-4);
+  margin: var(--space-6) 0;
+  border-left: 4px solid var(--border-color);
+  color: var(--text-secondary);
+  font-style: italic;
+
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  cite {
+    display: block;
+    margin-top: var(--space-2);
+    font-size: var(--font-size-sm);
+    font-style: normal;
+    color: var(--text-tertiary);
+
+    &::before {
+      content: "— ";
+    }
+  }
+}
+
+/**
+ * Code and Pre
+ */
+code {
+  font-family: var(--font-family-mono);
+  font-size: 0.9em;
+  background-color: var(--background-secondary);
+  padding: 0.2em 0.4em;
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+}
+
+pre {
+  background-color: var(--background-secondary);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin-bottom: var(--space-4);
+  @include custom-scrollbar;
+
+  code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+}
+
+/**
+ * Keyboard input
+ */
+kbd {
+  font-family: var(--font-family-mono);
+  font-size: 0.875em;
+  padding: 0.2em 0.4em;
+  background-color: var(--background-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 1px 0 var(--border-color);
+}
+
+/**
+ * Emphasis
+ */
+strong,
+b {
+  font-weight: var(--font-weight-bold);
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+/**
+ * Small text
+ */
+small {
+  font-size: var(--font-size-sm);
+}
+
+/**
+ * Mark/Highlight
+ */
+mark {
+  background-color: #fef08a;
+  color: var(--text-primary);
+  padding: 0.1em 0.2em;
+  border-radius: var(--radius-xs);
+}
+
+/**
+ * Horizontal rule
+ */
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--border-color);
+  margin: var(--space-8) 0;
+}
+
+/**
+ * Utility classes
+ */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-muted {
+  color: var(--text-secondary);
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-success {
+  color: var(--success);
+}
+
+.text-warning {
+  color: var(--warning);
+}
+
+.text-error {
+  color: var(--error);
+}

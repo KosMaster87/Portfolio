@@ -1,0 +1,223 @@
+/**
+ * @fileoverview Modern CSS Reset
+ * @description Normalize browser styles and set sensible defaults
+ * @module reset
+ */
+
+/* ============================================================================
+   MODERN CSS RESET
+   Based on modern-normalize and Josh Comeau's reset
+   ========================================================================== */
+
+/**
+ * Box sizing rules
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+ * Remove default margin and padding
+ */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * HTML & Body setup
+ */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
+  background-color: var(--background-primary);
+}
+
+/**
+ * Reset headings
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+}
+
+/**
+ * Reset lists
+ */
+ul,
+ol {
+  list-style: none;
+}
+
+/**
+ * Reset links
+ */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/**
+ * Images and media
+ */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+ * Form elements inherit font
+ */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/**
+ * Remove button styles
+ */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/**
+ * Textarea specific
+ */
+textarea {
+  resize: vertical;
+}
+
+/**
+ * Remove spinner from number inputs
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/**
+ * Remove default fieldset styles
+ */
+fieldset {
+  border: none;
+}
+
+/**
+ * Tables
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**
+ * Prevent text overflow
+ */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/**
+ * Root stacking context
+ */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/**
+ * Remove default blockquote styles
+ */
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: "";
+  content: none;
+}
+
+/**
+ * Improved media defaults
+ */
+svg {
+  vertical-align: middle;
+}
+
+/**
+ * Cursor pointer for interactive elements
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"],
+[role="button"] {
+  cursor: pointer;
+}
+
+:disabled {
+  cursor: not-allowed;
+}
+
+/**
+ * Pre and Code blocks
+ */
+pre,
+code,
+kbd,
+samp {
+  font-family: var(--font-family-mono);
+  font-size: 1em;
+}
+
+/**
+ * Hidden attribute
+ */
+[hidden] {
+  display: none !important;
+}
