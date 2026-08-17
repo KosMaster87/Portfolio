@@ -1,3 +1,4 @@
+@use 'scss-library/abstracts/mixins-utilities' as utils;
 @use 'mixins' as *;
 
 body {
@@ -20,7 +21,5 @@ a {
     color: var(--color-primary-dark);
   }
 
-  &:focus-visible {
-    @include focus-ring;
-  }
+  @include utils.focus-visible;
 }

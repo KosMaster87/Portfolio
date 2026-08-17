@@ -7,6 +7,12 @@
 // font-weight, z-index, transition/ease scales) was removed in favor of the shared source -
 // see the inline comments below for exactly what and why.
 :root {
+  // Bridges this project's own `--color-primary` naming to scss-library's `--primary-color` -
+  // lets shared mixins that reference the library's token name (e.g. focus-ring) resolve to
+  // Portfolio's actual brand color without the mixin needing a project-specific override at
+  // every call site, and without renaming Portfolio's own token scheme.
+  --primary-color: var(--color-primary);
+
   --color-primary: rgb(0, 188, 143);
   --color-primary-light: rgb(30 180 140);
   --color-primary-dark: rgb(1, 108, 83);
