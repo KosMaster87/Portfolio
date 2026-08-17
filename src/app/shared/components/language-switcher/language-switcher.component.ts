@@ -6,7 +6,7 @@
 
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, inject, signal } from '@angular/core';
-import { TranslationService } from '../../../core/services';
+import { Language, TranslationService } from '../../../core/services';
 
 @Component({
   selector: 'app-language-switcher',
@@ -23,6 +23,8 @@ export class LanguageSwitcherComponent {
   languages = [
     { code: 'en' as const, label: 'English', flag: 'assets/images/language-en.png' },
     { code: 'de' as const, label: 'Deutsch', flag: 'assets/images/language-de.png' },
+    { code: 'es' as const, label: 'Español', flag: 'assets/images/language-es.png' },
+    { code: 'ru' as const, label: 'Русский', flag: 'assets/images/language-ru.png' },
   ];
 
   /**
@@ -51,10 +53,10 @@ export class LanguageSwitcherComponent {
 
   /**
    * Switch to a different language and close the dropdown
-   * @param lang - The language code to switch to ('de' or 'en')
+   * @param lang - The language code to switch to
    * @returns void
    */
-  switchLanguage(lang: 'de' | 'en'): void {
+  switchLanguage(lang: Language): void {
     this.translationService.use(lang);
     this.closeDropdown();
   }

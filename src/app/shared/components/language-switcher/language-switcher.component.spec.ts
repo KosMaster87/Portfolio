@@ -37,8 +37,8 @@ describe('LanguageSwitcherComponent', () => {
   });
 
   describe('languages property', () => {
-    it('should have exactly 2 languages', () => {
-      expect(component.languages.length).toBe(2);
+    it('should have exactly 4 languages', () => {
+      expect(component.languages.length).toBe(4);
     });
 
     it('should have English language', () => {
@@ -55,6 +55,22 @@ describe('LanguageSwitcherComponent', () => {
       expect(german).toBeDefined();
       expect(german?.label).toBe('Deutsch');
       expect(german?.flag).toBe('assets/images/language-de.png');
+    });
+
+    it('should have Spanish language', () => {
+      const spanish = component.languages.find((lang) => lang.code === 'es');
+
+      expect(spanish).toBeDefined();
+      expect(spanish?.label).toBe('Español');
+      expect(spanish?.flag).toBe('assets/images/language-es.png');
+    });
+
+    it('should have Russian language', () => {
+      const russian = component.languages.find((lang) => lang.code === 'ru');
+
+      expect(russian).toBeDefined();
+      expect(russian?.label).toBe('Русский');
+      expect(russian?.flag).toBe('assets/images/language-ru.png');
     });
   });
 
@@ -301,13 +317,13 @@ describe('LanguageSwitcherComponent', () => {
       expect(dropdown).toBeTruthy();
     });
 
-    it('should render two language options when dropdown is open', () => {
+    it('should render four language options when dropdown is open', () => {
       component.isDropdownOpen.set(true);
       fixture.detectChanges();
 
       const options = fixture.nativeElement.querySelectorAll('.language-switcher__option');
 
-      expect(options.length).toBe(2);
+      expect(options.length).toBe(4);
     });
   });
 
