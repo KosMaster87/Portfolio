@@ -101,7 +101,9 @@
   },
   "UPDATE": {
     "message": "Eine neue Version ist verfügbar! Klicken Sie auf \"Aktualisieren\", um die neueste Version zu laden.",
-    "action": "Aktualisieren"
+    "action": "Aktualisieren",
+    "unrecoverableMessage": "Die Seite muss neu geladen werden, um weiter richtig zu funktionieren.",
+    "reloadAction": "Neu laden"
   },
   "NOT_FOUND": {
     "title": "Seite nicht gefunden",

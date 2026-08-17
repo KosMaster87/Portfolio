@@ -1,0 +1,227 @@
+/**
+ * @fileoverview Component Mixins
+ * @description Ready-to-use component mixins (Toast, Progress, etc.)
+ * @module mixins-components
+ */
+
+/* ============================================================================
+   COMPONENT MIXINS
+   ========================================================================== */
+
+/**
+ * Toast Container
+ * Fixed position container for toast notifications
+ *
+ * @example
+ * .toast-container {
+ *   @include toast-container;
+ * }
+ */
+@mixin toast-container {
+  position: fixed;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 2rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  pointer-events: none;
+  width: max-content;
+  max-width: calc(100vw - 2rem);
+}
+
+/**
+ * Toast Base
+ * Base styles for toast notifications
+ *
+ * @example
+ * .toast {
+ *   @include toast-base;
+ * }
+ */
+@mixin toast-base {
+  min-width: 220px;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--toast-text);
+  background: var(--toast-bg-default);
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base);
+  pointer-events: auto;
+}
+
+/**
+ * Toast Visible State
+ */
+@mixin toast-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/**
+ * Toast Success Variant
+ */
+@mixin toast-success {
+  background: var(--toast-bg-success);
+}
+
+/**
+ * Toast Error Variant
+ */
+@mixin toast-error {
+  background: var(--toast-bg-error);
+}
+
+/**
+ * Toast Warning Variant
+ */
+@mixin toast-warning {
+  background: var(--toast-bg-warning);
+}
+
+/**
+ * Toast Info Variant
+ */
+@mixin toast-info {
+  background: var(--toast-bg-info);
+}
+
+/**
+ * Progress Bar Base
+ * Modern progress bar with cross-browser support
+ *
+ * @example
+ * progress {
+ *   @include progress-bar;
+ * }
+ */
+@mixin progress-bar {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--progress-bg);
+  border: none;
+  border-radius: 0;
+  appearance: none;
+
+  // Webkit (Chrome, Safari, Edge)
+  &::-webkit-progress-bar {
+    background-color: var(--progress-bg);
+    border-radius: 0;
+  }
+
+  &::-webkit-progress-value {
+    background-color: var(--progress-fill);
+    border-radius: 0;
+  }
+
+  // Firefox
+  &::-moz-progress-bar {
+    background-color: var(--progress-fill);
+    border-radius: 0;
+  }
+}
+
+/**
+ * Progress Bar with Border Radius
+ *
+ * @param {string} $radius - Border radius (default: var(--radius-sm))
+ */
+@mixin progress-bar-rounded($radius: var(--radius-sm)) {
+  border-radius: $radius;
+
+  &::-webkit-progress-bar {
+    border-radius: $radius;
+  }
+
+  &::-webkit-progress-value {
+    border-radius: $radius;
+  }
+
+  &::-moz-progress-bar {
+    border-radius: $radius;
+  }
+}
+
+/**
+ * Badge (Profile Avatar Badge)
+ * For user avatars, tags, status indicators
+ *
+ * @param {number} $index - Badge color index (1-16)
+ *
+ * @example
+ * .badge {
+ *   @include badge(1); // Orange
+ * }
+ */
+@mixin badge($index: 1) {
+  @if $index >= 1 and $index <= 16 {
+    background-color: var(--badge-#{$index});
+    color: var(--white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+  }
+}
+
+/**
+ * Priority Badge
+ * Visual indicator for priority levels
+ *
+ * @param {string} $level - Priority level (urgent, high, medium, low)
+ */
+@mixin priority-badge($level: medium) {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+
+  @if $level == urgent or $level == high {
+    background-color: rgba(255, 61, 0, 0.1);
+    color: var(--priority-urgent);
+  } @else if $level == medium {
+    background-color: rgba(255, 168, 0, 0.1);
+    color: var(--priority-medium);
+  } @else if $level == low {
+    background-color: rgba(122, 226, 41, 0.1);
+    color: var(--priority-low);
+  }
+}
+
+/**
+ * Task Category Badge
+ *
+ * @param {string} $type - Task type (user-story, technical)
+ */
+@mixin task-badge($type: user-story) {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--white);
+
+  @if $type == user-story {
+    background-color: var(--task-user-story);
+  } @else if $type == technical {
+    background-color: var(--task-technical);
+  }
+}

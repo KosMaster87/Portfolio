@@ -1,0 +1,137 @@
+/**
+ * @fileoverview Flexbox Mixins
+ * @description Reusable flexbox layout mixins for common patterns
+ * @module mixins-flexbox
+ */
+
+/* ============================================================================
+   FLEXBOX MIXINS
+   ========================================================================== */
+
+/**
+ * Flexible Box Layout with Parameters
+ *
+ * @param {string} $direction - flex-direction value (row, column)
+ * @param {string} $justify - justify-content value
+ * @param {string} $align - align-items value
+ * @param {string} $wrap - flex-wrap value
+ *
+ * @example
+ * .container {
+ *   @include flex(row, space-between, center, wrap);
+ * }
+ */
+@mixin flex(
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch,
+  $wrap: nowrap
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+/**
+ * Center content on both axes
+ *
+ * @example
+ * .modal {
+ *   @include flex-center;
+ * }
+ */
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/**
+ * Flex column layout
+ */
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/**
+ * Flex row layout
+ */
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/**
+ * Space-between layout with centered items
+ *
+ * @example
+ * .header {
+ *   @include flex-between;
+ * }
+ */
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/**
+ * Align to start
+ */
+@mixin flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/**
+ * Align to end
+ */
+@mixin flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/**
+ * Flex column with stretch alignment
+ */
+@mixin flex-column-stretch {
+  @include flex(column, flex-start, stretch);
+}
+
+/**
+ * Flex column centered
+ */
+@mixin flex-column-center {
+  @include flex(column, center, center);
+}
+
+/**
+ * Flex row wrap
+ */
+@mixin flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/**
+ * Space around layout
+ */
+@mixin flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/**
+ * Space evenly layout
+ */
+@mixin flex-evenly {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}

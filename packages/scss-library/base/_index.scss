@@ -1,0 +1,15 @@
+/**
+ * @fileoverview Base Index
+ * @description Central hub for all base styles (reset, typography)
+ * @module base
+ */
+
+/* ============================================================================
+   BASE - Foundation styles
+   ========================================================================== */
+
+// 1️⃣ Reset - Browser normalization
+@forward "reset";
+
+// 2️⃣ Typography - Text styles
+@forward "typography";
