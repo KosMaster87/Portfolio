@@ -3,12 +3,14 @@ import { FooterComponent } from './footer.component';
 import { NavigationService, TranslationService } from '@core/services';
 import { signal } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { SwUpdateService } from '@ui/public-api';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
   let fixture: ComponentFixture<FooterComponent>;
   let navigationServiceSpy: jasmine.SpyObj<NavigationService>;
   let translationServiceSpy: jasmine.SpyObj<TranslationService>;
+  let swUpdateServiceSpy: jasmine.SpyObj<SwUpdateService>;
   let windowSpy: jasmine.SpyObj<Window>;
 
   beforeEach(() => {
@@ -34,12 +36,17 @@ describe('FooterComponent', () => {
     });
     translationServiceSpy.instant.and.callFake((key: string) => key);
 
+    swUpdateServiceSpy = jasmine.createSpyObj('SwUpdateService', ['onAction'], {
+      updateAvailable: signal(false),
+    });
+
     TestBed.configureTestingModule({
       imports: [FooterComponent],
       providers: [
         provideRouter([]),
         { provide: NavigationService, useValue: navigationServiceSpy },
         { provide: TranslationService, useValue: translationServiceSpy },
+        { provide: SwUpdateService, useValue: swUpdateServiceSpy },
       ],
     });
 
@@ -394,6 +401,24 @@ describe('FooterComponent', () => {
     it('should render Angular version', () => {
       const footerContent = fixture.nativeElement.textContent;
       expect(component.getAngularVersion()).toBe('21');
+    });
+  });
+
+  describe('update site button', () => {
+    it('is not rendered when no update is available', () => {
+      const links = fixture.nativeElement.querySelectorAll('.app-footer__features-item');
+      expect(links.length).toBe(0);
+    });
+
+    it('is rendered and calls swUpdateService.onAction() when an update is available', () => {
+      (swUpdateServiceSpy.updateAvailable as unknown as ReturnType<typeof signal>).set(true);
+      fixture.detectChanges();
+
+      const link = fixture.nativeElement.querySelector('.app-footer__features-item a');
+      expect(link).toBeTruthy();
+
+      link.click();
+      expect(swUpdateServiceSpy.onAction).toHaveBeenCalled();
     });
   });
 

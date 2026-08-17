@@ -60,6 +60,7 @@ describe('SwUpdateService', () => {
       type: 'success',
       persist: false,
     });
+    expect(service.updateAvailable()).toBe(false);
   });
 
   describe('initialize()', () => {
@@ -94,6 +95,22 @@ describe('SwUpdateService', () => {
         type: 'success',
         persist: false,
       });
+      expect(service.updateAvailable()).toBe(true);
+    });
+
+    it('keeps updateAvailable() true after dismiss() hides the notification', () => {
+      const service = createService();
+      service.initialize();
+
+      versionUpdates$.next({
+        type: 'VERSION_READY',
+        currentVersion: { hash: 'v1' },
+        latestVersion: { hash: 'v2' },
+      });
+      service.dismiss();
+
+      expect(service.notification().show).toBe(false);
+      expect(service.updateAvailable()).toBe(true);
     });
 
     it('should show a persistent error notification on unrecoverable state', () => {

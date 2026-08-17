@@ -105,6 +105,26 @@
                   </a>
                 </li>
               }
+              @if (swUpdateService.updateAvailable()) {
+                <li class="app-footer__features-item">
+                  <a
+                    class="app-footer__navigation-link"
+                    (click)="swUpdateService.onAction()"
+                    (keydown.space)="$event.preventDefault()"
+                    (keyup.enter)="swUpdateService.onAction()"
+                    (keyup.space)="swUpdateService.onAction()"
+                    tabindex="0"
+                  >
+                    <img
+                      src="/assets/images/vector/menu/refresh.svg"
+                      alt=""
+                      class="nav-icon"
+                      draggable="false"
+                    />
+                    {{ footerData().updateSite }}
+                  </a>
+                </li>
+              }
             </ul>
           </nav>
         </div>
