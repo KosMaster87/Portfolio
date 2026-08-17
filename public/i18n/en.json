@@ -28,6 +28,8 @@
   "PROJECTS": {
     "title": "Featured Projects",
     "description": "Discover my latest works and projects",
+    "liveTestButton": "Live Test",
+    "githubButton": "GitHub",
     "dabubble-name": "DABubble",
     "dabubble-description": "A Discord-inspired real-time chat app built with Angular 21 and Firebase. Features channels, DMs, threads, reactions, and real-time user presence.",
     "dabubble-alt": "DABubble chat-app Screenshot",
