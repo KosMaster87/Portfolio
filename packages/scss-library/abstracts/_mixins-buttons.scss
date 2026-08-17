@@ -1,0 +1,198 @@
+/**
+ * @fileoverview Button Mixins
+ * @description Reusable button style mixins with responsive sizing
+ * @module mixins-buttons
+ */
+
+/* ============================================================================
+   BUTTON MIXINS
+   ========================================================================== */
+
+/**
+ * Reset all browser button styles
+ */
+@mixin reset-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+/**
+ * Base button styles with responsive sizing
+ *
+ * @example
+ * .btn {
+ *   @include button-base;
+ *   background-color: var(--primary-color);
+ *   color: white;
+ * }
+ */
+@mixin button-base {
+  @include reset-button;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  // min() statt fest, sonst erzwingt ein Button in einem eng gepolsterten Container
+  // (z. B. verschachtelte Card-Paddings) horizontales Overflow auf schmalen Viewports.
+  min-width: min(var(--button-min-width), 100%);
+  min-height: var(--button-min-height);
+  padding: var(--space-3) var(--space-6);
+  // Border reserved (even when transparent) so a variant that adds a visible
+  // border never ends up a different box size than one that doesn't — both
+  // already pay for the same 2px, box-sizing: border-box just hides it.
+  border: var(--border-2) solid transparent;
+  border-radius: var(--button-radius);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: 1;
+  cursor: pointer;
+  transition: all var(--transition-base);
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+}
+
+/**
+ * Primary button style
+ */
+@mixin button-primary {
+  @include button-base;
+  background-color: var(--primary-color);
+  color: var(--text-inverse);
+  border: var(--border-2) solid var(--primary-color);
+
+  &:hover:not(:disabled) {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+  }
+}
+
+/**
+ * Secondary button style
+ */
+@mixin button-secondary {
+  @include button-base;
+  background-color: var(--secondary-color);
+  color: var(--text-inverse);
+  border: var(--border-2) solid var(--secondary-color);
+
+  &:hover:not(:disabled) {
+    background-color: var(--secondary-dark);
+    border-color: var(--secondary-dark);
+  }
+}
+
+/**
+ * Outline button style
+ */
+@mixin button-outline {
+  @include button-base;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: var(--border-2) solid var(--primary-color);
+
+  &:hover:not(:disabled) {
+    background-color: var(--primary-color);
+    color: var(--text-inverse);
+  }
+}
+
+/**
+ * Ghost button style (no border)
+ */
+@mixin button-ghost {
+  @include button-base;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: var(--border-2) solid transparent;
+
+  &:hover:not(:disabled) {
+    background-color: var(--background-secondary);
+  }
+}
+
+/**
+ * Danger button style
+ */
+@mixin button-danger {
+  @include button-base;
+  background-color: var(--error);
+  color: var(--text-inverse);
+  border: var(--border-2) solid var(--error);
+
+  &:hover:not(:disabled) {
+    background-color: var(--error);
+    border-color: var(--error);
+  }
+}
+
+/**
+ * Small button size
+ */
+@mixin button-sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+  gap: var(--space-1);
+}
+
+/**
+ * Large button size
+ */
+@mixin button-lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--font-size-lg);
+  gap: var(--space-3);
+}
+
+/**
+ * Icon button (square)
+ *
+ * @param {string} $size - Button size (default: var(--space-10))
+ */
+@mixin button-icon($size: var(--space-10)) {
+  @include reset-button;
+  @include flex-center;
+
+  width: $size;
+  height: $size;
+  padding: 0;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+
+  &:hover:not(:disabled) {
+    background-color: var(--background-secondary);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+/**
+ * Full width button
+ */
+@mixin button-full {
+  width: 100%;
+}

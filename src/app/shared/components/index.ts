@@ -10,6 +10,5 @@ export * from './buttons/scroll-arrow/scroll-arrow.component';
 export * from './buttons/submit-button/submit-button';
 export * from './decorative-border/decorative-border.component';
 export * from './language-switcher/language-switcher.component';
-export * from './notification/notification';
 export * from './separator/separator.component';
 export * from './theme-switcher/theme-switcher.component';

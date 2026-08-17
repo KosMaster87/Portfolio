@@ -101,7 +101,9 @@
   },
   "UPDATE": {
     "message": "A new version is available! Click \"Update\" to load the latest version.",
-    "action": "Update"
+    "action": "Update",
+    "unrecoverableMessage": "The page needs to reload to keep working correctly.",
+    "reloadAction": "Reload"
   },
   "NOT_FOUND": {
     "title": "Page Not Found",

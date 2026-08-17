@@ -7,7 +7,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 
-export type Language = 'de' | 'en';
+export type Language = 'de' | 'en' | 'es' | 'ru';
 
 type TranslationValue = string | TranslationObject;
 interface TranslationObject {
