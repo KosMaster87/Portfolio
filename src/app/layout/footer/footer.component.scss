@@ -2,7 +2,8 @@
 @use '../../../styles/mixins' as *;
 
 .app-footer {
-  --footer-icon-size: 20px;
+  // Matches Dev2K-Home-Page's footer icon size (1rem / 16px).
+  --footer-icon-size: 16px;
   --footer-icon-gap: var(--space-3);
 
   width: 100%;
@@ -11,7 +12,6 @@
   margin-top: auto;
 
   @media screen and (max-width: 400px) {
-    --footer-icon-size: 16px;
     --footer-icon-gap: var(--space-2);
   }
 
