@@ -27,12 +27,23 @@
     opacity: 1;
   }
 
+  // The gradient's second stop is derived from the same token (darkened via color-mix)
+  // instead of a hardcoded literal - a hardcoded green/red second stop would otherwise
+  // fight whatever color --toast-bg-success/-error actually resolves to in a host app.
   &--success {
-    background: linear-gradient(135deg, var(--toast-bg-success, #4caf50), #45a049);
+    background: linear-gradient(
+      135deg,
+      var(--toast-bg-success, #4caf50),
+      color-mix(in srgb, var(--toast-bg-success, #4caf50) 80%, black)
+    );
   }
 
   &--error {
-    background: linear-gradient(135deg, var(--toast-bg-error, #f44336), #d32f2f);
+    background: linear-gradient(
+      135deg,
+      var(--toast-bg-error, #f44336),
+      color-mix(in srgb, var(--toast-bg-error, #f44336) 80%, black)
+    );
   }
 
   &__content {
