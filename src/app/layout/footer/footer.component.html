@@ -117,6 +117,17 @@
                   {{ footerData().install }}
                 </button>
               </li>
+              <li class="app-footer__features-item">
+                <button type="button" class="app-footer__navigation-link" (click)="sharePage()">
+                  <img
+                    src="/assets/images/vector/menu/share.svg"
+                    alt=""
+                    class="nav-icon"
+                    draggable="false"
+                  />
+                  {{ shareFeedback() ? footerData().linkCopied : footerData().share }}
+                </button>
+              </li>
             </ul>
           </nav>
         </div>

@@ -405,13 +405,14 @@ describe('FooterComponent', () => {
   });
 
   describe('update site button', () => {
-    it('is always rendered (update first, then install), both disabled by default', () => {
+    it('is always rendered (update, install, share), update/install disabled by default, share never disabled', () => {
       const buttons: NodeListOf<HTMLButtonElement> = fixture.nativeElement.querySelectorAll(
         '.app-footer__features-item button',
       );
-      expect(buttons.length).toBe(2);
+      expect(buttons.length).toBe(3);
       expect(buttons[0].disabled).toBe(true);
       expect(buttons[1].disabled).toBe(true);
+      expect(buttons[2].disabled).toBe(false);
     });
 
     it('enables and calls swUpdateService.onAction() when an update is available', () => {
@@ -426,6 +427,57 @@ describe('FooterComponent', () => {
 
       buttons[0].click();
       expect(swUpdateServiceSpy.onAction).toHaveBeenCalled();
+    });
+  });
+
+  describe('sharePage()', () => {
+    const originalShare = navigator.share;
+    const originalClipboard = navigator.clipboard;
+
+    afterEach(() => {
+      Object.defineProperty(navigator, 'share', {
+        value: originalShare,
+        configurable: true,
+        writable: true,
+      });
+      Object.defineProperty(navigator, 'clipboard', {
+        value: originalClipboard,
+        configurable: true,
+        writable: true,
+      });
+    });
+
+    it('uses navigator.share when available', async () => {
+      const shareSpy = jasmine.createSpy('share').and.resolveTo(undefined);
+      Object.defineProperty(navigator, 'share', {
+        value: shareSpy,
+        configurable: true,
+        writable: true,
+      });
+
+      await component.sharePage();
+
+      expect(shareSpy).toHaveBeenCalledWith({ title: document.title, url: window.location.href });
+    });
+
+    it('falls back to clipboard copy and flips shareFeedback when navigator.share is unavailable', async () => {
+      Object.defineProperty(navigator, 'share', {
+        value: undefined,
+        configurable: true,
+        writable: true,
+      });
+      const writeTextSpy = jasmine.createSpy('writeText').and.resolveTo(undefined);
+      Object.defineProperty(navigator, 'clipboard', {
+        value: { writeText: writeTextSpy },
+        configurable: true,
+        writable: true,
+      });
+
+      expect(component['shareFeedback']()).toBe(false);
+      await component.sharePage();
+
+      expect(writeTextSpy).toHaveBeenCalledWith(window.location.href);
+      expect(component['shareFeedback']()).toBe(true);
     });
   });
 

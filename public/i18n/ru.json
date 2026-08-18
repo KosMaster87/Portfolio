@@ -99,6 +99,8 @@
     "scss": "SCSS",
     "install": "Установить приложение",
     "updateSite": "Обновить сайт",
+    "share": "Поделиться страницей",
+    "linkCopied": "Ссылка скопирована!",
     "backToTop": "Наверх",
     "backToTopAria": "Прокрутить наверх",
     "githubAria": "Посетить мой профиль GitHub",
