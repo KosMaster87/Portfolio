@@ -3,12 +3,14 @@ import { FooterComponent } from './footer.component';
 import { NavigationService, TranslationService } from '@core/services';
 import { signal } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { SwUpdateService } from '@ui/public-api';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
   let fixture: ComponentFixture<FooterComponent>;
   let navigationServiceSpy: jasmine.SpyObj<NavigationService>;
   let translationServiceSpy: jasmine.SpyObj<TranslationService>;
+  let swUpdateServiceSpy: jasmine.SpyObj<SwUpdateService>;
   let windowSpy: jasmine.SpyObj<Window>;
 
   beforeEach(() => {
@@ -34,12 +36,17 @@ describe('FooterComponent', () => {
     });
     translationServiceSpy.instant.and.callFake((key: string) => key);
 
+    swUpdateServiceSpy = jasmine.createSpyObj('SwUpdateService', ['onAction'], {
+      updateAvailable: signal(false),
+    });
+
     TestBed.configureTestingModule({
       imports: [FooterComponent],
       providers: [
         provideRouter([]),
         { provide: NavigationService, useValue: navigationServiceSpy },
         { provide: TranslationService, useValue: translationServiceSpy },
+        { provide: SwUpdateService, useValue: swUpdateServiceSpy },
       ],
     });
 
@@ -394,6 +401,83 @@ describe('FooterComponent', () => {
     it('should render Angular version', () => {
       const footerContent = fixture.nativeElement.textContent;
       expect(component.getAngularVersion()).toBe('21');
+    });
+  });
+
+  describe('update site button', () => {
+    it('is always rendered (update, install, share), update/install disabled by default, share never disabled', () => {
+      const buttons: NodeListOf<HTMLButtonElement> = fixture.nativeElement.querySelectorAll(
+        '.app-footer__features-item button',
+      );
+      expect(buttons.length).toBe(3);
+      expect(buttons[0].disabled).toBe(true);
+      expect(buttons[1].disabled).toBe(true);
+      expect(buttons[2].disabled).toBe(false);
+    });
+
+    it('enables and calls swUpdateService.onAction() when an update is available', () => {
+      (swUpdateServiceSpy.updateAvailable as unknown as ReturnType<typeof signal>).set(true);
+      fixture.detectChanges();
+
+      const buttons: NodeListOf<HTMLButtonElement> = fixture.nativeElement.querySelectorAll(
+        '.app-footer__features-item button',
+      );
+      expect(buttons[0].disabled).toBe(false);
+      expect(buttons[1].disabled).toBe(true);
+
+      buttons[0].click();
+      expect(swUpdateServiceSpy.onAction).toHaveBeenCalled();
+    });
+  });
+
+  describe('sharePage()', () => {
+    const originalShare = navigator.share;
+    const originalClipboard = navigator.clipboard;
+
+    afterEach(() => {
+      Object.defineProperty(navigator, 'share', {
+        value: originalShare,
+        configurable: true,
+        writable: true,
+      });
+      Object.defineProperty(navigator, 'clipboard', {
+        value: originalClipboard,
+        configurable: true,
+        writable: true,
+      });
+    });
+
+    it('uses navigator.share when available', async () => {
+      const shareSpy = jasmine.createSpy('share').and.resolveTo(undefined);
+      Object.defineProperty(navigator, 'share', {
+        value: shareSpy,
+        configurable: true,
+        writable: true,
+      });
+
+      await component.sharePage();
+
+      expect(shareSpy).toHaveBeenCalledWith({ title: document.title, url: window.location.href });
+    });
+
+    it('falls back to clipboard copy and flips shareFeedback when navigator.share is unavailable', async () => {
+      Object.defineProperty(navigator, 'share', {
+        value: undefined,
+        configurable: true,
+        writable: true,
+      });
+      const writeTextSpy = jasmine.createSpy('writeText').and.resolveTo(undefined);
+      Object.defineProperty(navigator, 'clipboard', {
+        value: { writeText: writeTextSpy },
+        configurable: true,
+        writable: true,
+      });
+
+      expect(component['shareFeedback']()).toBe(false);
+      await component.sharePage();
+
+      expect(writeTextSpy).toHaveBeenCalledWith(window.location.href);
+      expect(component['shareFeedback']()).toBe(true);
     });
   });
 
