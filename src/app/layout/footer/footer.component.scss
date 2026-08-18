@@ -29,8 +29,11 @@
 
     // Same 1 / 2 / 5 column collapse as Dev2K-Home-Page's footer, brand included as
     // an ordinary grid item throughout - that's what keeps headings from wrapping.
+    // The 280px floor keeps each column wide enough for a heading like
+    // "Website-Funktionen" even right at the 720px breakpoint (available content
+    // width there is ~672px, so two 280px columns plus the gap still fit).
     @include tablet {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
       gap: var(--space-12);
     }
 
@@ -43,7 +46,9 @@
   &__brand {
     .brand-title {
       font-family: var(--font-secondary);
-      font-size: var(--font-size-2xl);
+      // Fixed 20px rather than the fluid --font-size-2xl token (32-40px): matches
+      // Dev2K-Home-Page's footer brand title size, which is plenty in this footer.
+      font-size: 1.25rem;
       font-weight: var(--font-weight-bold);
       color: var(--color-text-primary);
       margin: 0 0 var(--space-4) 0;
@@ -55,15 +60,13 @@
 
     .brand-description {
       font-family: var(--font-primary);
-      font-size: var(--font-size-base);
+      // Fixed 14px rather than the fluid --font-size-base token (16-18px): matches
+      // Dev2K-Home-Page's footer brand description size.
+      font-size: 0.875rem;
       color: var(--color-text-muted);
       line-height: var(--line-height-relaxed);
       margin: 0;
       max-width: 300px;
-
-      @media screen and (max-width: 400px) {
-        font-size: var(--font-size-sm);
-      }
     }
   }
 
@@ -87,6 +90,10 @@
       // looks more compact than this one did without it.
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      // Compound words like "Website-Funktionen" have a soft-break opportunity at the
+      // hyphen; grid's automatic min-width lets the column shrink to that break point
+      // even though the full text would otherwise fit. Force a single line instead.
+      white-space: nowrap;
     }
 
     &-list {
