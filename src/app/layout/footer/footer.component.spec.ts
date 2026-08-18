@@ -405,19 +405,26 @@ describe('FooterComponent', () => {
   });
 
   describe('update site button', () => {
-    it('is not rendered when no update is available', () => {
-      const links = fixture.nativeElement.querySelectorAll('.app-footer__features-item');
-      expect(links.length).toBe(0);
+    it('is always rendered (update first, then install), both disabled by default', () => {
+      const buttons: NodeListOf<HTMLButtonElement> = fixture.nativeElement.querySelectorAll(
+        '.app-footer__features-item button',
+      );
+      expect(buttons.length).toBe(2);
+      expect(buttons[0].disabled).toBe(true);
+      expect(buttons[1].disabled).toBe(true);
     });
 
-    it('is rendered and calls swUpdateService.onAction() when an update is available', () => {
+    it('enables and calls swUpdateService.onAction() when an update is available', () => {
       (swUpdateServiceSpy.updateAvailable as unknown as ReturnType<typeof signal>).set(true);
       fixture.detectChanges();
 
-      const link = fixture.nativeElement.querySelector('.app-footer__features-item a');
-      expect(link).toBeTruthy();
+      const buttons: NodeListOf<HTMLButtonElement> = fixture.nativeElement.querySelectorAll(
+        '.app-footer__features-item button',
+      );
+      expect(buttons[0].disabled).toBe(false);
+      expect(buttons[1].disabled).toBe(true);
 
-      link.click();
+      buttons[0].click();
       expect(swUpdateServiceSpy.onAction).toHaveBeenCalled();
     });
   });

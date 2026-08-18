@@ -112,7 +112,17 @@
     }
 
     &-link {
+      // Reset browser <button> defaults - this class was originally only ever used on <a>,
+      // which has none of these, so adding them here doesn't change how the existing
+      // <a>-based nav/legal links look; it's what lets it now also be used on the real
+      // <button> the install/update feature links need for a working :disabled state
+      // (<a> has no such thing).
       display: flex;
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
       align-items: flex-start;
       gap: var(--footer-icon-gap);
       font-family: var(--font-primary);
@@ -142,6 +152,21 @@
 
         .nav-icon {
           filter: var(--filter-icon-primary);
+        }
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+
+        &:hover {
+          color: var(--color-text-muted);
+          background: none;
+          transform: none;
+
+          .nav-icon {
+            filter: var(--filter-icon-muted);
+          }
         }
       }
 
