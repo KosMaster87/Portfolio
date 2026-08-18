@@ -91,11 +91,13 @@
   &__social {
     &-heading {
       font-family: var(--font-primary);
-      font-size: var(--font-size-lg);
+      // Fixed 13px rather than the fluid --font-size-lg token (18-20px): that scale is
+      // meant for content headings, not this compact footer label row.
+      font-size: 0.8125rem;
       font-weight: var(--font-weight-semibold);
       color: var(--color-text-primary);
       line-height: var(--line-height-normal);
-      min-height: calc(var(--font-size-lg) * var(--line-height-normal) * 2 + var(--space-2) + 1px);
+      min-height: calc(0.8125rem * var(--line-height-normal) * 2 + var(--space-2) + 1px);
       margin: 0 0 var(--space-4) 0;
       padding-bottom: var(--space-2);
       border-bottom: 1px solid var(--color-text-primary);
@@ -108,7 +110,7 @@
     }
 
     &-item {
-      margin-bottom: var(--space-3);
+      margin-bottom: var(--space-1);
     }
 
     &-link {
@@ -126,11 +128,13 @@
       align-items: flex-start;
       gap: var(--footer-icon-gap);
       font-family: var(--font-primary);
-      font-size: var(--font-size-base);
+      // Fixed 14px rather than the fluid --font-size-base token (16-18px): matches
+      // Dev2K-Home-Page's footer link size, which reads better at this density.
+      font-size: 0.875rem;
       font-weight: var(--font-weight-medium);
       color: var(--color-text-muted);
       text-decoration: none;
-      padding: var(--space-2) var(--space-3);
+      padding: var(--space-1) var(--space-3);
       margin: 0 calc(-1 * var(--space-3));
       border-radius: var(--radius-md);
       transition: all var(--transition-base);
@@ -184,10 +188,10 @@
       display: flex;
       align-items: center;
       gap: var(--footer-icon-gap);
-      padding: var(--space-2) var(--space-3);
+      padding: var(--space-1) var(--space-3);
       margin: 0 calc(-1 * var(--space-3));
       font-family: var(--font-primary);
-      font-size: var(--font-size-base);
+      font-size: 0.875rem;
       color: var(--color-text-muted);
       text-decoration: none;
       border-radius: var(--radius-md);
