@@ -98,6 +98,7 @@
     "typescript": "TypeScript",
     "scss": "SCSS",
     "install": "Install App",
+    "updateSite": "Update website",
     "backToTop": "Top",
     "backToTopAria": "Scroll back to top",
     "githubAria": "Visit my GitHub profile",
