@@ -43,6 +43,14 @@ export class SwUpdateService {
 
   readonly notification = signal<SwUpdateNotification>(HIDDEN_NOTIFICATION);
 
+  /**
+   * Stays true once a ready update is detected, independent of `notification.show` -
+   * `dismiss()` only hides the toast, it doesn't mean the update went away. Lets a permanent
+   * UI element (e.g. a footer "update site" button/link) reflect "an update is waiting" even
+   * after the visitor has dismissed the transient notification.
+   */
+  readonly updateAvailable = signal(false);
+
   private notificationKind: NotificationKind = null;
 
   /**
@@ -99,6 +107,7 @@ export class SwUpdateService {
 
   private showUpdateReady(): void {
     this.notificationKind = 'update';
+    this.updateAvailable.set(true);
     this.notification.set({
       show: true,
       message: this.translator.instant('UPDATE.message'),

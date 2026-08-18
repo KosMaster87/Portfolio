@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
 
 import { NavigationService, TranslationService } from '@core/services';
 import { IconButtonComponent } from '@shared/components';
+import { SwUpdateService } from '@ui/public-api';
 
 /**
  * BeforeInstallPromptEvent interface for PWA installation
@@ -43,6 +44,7 @@ interface BeforeInstallPromptEvent extends Event {
 })
 export class FooterComponent implements OnInit, OnDestroy {
   protected translationService = inject(TranslationService);
+  protected swUpdateService = inject(SwUpdateService);
   private navigationService = inject(NavigationService);
   currentYear = new Date().getFullYear();
 
@@ -77,6 +79,7 @@ export class FooterComponent implements OnInit, OnDestroy {
       typescript: t.instant('FOOTER.typescript'),
       scss: t.instant('FOOTER.scss'),
       install: t.instant('FOOTER.install'),
+      updateSite: t.instant('FOOTER.updateSite'),
       backToTop: t.instant('FOOTER.backToTop'),
       backToTopAria: t.instant('FOOTER.backToTopAria'),
       home: t.instant('MENU.home'),

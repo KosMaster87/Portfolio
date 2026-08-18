@@ -2,7 +2,8 @@
 @use '../../../styles/mixins' as *;
 
 .app-footer {
-  --footer-icon-size: 20px;
+  // Matches Dev2K-Home-Page's footer icon size (1rem / 16px).
+  --footer-icon-size: 16px;
   --footer-icon-gap: var(--space-3);
 
   width: 100%;
@@ -11,7 +12,6 @@
   margin-top: auto;
 
   @media screen and (max-width: 400px) {
-    --footer-icon-size: 16px;
     --footer-icon-gap: var(--space-2);
   }
 
@@ -27,8 +27,13 @@
     padding-bottom: var(--space-12);
     grid-template-columns: 1fr;
 
+    // Same 1 / 2 / 5 column collapse as Dev2K-Home-Page's footer, brand included as
+    // an ordinary grid item throughout - that's what keeps headings from wrapping.
+    // The 280px floor keeps each column wide enough for a heading like
+    // "Website-Funktionen" even right at the 720px breakpoint (available content
+    // width there is ~672px, so two 280px columns plus the gap still fit).
     @include tablet {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
       gap: var(--space-12);
     }
 
@@ -36,28 +41,14 @@
       grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
       gap: var(--space-16);
     }
-
-    @media screen and (max-width: 719px) {
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-8);
-      padding-left: var(--space-4);
-      padding-right: var(--space-4);
-    }
-
-    @media screen and (max-width: 500px) {
-      grid-template-columns: 1fr;
-    }
   }
 
   &__brand {
-    @media screen and (max-width: 1023px) {
-      grid-column: 1 / -1;
-      text-align: center;
-    }
-
     .brand-title {
       font-family: var(--font-secondary);
-      font-size: var(--font-size-2xl);
+      // Fixed 20px rather than the fluid --font-size-2xl token (32-40px): matches
+      // Dev2K-Home-Page's footer brand title size, which is plenty in this footer.
+      font-size: 1.25rem;
       font-weight: var(--font-weight-bold);
       color: var(--color-text-primary);
       margin: 0 0 var(--space-4) 0;
@@ -69,19 +60,13 @@
 
     .brand-description {
       font-family: var(--font-primary);
-      font-size: var(--font-size-base);
+      // Fixed 14px rather than the fluid --font-size-base token (16-18px): matches
+      // Dev2K-Home-Page's footer brand description size.
+      font-size: 0.875rem;
       color: var(--color-text-muted);
       line-height: var(--line-height-relaxed);
       margin: 0;
       max-width: 300px;
-
-      @media screen and (max-width: 1023px) {
-        margin: 0 auto;
-      }
-
-      @media screen and (max-width: 400px) {
-        font-size: var(--font-size-sm);
-      }
     }
   }
 
@@ -91,14 +76,24 @@
   &__social {
     &-heading {
       font-family: var(--font-primary);
-      font-size: var(--font-size-lg);
-      font-weight: var(--font-weight-semibold);
+      // Fixed 13px rather than the fluid --font-size-lg token (18-20px): that scale is
+      // meant for content headings, not this compact footer label row.
+      font-size: 0.8125rem;
+      font-weight: var(--font-weight-bold);
       color: var(--color-text-primary);
       line-height: var(--line-height-normal);
-      min-height: calc(var(--font-size-lg) * var(--line-height-normal) * 2 + var(--space-2) + 1px);
       margin: 0 0 var(--space-4) 0;
       padding-bottom: var(--space-2);
       border-bottom: 1px solid var(--color-text-primary);
+      // Uppercase reads visually smaller than mixed case at the same font-size (no
+      // ascenders/descenders), which is why Dev2K-Home-Page's identical 13px heading
+      // looks more compact than this one did without it.
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      // Compound words like "Website-Funktionen" have a soft-break opportunity at the
+      // hyphen; grid's automatic min-width lets the column shrink to that break point
+      // even though the full text would otherwise fit. Force a single line instead.
+      white-space: nowrap;
     }
 
     &-list {
@@ -108,19 +103,31 @@
     }
 
     &-item {
-      margin-bottom: var(--space-3);
+      margin-bottom: var(--space-1);
     }
 
     &-link {
+      // Reset browser <button> defaults - this class was originally only ever used on <a>,
+      // which has none of these, so adding them here doesn't change how the existing
+      // <a>-based nav/legal links look; it's what lets it now also be used on the real
+      // <button> the install/update feature links need for a working :disabled state
+      // (<a> has no such thing).
       display: flex;
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
       align-items: flex-start;
       gap: var(--footer-icon-gap);
       font-family: var(--font-primary);
-      font-size: var(--font-size-base);
+      // Fixed 14px rather than the fluid --font-size-base token (16-18px): matches
+      // Dev2K-Home-Page's footer link size, which reads better at this density.
+      font-size: 0.875rem;
       font-weight: var(--font-weight-medium);
       color: var(--color-text-muted);
       text-decoration: none;
-      padding: var(--space-2) var(--space-3);
+      padding: var(--space-1) var(--space-3);
       margin: 0 calc(-1 * var(--space-3));
       border-radius: var(--radius-md);
       transition: all var(--transition-base);
@@ -145,6 +152,21 @@
         }
       }
 
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+
+        &:hover {
+          color: var(--color-text-muted);
+          background: none;
+          transform: none;
+
+          .nav-icon {
+            filter: var(--filter-icon-muted);
+          }
+        }
+      }
+
       @include utils.focus-visible;
     }
   }
@@ -159,10 +181,10 @@
       display: flex;
       align-items: center;
       gap: var(--footer-icon-gap);
-      padding: var(--space-2) var(--space-3);
+      padding: var(--space-1) var(--space-3);
       margin: 0 calc(-1 * var(--space-3));
       font-family: var(--font-primary);
-      font-size: var(--font-size-base);
+      font-size: 0.875rem;
       color: var(--color-text-muted);
       text-decoration: none;
       border-radius: var(--radius-md);
@@ -314,18 +336,6 @@
   }
 
   @media screen and (max-width: 719px) {
-    &__content {
-      .app-footer__brand {
-        grid-column: 1 / -1;
-        text-align: center;
-        margin-bottom: var(--space-4);
-
-        .brand-description {
-          margin: 0 auto;
-        }
-      }
-    }
-
     &__bottom-content {
       grid-template-columns: 1fr;
       text-align: center;
