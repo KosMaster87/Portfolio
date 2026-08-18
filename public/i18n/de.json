@@ -99,6 +99,8 @@
     "scss": "SCSS",
     "install": "App installieren",
     "updateSite": "Website aktualisieren",
+    "share": "Seite teilen",
+    "linkCopied": "Link kopiert!",
     "backToTop": "Oben",
     "backToTopAria": "Zurück nach oben scrollen",
     "githubAria": "Besuchen Sie mein GitHub-Profil",
