@@ -1,7 +1,7 @@
 {
   "name": "Portfolio - Software Developer",
   "short_name": "Portfolio",
-  "description": "Professional portfolio showcasing modern web development projects and skills",
+  "description": "Portfolio von Konstantin Aksenov - Angular-, TypeScript- und Node.js-Projekte",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -9,7 +9,7 @@
   "background_color": "#fffcf3",
   "theme_color": "#00bc8f",
   "categories": ["portfolio", "developer", "web development"],
-  "lang": "en",
+  "lang": "de",
   "dir": "ltr",
   "icons": [
     {
@@ -81,10 +81,10 @@
   ],
   "shortcuts": [
     {
-      "name": "Projects",
-      "short_name": "Projects",
-      "description": "View my latest development projects",
-      "url": "/projects",
+      "name": "Projekte",
+      "short_name": "Projekte",
+      "description": "Ausgewählte Projekte ansehen",
+      "url": "/#projects",
       "icons": [
         {
           "src": "/theme-light/icon-192.png",
@@ -94,10 +94,10 @@
       ]
     },
     {
-      "name": "About",
-      "short_name": "About",
-      "description": "Learn more about my skills and experience",
-      "url": "/about",
+      "name": "Über mich",
+      "short_name": "Über mich",
+      "description": "Mehr über Konstantin und den Werdegang erfahren",
+      "url": "/#about",
       "icons": [
         {
           "src": "/theme-light/icon-192.png",
@@ -107,10 +107,10 @@
       ]
     },
     {
-      "name": "Contact",
-      "short_name": "Contact",
-      "description": "Get in touch for collaboration opportunities",
-      "url": "/contact",
+      "name": "Kontakt",
+      "short_name": "Kontakt",
+      "description": "Direkt Kontakt aufnehmen",
+      "url": "/#contact",
       "icons": [
         {
           "src": "/theme-light/icon-192.png",
@@ -126,14 +126,14 @@
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Portfolio Homepage on Desktop"
+      "label": "Startseite auf dem Desktop"
     },
     {
       "src": "/assets/screenshots/mobile-projects.png",
       "sizes": "375x812",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Projects Page on Mobile"
+      "label": "Projekte-Bereich auf dem Handy"
     }
   ]
 }

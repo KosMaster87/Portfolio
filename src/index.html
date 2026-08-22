@@ -17,20 +17,23 @@
     />
     <meta name="author" content="K. Aksenov - Software Developer" />
 
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest-light.webmanifest" />
+    <!-- PWA Manifest (Light/Dark je nach Systemeinstellung) -->
+    <link rel="manifest" href="manifest-light.webmanifest" media="(prefers-color-scheme: light)" />
+    <link rel="manifest" href="manifest-dark.webmanifest" media="(prefers-color-scheme: dark)" />
 
     <!-- Theme Colors -->
-    <meta name="theme-color" content="#00bc8f" />
+    <meta name="theme-color" content="#00bc8f" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#00bc8f" media="(prefers-color-scheme: dark)" />
     <meta name="msapplication-TileColor" content="#00bc8f" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Portfolio" />
 
     <!-- Favicon & Icons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="theme-light/icon-32.png" />
-    <link rel="icon" type="image/png" sizes="96x96" href="theme-light/icon-96.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="theme-light/icon-192.png" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="theme-light/icon-32.png" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/png" sizes="32x32" href="theme-dark/icon-32.png" media="(prefers-color-scheme: dark)" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
     <!-- Open Graph Meta -->
     <meta property="og:title" content="Portfolio - Software Developer" />
