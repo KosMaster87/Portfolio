@@ -30,8 +30,8 @@ importers:
         specifier: ^21.2.5
         version: 21.2.20(@angular/core@21.2.20(@angular/compiler@21.2.20)(rxjs@7.8.2))(rxjs@7.8.2)
       '@ngx-translate/core':
-        specifier: ^17.0.0
-        version: 17.0.0(@angular/common@21.2.20(@angular/core@21.2.20(@angular/compiler@21.2.20)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.20(@angular/compiler@21.2.20)(rxjs@7.8.2))
+        specifier: ^18.0.0
+        version: 18.0.0(@angular/common@21.2.20(@angular/core@21.2.20(@angular/compiler@21.2.20)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.20(@angular/compiler@21.2.20)(rxjs@7.8.2))(rxjs@7.8.2)
       '@ngx-translate/http-loader':
         specifier: ^17.0.0
         version: 17.0.0(@angular/common@21.2.20(@angular/core@21.2.20(@angular/compiler@21.2.20)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.20(@angular/compiler@21.2.20)(rxjs@7.8.2))
@@ -1033,11 +1033,12 @@ packages:
       '@emnapi/core': ^1.7.1 || ^2.0.0-alpha.4
       '@emnapi/runtime': ^1.7.1 || ^2.0.0-alpha.4
 
-  '@ngx-translate/core@17.0.0':
-    resolution: {integrity: sha512-Rft2D5ns2pq4orLZjEtx1uhNuEBerUdpFUG1IcqtGuipj6SavgB8SkxtNQALNDA+EVlvsNCCjC2ewZVtUeN6rg==}
+  '@ngx-translate/core@18.0.0':
+    resolution: {integrity: sha512-Z9u9AXaeuyeHHimivvJQvhal/LJNB+5tlH+FimSU4QQ61FrtRDqgyn6nfFbc6Cb+59NDZdsh4QeTJyPCldFUwA==}
     peerDependencies:
-      '@angular/common': '>=16'
-      '@angular/core': '>=16'
+      '@angular/common': '>=18'
+      '@angular/core': '>=18'
+      rxjs: '>=7'
 
   '@ngx-translate/http-loader@17.0.0':
     resolution: {integrity: sha512-hgS8sa0ARjH9ll3PhkLTufeVXNI2DNR2uFKDhBgq13siUXzzVr/a31M6zgecrtwbA34iaBV01hsTMbMS8V7iIw==}
@@ -4234,10 +4235,11 @@ snapshots:
       '@tybys/wasm-util': 0.10.3
     optional: true
 
-  '@ngx-translate/core@17.0.0(@angular/common@21.2.20(@angular/core@21.2.20(@angular/compiler@21.2.20)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.20(@angular/compiler@21.2.20)(rxjs@7.8.2))':
+  '@ngx-translate/core@18.0.0(@angular/common@21.2.20(@angular/core@21.2.20(@angular/compiler@21.2.20)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.20(@angular/compiler@21.2.20)(rxjs@7.8.2))(rxjs@7.8.2)':
     dependencies:
       '@angular/common': 21.2.20(@angular/core@21.2.20(@angular/compiler@21.2.20)(rxjs@7.8.2))(rxjs@7.8.2)
       '@angular/core': 21.2.20(@angular/compiler@21.2.20)(rxjs@7.8.2)
+      rxjs: 7.8.2
       tslib: 2.8.1
 
   '@ngx-translate/http-loader@17.0.0(@angular/common@21.2.20(@angular/core@21.2.20(@angular/compiler@21.2.20)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.20(@angular/compiler@21.2.20)(rxjs@7.8.2))':
