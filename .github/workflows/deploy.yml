@@ -65,7 +65,7 @@ jobs:
       - name: Deploy to Unraid Production via rsync
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
-          echo "${{ secrets.UNRAID_DEPLOY_SSH_KEY }}" > ~/.ssh/id_ed25519
+          echo "${{ secrets.MAC2K_DEPLOY_SSH_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           cat >> ~/.ssh/config <<EOF
           Host deploy-portfolio.dev2ksoftware.com
@@ -80,12 +80,12 @@ jobs:
           # api/ is deployed manually (contact.php, PHPMailer & credentials are
           # gitignored and never checked out on this runner) - never touch it here.
           rsync -avz --delete --exclude='api/' \
-            deploy/ root@deploy-portfolio.dev2ksoftware.com:/mnt/nvme/appdata/static-sites/www/portfolio/
+            deploy/ gh-deploy@deploy-portfolio.dev2ksoftware.com:/srv/mac2k/data/static-sites/www/portfolio/
 
       - name: Deploy to Unraid Staging via rsync
         if: github.ref == 'refs/heads/staging' && github.event_name == 'push'
         run: |
-          echo "${{ secrets.UNRAID_DEPLOY_SSH_KEY_STAGING }}" > ~/.ssh/id_ed25519
+          echo "${{ secrets.MAC2K_DEPLOY_SSH_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           cat >> ~/.ssh/config <<EOF
           Host deploy-portfolio.dev2ksoftware.com
@@ -99,7 +99,7 @@ jobs:
 
           # Staging has no PHP-FPM backend - only the static build is deployed.
           rsync -avz --delete --exclude='api/' \
-            deploy/ root@deploy-portfolio.dev2ksoftware.com:/mnt/nvme/appdata/static-sites/www/portfolio-staging/
+            deploy/ gh-deploy@deploy-portfolio.dev2ksoftware.com:/srv/mac2k/data/static-sites/www/portfolio-staging/
 
       - name: Deployment Complete
         if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging')
